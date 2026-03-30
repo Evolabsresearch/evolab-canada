@@ -1,0 +1,7 @@
+{
+  "ignoreCommand": "[ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ] && [ \"$VERCEL_GIT_COMMIT_REF\" != \"claude/quirky-allen\" ] && exit 0; exit 1",
+  "crons": [
+    { "path": "/api/cron/reactivation", "schedule": "0 10 * * *" },
+    { "path": "/api/cron/birthdays", "schedule": "0 9 * * *" }
+  ]
+}

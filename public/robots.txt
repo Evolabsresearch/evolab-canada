@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Private/functional pages — not useful in search results
+Disallow: /account/
+Disallow: /cart
+Disallow: /checkout
+Disallow: /admin
+Disallow: /api/
+Disallow: /products/
+Disallow: /stacks
+Disallow: /order-confirmation
+
+# Crawl-delay for polite bots
+Crawl-delay: 2
+
+Sitemap: https://evolabsresearch.ca/sitemap.xml

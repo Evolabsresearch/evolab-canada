@@ -1,0 +1,39 @@
+{
+  "name": "evolabs-site2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@next-auth/supabase-adapter": "^0.2.1",
+    "@stripe/react-stripe-js": "^5.6.1",
+    "@stripe/stripe-js": "^8.9.0",
+    "@supabase/auth-helpers-nextjs": "^0.15.0",
+    "@supabase/supabase-js": "^2.99.2",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "formidable": "^3.5.4",
+    "mapbox-gl": "^3.20.0",
+    "next": "16.1.6",
+    "next-auth": "^4.24.13",
+    "nodemailer": "^7.0.13",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "shippo": "^2.18.0",
+    "stripe": "^20.4.1",
+    "twilio": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sharp": "^0.34.5",
+    "typescript": "5.9.3"
+  }
+}

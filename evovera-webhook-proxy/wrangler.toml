@@ -1,0 +1,5 @@
+name = "evovera-webhook-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Deploying to raw workers.dev subdomain because evovera.store DNS is not on Cloudflare

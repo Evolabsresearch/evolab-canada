@@ -1,0 +1,13 @@
+{
+  "name": "EVO Labs Research",
+  "short_name": "EVO Labs",
+  "description": "Research-grade peptides with 99%+ verified purity.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1B4D3E",
+  "theme_color": "#1B4D3E",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" }
+  ]
+}

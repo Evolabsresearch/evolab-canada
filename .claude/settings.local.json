@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --no-app --no-tailwind --no-eslint --no-src-dir --no-typescript --yes)",
+      "Read(//c/Users/jakob/Documents/**)",
+      "Bash(npx create-next-app@latest evolabs-site --no-app --no-tailwind --no-eslint --no-src-dir --no-typescript --yes)",
+      "Bash(npx create-next-app@latest evolabs-site2 --no-app --no-tailwind --no-eslint --no-src-dir --no-typescript --yes)",
+      "Bash(cp -r /c/Users/jakob/Documents/evolabs-site2/node_modules /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp /c/Users/jakob/Documents/evolabs-site2/package.json /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp /c/Users/jakob/Documents/evolabs-site2/package-lock.json /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp /c/Users/jakob/Documents/evolabs-site2/next.config.ts /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp /c/Users/jakob/Documents/evolabs-site2/tsconfig.json /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp /c/Users/jakob/Documents/evolabs-site2/next-env.d.ts /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp -r /c/Users/jakob/Documents/evolabs-site2/pages /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp -r /c/Users/jakob/Documents/evolabs-site2/public /c/Users/jakob/Documents/evolabs-site/)",
+      "Bash(cp -r /c/Users/jakob/Documents/evolabs-site2/styles /c/Users/jakob/Documents/evolabs-site/)"
+    ]
+  }
+}
