@@ -1,5 +1,11 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { SessionProvider } from "next-auth/react";
