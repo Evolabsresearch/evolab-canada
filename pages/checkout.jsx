@@ -201,6 +201,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
   const [hbError, setHbError] = useState('');
   const [stripeSubmitting, setStripeSubmitting] = useState(false);
   const [stripeError, setStripeError] = useState('');
+  const [ruoAgreed, setRuoAgreed] = useState(false); // Research use only acknowledgment
   const adyenContainerRef = useRef(null);
 
   // Persist order to Supabase after any successful payment (fire-and-forget)
@@ -1458,15 +1459,22 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     );
                   })()}
 
+                  <Checkbox
+                    checked={ruoAgreed}
+                    onChange={e => setRuoAgreed(e.target.checked)}
+                  >
+                    I confirm these products are for research use only, not for human consumption, and are not approved by Health Canada.
+                  </Checkbox>
+
                   <button
                     type="submit"
-                    disabled={placing}
+                    disabled={placing || !ruoAgreed}
                     style={{
-                      width: '100%', background: placing ? '#6b7280' : '#1B4D3E', color: '#fff',
+                      width: '100%', background: (placing || !ruoAgreed) ? '#6b7280' : '#1B4D3E', color: '#fff',
                       padding: '16px 24px', borderRadius: 12, fontSize: 15,
                       fontWeight: 700, fontFamily: "'Poppins', sans-serif",
-                      cursor: placing ? 'not-allowed' : 'pointer', border: 'none',
-                      transition: 'background 0.2s',
+                      cursor: (placing || !ruoAgreed) ? 'not-allowed' : 'pointer', border: 'none',
+                      transition: 'background 0.2s', opacity: (placing || !ruoAgreed) ? 0.5 : 1,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                     }}
                   >
@@ -1490,9 +1498,11 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     )}
                   </button>
 
-                  <p style={{ fontSize: 11, color: '#9ca3af', textAlign: 'center', marginTop: 12, lineHeight: 1.5 }}>
-                    By placing your order, you agree that these products are for research use only and not for human consumption.
-                  </p>
+                  {!ruoAgreed && placing && (
+                    <p style={{ fontSize: 11, color: '#ef4444', textAlign: 'center', marginTop: 8, lineHeight: 1.5 }}>
+                      You must acknowledge the research use policy to proceed.
+                    </p>
+                  )}
                 </form>
               )}
             </div>

@@ -27,6 +27,8 @@ export default function NewsletterPopup() {
   const [phoneOnlyMode, setPhoneOnlyMode] = useState(false);
   // unique discount code returned from server
   const [discountCode, setDiscountCode] = useState('');
+  // CASL consent checkbox
+  const [caslConsent, setCaslConsent] = useState(false);
 
   // Auto-show after 12s — only for logged-in users who haven't subscribed yet
   useEffect(() => {
@@ -121,6 +123,8 @@ export default function NewsletterPopup() {
           email: phoneOnlyMode ? undefined : email,
           phone: phone || undefined,
           phoneOnly: phoneOnlyMode,
+          caslConsent: true,
+          consentTimestamp: new Date().toISOString(),
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -377,9 +381,24 @@ export default function NewsletterPopup() {
                       </div>
                     )}
 
+                    {/* CASL Consent */}
+                    <label style={{ display: 'flex', gap: 8, cursor: 'pointer', alignItems: 'flex-start', marginTop: 4 }}>
+                      <input
+                        type="checkbox"
+                        checked={caslConsent}
+                        onChange={e => setCaslConsent(e.target.checked)}
+                        style={{ marginTop: 2, accentColor: '#4ade80', flexShrink: 0 }}
+                      />
+                      <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', lineHeight: 1.5 }}>
+                        I consent to receive promotional emails and SMS from EVO Labs Research Canada. You can unsubscribe at any time. View our{' '}
+                        <a href="/privacy" style={{ color: '#4ade80', textDecoration: 'underline' }}>Privacy Policy</a>.
+                      </span>
+                    </label>
+
                     {/* Submit */}
                     <button
                       type="submit"
+                      disabled={!caslConsent}
                       style={{
                         width: '100%', padding: '14px 24px',
                         background: 'linear-gradient(135deg, #1B4D3E 0%, #2d7a5e 100%)',
@@ -387,12 +406,13 @@ export default function NewsletterPopup() {
                         borderRadius: 12, border: '1px solid rgba(74,222,128,0.2)',
                         fontSize: 15, fontWeight: 700,
                         fontFamily: "'Poppins', sans-serif",
-                        cursor: 'pointer',
-                        transition: 'transform 0.15s, box-shadow 0.15s',
+                        cursor: !caslConsent ? 'not-allowed' : 'pointer',
+                        opacity: !caslConsent ? 0.5 : 1,
+                        transition: 'transform 0.15s, box-shadow 0.15s, opacity 0.15s',
                         marginTop: 2,
                         boxShadow: '0 4px 20px rgba(27,77,62,0.4)',
                       }}
-                      onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(27,77,62,0.55)'; }}
+                      onMouseEnter={e => { if (caslConsent) { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(27,77,62,0.55)'; } }}
                       onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(27,77,62,0.4)'; }}
                     >
                       {phoneOnlyMode ? 'Unlock My Extra 5% →' : (addPhone && phone ? 'Claim My 15% Discount →' : 'Claim My 10% Discount →')}

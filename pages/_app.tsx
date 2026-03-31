@@ -14,10 +14,13 @@ import { WishlistProvider } from "../context/WishlistContext";
 import { RecentlyViewedProvider } from "../context/RecentlyViewedContext";
 import { CompareProvider } from "../context/CompareContext";
 import LoginGateModal from "../components/LoginGateModal";
+import AgeGate from "../components/AgeGate";
+import CookieConsent from "../components/CookieConsent";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const OMNISEND_BRAND_ID = process.env.NEXT_PUBLIC_OMNISEND_BRAND_ID;
 
 function gtag(...args: unknown[]) {
   if (typeof window !== "undefined" && GA_ID) {
@@ -63,14 +66,68 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
     }
   }, [router.query.ref]);
 
+  // Conditionally load GA4 and Omnisend after cookie consent
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const loadGAAndOmnisend = () => {
+      const consent = localStorage.getItem("evo_cookie_consent");
+      if (consent === "all") {
+        // Load Google Analytics 4
+        if (GA_ID) {
+          const script1 = document.createElement("script");
+          script1.async = true;
+          script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+          document.head.appendChild(script1);
+
+          const script2 = document.createElement("script");
+          script2.dangerouslySetInnerHTML = {
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+            `,
+          };
+          document.head.appendChild(script2);
+        }
+
+        // Load Omnisend
+        if (OMNISEND_BRAND_ID) {
+          const script3 = document.createElement("script");
+          script3.dangerouslySetInnerHTML = {
+            __html: `
+              window.omnisend = window.omnisend || [];
+              omnisend.push(["accountID", "${OMNISEND_BRAND_ID}"]);
+              omnisend.push(["track", "$pageViewed"]);
+              !function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisend-webpush-and-forms.omnisend.com/omnisend.js",document.head.appendChild(e)}();
+            `,
+          };
+          document.head.appendChild(script3);
+        }
+      }
+    };
+
+    // Check on mount
+    loadGAAndOmnisend();
+
+    // Listen for consent grant event
+    window.addEventListener("evo:cookie-consent-granted", loadGAAndOmnisend);
+    return () => {
+      window.removeEventListener("evo:cookie-consent-granted", loadGAAndOmnisend);
+    };
+  }, []);
+
   return (
     <SessionProvider session={session}>
       <CartProvider>
         <WishlistProvider>
           <RecentlyViewedProvider>
             <CompareProvider>
+              <AgeGate />
               <Component {...pageProps} />
               <GateModalWrapper />
+              <CookieConsent />
               <Analytics />
               <SpeedInsights />
             </CompareProvider>

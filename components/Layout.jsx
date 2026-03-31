@@ -10,6 +10,7 @@ import ChatWidget from './ChatWidget';
 import MiniCart from './MiniCart';
 import CompareDrawer from './CompareDrawer';
 import AdminEditBar from './AdminEditBar';
+import CookieConsent from './CookieConsent';
 
 const DEFAULT_ANNOUNCEMENT_MESSAGES = [
   { text: 'Free Shipping on Orders $300+ CAD · Shipped via Canada Post', highlight: true, icon: '🚚' },
@@ -719,6 +720,8 @@ export default function Layout({ children, title, description, ogImage, structur
           *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
       `}</style>
+
+      <CookieConsent />
     </>
   );
 }

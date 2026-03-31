@@ -23,35 +23,7 @@ export default function Document() {
             src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
           />
         )}
-        {/* Google Analytics 4 */}
-        {GA_ID && (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-                `,
-              }}
-            />
-          </>
-        )}
-        {/* Omnisend web tracking */}
-        {OMNISEND_BRAND_ID && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.omnisend = window.omnisend || [];
-                omnisend.push(["accountID", "${OMNISEND_BRAND_ID}"]);
-                omnisend.push(["track", "$pageViewed"]);
-                !function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisend-webpush-and-forms.omnisend.com/omnisend.js",document.head.appendChild(e)}();
-              `,
-            }}
-          />
-        )}
+        {/* Google Analytics 4 and Omnisend are loaded conditionally in _app.tsx after cookie consent */}
       </Head>
       <body>
         <Main />

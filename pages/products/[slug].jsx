@@ -1150,6 +1150,11 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       ✓ Added to cart — view cart or continue shopping
                     </p>
                   )}
+
+                  {/* RUO Disclaimer Banner */}
+                  <div style={{ marginTop: 12, padding: '10px 14px', background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.15)', borderRadius: 10, fontSize: 11, color: '#6b7280', lineHeight: 1.5 }}>
+                    ⚠️ <strong style={{ color: '#dc2626' }}>Research Use Only</strong> — This product is not for human consumption and has not been approved by Health Canada. By purchasing, you confirm it will be used solely for legitimate scientific research.
+                  </div>
                 </div>
               )}
 
