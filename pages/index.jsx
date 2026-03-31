@@ -604,7 +604,7 @@ export default function Home({ dbProducts }) {
             {[
               { val: '99%+', label: 'Purity Guaranteed' },
               { val: '5', label: 'Quality Checks' },
-              { val: '100%', label: 'U.S. Verified' },
+              { val: '100%', label: 'Canada Verified' },
             ].map(s => (
               <div key={s.val} style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 28, fontWeight: 900, color: '#4ade80', letterSpacing: '-0.02em' }}>{s.val}</div>
@@ -736,8 +736,8 @@ export default function Home({ dbProducts }) {
                 bg: '#141414',
               },
               {
-                icon: '🇺🇸',
-                title: 'U.S. Based & Shipped',
+                icon: '🇨🇦',
+                title: 'Canada-Based & Shipped',
                 desc: 'All products stored and shipped from Toronto, ON. 100% domestic supply chain. No overseas sourcing — ever.',
                 accent: '#ef4444',
                 bg: '#141414',
@@ -827,7 +827,7 @@ export default function Home({ dbProducts }) {
                   { feature: 'Independent 3rd-Party COA', evo: '✓ Janoshik Analytical', other: '✓ Some provide', gray: '— Rarely provided' },
                   { feature: 'Minimum 99%+ Purity Guarantee', evo: '✓ Every batch', other: '— Variable quality', gray: '— Unverified' },
                   { feature: 'Canada-Based & Shipped', evo: '✓ Toronto, ON', other: '✓ Some are Canada-based', gray: '— Often overseas' },
-                  { feature: 'Free Shipping Threshold', evo: '✓ $250+', other: '— Rarely offered', gray: '— Unknown' },
+                  { feature: 'Free Shipping Threshold', evo: '✓ $300+ CAD', other: '— Rarely offered', gray: '— Unknown' },
                   { feature: 'Loyalty & Rewards Program', evo: '✓ Points + tiers', other: '— None', gray: '— None' },
                   { feature: 'Live Chat Support', evo: '✓ AI-powered', other: '— None', gray: '— None' },
                   { feature: 'Wholesale / Bulk Pricing', evo: '✓ 3 tiers', other: '— None', gray: '— None' },
@@ -1104,7 +1104,7 @@ export default function Home({ dbProducts }) {
                 { val: '99%+',   label: 'Average Purity',      bg: '#f0fdf4', accent: '#1B4D3E' },
                 { val: '100%',   label: 'Batches Tested',       bg: '#eff6ff', accent: '#2563eb' },
                 { val: 'Same Day', label: 'Fulfillment',        bg: '#fdf4ff', accent: '#7c3aed' },
-                { val: 'Free',   label: 'Shipping $250+',       bg: '#fff7ed', accent: '#ea580c' },
+                { val: 'Free',   label: 'Shipping $300+ CAD',    bg: '#fff7ed', accent: '#ea580c' },
               ].map(s => (
                 <div key={s.val} style={{ background: s.bg, borderRadius: 20, padding: '32px 24px' }}>
                   <div style={{ fontSize: 36, fontWeight: 900, color: s.accent, letterSpacing: '-0.02em', marginBottom: 8 }}>{s.val}</div>
