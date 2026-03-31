@@ -81,28 +81,24 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
           document.head.appendChild(script1);
 
           const script2 = document.createElement("script");
-          script2.dangerouslySetInnerHTML = {
-            __html: `
+          script2.textContent = `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-            `,
-          };
+            `;
           document.head.appendChild(script2);
         }
 
         // Load Omnisend
         if (OMNISEND_BRAND_ID) {
           const script3 = document.createElement("script");
-          script3.dangerouslySetInnerHTML = {
-            __html: `
+          script3.textContent = `
               window.omnisend = window.omnisend || [];
               omnisend.push(["accountID", "${OMNISEND_BRAND_ID}"]);
               omnisend.push(["track", "$pageViewed"]);
               !function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisend-webpush-and-forms.omnisend.com/omnisend.js",document.head.appendChild(e)}();
-            `,
-          };
+            `;
           document.head.appendChild(script3);
         }
       }
