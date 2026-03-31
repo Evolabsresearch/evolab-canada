@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     if (!data) {
       try {
         const { getOrdersByEmail } = await import('../../lib/woocommerce');
-        const isPhoneUser = userId.endsWith('@phone.evolabsresearch.cam');
+        const isPhoneUser = userId.endsWith('@phone.evolabsresearch.ca');
         // Phone users don't have WC orders by email — return empty profile
         if (isPhoneUser) return res.json({ profile: null });
 

@@ -63,7 +63,7 @@ export default async function handler(req, res) {
     try {
       const digits = phone.replace(/\D/g, '');
       if (digits.length >= 10) {
-        const pseudoEmail = `${digits}@phone.evolabsresearch.cam`;
+        const pseudoEmail = `${digits}@phone.evolabsresearch.ca`;
         const { data: authData } = await supabase.auth.admin.listUsers();
         const match = authData?.users?.find(u => u.email === pseudoEmail);
         if (match) userId = match.id;

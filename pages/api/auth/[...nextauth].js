@@ -28,7 +28,7 @@ async function sendBrandedVerificationRequest({ identifier: email, url, provider
         <!-- Logo Header -->
         <tr>
           <td align="center" style="padding:0 0 24px 0;">
-            <img src="https://evolabsresearch.cam/images/evo-logo.png"
+            <img src="https://evolabsresearch.ca/images/evo-logo.png"
               alt="EVO Labs Research" width="120" height="auto"
               style="display:block;max-width:120px;" />
           </td>
@@ -91,10 +91,10 @@ async function sendBrandedVerificationRequest({ identifier: email, url, provider
                         <div style="width:2px;height:40px;background:${brandColor};border-radius:1px;"></div>
                       </td>
                       <td style="vertical-align:top;">
-                        <p style="margin:0;font-size:13px;font-weight:700;color:#0f1117;">EVO Labs Research LLC</p>
+                        <p style="margin:0;font-size:13px;font-weight:700;color:#0f1117;">EVO Labs Research Canada</p>
                         <p style="margin:2px 0 0;font-size:12px;color:#9ca3af;line-height:1.6;">
-                          8270 Woodland Center Blvd, Tampa, FL 33614<br/>
-                          support@evolabsresearch.cam
+                          100 King Street West, Suite 5600, Toronto, ON M5X 1C9<br/>
+                          support@evolabsresearch.ca
                         </p>
                       </td>
                     </tr>
@@ -110,8 +110,8 @@ async function sendBrandedVerificationRequest({ identifier: email, url, provider
         <tr>
           <td align="center" style="padding:20px 0 0;">
             <p style="margin:0;font-size:11px;color:#9ca3af;">
-              Sent to ${escapedEmail} · EVO Labs Research LLC · Tampa, FL 33614<br/>
-              <a href="https://evolabsresearch.cam" style="color:#9ca3af;text-decoration:underline;">evolabsresearch.cam</a>
+              Sent to ${escapedEmail} · EVO Labs Research Canada · Toronto, ON M5X 1C9<br/>
+              <a href="https://evolabsresearch.ca" style="color:#9ca3af;text-decoration:underline;">evolabsresearch.ca</a>
             </p>
           </td>
         </tr>
@@ -122,9 +122,9 @@ async function sendBrandedVerificationRequest({ identifier: email, url, provider
 </body>
 </html>`;
 
-  const text = `Sign in to EVO Labs Research\n\nClick this link to sign in:\n${url}\n\nThis link expires in 24 hours.\n\nIf you didn't request this, ignore this email.\n\n---\nEVO Labs Research LLC\n8270 Woodland Center Blvd, Tampa, FL 33614\nsupport@evolabsresearch.cam`;
+  const text = `Sign in to EVO Labs Research\n\nClick this link to sign in:\n${url}\n\nThis link expires in 24 hours.\n\nIf you didn't request this, ignore this email.\n\n---\nEVO Labs Research Canada\n100 King Street West, Suite 5600, Toronto, ON M5X 1C9\nsupport@evolabsresearch.ca`;
 
-  const fromRaw = process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.cam>';
+  const fromRaw = process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.ca>';
   const fromMatch = fromRaw.match(/^(.*?)\s*<(.+)>$/);
   const fromName = fromMatch ? fromMatch[1].trim() : 'EVO Labs Research';
   const fromEmail = fromMatch ? fromMatch[2].trim() : fromRaw;
@@ -178,10 +178,10 @@ export const authOptions = {
     // ── Email magic link (via SendGrid HTTP API) ─────────────────────────
     // Env vars needed in Vercel:
     //   SENDGRID_API_KEY=SG.xxxx
-    //   EMAIL_FROM=EVO Labs Research <support@evolabsresearch.cam>
+    //   EMAIL_FROM=EVO Labs Research <support@evolabsresearch.ca>
     EmailProvider({
       server: 'smtp://placeholder:placeholder@placeholder:587', // unused — sendVerificationRequest handles sending
-      from: process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.cam>',
+      from: process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.ca>',
       sendVerificationRequest: sendBrandedVerificationRequest,
     }),
 
@@ -221,7 +221,7 @@ export const authOptions = {
         );
 
         // Find or create a user record in Supabase keyed to their phone
-        const pseudoEmail = `${phone.replace(/\+/g, '')}@phone.evolabsresearch.cam`;
+        const pseudoEmail = `${phone.replace(/\+/g, '')}@phone.evolabsresearch.ca`;
 
         let { data: user } = await supabase
           .from('users')
@@ -303,7 +303,7 @@ export const authOptions = {
     async createUser({ user }) {
       // Fire welcome series when a new email/magic-link user is created
       const email = user.email;
-      if (!email || email.endsWith('@phone.evolabsresearch.cam')) return;
+      if (!email || email.endsWith('@phone.evolabsresearch.ca')) return;
       try {
         await upsertContact({ email });
         await triggerEvent(email, 'welcomeSeriesStart', {

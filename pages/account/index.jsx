@@ -728,10 +728,10 @@ export default function AccountPage() {
     );
   }
 
-  const isPhoneUser = session.user.email?.endsWith('@phone.evolabsresearch.cam');
+  const isPhoneUser = session.user.email?.endsWith('@phone.evolabsresearch.ca');
   const displayIdentifier = isPhoneUser
     ? (() => {
-        const digits = session.user.email.replace('@phone.evolabsresearch.cam', '');
+        const digits = session.user.email.replace('@phone.evolabsresearch.ca', '');
         // Format: digits stored as E.164 without '+', e.g. "12345678901" → "+1 (234) 567-8901"
         if (digits.length === 11 && digits.startsWith('1')) {
           return `+1 (${digits.slice(1,4)}) ${digits.slice(4,7)}-${digits.slice(7)}`;

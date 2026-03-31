@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   }
 
   const sgKey   = process.env.SENDGRID_API_KEY;
-  const fromEmail = process.env.SENDGRID_FROM_EMAIL || 'orders@evolabsresearch.cam';
+  const fromEmail = process.env.SENDGRID_FROM_EMAIL || 'orders@evolabsresearch.ca';
   const twilioSid = process.env.TWILIO_ACCOUNT_SID;
   const twilioToken = process.env.TWILIO_AUTH_TOKEN;
   const twilioFrom  = process.env.TWILIO_PHONE_NUMBER;
@@ -130,7 +130,7 @@ export default async function handler(req, res) {
         <!-- CTA -->
         <tr>
           <td style="padding:0 40px 36px;text-align:center;">
-            <a href="https://evolabsresearch.cam/account" style="display:inline-block;background:#1B4D3E;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:700;font-size:14px;">View Your Orders →</a>
+            <a href="https://evolabsresearch.ca/account" style="display:inline-block;background:#1B4D3E;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:700;font-size:14px;">View Your Orders →</a>
           </td>
         </tr>
 
@@ -170,9 +170,9 @@ ${city}, ${state} ${zip}
 Estimated delivery: ${deliveryEta}
 
 Tracking info will be sent once your order ships.
-Track your order: https://evolabsresearch.cam/account
+Track your order: https://evolabsresearch.ca/account
 
-EVO Labs Research | support@evolabsresearch.cam
+EVO Labs Research Canada | support@evolabsresearch.ca
 `;
 
   const errors = [];
@@ -189,7 +189,7 @@ EVO Labs Research | support@evolabsresearch.cam
         body: JSON.stringify({
           personalizations: [{ to: [{ email, name: fullName }] }],
           from: { email: fromEmail, name: 'EVO Labs Research' },
-          reply_to: { email: 'support@evolabsresearch.cam', name: 'EVO Labs Support' },
+          reply_to: { email: 'support@evolabsresearch.ca', name: 'EVO Labs Support' },
           subject: `✅ Order Confirmed — #${orderRef} | EVO Labs Research`,
           content: [
             { type: 'text/plain', value: textBody },
@@ -216,7 +216,7 @@ EVO Labs Research | support@evolabsresearch.cam
     try {
       const normalizedPhone = phone.replace(/\D/g, '');
       const e164 = normalizedPhone.startsWith('1') ? `+${normalizedPhone}` : `+1${normalizedPhone}`;
-      const smsBody = `✅ EVO Labs Order Confirmed! Order #${orderRef} for $${parseFloat(total || 0).toFixed(2)} is being prepared. Tracking will be texted once shipped. Questions? support@evolabsresearch.cam`;
+      const smsBody = `✅ EVO Labs Order Confirmed! Order #${orderRef} for $${parseFloat(total || 0).toFixed(2)} is being prepared. Tracking will be texted once shipped. Questions? support@evolabsresearch.ca`;
 
       const twilioRes = await fetch(
         `https://api.twilio.com/2010-04-01/Accounts/${twilioSid}/Messages.json`,

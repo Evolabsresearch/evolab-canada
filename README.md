@@ -61,7 +61,7 @@ The code fires these events automatically — the actual email/SMS templates nee
 3. Test by triggering a test order through WooCommerce
 
 ### Priority 6 — Supabase `users` Table Check
-Phone OTP login creates user records with a pseudo-email like `15551234567@phone.evolabsresearch.com`. Verify the `users` table allows this:
+Phone OTP login creates user records with a pseudo-email like `15551234567@phone.evolabsresearch.ca`. Verify the `users` table allows this:
 ```sql
 -- Run in Supabase SQL Editor to confirm schema is correct
 SELECT column_name, data_type FROM information_schema.columns
@@ -317,7 +317,7 @@ Two login methods, both passwordless:
 ### Phone OTP internals:
 - `POST /api/auth/send-otp` — generates a 6-digit code, stores it in memory (`OTP_STORE` Map), sends via Twilio
 - Code expires in **10 minutes**
-- NextAuth `CredentialsProvider` verifies code on sign-in, finds or creates a Supabase user with pseudo-email `{e164phone}@phone.evolabsresearch.com`
+- NextAuth `CredentialsProvider` verifies code on sign-in, finds or creates a Supabase user with pseudo-email `{e164phone}@phone.evolabsresearch.ca`
 - OTP_STORE is in-memory — works for single-instance Vercel deployments; if you ever move to multi-region, migrate to Supabase or Redis
 
 ### JWT session contains:
