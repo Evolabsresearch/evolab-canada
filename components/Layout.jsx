@@ -192,7 +192,7 @@ export default function Layout({ children, title, description, ogImage, structur
       {/* ── Edge glow ring ── */}
       <div aria-hidden="true" style={{
         position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 99999,
-        boxShadow: 'inset 0 0 0 1.5px rgba(74,222,128,0.70), inset 0 0 40px 4px rgba(74,222,128,0.38), inset 0 0 90px 8px rgba(74,222,128,0.16)',
+        boxShadow: 'inset 0 0 0 1px rgba(74,222,128,0.50), inset 0 0 30px 3px rgba(74,222,128,0.25), inset 0 0 80px 6px rgba(74,222,128,0.10)',
       }} />
 
       {/* Skip to content — accessibility */}
@@ -217,7 +217,7 @@ export default function Layout({ children, title, description, ogImage, structur
           </span>
         );
         return (
-          <div style={{ background: '#1B4D3E', color: '#fff', textAlign: 'center', fontSize: 12, fontWeight: 500, padding: '10px 16px', letterSpacing: '0.04em', fontFamily: "'Anek Telugu', sans-serif", minHeight: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ background: 'linear-gradient(90deg, #163d31 0%, #1B4D3E 50%, #163d31 100%)', color: '#fff', textAlign: 'center', fontSize: 12, fontWeight: 500, padding: '9px 16px', letterSpacing: '0.05em', fontFamily: "'Poppins', system-ui, sans-serif", minHeight: 38, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {msg.href ? <Link href={msg.href} style={{ color: '#fff', textDecoration: 'none' }}>{inner}</Link> : inner}
           </div>
         );
@@ -228,13 +228,15 @@ export default function Layout({ children, title, description, ogImage, structur
         position: 'sticky',
         top: 0,
         zIndex: 1000,
-        background: '#fff',
-        borderBottom: `1px solid ${scrolled ? '#e5e7eb' : 'transparent'}`,
-        boxShadow: scrolled ? '0 1px 24px rgba(0,0,0,0.07)' : 'none',
-        transition: 'border-color 0.2s, box-shadow 0.2s',
+        background: scrolled ? 'rgba(255,255,255,0.92)' : '#fff',
+        backdropFilter: scrolled ? 'blur(16px) saturate(180%)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(16px) saturate(180%)' : 'none',
+        borderBottom: `1px solid ${scrolled ? 'rgba(0,0,0,0.06)' : 'transparent'}`,
+        boxShadow: scrolled ? '0 1px 20px rgba(0,0,0,0.05)' : 'none',
+        transition: 'all 0.3s cubic-bezier(0.2,0.8,0.2,1)',
         fontFamily: "'Anek Telugu', sans-serif",
       }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', height: 72, gap: 40 }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', height: 68, gap: 36 }}>
 
           {/* Logo */}
           <Link href="/" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
@@ -365,11 +367,11 @@ export default function Layout({ children, title, description, ogImage, structur
       </main>
 
       {/* ── Footer ── */}
-      <footer style={{ background: '#0d0d0d', color: '#fff', padding: '72px 0 0', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <footer style={{ background: '#0a0a0a', color: '#fff', padding: '80px 0 0', fontFamily: "'Anek Telugu', sans-serif", borderTop: '1px solid rgba(255,255,255,0.04)' }}>
         <div className="container">
 
           {/* Top: brand + nav columns */}
-          <div style={{ display: 'grid', gridTemplateColumns: '2.2fr 1fr 1fr 1fr', gap: 56, paddingBottom: 56, borderBottom: '1px solid rgba(255,255,255,0.08)' }} className="footer-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '2.2fr 1fr 1fr 1fr', gap: 56, paddingBottom: 60, borderBottom: '1px solid rgba(255,255,255,0.06)' }} className="footer-grid">
 
             {/* Brand */}
             <div>
@@ -465,7 +467,7 @@ export default function Layout({ children, title, description, ogImage, structur
           </div>
 
           {/* Bottom bar */}
-          <div style={{ padding: '24px 0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }} className="footer-bottom">
+          <div style={{ padding: '28px 0 36px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }} className="footer-bottom">
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>
               © 2026 EVO Labs Research Canada. All rights reserved. For Research Use Only — Not for Human Consumption.
             </p>
@@ -497,14 +499,14 @@ export default function Layout({ children, title, description, ogImage, structur
           onClick={(e) => { if (e.target === e.currentTarget) setSearchOpen(false); }}
           style={{
             position: 'fixed', inset: 0, zIndex: 2000,
-            background: 'rgba(10,10,10,0.65)', backdropFilter: 'blur(6px)',
+            background: 'rgba(10,10,10,0.55)', backdropFilter: 'blur(12px) saturate(180%)',
             display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
             paddingTop: 80,
           }}
         >
           <div style={{
             background: '#fff', borderRadius: 20, width: '100%', maxWidth: 600,
-            margin: '0 20px', boxShadow: '0 32px 80px rgba(0,0,0,0.3)',
+            margin: '0 20px', boxShadow: '0 32px 80px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.05)',
             overflow: 'hidden',
           }}>
             {/* Search input */}

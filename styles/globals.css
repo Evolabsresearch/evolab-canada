@@ -19,12 +19,13 @@ a { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 img { display: block; max-width: 100%; }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #1B4D3E; border-radius: 3px; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(27,77,62,0.35); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(27,77,62,0.55); }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeIn {
@@ -35,33 +36,44 @@ img { display: block; max-width: 100%; }
   0%   { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
-/* Vial GPU compositor hints — actual keyframe is in FloatingVials.jsx (single source of truth) */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Vial GPU compositor hints */
 [class*="hero-vial"], .vial-anim {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
+/* ── Product Cards ── */
 .product-card {
   background: #141414;
-  border-radius: 12px;
-  border: none;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.3s;
   cursor: pointer;
   position: relative;
 }
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(74,222,128,0.12);
+  border-color: rgba(74,222,128,0.15);
 }
 .product-card .card-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.75) 50%, transparent 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.70) 50%, transparent 100%);
   padding: 32px 20px 20px;
   transform: translateY(100%);
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1);
   z-index: 4;
 }
 .product-card:hover .card-overlay {
@@ -80,149 +92,171 @@ img { display: block; max-width: 100%; }
   width: 88%;
   height: 88%;
   object-fit: contain;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1);
 }
 .product-card:hover .card-image-wrap img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
+/* ── COA Cards ── */
 .coa-card {
   border-radius: 16px;
   border: 1px solid #e5e7eb;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.3s cubic-bezier(0.2,0.8,0.2,1);
   background: #fff;
 }
 .coa-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
 }
 
+/* ── Category Cards ── */
 .cat-card {
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.3s cubic-bezier(0.2,0.8,0.2,1);
 }
 .cat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
 }
 
+/* ── Review Cards ── */
 .review-card {
   background: #fff;
   border-radius: 20px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(0,0,0,0.06);
   padding: 28px;
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.3s cubic-bezier(0.2,0.8,0.2,1), transform 0.3s cubic-bezier(0.2,0.8,0.2,1);
 }
 .review-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
 }
 
+/* ── FAQ Items ── */
 .faq-item {
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.15s;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: background 0.2s;
 }
-.faq-item:hover { background: #fafafa; }
+.faq-item:hover { background: #fafbfc; }
 
+/* ── Nav Links ── */
 .nav-link {
   font-size: 14px;
   font-weight: 500;
   font-family: 'Poppins', system-ui, sans-serif;
-  color: rgba(0,0,0,0.75);
-  transition: color 0.2s, background-color 0.2s;
-  padding: 4px 8px;
-  border-radius: 6px;
+  color: rgba(0,0,0,0.65);
+  transition: color 0.25s, background-color 0.25s;
+  padding: 6px 10px;
+  border-radius: 8px;
   position: relative;
 }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 0; right: 0;
+  bottom: -2px; left: 10px; right: 10px;
   height: 2px;
-  background: #1B4D3E;
+  background: linear-gradient(90deg, #1B4D3E, #4ade80);
   transform: scaleX(0);
-  transition: transform 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.2,0.8,0.2,1);
   transform-origin: left;
   border-radius: 2px;
 }
-.nav-link:hover { color: #000000; background: rgba(0,0,0,0.03); }
+.nav-link:hover { color: #111827; background: rgba(0,0,0,0.03); }
 .nav-link:hover::after { transform: scaleX(1); }
-.nav-link.active { color: #000000; }
+.nav-link.active { color: #111827; font-weight: 600; }
 .nav-link.active::after { transform: scaleX(1); }
 
+/* ── Buttons ── */
 .btn-primary {
-  background: #000000;
+  background: #111827;
   color: #fff;
-  padding: 13px 32px;
-  border-radius: 9999px;
-  font-size: 15px;
-  font-weight: 500;
+  padding: 13px 30px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
   font-family: 'Poppins', system-ui, sans-serif;
-  transition: background 0.2s cubic-bezier(0.4,0,0.2,1), transform 0.15s;
+  transition: background 0.25s cubic-bezier(0.2,0.8,0.2,1), transform 0.2s, box-shadow 0.25s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
   cursor: pointer;
 }
-.btn-primary:hover { background: rgba(0,0,0,0.85); transform: translateY(-1px); }
+.btn-primary:hover {
+  background: #1B4D3E;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(27,77,62,0.25);
+}
 
 .btn-secondary {
   background: transparent;
-  color: #131315;
+  color: #111827;
   padding: 12px 26px;
-  border-radius: 9999px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 500;
   font-family: 'Poppins', system-ui, sans-serif;
-  border: 1px solid #131315;
-  transition: background 0.2s, transform 0.15s;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
   cursor: pointer;
 }
-.btn-secondary:hover { background: #f9fafb; transform: translateY(-1px); }
+.btn-secondary:hover {
+  background: #f9fafb;
+  border-color: rgba(0,0,0,0.25);
+  transform: translateY(-1px);
+}
 
 .btn-green {
   background: #1B4D3E;
   color: #fff;
-  padding: 13px 32px;
-  border-radius: 9999px;
-  font-size: 15px;
-  font-weight: 500;
+  padding: 13px 30px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
   font-family: 'Poppins', system-ui, sans-serif;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
   cursor: pointer;
 }
-.btn-green:hover { background: #163d31; transform: translateY(-1px); }
+.btn-green:hover {
+  background: #163d31;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(27,77,62,0.25);
+}
 
-.section { padding: 96px 0; }
+/* ── Layout ── */
+.section { padding: 100px 0; }
 .section-sm { padding: 64px 0; }
 .container { max-width: 1440px; margin: 0 auto; padding: 0 32px; }
 
+/* ── Filter Pills ── */
 .filter-pill {
-  padding: 8px 16px;
-  border-radius: 9999px;
-  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 13px;
   font-weight: 500;
   font-family: 'Poppins', system-ui, sans-serif;
-  border: none;
+  border: 1.5px solid transparent;
   color: #374151;
   background: #f3f4f6;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s cubic-bezier(0.2,0.8,0.2,1);
   white-space: nowrap;
 }
-.filter-pill:hover { background: #e5e7eb; }
-.filter-pill.active { background: #111827; color: #fff; }
+.filter-pill:hover { background: #e8e9ec; border-color: rgba(0,0,0,0.08); }
+.filter-pill.active { background: #111827; color: #fff; border-color: #111827; }
 
+/* ── Inputs ── */
 .input {
   width: 100%;
   padding: 13px 18px;
@@ -231,21 +265,23 @@ img { display: block; max-width: 100%; }
   font-size: 14px;
   color: #111827;
   background: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.25s, box-shadow 0.25s;
   outline: none;
   font-family: inherit;
 }
-.input:focus { border-color: #1B4D3E; box-shadow: 0 0 0 3px rgba(27,77,62,0.08); }
+.input:focus { border-color: #1B4D3E; box-shadow: 0 0 0 3px rgba(27,77,62,0.10); }
 .input::placeholder { color: #9ca3af; }
 
+/* ── Badges ── */
 .stars { color: #F59E0B; }
-.badge { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.badge { display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 .badge-green  { background: #dcfce7; color: #166534; }
 .badge-blue   { background: #dbeafe; color: #1e40af; }
 .badge-purple { background: #ede9fe; color: #5b21b6; }
 .badge-orange { background: #ffedd5; color: #9a3412; }
 .badge-dark   { background: #111827; color: #fff; }
 
+/* ── Responsive ── */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
   .hide-tablet { display: none !important; }
