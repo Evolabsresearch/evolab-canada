@@ -49,7 +49,7 @@ export default function TrackingPage() {
   return (
     <>
       <Head><title>Track Package | EVO Labs Research</title></Head>
-      <div style={{ minHeight: '100vh', background: '#0f0f0f', fontFamily: "'Poppins', sans-serif" }}>
+      <div style={{ minHeight: '100vh', background: '#0f0f0f', fontFamily: "'DM Sans', sans-serif" }}>
 
         {/* Top bar */}
         <div style={{ background: '#0a0a0a', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '0 32px' }}>
@@ -69,7 +69,7 @@ export default function TrackingPage() {
           {error && (
             <div style={{ textAlign: 'center', padding: '60px 0' }}>
               <p style={{ color: '#f87171', fontSize: 14 }}>{error}</p>
-              <Link href="/account" style={{ color: '#4ade80', fontSize: 13 }}>← Back to orders</Link>
+              <Link href="/account" style={{ color: '#06b6d4', fontSize: 13 }}>← Back to orders</Link>
             </div>
           )}
 
@@ -92,8 +92,8 @@ export default function TrackingPage() {
                     </div>
                   </div>
                   {tracking.estimatedDelivery && (
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.15)', borderRadius: 8, padding: '8px 14px' }}>
-                      <span style={{ fontSize: 12, color: '#4ade80', fontWeight: 600 }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.15)', borderRadius: 8, padding: '8px 14px' }}>
+                      <span style={{ fontSize: 12, color: '#06b6d4', fontWeight: 600 }}>
                         📅 Est. delivery: {new Date(tracking.estimatedDelivery).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
                       </span>
                     </div>
@@ -114,7 +114,7 @@ export default function TrackingPage() {
                     <div key={i} style={{ display: 'flex', gap: 14, paddingBottom: i < tracking.checkpoints.length - 1 ? 20 : 0 }}>
                       {/* Dot + line */}
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                        <div style={{ width: 10, height: 10, borderRadius: '50%', background: i === 0 ? '#4ade80' : 'rgba(255,255,255,0.2)', border: i === 0 ? '2px solid rgba(74,222,128,0.5)' : '2px solid rgba(255,255,255,0.1)', marginTop: 3, flexShrink: 0 }} />
+                        <div style={{ width: 10, height: 10, borderRadius: '50%', background: i === 0 ? '#06b6d4' : 'rgba(255,255,255,0.2)', border: i === 0 ? '2px solid rgba(6,182,212,0.5)' : '2px solid rgba(255,255,255,0.1)', marginTop: 3, flexShrink: 0 }} />
                         {i < tracking.checkpoints.length - 1 && (
                           <div style={{ width: 1, flex: 1, background: 'rgba(255,255,255,0.08)', marginTop: 4 }} />
                         )}

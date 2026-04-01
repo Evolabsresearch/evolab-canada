@@ -49,7 +49,7 @@ function FAQItem({ item }) {
         <span style={{ fontSize: 15, fontWeight: 600, color: '#111827', lineHeight: 1.4 }}>{item.q}</span>
         <span style={{
           width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
-          background: open ? '#1B4D3E' : '#f3f4f6',
+          background: open ? '#0F2A4A' : '#f3f4f6',
           color: open ? '#fff' : '#6b7280',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: 18, fontWeight: 400, lineHeight: 1,
@@ -81,12 +81,12 @@ export default function AboutPage() {
       <div style={{ background: '#0a0a0a', padding: '80px 0 72px' }}>
         <div className="container">
           <div style={{ maxWidth: 640 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>
               Our Story
             </div>
             <h1 style={{ fontSize: 'clamp(36px, 5vw, 60px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1.0, marginBottom: 24 }}>
               Built on One Standard:<br />
-              <span style={{ color: '#4ade80' }}>Purity First.</span>
+              <span style={{ color: '#06b6d4' }}>Purity First.</span>
             </h1>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', lineHeight: 1.85 }}>
               EVO Labs Research was founded on the belief that researchers deserve better. Better transparency, better testing, better compounds. We built the company we wished existed.
@@ -100,7 +100,7 @@ export default function AboutPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }} className="about-split">
             <div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
                 Our Mission
               </div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: 24 }}>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               {[
-                { val: '99%+', label: 'Guaranteed Purity', bg: '#f0fdf4', color: '#1B4D3E' },
+                { val: '99%+', label: 'Guaranteed Purity', bg: '#f0fdf4', color: '#0F2A4A' },
                 { val: '33+',  label: 'COAs Published',    bg: '#eff6ff', color: '#1d4ed8' },
                 { val: '48+',  label: 'Active Compounds',  bg: '#fdf4ff', color: '#7c3aed' },
                 { val: '100%', label: 'Batches 3rd-Party Tested', bg: '#fff7ed', color: '#c2410c' },
@@ -137,7 +137,7 @@ export default function AboutPage() {
       <section className="section" style={{ background: '#fafafa' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
               Core Values
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
@@ -168,7 +168,7 @@ export default function AboutPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }} className="location-split">
             <div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
                 Where We Are
               </div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 24 }}>
@@ -194,14 +194,14 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-            <div style={{ background: '#1B4D3E', borderRadius: 32, padding: '56px 40px', color: '#fff' }}>
+            <div style={{ background: '#0F2A4A', borderRadius: 32, padding: '56px 40px', color: '#fff' }}>
               <div style={{ fontSize: 48, marginBottom: 24 }}>🇨🇦</div>
               <h3 style={{ fontSize: 28, fontWeight: 900, marginBottom: 16, lineHeight: 1.1 }}>100% Canadian<br />Supply Chain</h3>
               <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: 32 }}>
                 Every compound stored, tested, and shipped from within Canada. No overseas manufacturing. No unknown handling. Complete chain of custody from our facility to your lab.
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <Link href="/products" className="btn-primary" style={{ background: '#fff', color: '#1B4D3E' }}>
+                <Link href="/products" className="btn-primary" style={{ background: '#fff', color: '#0F2A4A' }}>
                   Shop All Products
                 </Link>
                 <Link href="/contact" style={{ color: 'rgba(255,255,255,0.7)', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -216,7 +216,7 @@ export default function AboutPage() {
       {/* ── FAQ Section ── */}
       <div id="faq" style={{ background: '#0a0a0a', padding: '72px 0 60px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
             Help Center
           </div>
           <h2 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -242,7 +242,7 @@ export default function AboutPage() {
                     style={{
                       textAlign: 'left', padding: '10px 14px', borderRadius: 12, border: 'none',
                       background: activeCategory === cat.label ? '#f0fdf4' : 'transparent',
-                      color: activeCategory === cat.label ? '#1B4D3E' : '#6b7280',
+                      color: activeCategory === cat.label ? '#0F2A4A' : '#6b7280',
                       fontWeight: activeCategory === cat.label ? 700 : 500,
                       fontSize: 14, cursor: 'pointer', transition: 'all 0.15s', fontFamily: 'inherit',
                     }}
@@ -271,7 +271,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: '#1B4D3E', padding: '64px 0' }}>
+      <section style={{ background: '#0F2A4A', padding: '64px 0' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 900, color: '#fff', marginBottom: 12 }}>
             Ready to Start Your Research?
@@ -280,7 +280,7 @@ export default function AboutPage() {
             Browse our full catalog of 99%+ pure, independently tested research peptides.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/products" style={{ background: '#fff', color: '#1B4D3E', padding: '14px 32px', borderRadius: 100, fontSize: 15, fontWeight: 700 }}>
+            <Link href="/products" style={{ background: '#fff', color: '#0F2A4A', padding: '14px 32px', borderRadius: 100, fontSize: 15, fontWeight: 700 }}>
               Browse Products →
             </Link>
             <Link href="/coa" style={{ background: 'rgba(255,255,255,0.12)', color: '#fff', padding: '14px 32px', borderRadius: 100, fontSize: 15, fontWeight: 600, border: '1.5px solid rgba(255,255,255,0.25)' }}>

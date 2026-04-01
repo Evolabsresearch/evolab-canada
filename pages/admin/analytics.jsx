@@ -115,8 +115,8 @@ export default function AdminAnalytics() {
             <button key={p} onClick={() => setPeriod(p)} style={{
               padding: '8px 20px', borderRadius: 8, fontSize: 13, fontWeight: 600,
               border: '1px solid', cursor: 'pointer',
-              background: period === p ? '#1B4D3E' : '#fff',
-              borderColor: period === p ? '#1B4D3E' : '#e5e7eb',
+              background: period === p ? '#0F2A4A' : '#fff',
+              borderColor: period === p ? '#0F2A4A' : '#e5e7eb',
               color: period === p ? '#fff' : '#374151',
             }}>
               Last {p.replace('d', ' days')}
@@ -134,7 +134,7 @@ export default function AdminAnalytics() {
             disabled={syncing}
             style={{
               padding: '8px 18px', borderRadius: 8, fontSize: 13, fontWeight: 600,
-              background: syncing ? '#9ca3af' : '#1B4D3E', color: '#fff',
+              background: syncing ? '#9ca3af' : '#0F2A4A', color: '#fff',
               border: 'none', cursor: syncing ? 'not-allowed' : 'pointer',
             }}
           >
@@ -173,7 +173,7 @@ export default function AdminAnalytics() {
             onClick={runSync}
             disabled={syncing}
             style={{
-              padding: '12px 28px', background: '#1B4D3E', color: '#fff',
+              padding: '12px 28px', background: '#0F2A4A', color: '#fff',
               border: 'none', borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: syncing ? 'not-allowed' : 'pointer',
             }}
           >
@@ -212,10 +212,10 @@ export default function AdminAnalytics() {
               <h2 style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#111' }}>Revenue & Orders — Last {days} Days</h2>
               <div style={{ display: 'flex', gap: 16, fontSize: 12, color: '#6b7280' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                  <span style={{ width: 12, height: 12, background: '#1B4D3E', borderRadius: 2, display: 'inline-block' }} /> Revenue
+                  <span style={{ width: 12, height: 12, background: '#0F2A4A', borderRadius: 2, display: 'inline-block' }} /> Revenue
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                  <span style={{ width: 12, height: 12, background: '#4ade80', borderRadius: 2, display: 'inline-block' }} /> Orders
+                  <span style={{ width: 12, height: 12, background: '#06b6d4', borderRadius: 2, display: 'inline-block' }} /> Orders
                 </span>
               </div>
             </div>
@@ -223,11 +223,11 @@ export default function AdminAnalytics() {
               {chartData.map(({ label, revenue, orders }) => (
                 <div key={label} style={{ flex: '1 0 auto', minWidth: 18, display: 'flex', alignItems: 'flex-end', gap: 2 }}>
                   <div
-                    style={{ flex: 1, background: '#1B4D3E', borderRadius: '3px 3px 0 0', height: `${Math.max(4, (revenue / maxRevenue) * 140)}px`, minHeight: 4 }}
+                    style={{ flex: 1, background: '#0F2A4A', borderRadius: '3px 3px 0 0', height: `${Math.max(4, (revenue / maxRevenue) * 140)}px`, minHeight: 4 }}
                     title={`${label}: $${revenue.toLocaleString()}`}
                   />
                   <div
-                    style={{ flex: 1, background: '#4ade80', borderRadius: '3px 3px 0 0', height: `${Math.max(4, (orders / maxOrders) * 140)}px`, minHeight: 4, opacity: 0.85 }}
+                    style={{ flex: 1, background: '#06b6d4', borderRadius: '3px 3px 0 0', height: `${Math.max(4, (orders / maxOrders) * 140)}px`, minHeight: 4, opacity: 0.85 }}
                     title={`${label}: ${orders} orders`}
                   />
                 </div>
@@ -324,7 +324,7 @@ export default function AdminAnalytics() {
                         </div>
                       </div>
                       <div style={{ height: 4, background: '#f3f4f6', borderRadius: 9999 }}>
-                        <div style={{ height: 4, background: '#1B4D3E', borderRadius: 9999, width: `${pct}%` }} />
+                        <div style={{ height: 4, background: '#0F2A4A', borderRadius: 9999, width: `${pct}%` }} />
                       </div>
                     </div>
                   );
@@ -352,7 +352,7 @@ export default function AdminAnalytics() {
                         </div>
                       </div>
                       <div style={{ height: 4, background: '#f3f4f6', borderRadius: 9999 }}>
-                        <div style={{ height: 4, background: '#4ade80', borderRadius: 9999, width: `${pct}%` }} />
+                        <div style={{ height: 4, background: '#06b6d4', borderRadius: 9999, width: `${pct}%` }} />
                       </div>
                     </div>
                   );
@@ -388,7 +388,7 @@ export default function AdminAnalytics() {
                       <td style={{ padding: '12px 16px', fontSize: 12, color: '#6b7280' }}>{c.email}</td>
                       <td style={{ padding: '12px 16px', fontSize: 13, color: '#374151', textAlign: 'center' }}>{c.orders}</td>
                       <td style={{ padding: '12px 16px', fontSize: 13, color: '#374151' }}>${c.avgOrder.toFixed(2)}</td>
-                      <td style={{ padding: '12px 16px', fontSize: 14, fontWeight: 800, color: '#1B4D3E', whiteSpace: 'nowrap' }}>${c.ltv.toFixed(2)}</td>
+                      <td style={{ padding: '12px 16px', fontSize: 14, fontWeight: 800, color: '#0F2A4A', whiteSpace: 'nowrap' }}>${c.ltv.toFixed(2)}</td>
                       <td style={{ padding: '12px 16px', fontSize: 12, color: '#6b7280' }}>{c.lastOrder || '—'}</td>
                       <td style={{ padding: '12px 16px' }}>
                         <div style={{ display: 'flex', gap: 4 }}>

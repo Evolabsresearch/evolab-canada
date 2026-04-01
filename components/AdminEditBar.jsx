@@ -350,7 +350,7 @@ export default function AdminEditBar() {
 
     el.dataset.originalHtml = el.innerHTML; // for undo
     el.contentEditable = 'true';
-    el.style.outline = '2px dashed #4ade80';
+    el.style.outline = '2px dashed #06b6d4';
     el.style.outlineOffset = '2px';
     el.focus();
     activeElRef.current = el;
@@ -429,7 +429,7 @@ export default function AdminEditBar() {
       const imgEl = pendingImgRef.current;
       const oldSrc = imgEl.src;
       imgEl.src = dataUrl;
-      imgEl.style.outline = '2px solid #4ade80';
+      imgEl.style.outline = '2px solid #06b6d4';
       setTimeout(() => { imgEl.style.outline = ''; }, 1500);
 
       const selector = getElementPath(imgEl);
@@ -521,7 +521,7 @@ export default function AdminEditBar() {
           position: 'fixed', inset: 0, zIndex: 100001,
           background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(10px)',
           display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-          padding: 24, fontFamily: "'Poppins', sans-serif",
+          padding: 24, fontFamily: "'DM Sans', sans-serif",
         }}>
           <div onClick={e => e.stopPropagation()} style={{
             position: 'relative', maxWidth: '90vw',
@@ -544,8 +544,8 @@ export default function AdminEditBar() {
             <div style={{ display: 'flex', gap: 10 }}>
               <button onClick={() => { setLightbox(null); fileInputRef.current?.click(); }} style={{
                 display: 'flex', alignItems: 'center', gap: 7,
-                background: '#1B4D3E', color: '#4ade80',
-                border: '1px solid rgba(74,222,128,0.3)',
+                background: '#0F2A4A', color: '#06b6d4',
+                border: '1px solid rgba(6,182,212,0.3)',
                 borderRadius: 100, padding: '10px 22px',
                 fontSize: 13, fontWeight: 700, cursor: 'pointer',
               }}>
@@ -575,7 +575,7 @@ export default function AdminEditBar() {
           background: '#1a1d27', border: '1px solid rgba(255,255,255,0.12)',
           borderRadius: 16, padding: 16,
           boxShadow: '0 16px 48px rgba(0,0,0,0.65)',
-          fontFamily: "'Poppins', sans-serif",
+          fontFamily: "'DM Sans', sans-serif",
         }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em', marginBottom: 10 }}>
             COLOR EDITOR
@@ -586,8 +586,8 @@ export default function AdminEditBar() {
             {[['text','Text'],['background','BG'],['border','Border']].map(([val, label]) => (
               <button key={val} onClick={() => setColorProp(val)} style={{
                 flex: 1, padding: '6px 0', borderRadius: 7, border: 'none',
-                background: colorProp === val ? 'rgba(74,222,128,0.15)' : 'rgba(255,255,255,0.05)',
-                color: colorProp === val ? '#4ade80' : 'rgba(255,255,255,0.45)',
+                background: colorProp === val ? 'rgba(6,182,212,0.15)' : 'rgba(255,255,255,0.05)',
+                color: colorProp === val ? '#06b6d4' : 'rgba(255,255,255,0.45)',
                 fontSize: 11, fontWeight: 600, cursor: 'pointer',
               }}>{label}</button>
             ))}
@@ -607,7 +607,7 @@ export default function AdminEditBar() {
                 <span style={{ fontSize: 12, color: '#fff', fontFamily: 'monospace' }}>{pickerColor.toUpperCase()}</span>
                 <button onClick={() => {
                   navigator.clipboard?.writeText(pickerColor.toUpperCase()).then(() => notify('Copied!'));
-                }} style={{ background: 'none', border: 'none', color: '#4ade80', fontSize: 11, cursor: 'pointer', padding: 0 }}>
+                }} style={{ background: 'none', border: 'none', color: '#06b6d4', fontSize: 11, cursor: 'pointer', padding: 0 }}>
                   copy
                 </button>
               </div>
@@ -641,7 +641,7 @@ export default function AdminEditBar() {
                 {recentColors.map(c => (
                   <button key={c} onClick={() => setPickerColor(c)} title={c} style={{
                     width: 24, height: 24, borderRadius: 6, background: c,
-                    border: pickerColor === c ? '2px solid #4ade80' : '1px solid rgba(255,255,255,0.12)',
+                    border: pickerColor === c ? '2px solid #06b6d4' : '1px solid rgba(255,255,255,0.12)',
                     cursor: 'pointer', padding: 0, flexShrink: 0,
                   }} />
                 ))}
@@ -658,7 +658,7 @@ export default function AdminEditBar() {
             }}>Cancel</button>
             <button onClick={applyColor} style={{
               flex: 1, padding: '9px', borderRadius: 8, border: 'none',
-              background: '#1B4D3E', color: '#4ade80', fontSize: 12, fontWeight: 700, cursor: 'pointer',
+              background: '#0F2A4A', color: '#06b6d4', fontSize: 12, fontWeight: 700, cursor: 'pointer',
             }}>Apply</button>
           </div>
         </div>
@@ -671,11 +671,11 @@ export default function AdminEditBar() {
         background: '#0f1117', border: '1px solid rgba(255,255,255,0.14)',
         borderRadius: 100, padding: '7px 14px',
         boxShadow: '0 8px 40px rgba(0,0,0,0.6)',
-        fontFamily: "'Poppins', sans-serif", userSelect: 'none', whiteSpace: 'nowrap',
+        fontFamily: "'DM Sans', sans-serif", userSelect: 'none', whiteSpace: 'nowrap',
       }}>
         {/* Admin badge */}
         <span style={{
-          fontSize: 10, fontWeight: 800, color: guestPreview ? '#fb923c' : '#4ade80',
+          fontSize: 10, fontWeight: 800, color: guestPreview ? '#fb923c' : '#06b6d4',
           letterSpacing: '0.12em', textTransform: 'uppercase',
           paddingRight: 10, borderRight: '1px solid rgba(255,255,255,0.1)',
         }}>
@@ -686,9 +686,9 @@ export default function AdminEditBar() {
         {!guestPreview && (
           <button onClick={() => setEditMode(m => !m)} style={{
             display: 'flex', alignItems: 'center', gap: 6,
-            background: editMode ? '#1B4D3E' : 'rgba(255,255,255,0.07)',
-            color: editMode ? '#4ade80' : 'rgba(255,255,255,0.65)',
-            border: editMode ? '1px solid rgba(74,222,128,0.35)' : '1px solid rgba(255,255,255,0.08)',
+            background: editMode ? '#0F2A4A' : 'rgba(255,255,255,0.07)',
+            color: editMode ? '#06b6d4' : 'rgba(255,255,255,0.65)',
+            border: editMode ? '1px solid rgba(6,182,212,0.35)' : '1px solid rgba(255,255,255,0.08)',
             borderRadius: 100, padding: '6px 14px',
             fontSize: 12, fontWeight: 600, cursor: 'pointer', transition: 'all 0.15s',
           }}>
@@ -725,16 +725,16 @@ export default function AdminEditBar() {
         {/* Save / Undo / Reset */}
         {editCount > 0 && !guestPreview && (
           <>
-            <span style={{ fontSize: 11, color: savedToSite ? 'rgba(74,222,128,0.5)' : 'rgba(251,191,36,0.7)', paddingLeft: 2 }}>
+            <span style={{ fontSize: 11, color: savedToSite ? 'rgba(6,182,212,0.5)' : 'rgba(251,191,36,0.7)', paddingLeft: 2 }}>
               {editCount} edit{editCount !== 1 ? 's' : ''}{savedToSite ? ' · saved' : ' · unsaved'}
             </span>
 
             {/* Save to Site */}
             <button onClick={saveToSite} disabled={saving || savedToSite} style={{
               display: 'flex', alignItems: 'center', gap: 5,
-              background: savedToSite ? 'rgba(74,222,128,0.08)' : 'rgba(74,222,128,0.18)',
-              color: savedToSite ? 'rgba(74,222,128,0.45)' : '#4ade80',
-              border: '1px solid rgba(74,222,128,0.25)',
+              background: savedToSite ? 'rgba(6,182,212,0.08)' : 'rgba(6,182,212,0.18)',
+              color: savedToSite ? 'rgba(6,182,212,0.45)' : '#06b6d4',
+              border: '1px solid rgba(6,182,212,0.25)',
               borderRadius: 100, padding: '5px 12px',
               fontSize: 11, fontWeight: 700, cursor: saving ? 'wait' : savedToSite ? 'default' : 'pointer',
             }}>
@@ -770,9 +770,9 @@ export default function AdminEditBar() {
       {toast && (
         <div style={{
           position: 'fixed', bottom: 74, left: '50%', transform: 'translateX(-50%)',
-          zIndex: 100000, background: '#1B4D3E', color: '#4ade80',
+          zIndex: 100000, background: '#0F2A4A', color: '#06b6d4',
           borderRadius: 100, padding: '8px 22px', fontSize: 13, fontWeight: 600,
-          fontFamily: "'Poppins', sans-serif",
+          fontFamily: "'DM Sans', sans-serif",
           boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
           animation: 'evoToastIn 0.18s ease', pointerEvents: 'none',
         }}>{toast}</div>
@@ -782,7 +782,7 @@ export default function AdminEditBar() {
       {editMode && (
         <style>{`
           img:hover {
-            outline: 2px dashed rgba(74,222,128,0.6) !important;
+            outline: 2px dashed rgba(6,182,212,0.6) !important;
             outline-offset: 3px !important;
             cursor: crosshair !important;
           }
@@ -795,7 +795,7 @@ export default function AdminEditBar() {
           p:not([contenteditable="true"]):hover,
           span:not([contenteditable="true"]):hover,
           li:not([contenteditable="true"]):hover {
-            outline: 1px dashed rgba(74,222,128,0.25) !important;
+            outline: 1px dashed rgba(6,182,212,0.25) !important;
             outline-offset: 1px !important;
             cursor: crosshair !important;
           }

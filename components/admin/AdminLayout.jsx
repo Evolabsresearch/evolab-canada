@@ -83,7 +83,7 @@ export default function AdminLayout({ children, title = 'Admin' }) {
     return (
       <>
         <Head><title>Admin Login | EVO Labs Research</title></Head>
-        <div style={{ minHeight: '100vh', background: '#0f1117', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Anek Telugu', sans-serif", padding: '16px' }}>
+        <div style={{ minHeight: '100vh', background: '#0f1117', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Inter', sans-serif", padding: '16px' }}>
           <div style={{ background: '#1a1d27', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 16, padding: '48px 40px', width: '100%', maxWidth: 420 }}>
             <div style={{ textAlign: 'center', marginBottom: 36 }}>
               <img src="https://evolabsresearch.ca/wp-content/uploads/2021/06/EVO-LABS-RESEARCH-1.png" alt="EVO Labs" style={{ height: 32, filter: 'brightness(0) invert(1)', marginBottom: 16 }} />
@@ -105,7 +105,7 @@ export default function AdminLayout({ children, title = 'Admin' }) {
               />
               {error && <p style={{ color: '#ef4444', fontSize: 12, margin: '0 0 20px' }}>{error}</p>}
               <button type="submit" style={{
-                width: '100%', padding: '13px', background: '#1B4D3E', color: '#fff',
+                width: '100%', padding: '13px', background: '#0F2A4A', color: '#fff',
                 border: 'none', borderRadius: 8, fontSize: 15, fontWeight: 700, cursor: 'pointer',
               }}>
                 Sign In →
@@ -120,7 +120,7 @@ export default function AdminLayout({ children, title = 'Admin' }) {
   return (
     <>
       <Head><title>{title} | EVO Labs Admin</title></Head>
-      <div style={{ display: 'flex', minHeight: '100vh', background: '#f0f2f5', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <div style={{ display: 'flex', minHeight: '100vh', background: '#f0f2f5', fontFamily: "'Inter', sans-serif" }}>
 
         {/* Mobile overlay backdrop */}
         {isMobile && sidebarOpen && (
@@ -172,8 +172,8 @@ export default function AdminLayout({ children, title = 'Admin' }) {
                   style={{
                     display: 'flex', alignItems: 'center', gap: 12,
                     padding: '11px 14px', borderRadius: 8, marginBottom: 2,
-                    background: active ? 'rgba(74, 222, 128, 0.12)' : 'transparent',
-                    color: active ? '#4ade80' : 'rgba(255,255,255,0.65)',
+                    background: active ? 'rgba(6, 182, 212, 0.12)' : 'transparent',
+                    color: active ? '#06b6d4' : 'rgba(255,255,255,0.65)',
                     textDecoration: 'none', fontSize: 14, fontWeight: active ? 600 : 400,
                     transition: 'all 0.15s',
                   }}
@@ -249,7 +249,7 @@ export default function AdminLayout({ children, title = 'Admin' }) {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 8 : 16 }}>
               <span style={{
-                background: '#1B4D3E', color: '#fff', fontSize: 10, fontWeight: 700,
+                background: '#0F2A4A', color: '#fff', fontSize: 10, fontWeight: 700,
                 padding: '3px 8px', borderRadius: 9999, letterSpacing: '0.06em', flexShrink: 0,
               }}>ADMIN</span>
               {!isMobile && <span style={{ fontSize: 13, color: '#6b7280' }}>EVO Labs Research</span>}

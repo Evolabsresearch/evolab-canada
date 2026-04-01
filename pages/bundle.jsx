@@ -41,8 +41,8 @@ function ProductTile({ product, selected, onToggle }) {
         cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
-        background: selected ? 'rgba(74,222,128,0.06)' : 'rgba(255,255,255,0.03)',
-        border: `1.5px solid ${selected ? 'rgba(74,222,128,0.4)' : 'rgba(255,255,255,0.08)'}`,
+        background: selected ? 'rgba(6,182,212,0.06)' : 'rgba(255,255,255,0.03)',
+        border: `1.5px solid ${selected ? 'rgba(6,182,212,0.4)' : 'rgba(255,255,255,0.08)'}`,
         borderRadius: 14,
         padding: '14px 12px',
         textAlign: 'left',
@@ -54,7 +54,7 @@ function ProductTile({ product, selected, onToggle }) {
       {selected && (
         <span style={{
           position: 'absolute', top: 8, right: 8,
-          background: '#4ade80', color: '#0a0a0a', borderRadius: '50%',
+          background: '#06b6d4', color: '#0a0a0a', borderRadius: '50%',
           width: 20, height: 20, fontSize: 11, fontWeight: 800,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>✓</span>
@@ -73,7 +73,7 @@ function ProductTile({ product, selected, onToggle }) {
       </div>
       <div style={{ fontSize: 9, fontWeight: 700, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>{product.category}</div>
       <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', lineHeight: 1.3, marginBottom: 6, flex: 1 }}>{product.name}</div>
-      <div style={{ fontSize: 13, fontWeight: 700, color: selected ? '#4ade80' : 'rgba(255,255,255,0.5)', fontFamily: "'Poppins', sans-serif" }}>
+      <div style={{ fontSize: 13, fontWeight: 700, color: selected ? '#06b6d4' : 'rgba(255,255,255,0.5)', fontFamily: "'Poppins', sans-serif" }}>
         {product.salePrice || product.price}
       </div>
     </button>
@@ -126,7 +126,7 @@ export default function BundlePage() {
       {/* Hero */}
       <div style={{ background: '#0a0a0a', padding: '56px 0 48px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="container">
-          <div style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>Custom Bundle</div>
+          <div style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>Custom Bundle</div>
           <h1 style={{ fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 14 }}>
             Build Your Research Bundle
           </h1>
@@ -142,16 +142,16 @@ export default function BundlePage() {
               return (
                 <div key={tier.min} style={{
                   display: 'flex', alignItems: 'center', gap: 7,
-                  background: isCurrent ? 'rgba(74,222,128,0.12)' : active ? 'rgba(74,222,128,0.06)' : 'rgba(255,255,255,0.03)',
-                  border: `1px solid ${isCurrent ? 'rgba(74,222,128,0.35)' : 'rgba(255,255,255,0.07)'}`,
+                  background: isCurrent ? 'rgba(6,182,212,0.12)' : active ? 'rgba(6,182,212,0.06)' : 'rgba(255,255,255,0.03)',
+                  border: `1px solid ${isCurrent ? 'rgba(6,182,212,0.35)' : 'rgba(255,255,255,0.07)'}`,
                   borderRadius: 9999, padding: '7px 14px',
                 }}>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: active ? '#4ade80' : 'rgba(255,255,255,0.3)', fontFamily: "'Poppins', sans-serif" }}>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: active ? '#06b6d4' : 'rgba(255,255,255,0.3)', fontFamily: "'Poppins', sans-serif" }}>
                     {tier.pct}% off
                   </span>
                   <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)' }}>{tier.label}</span>
                   {tier.badge && (
-                    <span style={{ fontSize: 9, fontWeight: 700, color: '#0a0a0a', background: '#4ade80', padding: '2px 6px', borderRadius: 9999, letterSpacing: '0.04em' }}>
+                    <span style={{ fontSize: 9, fontWeight: 700, color: '#0a0a0a', background: '#06b6d4', padding: '2px 6px', borderRadius: 9999, letterSpacing: '0.04em' }}>
                       {tier.badge}
                     </span>
                   )}
@@ -213,7 +213,7 @@ export default function BundlePage() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ fontSize: 15, fontWeight: 800, color: '#fff' }}>Your Bundle</div>
                     {selectedSlugs.length > 0 && (
-                      <span style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a', background: '#4ade80', padding: '3px 10px', borderRadius: 9999 }}>
+                      <span style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a', background: '#06b6d4', padding: '3px 10px', borderRadius: 9999 }}>
                         {selectedSlugs.length} item{selectedSlugs.length !== 1 ? 's' : ''}
                       </span>
                     )}
@@ -256,13 +256,13 @@ export default function BundlePage() {
                         </div>
                         {discount > 0 && (
                           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                            <span style={{ fontSize: 12, color: '#4ade80' }}>Bundle discount ({discount}%)</span>
-                            <span style={{ fontSize: 12, color: '#4ade80', fontFamily: "'Poppins', sans-serif" }}>−${savings.toFixed(2)}</span>
+                            <span style={{ fontSize: 12, color: '#06b6d4' }}>Bundle discount ({discount}%)</span>
+                            <span style={{ fontSize: 12, color: '#06b6d4', fontFamily: "'Poppins', sans-serif" }}>−${savings.toFixed(2)}</span>
                           </div>
                         )}
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10 }}>
                           <span style={{ fontSize: 14, fontWeight: 700, color: '#fff' }}>Total</span>
-                          <span style={{ fontSize: 14, fontWeight: 700, color: discount > 0 ? '#4ade80' : '#fff', fontFamily: "'Poppins', sans-serif" }}>
+                          <span style={{ fontSize: 14, fontWeight: 700, color: discount > 0 ? '#06b6d4' : '#fff', fontFamily: "'Poppins', sans-serif" }}>
                             ${total.toFixed(2)}
                           </span>
                         </div>
@@ -270,8 +270,8 @@ export default function BundlePage() {
 
                       {/* Upsell nudge */}
                       {nextTier && (
-                        <div style={{ background: 'rgba(74,222,128,0.06)', border: '1px solid rgba(74,222,128,0.12)', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>
-                          Add {nextTier.min - selectedSlugs.length} more item{nextTier.min - selectedSlugs.length !== 1 ? 's' : ''} to unlock <strong style={{ color: '#4ade80' }}>{nextTier.pct}% off</strong>
+                        <div style={{ background: 'rgba(6,182,212,0.06)', border: '1px solid rgba(6,182,212,0.12)', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>
+                          Add {nextTier.min - selectedSlugs.length} more item{nextTier.min - selectedSlugs.length !== 1 ? 's' : ''} to unlock <strong style={{ color: '#06b6d4' }}>{nextTier.pct}% off</strong>
                         </div>
                       )}
                     </>

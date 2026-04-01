@@ -7,12 +7,12 @@ import Link from 'next/link';
 const STAT_CARD = ({ label, value, sub, accent }) => (
   <div style={{
     background: 'rgba(255,255,255,0.03)',
-    border: `1px solid ${accent ? 'rgba(74,222,128,0.18)' : 'rgba(255,255,255,0.07)'}`,
+    border: `1px solid ${accent ? 'rgba(6,182,212,0.18)' : 'rgba(255,255,255,0.07)'}`,
     borderRadius: 14,
     padding: '20px 22px',
   }}>
     <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 6 }}>{label}</div>
-    <div style={{ fontSize: 28, fontWeight: 800, color: accent ? '#4ade80' : '#fff', lineHeight: 1 }}>{value}</div>
+    <div style={{ fontSize: 28, fontWeight: 800, color: accent ? '#06b6d4' : '#fff', lineHeight: 1 }}>{value}</div>
     {sub && <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 5 }}>{sub}</div>}
   </div>
 );
@@ -96,7 +96,7 @@ export default function PartnerPage() {
           .partner-ref-link-text { display: none; }
         }
       `}</style>
-      <div style={{ minHeight: '100vh', background: '#0f0f0f', fontFamily: "'Poppins', sans-serif" }}>
+      <div style={{ minHeight: '100vh', background: '#0f0f0f', fontFamily: "'DM Sans', sans-serif" }}>
 
         {/* Top bar */}
         <div className="partner-topbar" style={{ background: '#0a0a0a', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
@@ -144,7 +144,7 @@ export default function PartnerPage() {
                 onClick={handleApply}
                 disabled={applying}
                 style={{
-                  background: '#4ade80', color: '#0a0a0a', border: 'none', borderRadius: 10,
+                  background: '#06b6d4', color: '#0a0a0a', border: 'none', borderRadius: 10,
                   padding: '14px 32px', fontSize: 14, fontWeight: 700, cursor: applying ? 'not-allowed' : 'pointer',
                   opacity: applying ? 0.7 : 1,
                 }}
@@ -178,16 +178,16 @@ export default function PartnerPage() {
                     <h1 style={{ fontSize: 22, fontWeight: 800, color: '#fff', margin: 0 }}>Partner Dashboard</h1>
                     <span style={{
                       fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 20,
-                      background: stats.partnerStatus === 'active' ? 'rgba(74,222,128,0.12)' : 'rgba(250,204,21,0.12)',
-                      color: stats.partnerStatus === 'active' ? '#4ade80' : '#facc15',
-                      border: `1px solid ${stats.partnerStatus === 'active' ? 'rgba(74,222,128,0.25)' : 'rgba(250,204,21,0.25)'}`,
+                      background: stats.partnerStatus === 'active' ? 'rgba(6,182,212,0.12)' : 'rgba(250,204,21,0.12)',
+                      color: stats.partnerStatus === 'active' ? '#06b6d4' : '#facc15',
+                      border: `1px solid ${stats.partnerStatus === 'active' ? 'rgba(6,182,212,0.25)' : 'rgba(250,204,21,0.25)'}`,
                       textTransform: 'uppercase',
                     }}>
                       {stats.partnerStatus || 'Pending Review'}
                     </span>
                   </div>
                   <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', margin: 0 }}>
-                    {session.user?.email} · Code: <span style={{ color: '#4ade80', fontWeight: 600 }}>{stats.referralCode}</span>
+                    {session.user?.email} · Code: <span style={{ color: '#06b6d4', fontWeight: 600 }}>{stats.referralCode}</span>
                   </p>
                 </div>
 
@@ -204,9 +204,9 @@ export default function PartnerPage() {
                     <button
                       onClick={copyLink}
                       style={{
-                        background: copied ? 'rgba(74,222,128,0.15)' : 'rgba(255,255,255,0.06)',
+                        background: copied ? 'rgba(6,182,212,0.15)' : 'rgba(255,255,255,0.06)',
                         border: 'none', borderLeft: '1px solid rgba(255,255,255,0.08)',
-                        color: copied ? '#4ade80' : 'rgba(255,255,255,0.6)',
+                        color: copied ? '#06b6d4' : 'rgba(255,255,255,0.6)',
                         fontSize: 12, fontWeight: 600, padding: '10px 16px', cursor: 'pointer',
                         transition: 'all .15s',
                       }}
@@ -258,7 +258,7 @@ export default function PartnerPage() {
                       { step: '4', title: 'Request payout', desc: 'Once your balance hits $50, you can request a payout to your preferred method.' },
                     ].map(s => (
                       <div key={s.step} style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
-                        <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'rgba(74,222,128,0.12)', border: '1px solid rgba(74,222,128,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#4ade80', flexShrink: 0 }}>
+                        <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#06b6d4', flexShrink: 0 }}>
                           {s.step}
                         </div>
                         <div>
@@ -283,11 +283,11 @@ export default function PartnerPage() {
                               </div>
                             </div>
                             <div style={{ textAlign: 'right' }}>
-                              <div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80' }}>+${c.commission?.toFixed(2)}</div>
+                              <div style={{ fontSize: 13, fontWeight: 700, color: '#06b6d4' }}>+${c.commission?.toFixed(2)}</div>
                               <span style={{
                                 fontSize: 9, padding: '2px 7px', borderRadius: 10, fontWeight: 600,
-                                background: c.status === 'approved' ? 'rgba(74,222,128,0.1)' : 'rgba(250,204,21,0.1)',
-                                color: c.status === 'approved' ? '#4ade80' : '#facc15',
+                                background: c.status === 'approved' ? 'rgba(6,182,212,0.1)' : 'rgba(250,204,21,0.1)',
+                                color: c.status === 'approved' ? '#06b6d4' : '#facc15',
                                 textTransform: 'uppercase',
                               }}>
                                 {c.status}
@@ -298,7 +298,7 @@ export default function PartnerPage() {
                         {stats.conversions.length > 5 && (
                           <button
                             onClick={() => setActiveTab('conversions')}
-                            style={{ fontSize: 12, color: '#4ade80', background: 'none', border: 'none', cursor: 'pointer', padding: '4px 0', textAlign: 'left' }}
+                            style={{ fontSize: 12, color: '#06b6d4', background: 'none', border: 'none', cursor: 'pointer', padding: '4px 0', textAlign: 'left' }}
                           >
                             View all {stats.conversions.length} conversions →
                           </button>
@@ -330,15 +330,15 @@ export default function PartnerPage() {
                           <tr key={i} style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                             <td style={{ padding: '11px 12px', fontSize: 12, color: '#fff' }}>#{c.wc_order_id}</td>
                             <td style={{ padding: '11px 12px', fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>${c.order_total?.toFixed(2)}</td>
-                            <td style={{ padding: '11px 12px', fontSize: 13, fontWeight: 700, color: '#4ade80' }}>+${c.commission?.toFixed(2)}</td>
+                            <td style={{ padding: '11px 12px', fontSize: 13, fontWeight: 700, color: '#06b6d4' }}>+${c.commission?.toFixed(2)}</td>
                             <td style={{ padding: '11px 12px', fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>
                               {new Date(c.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                             </td>
                             <td style={{ padding: '11px 12px' }}>
                               <span style={{
                                 fontSize: 9, padding: '3px 8px', borderRadius: 10, fontWeight: 700,
-                                background: c.status === 'approved' ? 'rgba(74,222,128,0.1)' : 'rgba(250,204,21,0.1)',
-                                color: c.status === 'approved' ? '#4ade80' : '#facc15',
+                                background: c.status === 'approved' ? 'rgba(6,182,212,0.1)' : 'rgba(250,204,21,0.1)',
+                                color: c.status === 'approved' ? '#06b6d4' : '#facc15',
                                 textTransform: 'uppercase',
                               }}>
                                 {c.status}
@@ -381,8 +381,8 @@ export default function PartnerPage() {
                               <td style={{ padding: '11px 12px' }}>
                                 <span style={{
                                   fontSize: 9, padding: '3px 8px', borderRadius: 10, fontWeight: 700,
-                                  background: p.status === 'paid' ? 'rgba(74,222,128,0.1)' : 'rgba(255,255,255,0.06)',
-                                  color: p.status === 'paid' ? '#4ade80' : 'rgba(255,255,255,0.4)',
+                                  background: p.status === 'paid' ? 'rgba(6,182,212,0.1)' : 'rgba(255,255,255,0.06)',
+                                  color: p.status === 'paid' ? '#06b6d4' : 'rgba(255,255,255,0.4)',
                                   textTransform: 'uppercase',
                                 }}>
                                   {p.status}
@@ -404,9 +404,9 @@ export default function PartnerPage() {
                     <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', marginBottom: 18, lineHeight: 1.6 }}>
                       Minimum payout is $50. Approved commissions (after 30-day window) are eligible.
                     </p>
-                    <div style={{ background: 'rgba(74,222,128,0.06)', border: '1px solid rgba(74,222,128,0.15)', borderRadius: 10, padding: '14px 16px', marginBottom: 18 }}>
+                    <div style={{ background: 'rgba(6,182,212,0.06)', border: '1px solid rgba(6,182,212,0.15)', borderRadius: 10, padding: '14px 16px', marginBottom: 18 }}>
                       <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>Available for payout</div>
-                      <div style={{ fontSize: 26, fontWeight: 800, color: '#4ade80' }}>
+                      <div style={{ fontSize: 26, fontWeight: 800, color: '#06b6d4' }}>
                         ${(stats.pendingPayout ?? 0).toFixed(2)}
                       </div>
                     </div>
@@ -414,7 +414,7 @@ export default function PartnerPage() {
                       <a
                         href={`mailto:partners@evolabsresearch.ca?subject=Payout Request — ${stats.referralCode}&body=Hi EVO team,%0A%0APlease process my payout of $${stats.pendingPayout?.toFixed(2)}.%0A%0AReferral code: ${stats.referralCode}%0APreferred method: [bank / crypto / check]%0ADetails: [your payment info]`}
                         style={{
-                          display: 'block', textAlign: 'center', background: '#4ade80', color: '#0a0a0a',
+                          display: 'block', textAlign: 'center', background: '#06b6d4', color: '#0a0a0a',
                           borderRadius: 9, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none',
                         }}
                       >

@@ -165,14 +165,14 @@ export default function AdminDiscounts() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
           <p style={{ margin: 0, fontSize: 14, color: '#6b7280' }}>{activeCount} active codes · {totalUses} total uses</p>
           <button onClick={showForm ? closeForm : openCreate}
-            style={{ padding: '10px 20px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+            style={{ padding: '10px 20px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
             {showForm ? '✕ Cancel' : '+ Create Discount'}
           </button>
         </div>
 
         {/* Create / Edit Form */}
         {showForm && (
-          <div style={{ background: '#fff', borderRadius: 12, border: `2px solid ${editingId ? '#1B4D3E' : '#e5e7eb'}`, padding: '24px', marginBottom: 24 }}>
+          <div style={{ background: '#fff', borderRadius: 12, border: `2px solid ${editingId ? '#0F2A4A' : '#e5e7eb'}`, padding: '24px', marginBottom: 24 }}>
             <h2 style={{ margin: '0 0 20px', fontSize: 16, fontWeight: 700, color: '#111' }}>
               {editingId ? `✏️ Edit Discount — ${form.code}` : '+ Create Discount Code'}
             </h2>
@@ -290,7 +290,7 @@ export default function AdminDiscounts() {
 
               <div style={{ marginTop: 16, display: 'flex', gap: 10 }}>
                 <button type="submit" disabled={saving}
-                  style={{ padding: '10px 24px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', opacity: saving ? 0.7 : 1 }}>
+                  style={{ padding: '10px 24px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', opacity: saving ? 0.7 : 1 }}>
                   {saving ? 'Saving…' : editingId ? '💾 Save Changes' : 'Create Code'}
                 </button>
                 <button type="button" onClick={closeForm}
@@ -319,7 +319,7 @@ export default function AdminDiscounts() {
                 {discounts.map(d => (
                   <tr key={d.id} style={{ borderTop: '1px solid #f3f4f6', background: editingId === d.id ? '#f0fdf4' : 'transparent' }}>
                     <td style={{ padding: '14px 16px' }}>
-                      <div style={{ fontFamily: 'monospace', fontSize: 14, fontWeight: 800, color: '#1B4D3E' }}>{d.code}</div>
+                      <div style={{ fontFamily: 'monospace', fontSize: 14, fontWeight: 800, color: '#0F2A4A' }}>{d.code}</div>
                       <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 2 }}>{d.description}</div>
                     </td>
                     <td style={{ padding: '14px 16px', fontSize: 12, color: '#374151' }}>
@@ -342,7 +342,7 @@ export default function AdminDiscounts() {
                       {d.uses || 0}{d.usage_limit ? ` / ${d.usage_limit}` : ''}
                       {d.usage_limit && (
                         <div style={{ marginTop: 4, height: 4, background: '#f3f4f6', borderRadius: 9999 }}>
-                          <div style={{ height: 4, background: '#1B4D3E', borderRadius: 9999, width: `${Math.min(100, ((d.uses || 0) / d.usage_limit) * 100)}%` }} />
+                          <div style={{ height: 4, background: '#0F2A4A', borderRadius: 9999, width: `${Math.min(100, ((d.uses || 0) / d.usage_limit) * 100)}%` }} />
                         </div>
                       )}
                     </td>

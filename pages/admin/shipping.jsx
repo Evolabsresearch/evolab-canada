@@ -33,7 +33,7 @@ function Spinner() {
   return (
     <span style={{
       display: 'inline-block', width: 16, height: 16,
-      border: '2px solid #e5e7eb', borderTopColor: '#1B4D3E',
+      border: '2px solid #e5e7eb', borderTopColor: '#0F2A4A',
       borderRadius: '50%', animation: 'spin 0.7s linear infinite',
       verticalAlign: 'middle',
     }} />
@@ -202,7 +202,7 @@ function ShipModal({ order, onClose, onShipped }) {
                 onClick={getRates}
                 disabled={loadingRates}
                 style={{
-                  marginTop: 14, width: '100%', padding: '10px', background: '#1B4D3E', color: '#fff',
+                  marginTop: 14, width: '100%', padding: '10px', background: '#0F2A4A', color: '#fff',
                   border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: loadingRates ? 'not-allowed' : 'pointer',
                   opacity: loadingRates ? 0.75 : 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                 }}
@@ -254,7 +254,7 @@ function ShipModal({ order, onClose, onShipped }) {
                               onClick={() => buyLabel(rate.rateId)}
                               disabled={isBuying || buyingRateId !== null}
                               style={{
-                                padding: '7px 16px', background: '#1B4D3E', color: '#fff',
+                                padding: '7px 16px', background: '#0F2A4A', color: '#fff',
                                 border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700,
                                 cursor: (isBuying || buyingRateId !== null) ? 'not-allowed' : 'pointer',
                                 opacity: (buyingRateId !== null && !isBuying) ? 0.5 : 1,
@@ -299,7 +299,7 @@ function ShipModal({ order, onClose, onShipped }) {
                     onClick={confirmShipment}
                     disabled={confirming}
                     style={{
-                      flex: 1, padding: '10px', background: confirming ? '#6b7280' : '#1B4D3E', color: '#fff',
+                      flex: 1, padding: '10px', background: confirming ? '#6b7280' : '#0F2A4A', color: '#fff',
                       border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700,
                       cursor: confirming ? 'not-allowed' : 'pointer',
                       display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
@@ -414,8 +414,8 @@ export default function AdminShipping() {
             onClick={() => setActiveTab(tab.key)}
             style={{
               padding: '10px 18px', fontSize: 13, fontWeight: 600, cursor: 'pointer',
-              border: 'none', background: 'none', borderBottom: activeTab === tab.key ? '2px solid #1B4D3E' : '2px solid transparent',
-              color: activeTab === tab.key ? '#1B4D3E' : '#6b7280',
+              border: 'none', background: 'none', borderBottom: activeTab === tab.key ? '2px solid #0F2A4A' : '2px solid transparent',
+              color: activeTab === tab.key ? '#0F2A4A' : '#6b7280',
               display: 'flex', alignItems: 'center', gap: 6,
               transition: 'color 0.15s, border-color 0.15s',
               marginBottom: -1,
@@ -423,7 +423,7 @@ export default function AdminShipping() {
           >
             {tab.label}
             <span style={{
-              background: activeTab === tab.key ? '#1B4D3E' : '#e5e7eb',
+              background: activeTab === tab.key ? '#0F2A4A' : '#e5e7eb',
               color: activeTab === tab.key ? '#fff' : '#6b7280',
               fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 9999,
             }}>
@@ -461,7 +461,7 @@ export default function AdminShipping() {
                           <span title={p.label} style={{ fontSize: 18, lineHeight: 1 }}>{p.dot}</span>
                           <span style={{ fontSize: 11, color: '#9ca3af', marginLeft: 4 }}>{p.label}</span>
                         </td>
-                        <td style={{ ...tdStyle, fontWeight: 700, color: '#1B4D3E' }}>
+                        <td style={{ ...tdStyle, fontWeight: 700, color: '#0F2A4A' }}>
                           #{order.order_number || order.wc_order_id}
                         </td>
                         <td style={{ ...tdStyle, color: '#6b7280' }}>{fmtDateTime(order.created_at)}</td>
@@ -471,7 +471,7 @@ export default function AdminShipping() {
                           <button
                             onClick={() => setModalOrder(order)}
                             style={{
-                              padding: '7px 14px', background: '#1B4D3E', color: '#fff',
+                              padding: '7px 14px', background: '#0F2A4A', color: '#fff',
                               border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700,
                               cursor: 'pointer', whiteSpace: 'nowrap',
                             }}
@@ -506,7 +506,7 @@ export default function AdminShipping() {
                 <tbody>
                   {shipped.map(order => (
                     <tr key={order.id}>
-                      <td style={{ ...tdStyle, fontWeight: 700, color: '#1B4D3E' }}>
+                      <td style={{ ...tdStyle, fontWeight: 700, color: '#0F2A4A' }}>
                         #{order.order_number || order.wc_order_id}
                       </td>
                       <td style={tdStyle}>{order.customer_email}</td>
@@ -519,7 +519,7 @@ export default function AdminShipping() {
                             href={`/track?number=${order.tracking_number}`}
                             target="_blank"
                             rel="noreferrer"
-                            style={{ color: '#1B4D3E', fontWeight: 700, textDecoration: 'none', fontSize: 13 }}
+                            style={{ color: '#0F2A4A', fontWeight: 700, textDecoration: 'none', fontSize: 13 }}
                           >
                             Track →
                           </a>
@@ -551,7 +551,7 @@ export default function AdminShipping() {
                 <tbody>
                   {delivered.map(order => (
                     <tr key={order.id}>
-                      <td style={{ ...tdStyle, fontWeight: 700, color: '#1B4D3E' }}>
+                      <td style={{ ...tdStyle, fontWeight: 700, color: '#0F2A4A' }}>
                         #{order.order_number || order.wc_order_id}
                       </td>
                       <td style={tdStyle}>{order.customer_email}</td>

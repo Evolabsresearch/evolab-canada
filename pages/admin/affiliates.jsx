@@ -119,8 +119,8 @@ export default function AdminAffiliates() {
               <button key={t} onClick={() => setTab(t)} style={{
                 padding: '6px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600,
                 border: '1px solid', cursor: 'pointer', textTransform: 'capitalize',
-                background: tab === t ? '#1B4D3E' : '#fff',
-                borderColor: tab === t ? '#1B4D3E' : '#e5e7eb',
+                background: tab === t ? '#0F2A4A' : '#fff',
+                borderColor: tab === t ? '#0F2A4A' : '#e5e7eb',
                 color: tab === t ? '#fff' : '#374151',
               }}>
                 {t} ({t === 'all' ? affiliates.length : affiliates.filter(a => a.status === t).length})
@@ -155,7 +155,7 @@ export default function AdminAffiliates() {
                         <div style={{ fontSize: 13, fontWeight: 600, color: '#111' }}>{aff.name}</div>
                         <div style={{ fontSize: 11, color: '#9ca3af' }}>{aff.email}</div>
                       </td>
-                      <td style={{ padding: '12px 16px', fontSize: 13, fontFamily: 'monospace', color: '#1B4D3E', fontWeight: 700 }}>{aff.referralCode}</td>
+                      <td style={{ padding: '12px 16px', fontSize: 13, fontFamily: 'monospace', color: '#0F2A4A', fontWeight: 700 }}>{aff.referralCode}</td>
                       <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 700, color: '#111' }}>{Math.round((aff.commissionRate || 0) * 100)}%</td>
                       <td style={{ padding: '12px 16px', fontSize: 13, color: '#374151' }}>{aff.conversions}</td>
                       <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 700, color: '#111' }}>{fmtUSD(aff.totalSales)}</td>
@@ -167,7 +167,7 @@ export default function AdminAffiliates() {
                       </td>
                       <td style={{ padding: '12px 16px' }}>
                         {aff.status === 'pending' && (
-                          <button onClick={e => { e.stopPropagation(); approveAffiliate(aff.id); }} style={{ padding: '4px 10px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+                          <button onClick={e => { e.stopPropagation(); approveAffiliate(aff.id); }} style={{ padding: '4px 10px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
                             Approve
                           </button>
                         )}
@@ -192,7 +192,7 @@ export default function AdminAffiliates() {
               <div>
                 <h2 style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#111' }}>{selected.name}</h2>
                 <div style={{ fontSize: 12, color: '#6b7280', marginTop: 2 }}>
-                  <span style={{ fontFamily: 'monospace', color: '#1B4D3E', fontWeight: 700 }}>{selected.referralCode}</span>
+                  <span style={{ fontFamily: 'monospace', color: '#0F2A4A', fontWeight: 700 }}>{selected.referralCode}</span>
                 </div>
               </div>
               <button onClick={() => setSelected(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18, color: '#6b7280' }}>✕</button>
@@ -231,7 +231,7 @@ export default function AdminAffiliates() {
                     onChange={e => setEditRate(e.target.value)}
                     style={{ flex: 1, padding: '8px 12px', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 14, fontWeight: 700 }}
                   />
-                  <button onClick={saveRate} style={{ padding: '8px 16px', background: saved ? '#065f46' : '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
+                  <button onClick={saveRate} style={{ padding: '8px 16px', background: saved ? '#065f46' : '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
                     {saved ? '✓' : 'Set'}
                   </button>
                 </div>

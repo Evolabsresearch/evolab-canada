@@ -82,7 +82,7 @@ export default function AdminCustomers() {
                     >
                       <td style={{ padding: '12px 16px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                          <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#1B4D3E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
+                          <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#0F2A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
                             {(c.name || c.email || '?').charAt(0).toUpperCase()}
                           </div>
                           <div>
@@ -117,7 +117,7 @@ export default function AdminCustomers() {
           <div style={{ width: 400, background: '#fff', borderRadius: 12, border: '1px solid #e5e7eb', overflow: 'hidden', display: 'flex', flexDirection: 'column', flexShrink: 0 }}>
             <div style={{ padding: '16px 20px', borderBottom: '1px solid #f3f4f6', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#1B4D3E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 16, fontWeight: 700 }}>
+                <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#0F2A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 16, fontWeight: 700 }}>
                   {selected.name.charAt(0)}
                 </div>
                 <div>
@@ -189,7 +189,7 @@ export default function AdminCustomers() {
                 <button
                   onClick={saveNote}
                   disabled={noteSaving}
-                  style={{ marginTop: 8, padding: '8px 18px', background: noteSaved ? '#065f46' : '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer', opacity: noteSaving ? 0.7 : 1 }}
+                  style={{ marginTop: 8, padding: '8px 18px', background: noteSaved ? '#065f46' : '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer', opacity: noteSaving ? 0.7 : 1 }}
                 >
                   {noteSaved ? '✓ Saved' : noteSaving ? 'Saving…' : 'Save Note'}
                 </button>

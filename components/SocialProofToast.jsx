@@ -101,7 +101,7 @@ export default function SocialProofToast() {
         gap: 10,
         padding: '10px 12px',
         border: '1px solid #e5e7eb',
-        fontFamily: "'Poppins', sans-serif",
+        fontFamily: "'DM Sans', sans-serif",
         fontSize: 13,
         position: 'relative',
       }}>
@@ -134,7 +134,7 @@ export default function SocialProofToast() {
             ordered{' '}
             <Link
               href={`/products/${toast.product.slug}`}
-              style={{ color: '#1B4D3E', fontWeight: 600, textDecoration: 'none' }}
+              style={{ color: '#0F2A4A', fontWeight: 600, textDecoration: 'none' }}
             >
               {toast.product.name}
             </Link>
@@ -170,7 +170,7 @@ export default function SocialProofToast() {
           width: 8,
           height: 8,
           borderRadius: '50%',
-          background: '#22c55e',
+          background: '#0ea5e9',
           boxShadow: '0 0 0 2px #dcfce7',
         }} />
       </div>

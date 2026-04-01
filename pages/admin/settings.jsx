@@ -154,7 +154,7 @@ export default function AdminSettings() {
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
               display: 'flex', alignItems: 'center', gap: 10, width: '100%',
               padding: '10px 14px', borderRadius: 8, marginBottom: 4,
-              background: activeTab === tab.id ? '#1B4D3E' : 'transparent',
+              background: activeTab === tab.id ? '#0F2A4A' : 'transparent',
               color: activeTab === tab.id ? '#fff' : '#374151',
               border: 'none', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 500,
             }}>
@@ -255,7 +255,7 @@ export default function AdminSettings() {
                   </Field>
                   <button onClick={saveAnnouncement} disabled={annSaving} style={{
                     padding: '10px 24px', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: annSaving ? 'not-allowed' : 'pointer',
-                    background: annSaved ? '#065f46' : '#1B4D3E', color: '#fff', opacity: annSaving ? 0.7 : 1, marginTop: 8,
+                    background: annSaved ? '#065f46' : '#0F2A4A', color: '#fff', opacity: annSaving ? 0.7 : 1, marginTop: 8,
                   }}>
                     {annSaving ? 'Saving…' : annSaved ? '✓ Saved' : 'Save Announcement'}
                   </button>
@@ -367,7 +367,7 @@ export default function AdminSettings() {
               {error && <div style={{ color: '#dc2626', fontSize: 13, marginBottom: 10 }}>✕ {error}</div>}
               <button onClick={save} disabled={saving} style={{
                 padding: '10px 24px', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: saving ? 'not-allowed' : 'pointer',
-                background: saved ? '#065f46' : '#1B4D3E', color: '#fff', opacity: saving ? 0.7 : 1,
+                background: saved ? '#065f46' : '#0F2A4A', color: '#fff', opacity: saving ? 0.7 : 1,
               }}>
                 {saving ? 'Saving…' : saved ? '✓ Saved to Database' : 'Save Settings'}
               </button>

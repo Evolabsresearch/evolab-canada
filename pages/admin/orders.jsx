@@ -135,8 +135,8 @@ export default function AdminOrders() {
                 <button key={s} onClick={() => setStatusFilter(s)} style={{
                   padding: '6px 12px', borderRadius: 8, fontSize: 12, fontWeight: 600,
                   border: '1px solid', cursor: 'pointer',
-                  background: statusFilter === s ? '#1B4D3E' : '#fff',
-                  borderColor: statusFilter === s ? '#1B4D3E' : '#e5e7eb',
+                  background: statusFilter === s ? '#0F2A4A' : '#fff',
+                  borderColor: statusFilter === s ? '#0F2A4A' : '#e5e7eb',
                   color: statusFilter === s ? '#fff' : '#374151',
                   textTransform: 'capitalize',
                 }}>
@@ -175,7 +175,7 @@ export default function AdminOrders() {
                         onMouseEnter={e => { if (!isSelected) e.currentTarget.style.background = '#f9fafb'; }}
                         onMouseLeave={e => { if (!isSelected) e.currentTarget.style.background = 'transparent'; }}
                       >
-                        <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 700, color: '#1B4D3E' }}>
+                        <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 700, color: '#0F2A4A' }}>
                           #{order.order_number || order.wc_order_id}
                         </td>
                         <td style={{ padding: '12px 16px' }}>
@@ -258,7 +258,7 @@ export default function AdminOrders() {
                       target="_blank"
                       rel="noreferrer"
                       style={{
-                        flex: 1, padding: '9px 12px', background: '#1B4D3E', color: '#fff',
+                        flex: 1, padding: '9px 12px', background: '#0F2A4A', color: '#fff',
                         borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none',
                         textAlign: 'center', display: 'block',
                       }}
@@ -316,7 +316,7 @@ export default function AdminOrders() {
               {/* Save Bar */}
               <div style={{ padding: '16px 20px', borderTop: '1px solid #f3f4f6', display: 'flex', gap: 10 }}>
                 <button onClick={saveChanges} disabled={saving} style={{
-                  flex: 1, padding: '10px', background: saved ? '#065f46' : '#1B4D3E', color: '#fff',
+                  flex: 1, padding: '10px', background: saved ? '#065f46' : '#0F2A4A', color: '#fff',
                   border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer',
                   transition: 'background 0.2s', opacity: saving ? 0.7 : 1,
                 }}>

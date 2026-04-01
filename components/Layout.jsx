@@ -156,7 +156,7 @@ export default function Layout({ children, title, description, ogImage, structur
         <title>{title || 'EVO Labs Research Canada | Buy Research Peptides Canada — 99%+ Purity'}</title>
         <meta name="description" content={description || 'Buy research-grade peptides in Canada with 99%+ verified purity. Third-party tested every batch. Certificate of Analysis included. Ships across Canada via Canada Post.'} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1B4D3E" />
+        <meta name="theme-color" content="#0F2A4A" />
         <link rel="canonical" href={`https://evolabsresearch.ca${router.asPath.split('?')[0]}`} />
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -192,13 +192,13 @@ export default function Layout({ children, title, description, ogImage, structur
       {/* ── Edge glow ring ── */}
       <div aria-hidden="true" style={{
         position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 99999,
-        boxShadow: 'inset 0 0 0 1px rgba(74,222,128,0.50), inset 0 0 30px 3px rgba(74,222,128,0.25), inset 0 0 80px 6px rgba(74,222,128,0.10)',
+        boxShadow: 'inset 0 0 0 1px rgba(6,182,212,0.50), inset 0 0 30px 3px rgba(6,182,212,0.25), inset 0 0 80px 6px rgba(6,182,212,0.10)',
       }} />
 
       {/* Skip to content — accessibility */}
       <a href="#main-content" style={{
         position: 'absolute', top: -40, left: 16, zIndex: 9999,
-        background: '#1B4D3E', color: '#fff', padding: '8px 16px', borderRadius: 4,
+        background: '#0F2A4A', color: '#fff', padding: '8px 16px', borderRadius: 4,
         fontSize: 14, fontWeight: 600, textDecoration: 'none', transition: 'top 0.2s',
       }}
         onFocus={e => e.target.style.top = '8px'}
@@ -217,7 +217,7 @@ export default function Layout({ children, title, description, ogImage, structur
           </span>
         );
         return (
-          <div style={{ background: 'linear-gradient(90deg, #163d31 0%, #1B4D3E 50%, #163d31 100%)', color: '#fff', textAlign: 'center', fontSize: 12, fontWeight: 500, padding: '9px 16px', letterSpacing: '0.05em', fontFamily: "'Poppins', system-ui, sans-serif", minHeight: 38, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ background: 'linear-gradient(90deg, #0a1f3d 0%, #0F2A4A 50%, #0a1f3d 100%)', color: '#fff', textAlign: 'center', fontSize: 12, fontWeight: 500, padding: '9px 16px', letterSpacing: '0.05em', fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: 38, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {msg.href ? <Link href={msg.href} style={{ color: '#fff', textDecoration: 'none' }}>{inner}</Link> : inner}
           </div>
         );
@@ -234,7 +234,7 @@ export default function Layout({ children, title, description, ogImage, structur
         borderBottom: `1px solid ${scrolled ? 'rgba(0,0,0,0.06)' : 'transparent'}`,
         boxShadow: scrolled ? '0 1px 20px rgba(0,0,0,0.05)' : 'none',
         transition: 'all 0.3s cubic-bezier(0.2,0.8,0.2,1)',
-        fontFamily: "'Anek Telugu', sans-serif",
+        fontFamily: "'Inter', sans-serif",
       }}>
         <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 28px', display: 'flex', alignItems: 'center', height: 68, gap: 28 }}>
 
@@ -285,8 +285,8 @@ export default function Layout({ children, title, description, ogImage, structur
               {itemCount > 0 && (
                 <span style={{
                   position: 'absolute', top: -6, right: -8,
-                  background: '#1B4D3E', color: '#fff',
-                  fontSize: 10, fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                  background: '#0F2A4A', color: '#fff',
+                  fontSize: 10, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                   width: 18, height: 18, borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   lineHeight: 1,
@@ -309,8 +309,8 @@ export default function Layout({ children, title, description, ogImage, structur
               {itemCount > 0 && (
                 <span style={{
                   position: 'absolute', top: 2, right: 2,
-                  background: '#1B4D3E', color: '#fff',
-                  fontSize: 10, fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                  background: '#0F2A4A', color: '#fff',
+                  fontSize: 10, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                   width: 18, height: 18, borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   lineHeight: 1,
@@ -331,7 +331,7 @@ export default function Layout({ children, title, description, ogImage, structur
 
         {/* Mobile Menu Dropdown */}
         {menuOpen && (
-          <div style={{ background: '#fff', borderTop: '1px solid #f3f4f6', padding: '8px 20px 28px', fontFamily: "'Anek Telugu', sans-serif" }}>
+          <div style={{ background: '#fff', borderTop: '1px solid #f3f4f6', padding: '8px 20px 28px', fontFamily: "'Inter', sans-serif" }}>
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
@@ -340,7 +340,7 @@ export default function Layout({ children, title, description, ogImage, structur
                   display: 'block',
                   fontSize: 16,
                   fontWeight: 500,
-                  color: isActive(href) ? '#1B4D3E' : '#111827',
+                  color: isActive(href) ? '#0F2A4A' : '#111827',
                   padding: '16px 0',
                   borderBottom: '1px solid #f3f4f6',
                 }}
@@ -362,12 +362,12 @@ export default function Layout({ children, title, description, ogImage, structur
       </header>
 
       {/* ── Page Content ── */}
-      <main id="main-content" style={{ fontFamily: "'Anek Telugu', sans-serif", minHeight: '60vh' }}>
+      <main id="main-content" style={{ fontFamily: "'Inter', sans-serif", minHeight: '60vh' }}>
         {children}
       </main>
 
       {/* ── Footer ── */}
-      <footer style={{ background: '#0a0a0a', color: '#fff', padding: '80px 0 0', fontFamily: "'Anek Telugu', sans-serif", borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+      <footer style={{ background: '#0a0a0a', color: '#fff', padding: '80px 0 0', fontFamily: "'Inter', sans-serif", borderTop: '1px solid rgba(255,255,255,0.04)' }}>
         <div className="container">
 
           {/* Top: brand + nav columns */}
@@ -385,12 +385,12 @@ export default function Layout({ children, title, description, ogImage, structur
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <a href={`mailto:${CONTACT.email}`} style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', transition: 'color 0.15s' }}
-                  onMouseEnter={e => e.target.style.color = '#4ade80'}
+                  onMouseEnter={e => e.target.style.color = '#06b6d4'}
                   onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.55)'}>
                   ✉ {CONTACT.email}
                 </a>
                 <a href={`tel:+16475550199`} style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', transition: 'color 0.15s' }}
-                  onMouseEnter={e => e.target.style.color = '#4ade80'}
+                  onMouseEnter={e => e.target.style.color = '#06b6d4'}
                   onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.55)'}>
                   ☎ {CONTACT.phone}
                 </a>
@@ -481,7 +481,7 @@ export default function Layout({ children, title, description, ogImage, structur
               {/* PayPal */}
               <svg height="22" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="16" rx="3" fill="white"/><text x="6" y="12" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="9" fill="#003087">Pay</text><text x="23" y="12" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="9" fill="#009CDE">Pal</text></svg>
               {/* SSL lock */}
-              <svg height="22" viewBox="0 0 52 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="16" rx="3" fill="white"/><text x="6" y="12" fontFamily="Arial,sans-serif" fontWeight="600" fontSize="8" fill="#22c55e">🔒 SSL</text></svg>
+              <svg height="22" viewBox="0 0 52 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="16" rx="3" fill="white"/><text x="6" y="12" fontFamily="Arial,sans-serif" fontWeight="600" fontSize="8" fill="#0ea5e9">🔒 SSL</text></svg>
             </div>
           </div>
         </div>
@@ -520,7 +520,7 @@ export default function Layout({ children, title, description, ogImage, structur
                 onChange={e => setSearchQuery(e.target.value)}
                 style={{
                   flex: 1, border: 'none', outline: 'none', fontSize: 16,
-                  fontFamily: "'Poppins', sans-serif", color: '#111',
+                  fontFamily: "'DM Sans', sans-serif", color: '#111',
                   background: 'transparent',
                 }}
               />
@@ -555,10 +555,10 @@ export default function Layout({ children, title, description, ogImage, structur
                           <img src={p.image} alt={p.name} style={{ width: 36, height: 36, objectFit: 'contain' }} />
                         </div>
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: 14, fontWeight: 700, color: '#111', fontFamily: "'Poppins', sans-serif" }}>{p.name}</div>
+                          <div style={{ fontSize: 14, fontWeight: 700, color: '#111', fontFamily: "'DM Sans', sans-serif" }}>{p.name}</div>
                           <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 2 }}>{p.category}</div>
                         </div>
-                        <div style={{ fontSize: 14, fontWeight: 700, color: '#1B4D3E', fontFamily: "'Poppins', sans-serif", flexShrink: 0 }}>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: '#0F2A4A', fontFamily: "'DM Sans', sans-serif", flexShrink: 0 }}>
                           {p.outOfStock ? 'OOS' : p.salePrice || p.price}
                         </div>
                       </Link>
@@ -567,7 +567,7 @@ export default function Layout({ children, title, description, ogImage, structur
                       <Link
                         href={`/products?search=${encodeURIComponent(searchQuery)}`}
                         onClick={() => setSearchOpen(false)}
-                        style={{ display: 'block', padding: '14px 20px', textAlign: 'center', fontSize: 13, color: '#1B4D3E', fontWeight: 600, textDecoration: 'none', borderTop: '1px solid #f0f0f0' }}
+                        style={{ display: 'block', padding: '14px 20px', textAlign: 'center', fontSize: 13, color: '#0F2A4A', fontWeight: 600, textDecoration: 'none', borderTop: '1px solid #f0f0f0' }}
                       >
                         View all results →
                       </Link>
@@ -590,7 +590,7 @@ export default function Layout({ children, title, description, ogImage, structur
                           background: '#f3f4f6', border: 'none', borderRadius: 9999,
                           padding: '6px 14px', fontSize: 12, fontWeight: 600,
                           color: '#374151', cursor: 'pointer',
-                          fontFamily: "'Poppins', sans-serif",
+                          fontFamily: "'DM Sans', sans-serif",
                         }}
                       >
                         {term}
@@ -610,7 +610,7 @@ export default function Layout({ children, title, description, ogImage, structur
         position: 'fixed', bottom: 0, left: 0, right: 0,
         background: '#fff', borderTop: '1px solid #e5e7eb',
         zIndex: 900, padding: '8px 0 env(safe-area-inset-bottom, 8px)',
-        fontFamily: "'Anek Telugu', sans-serif",
+        fontFamily: "'Inter', sans-serif",
       }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
           {[
@@ -657,7 +657,7 @@ export default function Layout({ children, title, description, ogImage, structur
               <Link key={href} href={resolvedHref} style={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
                 gap: 3, padding: '8px 0 6px', textDecoration: 'none',
-                color: active ? '#1B4D3E' : '#9ca3af', position: 'relative',
+                color: active ? '#0F2A4A' : '#9ca3af', position: 'relative',
                 transition: 'color 0.15s',
               }}>
                 <span style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -665,7 +665,7 @@ export default function Layout({ children, title, description, ogImage, structur
                   {badge > 0 && (
                     <span style={{
                       position: 'absolute', top: -5, right: -7,
-                      background: '#1B4D3E', color: '#fff',
+                      background: '#0F2A4A', color: '#fff',
                       fontSize: 9, fontWeight: 700,
                       width: 16, height: 16, borderRadius: '50%',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -677,7 +677,7 @@ export default function Layout({ children, title, description, ogImage, structur
                 {active && (
                   <span style={{
                     position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)',
-                    width: 20, height: 2, background: '#1B4D3E', borderRadius: 1,
+                    width: 20, height: 2, background: '#0F2A4A', borderRadius: 1,
                   }} />
                 )}
               </Link>
@@ -709,12 +709,12 @@ export default function Layout({ children, title, description, ogImage, structur
         a[href="#main-content"]:focus { top: 8px !important; }
         /* Global focus indicators — visible for keyboard users */
         :focus-visible {
-          outline: 2px solid #1B4D3E;
+          outline: 2px solid #0F2A4A;
           outline-offset: 3px;
           border-radius: 4px;
         }
         button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-          outline: 2px solid #1B4D3E;
+          outline: 2px solid #0F2A4A;
           outline-offset: 3px;
         }
         /* Reduce motion for users who prefer it */

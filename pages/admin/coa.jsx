@@ -146,7 +146,7 @@ export default function AdminCOA() {
         </div>
         <button
           onClick={openNew}
-          style={{ padding: '9px 18px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}
+          style={{ padding: '9px 18px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}
         >
           + Add COA
         </button>
@@ -192,7 +192,7 @@ export default function AdminCOA() {
                   </div>
                   {entry.pdf_url && (
                     <div style={{ marginTop: 4 }}>
-                      <span style={{ fontSize: 11, color: '#1B4D3E', fontWeight: 600 }}>📄 PDF linked</span>
+                      <span style={{ fontSize: 11, color: '#0F2A4A', fontWeight: 600 }}>📄 PDF linked</span>
                     </div>
                   )}
                 </div>
@@ -268,7 +268,7 @@ export default function AdminCOA() {
                   href={form.pdf_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: 13, color: '#1B4D3E', fontWeight: 600, textDecoration: 'none', wordBreak: 'break-all' }}
+                  style={{ fontSize: 13, color: '#0F2A4A', fontWeight: 600, textDecoration: 'none', wordBreak: 'break-all' }}
                 >
                   📄 {form.pdf_url.split('/').pop() || form.pdf_url}
                 </a>
@@ -280,7 +280,7 @@ export default function AdminCOA() {
                 onClick={handleSave}
                 disabled={saving || !form.product_name.trim()}
                 style={{
-                  padding: '10px 24px', background: saving ? '#9ca3af' : '#1B4D3E',
+                  padding: '10px 24px', background: saving ? '#9ca3af' : '#0F2A4A',
                   color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700,
                   cursor: saving ? 'default' : 'pointer',
                 }}

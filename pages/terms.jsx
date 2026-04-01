@@ -15,9 +15,9 @@ function Section({ title, children }) {
 export default function TermsOfService() {
   return (
     <Layout title="Terms of Service | EVO Labs Research Canada" description="EVO Labs Research Canada terms of service — rules governing use of our site and purchase of research compounds.">
-      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Inter', sans-serif" }}>
         <div style={{ marginBottom: 40 }}>
-          <span style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
+          <span style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
           <h1 style={{ fontSize: 36, fontWeight: 900, color: '#111', margin: '8px 0 12px', letterSpacing: '-0.02em' }}>Terms of Service</h1>
           <p style={{ fontSize: 14, color: '#6b7280' }}>Last updated: {UPDATED} · EVO Labs Research Canada, Toronto, ON M5X 1C9</p>
           <div style={{ height: 1, background: '#e5e7eb', marginTop: 24 }} />
@@ -71,7 +71,7 @@ export default function TermsOfService() {
             <li>The product arrives damaged or defective</li>
             <li>The wrong product was shipped</li>
           </ul>
-          <p style={{ marginTop: 8 }}>Refund requests must be submitted within 14 days of delivery with photo documentation. We may, at our sole discretion, offer a replacement or store credit. No cash refunds on opened products. Returns are handled in accordance with applicable Canadian consumer protection legislation. See our full <Link href="/returns" style={{ color: '#1B4D3E' }}>Returns Policy</Link>.</p>
+          <p style={{ marginTop: 8 }}>Refund requests must be submitted within 14 days of delivery with photo documentation. We may, at our sole discretion, offer a replacement or store credit. No cash refunds on opened products. Returns are handled in accordance with applicable Canadian consumer protection legislation. See our full <Link href="/returns" style={{ color: '#0F2A4A' }}>Returns Policy</Link>.</p>
         </Section>
 
         <Section title="7. Intellectual Property">
@@ -92,7 +92,7 @@ export default function TermsOfService() {
 
         <Section title="11. Contact">
           <p>EVO Labs Research Canada · 100 King Street West, Suite 5600, Toronto, ON M5X 1C9<br />
-            Email: <a href="mailto:support@evolabsresearch.ca" style={{ color: '#1B4D3E' }}>support@evolabsresearch.ca</a>
+            Email: <a href="mailto:support@evolabsresearch.ca" style={{ color: '#0F2A4A' }}>support@evolabsresearch.ca</a>
           </p>
         </Section>
 

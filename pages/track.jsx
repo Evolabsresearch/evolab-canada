@@ -9,7 +9,7 @@ const STATUS_LABELS = {
   InTransit:      { label: 'In Transit',         color: '#2563eb', bg: '#eff6ff' },
   OutForDelivery: { label: 'Out for Delivery',   color: '#d97706', bg: '#fffbeb' },
   AttemptFail:    { label: 'Delivery Attempted', color: '#ef4444', bg: '#fef2f2' },
-  Delivered:      { label: 'Delivered',           color: '#16a34a', bg: '#f0fdf4' },
+  Delivered:      { label: 'Delivered',           color: '#0ea5e9', bg: '#eff6ff' },
   Exception:      { label: 'Exception',           color: '#ef4444', bg: '#fef2f2' },
 };
 
@@ -52,7 +52,7 @@ export default function TrackOrderPage() {
 
       <div style={{ background: '#0a0a0a', padding: '72px 0 60px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>Order Status</div>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>Order Status</div>
           <h1 style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>Track Your Order</h1>
           <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.5)', maxWidth: 460 }}>Enter your tracking number for live shipment updates.</p>
         </div>
@@ -69,11 +69,11 @@ export default function TrackOrderPage() {
                   onChange={e => { setTrackingNum(e.target.value); setResult(null); setError(''); }}
                   placeholder="e.g. 1Z999AA10123456784"
                   style={{ flex: 1, padding: '13px 16px', border: '1.5px solid #e5e7eb', borderRadius: 12, fontSize: 15, color: '#111827', outline: 'none', fontFamily: 'monospace', transition: 'border-color 0.2s' }}
-                  onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+                  onFocus={e => e.target.style.borderColor = '#0F2A4A'}
                   onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                 />
                 <button type="submit" disabled={!trackingNum.trim() || loading}
-                  style={{ padding: '13px 24px', background: '#1B4D3E', color: '#fff', borderRadius: 12, border: 'none', fontSize: 14, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0, opacity: (!trackingNum.trim() || loading) ? 0.5 : 1 }}>
+                  style={{ padding: '13px 24px', background: '#0F2A4A', color: '#fff', borderRadius: 12, border: 'none', fontSize: 14, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0, opacity: (!trackingNum.trim() || loading) ? 0.5 : 1 }}>
                   {loading ? 'Tracking\u2026' : 'Track \u2192'}
                 </button>
               </div>
@@ -83,7 +83,7 @@ export default function TrackOrderPage() {
               <div style={{ marginTop: 16, padding: '14px 18px', background: '#fef2f2', borderRadius: 12, border: '1px solid #fecaca' }}>
                 <p style={{ fontSize: 14, color: '#dc2626', fontWeight: 600, margin: 0 }}>{error}</p>
                 <p style={{ fontSize: 13, color: '#6b7280', marginTop: 6 }}>
-                  {"Can't find it? "}<Link href="/contact" style={{ color: '#1B4D3E', fontWeight: 700 }}>Contact support</Link>
+                  {"Can't find it? "}<Link href="/contact" style={{ color: '#0F2A4A', fontWeight: 700 }}>Contact support</Link>
                 </p>
               </div>
             )}
@@ -114,7 +114,7 @@ export default function TrackOrderPage() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                       {result.checkpoints.map((cp, i) => (
                         <div key={i} style={{ display: 'flex', gap: 20, position: 'relative' }}>
-                          <div style={{ width: 16, height: 16, borderRadius: '50%', flexShrink: 0, marginTop: 2, background: i === 0 ? (si?.color || '#1B4D3E') : '#d1d5db', border: '2px solid ' + (i === 0 ? (si?.color || '#1B4D3E') : '#d1d5db'), zIndex: 1 }} />
+                          <div style={{ width: 16, height: 16, borderRadius: '50%', flexShrink: 0, marginTop: 2, background: i === 0 ? (si?.color || '#0F2A4A') : '#d1d5db', border: '2px solid ' + (i === 0 ? (si?.color || '#0F2A4A') : '#d1d5db'), zIndex: 1 }} />
                           <div style={{ flex: 1 }}>
                             <div style={{ fontSize: 14, fontWeight: i === 0 ? 700 : 500, color: i === 0 ? '#111827' : '#374151', lineHeight: 1.4 }}>{cp.message}</div>
                             {cp.location && <div style={{ fontSize: 12, color: '#6b7280', marginTop: 3 }}>{cp.location}</div>}

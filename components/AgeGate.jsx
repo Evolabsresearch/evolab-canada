@@ -42,7 +42,7 @@ export default function AgeGate() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '20px',
-        fontFamily: "'Poppins', sans-serif",
+        fontFamily: "'DM Sans', sans-serif",
       }}
     >
       <div
@@ -50,7 +50,7 @@ export default function AgeGate() {
           maxWidth: '600px',
           textAlign: 'center',
           background: '#0f0f0f',
-          border: '1.5px solid #1B4D3E',
+          border: '1.5px solid #0F2A4A',
           borderRadius: '16px',
           padding: '48px 32px',
           display: 'flex',
@@ -95,19 +95,19 @@ export default function AgeGate() {
             onClick={handleConfirm}
             style={{
               padding: '14px 28px',
-              background: '#1B4D3E',
+              background: '#0F2A4A',
               color: '#fff',
               border: 'none',
               borderRadius: '10px',
               fontSize: '14px',
               fontWeight: '700',
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               cursor: 'pointer',
               transition: 'background 0.2s',
             }}
-            onHover={(e) => (e.target.style.background = '#4ade80')}
-            onMouseEnter={(e) => (e.target.style.background = '#4ade80')}
-            onMouseLeave={(e) => (e.target.style.background = '#1B4D3E')}
+            onHover={(e) => (e.target.style.background = '#06b6d4')}
+            onMouseEnter={(e) => (e.target.style.background = '#06b6d4')}
+            onMouseLeave={(e) => (e.target.style.background = '#0F2A4A')}
           >
             I Confirm — Enter Site
           </button>
@@ -121,7 +121,7 @@ export default function AgeGate() {
               borderRadius: '10px',
               fontSize: '14px',
               fontWeight: '700',
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               cursor: 'pointer',
               transition: 'all 0.2s',
             }}

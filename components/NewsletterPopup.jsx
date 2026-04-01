@@ -168,13 +168,13 @@ export default function NewsletterPopup() {
         opacity: closing ? 0 : 1,
         transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease',
         width: '94%', maxWidth: 460,
-        fontFamily: "'Poppins', 'Anek Telugu', sans-serif",
+        fontFamily: "'DM Sans', 'Anek Telugu', sans-serif",
       }}>
         <div style={{
           background: '#0f0f0f',
           borderRadius: 24,
           overflow: 'hidden',
-          boxShadow: '0 0 0 1px rgba(74,222,128,0.15), 0 40px 100px rgba(0,0,0,0.6)',
+          boxShadow: '0 0 0 1px rgba(6,182,212,0.15), 0 40px 100px rgba(0,0,0,0.6)',
           border: '1px solid rgba(255,255,255,0.06)',
         }}>
 
@@ -189,7 +189,7 @@ export default function NewsletterPopup() {
             {/* Grid texture */}
             <div style={{
               position: 'absolute', inset: 0,
-              backgroundImage: 'linear-gradient(rgba(74,222,128,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(74,222,128,0.04) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(rgba(6,182,212,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.04) 1px, transparent 1px)',
               backgroundSize: '32px 32px',
               pointerEvents: 'none',
             }} />
@@ -198,7 +198,7 @@ export default function NewsletterPopup() {
             <div style={{
               position: 'absolute', top: -40, right: -40,
               width: 200, height: 200,
-              background: 'radial-gradient(circle, rgba(74,222,128,0.18) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(6,182,212,0.18) 0%, transparent 70%)',
               pointerEvents: 'none',
             }} />
 
@@ -250,23 +250,23 @@ export default function NewsletterPopup() {
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14, position: 'relative', zIndex: 1 }}>
               <div style={{
                 padding: '6px 16px',
-                background: 'rgba(74,222,128,0.15)',
-                border: '1px solid rgba(74,222,128,0.35)',
+                background: 'rgba(6,182,212,0.15)',
+                border: '1px solid rgba(6,182,212,0.35)',
                 borderRadius: 9999,
                 display: 'flex', alignItems: 'center', gap: 6,
               }}>
-                <span style={{ fontSize: 22, fontWeight: 900, color: '#4ade80', lineHeight: 1 }}>10%</span>
+                <span style={{ fontSize: 22, fontWeight: 900, color: '#06b6d4', lineHeight: 1 }}>10%</span>
                 <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 500, lineHeight: 1.3 }}>email<br/>discount</span>
               </div>
               <span style={{ fontSize: 18, color: 'rgba(255,255,255,0.2)', fontWeight: 300 }}>+</span>
               <div style={{
                 padding: '6px 16px',
-                background: 'rgba(74,222,128,0.08)',
-                border: '1px dashed rgba(74,222,128,0.25)',
+                background: 'rgba(6,182,212,0.08)',
+                border: '1px dashed rgba(6,182,212,0.25)',
                 borderRadius: 9999,
                 display: 'flex', alignItems: 'center', gap: 6,
               }}>
-                <span style={{ fontSize: 22, fontWeight: 900, color: '#4ade80', lineHeight: 1 }}>5%</span>
+                <span style={{ fontSize: 22, fontWeight: 900, color: '#06b6d4', lineHeight: 1 }}>5%</span>
                 <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, lineHeight: 1.3 }}>add<br/>your #</span>
               </div>
             </div>
@@ -277,8 +277,8 @@ export default function NewsletterPopup() {
               position: 'relative', zIndex: 1,
             }}>
               {phoneOnlyMode
-                ? <>Add Your # for an Extra <span style={{ color: '#4ade80' }}>5% Off</span></>
-                : <>Unlock Up to <span style={{ color: '#4ade80' }}>15% Off</span></>}
+                ? <>Add Your # for an Extra <span style={{ color: '#06b6d4' }}>5% Off</span></>
+                : <>Unlock Up to <span style={{ color: '#06b6d4' }}>15% Off</span></>}
             </h2>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 6, position: 'relative', zIndex: 1 }}>
               {phoneOnlyMode
@@ -296,7 +296,7 @@ export default function NewsletterPopup() {
                     {/* Email — hidden in phone-only mode */}
                     {!phoneOnlyMode && (
                     <div style={{ position: 'relative' }}>
-                      <div style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontSize: 15, pointerEvents: 'none' }}>
+                      <div style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#06b6d4', fontSize: 15, pointerEvents: 'none' }}>
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/>
                         </svg>
@@ -317,7 +317,7 @@ export default function NewsletterPopup() {
                           boxSizing: 'border-box',
                           transition: 'border-color 0.2s, background 0.2s',
                         }}
-                        onFocus={e => { e.target.style.borderColor = 'rgba(74,222,128,0.5)'; e.target.style.background = 'rgba(74,222,128,0.05)'; }}
+                        onFocus={e => { e.target.style.borderColor = 'rgba(6,182,212,0.5)'; e.target.style.background = 'rgba(6,182,212,0.05)'; }}
                         onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.background = 'rgba(255,255,255,0.05)'; }}
                       />
                     </div>
@@ -330,16 +330,16 @@ export default function NewsletterPopup() {
                         onClick={() => setAddPhone(true)}
                         style={{
                           width: '100%', padding: '12px 14px',
-                          border: '1px dashed rgba(74,222,128,0.3)',
+                          border: '1px dashed rgba(6,182,212,0.3)',
                           borderRadius: 12,
-                          background: 'rgba(74,222,128,0.05)',
+                          background: 'rgba(6,182,212,0.05)',
                           cursor: 'pointer',
-                          fontSize: 13, fontWeight: 600, color: '#4ade80',
+                          fontSize: 13, fontWeight: 600, color: '#06b6d4',
                           fontFamily: 'inherit', textAlign: 'center',
                           transition: 'all 0.2s',
                         }}
-                        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(74,222,128,0.1)'; e.currentTarget.style.borderColor = 'rgba(74,222,128,0.5)'; }}
-                        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(74,222,128,0.05)'; e.currentTarget.style.borderColor = 'rgba(74,222,128,0.3)'; }}
+                        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(6,182,212,0.1)'; e.currentTarget.style.borderColor = 'rgba(6,182,212,0.5)'; }}
+                        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(6,182,212,0.05)'; e.currentTarget.style.borderColor = 'rgba(6,182,212,0.3)'; }}
                       >
                         + Add phone number for an extra 5% off
                       </button>
@@ -348,12 +348,12 @@ export default function NewsletterPopup() {
                         <div style={{
                           position: 'absolute', top: -9, right: 10,
                           fontSize: 9, fontWeight: 800, color: '#0f0f0f',
-                          background: '#4ade80', padding: '2px 8px', borderRadius: 9999,
+                          background: '#06b6d4', padding: '2px 8px', borderRadius: 9999,
                           letterSpacing: '0.04em',
                         }}>
                           +5% OFF
                         </div>
-                        <div style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#4ade80', pointerEvents: 'none' }}>
+                        <div style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#06b6d4', pointerEvents: 'none' }}>
                           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                           </svg>
@@ -365,15 +365,15 @@ export default function NewsletterPopup() {
                           onChange={e => setPhone(e.target.value)}
                           style={{
                             width: '100%', padding: '13px 14px 13px 42px',
-                            border: '1px solid rgba(74,222,128,0.3)',
+                            border: '1px solid rgba(6,182,212,0.3)',
                             borderRadius: 12,
                             fontSize: 14, color: '#fff',
-                            background: 'rgba(74,222,128,0.05)',
+                            background: 'rgba(6,182,212,0.05)',
                             outline: 'none', fontFamily: 'inherit',
                             boxSizing: 'border-box',
                           }}
-                          onFocus={e => e.target.style.borderColor = 'rgba(74,222,128,0.6)'}
-                          onBlur={e => e.target.style.borderColor = 'rgba(74,222,128,0.3)'}
+                          onFocus={e => e.target.style.borderColor = 'rgba(6,182,212,0.6)'}
+                          onBlur={e => e.target.style.borderColor = 'rgba(6,182,212,0.3)'}
                         />
                         <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', marginTop: 4, marginLeft: 2 }}>
                           Order updates &amp; tracking only. No spam, ever.
@@ -387,11 +387,11 @@ export default function NewsletterPopup() {
                         type="checkbox"
                         checked={caslConsent}
                         onChange={e => setCaslConsent(e.target.checked)}
-                        style={{ marginTop: 2, accentColor: '#4ade80', flexShrink: 0 }}
+                        style={{ marginTop: 2, accentColor: '#06b6d4', flexShrink: 0 }}
                       />
                       <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', lineHeight: 1.5 }}>
                         I consent to receive promotional emails and SMS from EVO Labs Research Canada. You can unsubscribe at any time. View our{' '}
-                        <a href="/privacy" style={{ color: '#4ade80', textDecoration: 'underline' }}>Privacy Policy</a>.
+                        <a href="/privacy" style={{ color: '#06b6d4', textDecoration: 'underline' }}>Privacy Policy</a>.
                       </span>
                     </label>
 
@@ -401,11 +401,11 @@ export default function NewsletterPopup() {
                       disabled={!caslConsent}
                       style={{
                         width: '100%', padding: '14px 24px',
-                        background: 'linear-gradient(135deg, #1B4D3E 0%, #2d7a5e 100%)',
+                        background: 'linear-gradient(135deg, #0F2A4A 0%, #2d7a5e 100%)',
                         color: '#fff',
-                        borderRadius: 12, border: '1px solid rgba(74,222,128,0.2)',
+                        borderRadius: 12, border: '1px solid rgba(6,182,212,0.2)',
                         fontSize: 15, fontWeight: 700,
-                        fontFamily: "'Poppins', sans-serif",
+                        fontFamily: "'DM Sans', sans-serif",
                         cursor: !caslConsent ? 'not-allowed' : 'pointer',
                         opacity: !caslConsent ? 0.5 : 1,
                         transition: 'transform 0.15s, box-shadow 0.15s, opacity 0.15s',
@@ -434,12 +434,12 @@ export default function NewsletterPopup() {
               <div style={{ textAlign: 'center', padding: '16px 0 8px' }}>
                 <div style={{
                   width: 60, height: 60, borderRadius: '50%',
-                  background: 'rgba(74,222,128,0.1)',
-                  border: '2px solid rgba(74,222,128,0.3)',
+                  background: 'rgba(6,182,212,0.1)',
+                  border: '2px solid rgba(6,182,212,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   margin: '0 auto 16px',
                 }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
                 </div>
@@ -451,14 +451,14 @@ export default function NewsletterPopup() {
                 {discountCode && (
                   <div style={{
                     margin: '12px auto 14px',
-                    background: 'rgba(74,222,128,0.08)',
-                    border: '1.5px dashed rgba(74,222,128,0.4)',
+                    background: 'rgba(6,182,212,0.08)',
+                    border: '1.5px dashed rgba(6,182,212,0.4)',
                     borderRadius: 12,
                     padding: '12px 20px',
                     maxWidth: 220,
                   }}>
                     <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 4 }}>Your code</p>
-                    <p style={{ fontSize: 22, fontWeight: 900, color: '#4ade80', letterSpacing: '0.08em', fontFamily: 'monospace' }}>
+                    <p style={{ fontSize: 22, fontWeight: 900, color: '#06b6d4', letterSpacing: '0.08em', fontFamily: 'monospace' }}>
                       {discountCode}
                     </p>
                     <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', marginTop: 4 }}>one-time use · expires 30 days</p>
@@ -467,12 +467,12 @@ export default function NewsletterPopup() {
 
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
                   {discountCode
-                    ? <>Apply at checkout for <strong style={{ color: '#4ade80' }}>{(phoneOnlyMode || phone) ? '15%' : '10%'} off</strong> your first order.</>
-                    : <>Check your email for your <strong style={{ color: '#4ade80' }}>{(phoneOnlyMode || phone) ? '15%' : '10%'} discount code</strong>.</>
+                    ? <>Apply at checkout for <strong style={{ color: '#06b6d4' }}>{(phoneOnlyMode || phone) ? '15%' : '10%'} off</strong> your first order.</>
+                    : <>Check your email for your <strong style={{ color: '#06b6d4' }}>{(phoneOnlyMode || phone) ? '15%' : '10%'} discount code</strong>.</>
                   }
                 </p>
                 {(phone || phoneOnlyMode) && (
-                  <p style={{ fontSize: 11, color: '#4ade80', fontWeight: 600, marginTop: 8 }}>
+                  <p style={{ fontSize: 11, color: '#06b6d4', fontWeight: 600, marginTop: 8 }}>
                     ✓ +5% phone bonus applied — 15% total
                   </p>
                 )}

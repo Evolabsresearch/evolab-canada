@@ -128,14 +128,14 @@ export default function ChatWidget() {
             right: 24,
             zIndex: 9997,
             width: 56, height: 56, borderRadius: '50%',
-            background: '#1B4D3E', color: '#fff',
+            background: '#0F2A4A', color: '#fff',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 4px 24px rgba(27,77,62,0.4)',
+            boxShadow: '0 4px 24px rgba(15,42,74,0.4)',
             cursor: 'pointer', border: 'none',
             transition: 'bottom 0.3s ease, top 0.3s ease, transform 0.2s, box-shadow 0.2s',
           }}
-          onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.08)'; e.currentTarget.style.boxShadow = '0 6px 32px rgba(27,77,62,0.5)'; }}
-          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(27,77,62,0.4)'; }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.08)'; e.currentTarget.style.boxShadow = '0 6px 32px rgba(15,42,74,0.5)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(15,42,74,0.4)'; }}
         >
           {CHAT_ICON}
         </button>
@@ -152,11 +152,11 @@ export default function ChatWidget() {
           display: 'flex', flexDirection: 'column',
           overflow: 'hidden',
           animation: 'chatSlideUp 0.25s ease-out',
-          fontFamily: "'Anek Telugu', system-ui, sans-serif",
+          fontFamily: "'Inter', system-ui, sans-serif",
         }}>
           {/* Header */}
           <div style={{
-            background: '#1B4D3E', color: '#fff',
+            background: '#0F2A4A', color: '#fff',
             padding: '16px 20px',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             flexShrink: 0,
@@ -174,7 +174,7 @@ export default function ChatWidget() {
               </div>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, lineHeight: 1.2 }}>EVO Labs Assistant</div>
-                <div style={{ fontSize: 11, opacity: 0.7, fontFamily: "'Poppins', sans-serif" }}>Powered by AI</div>
+                <div style={{ fontSize: 11, opacity: 0.7, fontFamily: "'DM Sans', sans-serif" }}>Powered by AI</div>
               </div>
             </div>
             <button
@@ -202,7 +202,7 @@ export default function ChatWidget() {
                   maxWidth: '82%',
                   padding: '10px 14px',
                   borderRadius: msg.role === 'user' ? '16px 16px 4px 16px' : '16px 16px 16px 4px',
-                  background: msg.role === 'user' ? '#1B4D3E' : '#f3f4f6',
+                  background: msg.role === 'user' ? '#0F2A4A' : '#f3f4f6',
                   color: msg.role === 'user' ? '#fff' : '#111827',
                   fontSize: 14,
                   lineHeight: 1.55,
@@ -246,7 +246,7 @@ export default function ChatWidget() {
                 outline: 'none', fontFamily: 'inherit',
                 transition: 'border-color 0.2s',
               }}
-              onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+              onFocus={e => e.target.style.borderColor = '#0F2A4A'}
               onBlur={e => e.target.style.borderColor = '#e5e7eb'}
               disabled={loading}
             />
@@ -255,7 +255,7 @@ export default function ChatWidget() {
               disabled={loading || !input.trim()}
               style={{
                 width: 38, height: 38, borderRadius: '50%',
-                background: input.trim() && !loading ? '#1B4D3E' : '#e5e7eb',
+                background: input.trim() && !loading ? '#0F2A4A' : '#e5e7eb',
                 color: input.trim() && !loading ? '#fff' : '#9ca3af',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 border: 'none', cursor: input.trim() && !loading ? 'pointer' : 'default',

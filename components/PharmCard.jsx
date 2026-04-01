@@ -9,7 +9,7 @@
 export default function PharmCard({ product, chemData, catConfig }) {
   if (!chemData) return null;
 
-  const accent = catConfig?.accentColor || '#1B4D3E';
+  const accent = catConfig?.accentColor || '#0F2A4A';
   const pastel = catConfig?.color || '#E8F5EE';
   const isBlend = chemData.cas === 'Blend' || chemData.formula === 'Blend' || chemData.formula === 'Peptide Mixture' || chemData.formula === 'See COA';
 
@@ -19,7 +19,7 @@ export default function PharmCard({ product, chemData, catConfig }) {
       borderRadius: 20,
       overflow: 'hidden',
       boxShadow: '0 4px 40px rgba(0,0,0,0.10)',
-      fontFamily: "'Poppins', 'Anek Telugu', sans-serif",
+      fontFamily: "'DM Sans', 'Anek Telugu', sans-serif",
       maxWidth: 860,
       width: '100%',
     }}>

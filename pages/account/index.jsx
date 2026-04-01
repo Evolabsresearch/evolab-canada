@@ -13,7 +13,7 @@ const STATUS_COLORS = {
   pending:    { bg: 'rgba(251,191,36,0.15)',  text: '#fbbf24', label: 'Pending' },
   processing: { bg: 'rgba(56,189,248,0.15)',  text: '#38bdf8', label: 'Processing' },
   'on-hold':  { bg: 'rgba(156,163,175,0.15)', text: '#9ca3af', label: 'On Hold' },
-  completed:  { bg: 'rgba(74,222,128,0.15)',  text: '#4ade80', label: 'Delivered' },
+  completed:  { bg: 'rgba(74,222,128,0.15)',  text: '#06b6d4', label: 'Delivered' },
   shipped:    { bg: 'rgba(99,179,237,0.15)',  text: '#63b3ed', label: 'Shipped' },
   cancelled:  { bg: 'rgba(248,113,113,0.15)', text: '#f87171', label: 'Cancelled' },
   refunded:   { bg: 'rgba(167,139,250,0.15)', text: '#a78bfa', label: 'Refunded' },
@@ -27,7 +27,7 @@ function StatusBadge({ status }) {
       fontSize: 10, fontWeight: 700,
       padding: '3px 10px', borderRadius: 9999,
       letterSpacing: '0.06em', textTransform: 'uppercase',
-      fontFamily: "'Poppins', sans-serif",
+      fontFamily: "'DM Sans', sans-serif",
       border: `1px solid ${s.text}30`,
     }}>
       {s.label}
@@ -149,7 +149,7 @@ function LoyaltyTab({ orders }) {
                   <span style={{ fontSize: 16 }}>{h.icon}</span>
                   <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>{h.label}</span>
                 </div>
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#4ade80' }}>{h.value}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#06b6d4' }}>{h.value}</span>
               </div>
             ))}
           </div>
@@ -164,7 +164,7 @@ function LoyaltyTab({ orders }) {
             <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
               Your Discount Code
             </div>
-            <div style={{ fontSize: 26, fontWeight: 900, color: '#4ade80', fontFamily: 'monospace', letterSpacing: '0.05em' }}>
+            <div style={{ fontSize: 26, fontWeight: 900, color: '#06b6d4', fontFamily: 'monospace', letterSpacing: '0.05em' }}>
               {discountCode}
             </div>
             <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 4 }}>One-time use · 10% off first order</div>
@@ -196,7 +196,7 @@ function LoyaltyTab({ orders }) {
                 <button
                   disabled={points < r.pts}
                   style={{
-                    background: points >= r.pts ? '#1B4D3E' : 'rgba(255,255,255,0.04)',
+                    background: points >= r.pts ? '#0F2A4A' : 'rgba(255,255,255,0.04)',
                     color: points >= r.pts ? '#fff' : 'rgba(255,255,255,0.2)',
                     border: 'none', borderRadius: 8,
                     fontSize: 11, fontWeight: 700, padding: '8px 12px',
@@ -256,7 +256,7 @@ function ReferTab({ email }) {
 
   return (
     <div style={{ maxWidth: 620 }}>
-      <div className="acct-refer-hero" style={{ background: 'linear-gradient(135deg, #1B4D3E 0%, #2d7a5e 100%)', borderRadius: 16, marginBottom: 20, position: 'relative', overflow: 'hidden' }}>
+      <div className="acct-refer-hero" style={{ background: 'linear-gradient(135deg, #0F2A4A 0%, #2d7a5e 100%)', borderRadius: 16, marginBottom: 20, position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', right: -20, top: -20, fontSize: 80, opacity: 0.12, userSelect: 'none' }}>🎁</div>
         <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10 }}>Refer a Friend</div>
         <h2 className="acct-refer-heading" style={{ fontWeight: 800, color: '#fff', margin: '0 0 8px', fontFamily: "'Anek Telugu', sans-serif" }}>Give 10% Off. Get Rewarded.</h2>
@@ -268,18 +268,18 @@ function ReferTab({ email }) {
         <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Your Referral Link</div>
         <div className="acct-refer-link-row">
           <div style={{ flex: 1, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.6)', fontFamily: 'monospace', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{refLink}</div>
-          <button onClick={copyLink} style={{ background: copied ? '#16a34a' : '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, padding: '12px 18px', fontWeight: 700, fontSize: 13, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background 0.2s', fontFamily: "'Poppins', sans-serif", minHeight: 44 }}>
+          <button onClick={copyLink} style={{ background: copied ? '#0ea5e9' : '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, padding: '12px 18px', fontWeight: 700, fontSize: 13, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background 0.2s', fontFamily: "'DM Sans', sans-serif", minHeight: 44 }}>
             {copied ? '✓ Copied!' : 'Copy Link'}
           </button>
         </div>
         <div style={{ marginTop: 8, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
-          Your code: <span style={{ color: '#4ade80', fontWeight: 700, fontFamily: 'monospace' }}>{refCode}</span> — works in the discount field at checkout too
+          Your code: <span style={{ color: '#06b6d4', fontWeight: 700, fontFamily: 'monospace' }}>{refCode}</span> — works in the discount field at checkout too
         </div>
       </div>
       <div className="acct-refer-card" style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, marginBottom: 20 }}>
         <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Share Message</div>
         <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 8, padding: '12px 14px', fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, marginBottom: 10 }}>{shareText}</div>
-        <button onClick={copyEmail} className="acct-copy-email-btn" style={{ background: 'rgba(255,255,255,0.06)', color: emailCopied ? '#4ade80' : 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '10px 16px', fontWeight: 600, fontSize: 12, cursor: 'pointer', transition: 'all 0.2s', fontFamily: "'Poppins', sans-serif", minHeight: 44 }}>
+        <button onClick={copyEmail} className="acct-copy-email-btn" style={{ background: 'rgba(255,255,255,0.06)', color: emailCopied ? '#06b6d4' : 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '10px 16px', fontWeight: 600, fontSize: 12, cursor: 'pointer', transition: 'all 0.2s', fontFamily: "'DM Sans', sans-serif", minHeight: 44 }}>
           {emailCopied ? '✓ Copied message!' : 'Copy message'}
         </button>
       </div>
@@ -293,7 +293,7 @@ function ReferTab({ email }) {
             { step: '4', text: 'Redeem 500 pts for $5 off, 1000 pts for $10 off your next order' },
           ].map(({ step, text }) => (
             <div key={step} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-              <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#1B4D3E', color: '#4ade80', fontSize: 11, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{step}</div>
+              <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#0F2A4A', color: '#06b6d4', fontSize: 11, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{step}</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.5, paddingTop: 5 }}>{text}</div>
             </div>
           ))}
@@ -384,7 +384,7 @@ function SettingsTab({ session, isPhoneUser, displayIdentifier }) {
     border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8,
     padding: '12px', fontSize: 14, color: '#fff',
     outline: 'none', boxSizing: 'border-box',
-    fontFamily: "'Poppins', sans-serif",
+    fontFamily: "'DM Sans', sans-serif",
     minHeight: 44,
   };
   const labelStyle = {
@@ -405,7 +405,7 @@ function SettingsTab({ session, isPhoneUser, displayIdentifier }) {
   return (
     <form onSubmit={save} style={{ maxWidth: 640 }}>
       {autofilled && (
-        <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: 10, padding: '12px 16px', marginBottom: 24, fontSize: 13, color: '#4ade80' }}>
+        <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: 10, padding: '12px 16px', marginBottom: 24, fontSize: 13, color: '#06b6d4' }}>
           ✓ We pre-filled your details from your most recent order. Review and save to confirm.
         </div>
       )}
@@ -483,7 +483,7 @@ function SettingsTab({ session, isPhoneUser, displayIdentifier }) {
                 setSameAsBilling(e.target.checked);
                 if (e.target.checked) applyBillingToShipping();
               }}
-              style={{ accentColor: '#4ade80' }}
+              style={{ accentColor: '#06b6d4' }}
             />
             Same as billing
           </label>
@@ -572,11 +572,11 @@ function SettingsTab({ session, isPhoneUser, displayIdentifier }) {
             type="submit"
             disabled={saving}
             style={{
-              background: saved ? '#16a34a' : 'linear-gradient(135deg, #1B4D3E, #2d7a5e)',
+              background: saved ? '#0ea5e9' : 'linear-gradient(135deg, #0F2A4A, #2d7a5e)',
               color: '#fff', border: 'none', borderRadius: 8,
               fontSize: 14, fontWeight: 700, padding: '13px 28px',
               cursor: saving ? 'default' : 'pointer', opacity: saving ? 0.7 : 1,
-              transition: 'all 0.2s', fontFamily: "'Poppins', sans-serif",
+              transition: 'all 0.2s', fontFamily: "'DM Sans', sans-serif",
               minHeight: 48,
             }}
           >
@@ -589,7 +589,7 @@ function SettingsTab({ session, isPhoneUser, displayIdentifier }) {
               background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)',
               color: '#f87171', fontSize: 14, fontWeight: 600,
               padding: '12px 20px', borderRadius: 8, cursor: 'pointer',
-              transition: 'all 0.2s', fontFamily: "'Poppins', sans-serif",
+              transition: 'all 0.2s', fontFamily: "'DM Sans', sans-serif",
               minHeight: 48,
             }}
           >
@@ -612,7 +612,7 @@ function WishlistTab() {
         <div style={{ fontSize: 40, marginBottom: 16 }}>🤍</div>
         <p style={{ fontSize: 15, fontWeight: 600 }}>Your wishlist is empty</p>
         <p style={{ fontSize: 13, marginTop: 8, color: 'rgba(255,255,255,0.25)' }}>Tap the heart icon on any product to save it here.</p>
-        <Link href="/products" style={{ display: 'inline-block', marginTop: 20, background: '#1B4D3E', color: '#fff', padding: '12px 24px', borderRadius: 9999, fontSize: 13, fontWeight: 700, textDecoration: 'none', minHeight: 44 }}>
+        <Link href="/products" style={{ display: 'inline-block', marginTop: 20, background: '#0F2A4A', color: '#fff', padding: '12px 24px', borderRadius: 9999, fontSize: 13, fontWeight: 700, textDecoration: 'none', minHeight: 44 }}>
           Browse Products →
         </Link>
       </div>
@@ -638,16 +638,16 @@ function WishlistTab() {
                 <div style={{ width: 64, height: 64, background: `radial-gradient(ellipse at 50% 60%, ${cat.color} 0%, #1a1a1a 80%)`, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                   <img src={p.image} alt={p.name} style={{ width: '80%', height: '80%', objectFit: 'contain' }} />
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 4, fontFamily: "'Poppins', sans-serif" }}>{p.name}</div>
-                <div style={{ fontSize: 12, color: '#4ade80', fontWeight: 700, marginBottom: 10 }}>{p.salePrice || p.price}</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 4, fontFamily: "'DM Sans', sans-serif" }}>{p.name}</div>
+                <div style={{ fontSize: 12, color: '#06b6d4', fontWeight: 700, marginBottom: 10 }}>{p.salePrice || p.price}</div>
               </Link>
               <button
                 onClick={() => addItem(p, { dosage: '', bundleCount: 1 })}
                 style={{
                   width: '100%', padding: '10px 0',
-                  background: '#1B4D3E', color: '#fff', border: 'none',
+                  background: '#0F2A4A', color: '#fff', border: 'none',
                   borderRadius: 8, fontSize: 12, fontWeight: 700,
-                  cursor: 'pointer', fontFamily: "'Poppins', sans-serif",
+                  cursor: 'pointer', fontFamily: "'DM Sans', sans-serif",
                   marginBottom: 4, minHeight: 44,
                 }}
               >
@@ -669,17 +669,17 @@ function WishlistTab() {
                   <img src={p.image} alt={p.name} style={{ width: '80%', height: '80%', objectFit: 'contain' }} />
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', fontFamily: "'Poppins', sans-serif", overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
-                  <div style={{ fontSize: 12, color: '#4ade80', fontWeight: 700, marginTop: 2 }}>{p.salePrice || p.price}</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', fontFamily: "'DM Sans', sans-serif", overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
+                  <div style={{ fontSize: 12, color: '#06b6d4', fontWeight: 700, marginTop: 2 }}>{p.salePrice || p.price}</div>
                 </div>
               </Link>
               <button
                 onClick={() => addItem(p, { dosage: '', bundleCount: 1 })}
                 style={{
                   flexShrink: 0, padding: '0 12px',
-                  background: '#1B4D3E', color: '#fff', border: 'none',
+                  background: '#0F2A4A', color: '#fff', border: 'none',
                   borderRadius: 8, fontSize: 12, fontWeight: 700,
-                  cursor: 'pointer', fontFamily: "'Poppins', sans-serif",
+                  cursor: 'pointer', fontFamily: "'DM Sans', sans-serif",
                   height: 44, whiteSpace: 'nowrap',
                 }}
               >
@@ -763,7 +763,7 @@ export default function AccountPage() {
         @keyframes acctVialFloat3 { 0%,100% { transform: translateY(0px) rotate(5deg); } 50% { transform: translateY(-14px) rotate(7deg); } }
         @keyframes acctVialFloat4 { 0%,100% { transform: translateY(0px) rotate(-20deg); } 50% { transform: translateY(-20px) rotate(-18deg); } }
         .order-card:hover { border-color: rgba(74,222,128,0.2) !important; background: rgba(74,222,128,0.03) !important; }
-        .tab-btn { background: none; border: none; cursor: pointer; transition: all 0.15s; font-family: 'Poppins', sans-serif; }
+        .tab-btn { background: none; border: none; cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
         .tab-btn:hover { color: rgba(255,255,255,0.8) !important; }
         .acct-tab-bar::-webkit-scrollbar { display: none; }
         .acct-tab-bar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -863,7 +863,7 @@ export default function AccountPage() {
         }
       `}</style>
 
-      <div style={{ minHeight: '100vh', background: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+      <div style={{ minHeight: '100vh', background: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
 
         {/* ── Top nav bar ── */}
         <div style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'sticky', top: 0, zIndex: 50 }}>
@@ -948,15 +948,15 @@ export default function AccountPage() {
           <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
             {/* Eyebrow */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-              <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80', boxShadow: '0 0 8px #4ade80' }} />
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+              <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4' }} />
+              <span style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 Researcher Portal
               </span>
             </div>
 
             <h1 className="acct-hero-heading" style={{ fontWeight: 900, color: '#fff', letterSpacing: '-0.03em', marginBottom: 6, lineHeight: 1.1 }}>
               {firstName ? `Welcome back, ${firstName}` : 'Welcome back, Researcher'}
-              <span style={{ color: '#4ade80' }}>.</span>
+              <span style={{ color: '#06b6d4' }}>.</span>
             </h1>
             <p className="acct-hero-subtitle" style={{ color: 'rgba(255,255,255,0.35)' }}>
               Manage your orders, track shipments, and access your research account.
@@ -990,10 +990,10 @@ export default function AccountPage() {
                 className="tab-btn"
                 onClick={() => setTab(t.id)}
                 style={{
-                  color: tab === t.id ? '#4ade80' : 'rgba(255,255,255,0.35)',
+                  color: tab === t.id ? '#06b6d4' : 'rgba(255,255,255,0.35)',
                   fontSize: 13, fontWeight: 600,
                   padding: '12px 18px',
-                  borderBottom: tab === t.id ? '2px solid #4ade80' : '2px solid transparent',
+                  borderBottom: tab === t.id ? '2px solid #06b6d4' : '2px solid transparent',
                   marginBottom: -1,
                 }}
               >
@@ -1005,7 +1005,7 @@ export default function AccountPage() {
                 href="/account/partner"
                 style={{
                   marginLeft: 'auto', alignSelf: 'center',
-                  fontSize: 12, color: '#4ade80', textDecoration: 'none',
+                  fontSize: 12, color: '#06b6d4', textDecoration: 'none',
                   padding: '8px 14px',
                   border: '1px solid rgba(74,222,128,0.25)',
                   borderRadius: 8,
@@ -1039,11 +1039,11 @@ export default function AccountPage() {
                   className="tab-btn"
                   onClick={() => setTab(t.id)}
                   style={{
-                    color: tab === t.id ? '#4ade80' : 'rgba(255,255,255,0.4)',
+                    color: tab === t.id ? '#06b6d4' : 'rgba(255,255,255,0.4)',
                     fontSize: 13, fontWeight: 600,
                     padding: '0 14px',
                     height: 48,
-                    borderBottom: tab === t.id ? '2px solid #4ade80' : '2px solid transparent',
+                    borderBottom: tab === t.id ? '2px solid #06b6d4' : '2px solid transparent',
                     marginBottom: -1,
                     whiteSpace: 'nowrap',
                     flexShrink: 0,
@@ -1059,7 +1059,7 @@ export default function AccountPage() {
                   href="/account/partner"
                   style={{
                     marginLeft: 8, alignSelf: 'center', flexShrink: 0,
-                    fontSize: 12, color: '#4ade80', textDecoration: 'none',
+                    fontSize: 12, color: '#06b6d4', textDecoration: 'none',
                     padding: '8px 12px',
                     border: '1px solid rgba(74,222,128,0.25)',
                     borderRadius: 8,
@@ -1106,7 +1106,7 @@ export default function AccountPage() {
                       style={{
                         display: 'inline-flex', alignItems: 'center', gap: 8,
                         marginTop: 20,
-                        background: 'linear-gradient(135deg, #1B4D3E, #2d7a5e)',
+                        background: 'linear-gradient(135deg, #0F2A4A, #2d7a5e)',
                         color: '#fff', padding: '12px 24px',
                         borderRadius: 10, fontSize: 13, textDecoration: 'none',
                         fontWeight: 700, boxShadow: '0 4px 20px rgba(27,77,62,0.4)',
@@ -1163,7 +1163,7 @@ export default function AccountPage() {
                             href={`/account/tracking/${order.tracking.trackingNumber}?carrier=${order.tracking.carrier || 'usps'}`}
                             style={{
                               display: 'inline-flex', alignItems: 'center', gap: 8,
-                              fontSize: 12, color: '#4ade80', textDecoration: 'none',
+                              fontSize: 12, color: '#06b6d4', textDecoration: 'none',
                               fontWeight: 600, padding: '10px 16px',
                               background: 'rgba(74,222,128,0.07)',
                               borderRadius: 8, border: '1px solid rgba(74,222,128,0.2)',
@@ -1205,7 +1205,7 @@ export default function AccountPage() {
                 href="/account/partner"
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: 10,
-                  background: 'linear-gradient(135deg, #1B4D3E, #2d7a5e)',
+                  background: 'linear-gradient(135deg, #0F2A4A, #2d7a5e)',
                   color: '#fff', padding: '14px 28px',
                   borderRadius: 12, fontSize: 14, fontWeight: 700,
                   textDecoration: 'none',

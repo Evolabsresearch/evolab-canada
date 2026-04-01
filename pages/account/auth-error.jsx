@@ -20,7 +20,7 @@ export default function AuthErrorPage() {
       <div style={{
         minHeight: '100vh',
         background: '#0f0f0f',
-        fontFamily: "'Poppins', sans-serif",
+        fontFamily: "'DM Sans', sans-serif",
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -67,7 +67,7 @@ export default function AuthErrorPage() {
             href="/account/login"
             style={{
               display: 'inline-block',
-              background: '#4ade80', color: '#0a0a0a',
+              background: '#06b6d4', color: '#0a0a0a',
               borderRadius: 10, padding: '12px 28px',
               fontSize: 13, fontWeight: 700, textDecoration: 'none',
               marginBottom: 16,

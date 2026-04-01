@@ -145,9 +145,9 @@ export default function TrackingMap({ checkpoints = [], currentLocation = null }
           display: 'flex', flexDirection: 'column', gap: 5,
           pointerEvents: 'none',
         }}>
-          <LegendItem color="#4ade80" label="Current location" />
+          <LegendItem color="#06b6d4" label="Current location" />
           <LegendItem color="#60a5fa" label="Previous stops" />
-          <LegendItem color="rgba(74,222,128,0.45)" label="Route" dashed />
+          <LegendItem color="rgba(6,182,212,0.45)" label="Route" dashed />
         </div>
       )}
     </div>
@@ -202,7 +202,7 @@ function renderRoute(map, mapboxgl, geoPoints, currentLocation) {
     source: 'tracking-route',
     layout: { 'line-join': 'round', 'line-cap': 'round' },
     paint: {
-      'line-color': 'rgba(74,222,128,0.45)',
+      'line-color': 'rgba(6,182,212,0.45)',
       'line-width': 2,
       'line-dasharray': [4, 3],
     },
@@ -216,9 +216,9 @@ function renderRoute(map, mapboxgl, geoPoints, currentLocation) {
       width: ${isCurrent ? 18 : 12}px;
       height: ${isCurrent ? 18 : 12}px;
       border-radius: 50%;
-      background: ${isCurrent ? '#4ade80' : '#60a5fa'};
-      border: 2px solid ${isCurrent ? 'rgba(74,222,128,0.6)' : 'rgba(96,165,250,0.5)'};
-      box-shadow: 0 0 ${isCurrent ? '12px rgba(74,222,128,0.7)' : '6px rgba(96,165,250,0.4)'};
+      background: ${isCurrent ? '#06b6d4' : '#60a5fa'};
+      border: 2px solid ${isCurrent ? 'rgba(6,182,212,0.6)' : 'rgba(96,165,250,0.5)'};
+      box-shadow: 0 0 ${isCurrent ? '12px rgba(6,182,212,0.7)' : '6px rgba(96,165,250,0.4)'};
       cursor: pointer;
     `;
 
@@ -238,10 +238,10 @@ function renderRoute(map, mapboxgl, geoPoints, currentLocation) {
         border:1px solid rgba(255,255,255,0.1);
         border-radius:8px;
         padding:10px 12px;
-        font-family:'Poppins',sans-serif;
+        font-family:'DM Sans',sans-serif;
         color:#fff;
       ">
-        ${isCurrent ? '<div style="font-size:10px;color:#4ade80;font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Current Location</div>' : ''}
+        ${isCurrent ? '<div style="font-size:10px;color:#06b6d4;font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Current Location</div>' : ''}
         <div style="font-size:12px;font-weight:600;line-height:1.4;margin-bottom:3px">${cp.message || 'Checkpoint'}</div>
         ${cp.location ? `<div style="font-size:10px;color:rgba(255,255,255,0.45)">${cp.location}</div>` : ''}
         ${dateStr ? `<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px">${dateStr}</div>` : ''}

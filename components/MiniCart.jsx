@@ -39,7 +39,7 @@ export default function MiniCart() {
         transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
         display: 'flex', flexDirection: 'column',
         boxShadow: miniCartOpen ? '-8px 0 40px rgba(0,0,0,0.12)' : 'none',
-        fontFamily: "'Anek Telugu', sans-serif",
+        fontFamily: "'Inter', sans-serif",
       }}>
         {/* Header */}
         <div style={{
@@ -51,8 +51,8 @@ export default function MiniCart() {
             <span style={{ fontSize: 18, fontWeight: 800, color: '#0a0a0a' }}>Your Cart</span>
             {itemCount > 0 && (
               <span style={{
-                background: '#1B4D3E', color: '#fff',
-                fontSize: 11, fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                background: '#0F2A4A', color: '#fff',
+                fontSize: 11, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                 padding: '2px 10px', borderRadius: 9999,
               }}>
                 {itemCount} {itemCount === 1 ? 'item' : 'items'}
@@ -115,7 +115,7 @@ export default function MiniCart() {
                         <div>
                           <div style={{ fontSize: 14, fontWeight: 700, color: '#0a0a0a', lineHeight: 1.3 }}>{item.name}</div>
                           {item.dosage && (
-                            <span style={{ fontSize: 11, color: '#9ca3af', fontFamily: "'Poppins', sans-serif" }}>{item.dosage}</span>
+                            <span style={{ fontSize: 11, color: '#9ca3af', fontFamily: "'DM Sans', sans-serif" }}>{item.dosage}</span>
                           )}
                         </div>
                         <button
@@ -149,7 +149,7 @@ export default function MiniCart() {
                             }}
                           >+</button>
                         </div>
-                        <span style={{ fontSize: 14, fontWeight: 700, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+                        <span style={{ fontSize: 14, fontWeight: 700, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
                           ${(price * (item.qty || 1)).toFixed(2)}
                         </span>
                       </div>
@@ -178,7 +178,7 @@ export default function MiniCart() {
                   <button
                     onClick={() => addItem(p, { dosage: '', bundleCount: 1 })}
                     style={{
-                      padding: '10px 14px', background: '#1B4D3E', color: '#fff',
+                      padding: '10px 14px', background: '#0F2A4A', color: '#fff',
                       border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 700,
                       cursor: 'pointer', flexShrink: 0, whiteSpace: 'nowrap',
                       minHeight: 40,
@@ -203,13 +203,13 @@ export default function MiniCart() {
                 </div>
               ) : (
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 12, color: '#166534' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 12, color: '#1e40af' }}>
                     <span>Add <strong>${(250 - subtotal).toFixed(2)}</strong> for free shipping</span>
                     <span style={{ color: '#6b7280' }}>${subtotal.toFixed(2)} / $250</span>
                   </div>
                   <div style={{ height: 6, background: '#e5e7eb', borderRadius: 9999, overflow: 'hidden' }}>
                     <div style={{
-                      height: '100%', background: 'linear-gradient(90deg, #1B4D3E, #4ade80)',
+                      height: '100%', background: 'linear-gradient(90deg, #0F2A4A, #06b6d4)',
                       borderRadius: 9999,
                       width: `${Math.min(100, (subtotal / 250) * 100)}%`,
                       transition: 'width 0.4s ease',
@@ -261,14 +261,14 @@ export default function MiniCart() {
                 setMiniCartOpen(false);
               }}
               style={{
-                display: 'block', width: '100%', background: '#1B4D3E', color: '#fff',
+                display: 'block', width: '100%', background: '#0F2A4A', color: '#fff',
                 padding: '14px 24px', borderRadius: 12, fontSize: 15,
-                fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                 textAlign: 'center', textDecoration: 'none',
                 transition: 'background 0.2s',
               }}
-              onMouseEnter={e => e.currentTarget.style.background = '#163d31'}
-              onMouseLeave={e => e.currentTarget.style.background = '#1B4D3E'}
+              onMouseEnter={e => e.currentTarget.style.background = '#0a1f3d'}
+              onMouseLeave={e => e.currentTarget.style.background = '#0F2A4A'}
             >
               Checkout &rarr;
             </Link>

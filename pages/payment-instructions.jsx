@@ -87,7 +87,7 @@ export default function PaymentInstructionsPage() {
       {/* Header */}
       <div style={{ background: '#0a0a0a', padding: '72px 0 60px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
             How to Pay
           </div>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>

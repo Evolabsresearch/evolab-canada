@@ -141,7 +141,7 @@ function StackCard({ stack }) {
                 display: 'inline-block', background: stack.accentColor, color: '#fff',
                 fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999,
                 letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10,
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
               }}>{stack.badge}</span>
             )}
             <h3 style={{ fontSize: 19, fontWeight: 800, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 4, lineHeight: 1.2 }}>
@@ -175,10 +175,10 @@ function StackCard({ stack }) {
                   <img src={p.image} alt={p.name} style={{ width: '80%', height: '80%', objectFit: 'contain' }} />
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#111', fontFamily: "'Poppins', sans-serif" }}>{p.name}</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: '#111', fontFamily: "'DM Sans', sans-serif" }}>{p.name}</div>
                   <div style={{ fontSize: 11, color: '#9ca3af' }}>{p.category}</div>
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#374151', fontFamily: "'Poppins', sans-serif", flexShrink: 0 }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#374151', fontFamily: "'DM Sans', sans-serif", flexShrink: 0 }}>
                   {displayPrice}
                 </div>
               </Link>
@@ -195,10 +195,10 @@ function StackCard({ stack }) {
             </span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E' }}>
+            <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A' }}>
               Bundle price — save {savingsPct(stack)}%
             </span>
-            <span style={{ fontSize: 18, fontWeight: 900, color: '#1B4D3E', fontFamily: "'Poppins', sans-serif" }}>
+            <span style={{ fontSize: 18, fontWeight: 900, color: '#0F2A4A', fontFamily: "'DM Sans', sans-serif" }}>
               ${stack.bundlePrice.toFixed(2)}
             </span>
           </div>
@@ -209,10 +209,10 @@ function StackCard({ stack }) {
           style={{
             width: '100%', padding: '14px 0', background: '#131315', color: '#fff',
             border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700,
-            cursor: 'pointer', fontFamily: "'Poppins', sans-serif",
+            cursor: 'pointer', fontFamily: "'DM Sans', sans-serif",
             letterSpacing: '0.02em', transition: 'background 0.15s ease',
           }}
-          onMouseEnter={e => e.currentTarget.style.background = '#1B4D3E'}
+          onMouseEnter={e => e.currentTarget.style.background = '#0F2A4A'}
           onMouseLeave={e => e.currentTarget.style.background = '#131315'}
         >
           Add Full Stack to Cart — ${stack.bundlePrice.toFixed(2)}
@@ -235,7 +235,7 @@ export default function StacksPage() {
       {/* Page Header */}
       <div style={{ background: '#0a0a0a', padding: '64px 0 56px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
             Curated Protocols
           </div>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -263,7 +263,7 @@ export default function StacksPage() {
       <section className="section" style={{ paddingBottom: 0 }}>
         <div className="container">
           <div style={{ marginBottom: 32 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10, fontFamily: "'Poppins', sans-serif" }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10, fontFamily: "'DM Sans', sans-serif" }}>
               EVO Research Stacks
             </div>
             <h2 style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 800, color: '#111827', letterSpacing: '-0.02em', marginBottom: 8 }}>
@@ -291,7 +291,7 @@ export default function StacksPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                       <div>
                         {p.badge && (
-                          <span style={{ display: 'inline-block', background: meta.accentColor, color: '#fff', fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10, fontFamily: "'Poppins', sans-serif" }}>
+                          <span style={{ display: 'inline-block', background: meta.accentColor, color: '#fff', fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10, fontFamily: "'DM Sans', sans-serif" }}>
                             {p.badge}
                           </span>
                         )}
@@ -311,20 +311,20 @@ export default function StacksPage() {
                             <span style={{ fontSize: 13, color: '#9ca3af', textDecoration: 'line-through' }}>{p.price}</span>
                           </div>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E' }}>Kit price — save {savePct}%</span>
-                            <span style={{ fontSize: 18, fontWeight: 900, color: '#1B4D3E', fontFamily: "'Poppins', sans-serif" }}>{p.salePrice}</span>
+                            <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A' }}>Kit price — save {savePct}%</span>
+                            <span style={{ fontSize: 18, fontWeight: 900, color: '#0F2A4A', fontFamily: "'DM Sans', sans-serif" }}>{p.salePrice}</span>
                           </div>
                         </>
                       ) : (
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E' }}>Research kit price</span>
-                          <span style={{ fontSize: 18, fontWeight: 900, color: '#1B4D3E', fontFamily: "'Poppins', sans-serif" }}>{p.price}</span>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A' }}>Research kit price</span>
+                          <span style={{ fontSize: 18, fontWeight: 900, color: '#0F2A4A', fontFamily: "'DM Sans', sans-serif" }}>{p.price}</span>
                         </div>
                       )}
                     </div>
                     <Link href={`/products/${p.slug}`}
-                      style={{ display: 'block', width: '100%', padding: '14px 0', background: '#131315', color: '#fff', borderRadius: 12, fontSize: 14, fontWeight: 700, textAlign: 'center', fontFamily: "'Poppins', sans-serif", letterSpacing: '0.02em', textDecoration: 'none', transition: 'background 0.15s ease' }}
-                      onMouseEnter={e => e.currentTarget.style.background = '#1B4D3E'}
+                      style={{ display: 'block', width: '100%', padding: '14px 0', background: '#131315', color: '#fff', borderRadius: 12, fontSize: 14, fontWeight: 700, textAlign: 'center', fontFamily: "'DM Sans', sans-serif", letterSpacing: '0.02em', textDecoration: 'none', transition: 'background 0.15s ease' }}
+                      onMouseEnter={e => e.currentTarget.style.background = '#0F2A4A'}
                       onMouseLeave={e => e.currentTarget.style.background = '#131315'}
                     >
                       View Stack Details →
@@ -344,7 +344,7 @@ export default function StacksPage() {
       <section className="section">
         <div className="container">
           <div style={{ marginBottom: 32 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10, fontFamily: "'Poppins', sans-serif" }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10, fontFamily: "'DM Sans', sans-serif" }}>
               Custom Protocols
             </div>
             <h2 style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 800, color: '#111827', letterSpacing: '-0.02em', marginBottom: 8 }}>

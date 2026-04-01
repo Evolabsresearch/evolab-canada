@@ -35,7 +35,7 @@ export default function ContactPage() {
       {/* Header */}
       <div style={{ background: '#0a0a0a', padding: '72px 0 60px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
             Get in Touch
           </div>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                   secondary: 'Response within 24 hours',
                   href: `mailto:${CONTACT.email}`,
                   bg: '#f0fdf4',
-                  accent: '#1B4D3E',
+                  accent: '#0F2A4A',
                 },
                 {
                   icon: '📞',
@@ -196,7 +196,7 @@ export default function ContactPage() {
                         {submitting ? 'Sending…' : 'Send Message →'}
                       </button>
                       <p style={{ fontSize: 12, color: '#9ca3af', textAlign: 'center', marginTop: 12 }}>
-                        Or email us directly at <a href={`mailto:${CONTACT.email}`} style={{ color: '#1B4D3E', fontWeight: 600 }}>{CONTACT.email}</a>
+                        Or email us directly at <a href={`mailto:${CONTACT.email}`} style={{ color: '#0F2A4A', fontWeight: 600 }}>{CONTACT.email}</a>
                       </p>
                     </div>
                   </form>

@@ -29,14 +29,14 @@ function ProductCard({ product }) {
             position: 'absolute', top: 10, left: 10, zIndex: 2,
             background: '#131315', color: '#fff',
             fontSize: 9, fontWeight: 600, padding: '3px 9px', borderRadius: 9999,
-            letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Poppins', sans-serif",
+            letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'DM Sans', sans-serif",
           }}>{product.badge}</span>
         )}
         {isOOS && (
-          <span style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(0,0,0,0.6)', color: '#fff', fontSize: 9, fontWeight: 600, padding: '3px 9px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif" }}>Sold Out</span>
+          <span style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(0,0,0,0.6)', color: '#fff', fontSize: 9, fontWeight: 600, padding: '3px 9px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif" }}>Sold Out</span>
         )}
         {!isOOS && product.lowStock && (
-          <span style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(220,38,38,0.85)', color: '#fff', fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif", letterSpacing: '0.04em' }}>Low Stock</span>
+          <span style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(220,38,38,0.85)', color: '#fff', fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif", letterSpacing: '0.04em' }}>Low Stock</span>
         )}
         <button
           onClick={e => { e.preventDefault(); e.stopPropagation(); toggle(product.slug); }}
@@ -65,15 +65,15 @@ function ProductCard({ product }) {
       </div>
       {/* Info panel */}
       <div style={{ padding: '14px 16px 18px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <span style={{ fontSize: 9, fontWeight: 600, color: '#9ca3af', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4, fontFamily: "'Poppins', sans-serif" }}>{product.category}</span>
+        <span style={{ fontSize: 9, fontWeight: 600, color: '#9ca3af', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4, fontFamily: "'DM Sans', sans-serif" }}>{product.category}</span>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: '#131315', marginBottom: 6, lineHeight: 1.3 }}>{product.name}</h3>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6, marginTop: 'auto' }}>
           <div>
-            <span style={{ fontSize: 15, fontWeight: 700, color: '#131315', fontFamily: "'Poppins', sans-serif" }}>
+            <span style={{ fontSize: 15, fontWeight: 700, color: '#131315', fontFamily: "'DM Sans', sans-serif" }}>
               {isOOS ? 'Sold Out' : product.salePrice || product.price}
             </span>
             {product.salePrice && !isOOS && (
-              <span style={{ fontSize: 11, color: '#9ca3af', textDecoration: 'line-through', marginLeft: 5, fontFamily: "'Poppins', sans-serif" }}>{product.price}</span>
+              <span style={{ fontSize: 11, color: '#9ca3af', textDecoration: 'line-through', marginLeft: 5, fontFamily: "'DM Sans', sans-serif" }}>{product.price}</span>
             )}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -81,8 +81,8 @@ function ProductCard({ product }) {
               onClick={e => { e.preventDefault(); e.stopPropagation(); addToCompare(product.slug); }}
               title={inCompare ? 'Added to compare' : 'Compare'}
               style={{
-                background: inCompare ? '#e8f5e9' : 'rgba(0,0,0,0.04)',
-                border: `1.5px solid ${inCompare ? '#4ade80' : '#e5e7eb'}`,
+                background: inCompare ? '#dbeafe' : 'rgba(0,0,0,0.04)',
+                border: `1.5px solid ${inCompare ? '#06b6d4' : '#e5e7eb'}`,
                 borderRadius: 9999, width: 30, height: 30,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: inCompare ? 'default' : 'pointer', fontSize: 13, lineHeight: 1,
@@ -92,7 +92,7 @@ function ProductCard({ product }) {
               {inCompare ? '✓' : '⇄'}
             </button>
             {!isOOS && (
-              <span style={{ background: '#131315', color: '#fff', fontSize: 11, fontWeight: 500, padding: '7px 14px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif" }}>
+              <span style={{ background: '#131315', color: '#fff', fontSize: 11, fontWeight: 500, padding: '7px 14px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif" }}>
                 View →
               </span>
             )}
@@ -151,7 +151,7 @@ export default function ProductsPage({ products, catalogMode = 'gated', isGuest 
       {/* Page Header */}
       <div style={{ background: '#0a0a0a', padding: '64px 0 56px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#0ea5e9', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
             Research Compounds
           </div>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>

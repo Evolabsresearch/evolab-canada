@@ -7,7 +7,7 @@ function authHeaders() {
 }
 
 const COLLECTION_COLORS = {
-  'evo-stacks': '#1B4D3E',
+  'evo-stacks': '#0F2A4A',
   'growth-series': '#1e40af',
   'longevity-cellular': '#6d28d9',
   'metabolic-glp-research-peptides': '#b45309',
@@ -110,7 +110,7 @@ export default function AdminCategories() {
             <h2 style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#111' }}>Product Categories</h2>
             <button
               onClick={() => { setShowNew(true); setSelected(null); }}
-              style={{ padding: '7px 14px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}
+              style={{ padding: '7px 14px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}
             >
               + New
             </button>
@@ -181,7 +181,7 @@ export default function AdminCategories() {
                     The slug will be auto-generated from the name. You can edit it in WooCommerce after creation.
                   </div>
                   <button onClick={createCategory} disabled={creating || !newName.trim()} style={{
-                    padding: '10px 24px', background: '#1B4D3E', color: '#fff', border: 'none',
+                    padding: '10px 24px', background: '#0F2A4A', color: '#fff', border: 'none',
                     borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: creating ? 'not-allowed' : 'pointer',
                     opacity: creating ? 0.7 : 1,
                   }}>
@@ -227,7 +227,7 @@ export default function AdminCategories() {
 
                   <div style={{ display: 'flex', gap: 10 }}>
                     <button onClick={saveCategory} disabled={saving} style={{
-                      flex: 1, padding: '10px', background: saved ? '#065f46' : '#1B4D3E', color: '#fff',
+                      flex: 1, padding: '10px', background: saved ? '#065f46' : '#0F2A4A', color: '#fff',
                       border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700,
                       cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.7 : 1,
                     }}>

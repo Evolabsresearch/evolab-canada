@@ -15,9 +15,9 @@ function Section({ title, children }) {
 export default function PrivacyPolicy() {
   return (
     <Layout title="Privacy Policy | EVO Labs Research Canada" description="EVO Labs Research Canada privacy policy — how we collect, use, and protect your information under PIPEDA.">
-      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Inter', sans-serif" }}>
         <div style={{ marginBottom: 40 }}>
-          <span style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
+          <span style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
           <h1 style={{ fontSize: 36, fontWeight: 900, color: '#111', margin: '8px 0 12px', letterSpacing: '-0.02em' }}>Privacy Policy</h1>
           <p style={{ fontSize: 14, color: '#6b7280' }}>Last updated: {UPDATED} · EVO Labs Research Canada, Toronto, ON M5X 1C9</p>
           <div style={{ height: 1, background: '#e5e7eb', marginTop: 24 }} />
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
             <li>Opt out of marketing communications</li>
             <li>File a complaint with the Office of the Privacy Commissioner of Canada</li>
           </ul>
-          <p style={{ marginTop: 10 }}>To exercise these rights, email <a href="mailto:support@evolabsresearch.ca" style={{ color: '#1B4D3E' }}>support@evolabsresearch.ca</a>. We will respond within 30 days as required by PIPEDA.</p>
+          <p style={{ marginTop: 10 }}>To exercise these rights, email <a href="mailto:support@evolabsresearch.ca" style={{ color: '#0F2A4A' }}>support@evolabsresearch.ca</a>. We will respond within 30 days as required by PIPEDA.</p>
         </Section>
 
         <Section title="9. Children's Privacy">
@@ -114,10 +114,10 @@ export default function PrivacyPolicy() {
           <p>For privacy-related questions or requests:<br />
             EVO Labs Research Canada<br />
             100 King Street West, Suite 5600, Toronto, ON M5X 1C9<br />
-            Email: <a href="mailto:support@evolabsresearch.ca" style={{ color: '#1B4D3E' }}>support@evolabsresearch.ca</a><br />
+            Email: <a href="mailto:support@evolabsresearch.ca" style={{ color: '#0F2A4A' }}>support@evolabsresearch.ca</a><br />
             Phone: (647) 555-0199
           </p>
-          <p style={{ marginTop: 10 }}>You may also contact the <strong>Office of the Privacy Commissioner of Canada</strong> at <a href="https://www.priv.gc.ca" style={{ color: '#1B4D3E' }} target="_blank" rel="noopener noreferrer">www.priv.gc.ca</a> if you have concerns about our privacy practices.</p>
+          <p style={{ marginTop: 10 }}>You may also contact the <strong>Office of the Privacy Commissioner of Canada</strong> at <a href="https://www.priv.gc.ca" style={{ color: '#0F2A4A' }} target="_blank" rel="noopener noreferrer">www.priv.gc.ca</a> if you have concerns about our privacy practices.</p>
         </Section>
 
         <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: 24, display: 'flex', gap: 20, flexWrap: 'wrap' }}>

@@ -122,7 +122,7 @@ export default function AdminDashboard() {
         <div style={{ background: '#fff', borderRadius: 12, border: '1px solid #e5e7eb', overflow: 'hidden' }}>
           <div style={{ padding: '20px 24px', borderBottom: '1px solid #f3f4f6', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#111' }}>Recent Orders</h2>
-            <Link href="/admin/orders" style={{ fontSize: 13, color: '#1B4D3E', fontWeight: 600, textDecoration: 'none' }}>View all →</Link>
+            <Link href="/admin/orders" style={{ fontSize: 13, color: '#0F2A4A', fontWeight: 600, textDecoration: 'none' }}>View all →</Link>
           </div>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -141,8 +141,8 @@ export default function AdminDashboard() {
                   const sc = STATUS_COLORS[order.status] || STATUS_COLORS.pending;
                   return (
                     <tr key={order.id} style={{ borderTop: '1px solid #f3f4f6' }}>
-                      <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 600, color: '#1B4D3E' }}>
-                        <Link href={`/admin/orders`} style={{ color: '#1B4D3E', textDecoration: 'none' }}>#{order.order_number || order.wc_order_id}</Link>
+                      <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 600, color: '#0F2A4A' }}>
+                        <Link href={`/admin/orders`} style={{ color: '#0F2A4A', textDecoration: 'none' }}>#{order.order_number || order.wc_order_id}</Link>
                       </td>
                       <td style={{ padding: '12px 16px', fontSize: 13, color: '#374151' }}>{order.customer_email}</td>
                       <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 700, color: '#111' }}>{fmtUSD(parseFloat(order.total))}</td>
@@ -173,7 +173,7 @@ export default function AdminDashboard() {
           <div style={{ background: '#fff', borderRadius: 12, border: '1px solid #e5e7eb', overflow: 'hidden' }}>
             <div style={{ padding: '20px 24px', borderBottom: '1px solid #f3f4f6', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h2 style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#111' }}>Top Products</h2>
-              <Link href="/admin/analytics" style={{ fontSize: 13, color: '#1B4D3E', fontWeight: 600, textDecoration: 'none' }}>Analytics →</Link>
+              <Link href="/admin/analytics" style={{ fontSize: 13, color: '#0F2A4A', fontWeight: 600, textDecoration: 'none' }}>Analytics →</Link>
             </div>
             <div style={{ padding: '12px 0' }}>
               {topProducts.length === 0 && (
@@ -227,7 +227,7 @@ export default function AdminDashboard() {
                 fontSize: 13, borderBottom: '1px solid rgba(255,255,255,0.06)',
               }}>
                 <span>{label}</span>
-                {!!badge && <span style={{ background: '#4ade80', color: '#000', fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 9999 }}>{badge}</span>}
+                {!!badge && <span style={{ background: '#06b6d4', color: '#000', fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 9999 }}>{badge}</span>}
               </Link>
             ))}
           </div>
@@ -252,7 +252,7 @@ export default function AdminDashboard() {
               onClick={runSync}
               disabled={syncing}
               style={{
-                width: '100%', padding: '10px', background: syncing ? '#9ca3af' : '#1B4D3E',
+                width: '100%', padding: '10px', background: syncing ? '#9ca3af' : '#0F2A4A',
                 color: '#fff', border: 'none', borderRadius: 8, fontSize: 13,
                 fontWeight: 700, cursor: syncing ? 'default' : 'pointer',
               }}

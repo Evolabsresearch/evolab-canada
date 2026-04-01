@@ -19,8 +19,8 @@ const STEPS = [
 ];
 
 const BENEFITS = [
-  { title: '20% First Order', desc: 'Earn 20% commission on every new customer\'s first research purchase through your referral code.', accent: '#1B4D3E' },
-  { title: '10% Lifetime Recurring', desc: 'Continue earning 10% on all subsequent orders from your referrals — for life. No cap, no expiration.', accent: '#1B4D3E' },
+  { title: '20% First Order', desc: 'Earn 20% commission on every new customer\'s first research purchase through your referral code.', accent: '#0F2A4A' },
+  { title: '10% Lifetime Recurring', desc: 'Continue earning 10% on all subsequent orders from your referrals — for life. No cap, no expiration.', accent: '#0F2A4A' },
   { title: '99%+ Verified Purity', desc: 'Promote with confidence. Every product is third-party tested with publicly accessible COAs for full transparency.', accent: '#14532D' },
   { title: '30-Day Cookie Window', desc: 'Your referrals are tracked for 30 days. If they purchase within that window, you earn the commission.', accent: '#1E3A8A' },
   { title: 'RUO-Compliant Marketing', desc: 'We provide approved marketing materials that maintain strict Research Use Only compliance standards.', accent: '#4C1D95' },
@@ -103,7 +103,7 @@ function PartnerApplicationForm() {
 
   const labelStyle = {
     fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6, display: 'block',
-    fontFamily: "'Poppins', sans-serif",
+    fontFamily: "'DM Sans', sans-serif",
   };
 
   return (
@@ -112,14 +112,14 @@ function PartnerApplicationForm() {
         <div>
           <label style={labelStyle}>Full Name *</label>
           <input name="name" value={form.name} onChange={handleChange} required style={inputStyle} placeholder="Dr. Jane Smith"
-            onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+            onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
             onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
           />
         </div>
         <div>
           <label style={labelStyle}>Email Address *</label>
           <input name="email" type="email" value={form.email} onChange={handleChange} required style={inputStyle} placeholder="jane@university.edu"
-            onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+            onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
             onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
           />
         </div>
@@ -127,7 +127,7 @@ function PartnerApplicationForm() {
       <div>
         <label style={labelStyle}>Phone Number *</label>
         <input name="phone" type="tel" value={form.phone} onChange={handleChange} required style={inputStyle} placeholder="(555) 123-4567"
-          onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+          onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
           onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
         />
       </div>
@@ -135,14 +135,14 @@ function PartnerApplicationForm() {
         <div>
           <label style={labelStyle}>Organization / Institution *</label>
           <input name="organization" value={form.organization} onChange={handleChange} required style={inputStyle} placeholder="University of Toronto, Research Lab Inc."
-            onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+            onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
             onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
           />
         </div>
         <div>
           <label style={labelStyle}>Your Role *</label>
           <select name="role" value={form.role} onChange={handleChange} required style={{ ...inputStyle, cursor: 'pointer' }}
-            onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+            onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
             onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
           >
             <option value="">Select your role...</option>
@@ -160,18 +160,18 @@ function PartnerApplicationForm() {
       <div>
         <label style={labelStyle}>Website or Social Media URL *</label>
         <input name="website" value={form.website} onChange={handleChange} required style={inputStyle} placeholder="https://yourlab.edu or @handle"
-          onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+          onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
           onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
         />
       </div>
       {/* Shipping Address */}
       <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: 20, marginTop: 4 }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: '#111827', marginBottom: 14, fontFamily: "'Poppins', sans-serif" }}>Shipping Address</div>
+        <div style={{ fontSize: 13, fontWeight: 700, color: '#111827', marginBottom: 14, fontFamily: "'DM Sans', sans-serif" }}>Shipping Address</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           <div>
             <label style={labelStyle}>Street Address *</label>
             <input name="address" value={form.address} onChange={handleChange} required style={inputStyle} placeholder="123 Research Blvd, Suite 100"
-              onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+              onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
               onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
             />
           </div>
@@ -179,21 +179,21 @@ function PartnerApplicationForm() {
             <div>
               <label style={labelStyle}>City *</label>
               <input name="city" value={form.city} onChange={handleChange} required style={inputStyle} placeholder="Toronto"
-                onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+                onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
                 onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
             <div>
               <label style={labelStyle}>State *</label>
               <input name="state" value={form.state} onChange={handleChange} required style={inputStyle} placeholder="FL"
-                onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+                onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
                 onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
             <div>
               <label style={labelStyle}>ZIP *</label>
               <input name="zip" value={form.zip} onChange={handleChange} required style={inputStyle} placeholder="33614"
-                onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+                onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
                 onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
@@ -204,7 +204,7 @@ function PartnerApplicationForm() {
         <div>
           <label style={labelStyle}>Audience Size (approx.)</label>
           <select name="audience" value={form.audience} onChange={handleChange} style={{ ...inputStyle, cursor: 'pointer' }}
-            onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+            onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
             onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
           >
             <option value="">Select range...</option>
@@ -218,7 +218,7 @@ function PartnerApplicationForm() {
         <div>
           <label style={labelStyle}>Primary Channels</label>
           <input name="channels" value={form.channels} onChange={handleChange} style={inputStyle} placeholder="YouTube, Twitter, Blog, Lab Network"
-            onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+            onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
             onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
           />
         </div>
@@ -226,12 +226,12 @@ function PartnerApplicationForm() {
       <div>
         <label style={labelStyle}>Why do you want to partner with EVO Labs? *</label>
         <textarea name="reason" value={form.reason} onChange={handleChange} required rows={4} style={{ ...inputStyle, resize: 'vertical', minHeight: 100 }} placeholder="Tell us about your research focus, audience, and how you'd promote EVO Labs products in an RUO-compliant manner..."
-          onFocus={e => { e.target.style.borderColor = '#1B4D3E'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
+          onFocus={e => { e.target.style.borderColor = '#0F2A4A'; e.target.style.boxShadow = '0 0 0 3px rgba(27,77,62,0.08)'; }}
           onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none'; }}
         />
       </div>
       <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer' }}>
-        <input type="checkbox" name="agree" checked={form.agree} onChange={handleChange} required style={{ marginTop: 3, width: 18, height: 18, accentColor: '#1B4D3E' }} />
+        <input type="checkbox" name="agree" checked={form.agree} onChange={handleChange} required style={{ marginTop: 3, width: 18, height: 18, accentColor: '#0F2A4A' }} />
         <span style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6 }}>
           I confirm that I will adhere to EVO Labs' Research Use Only (RUO) compliance standards. I understand that all promotional content must include required disclaimers and must never suggest human consumption, medical use, or provide dosing guidance. Violations will result in immediate account termination. *
         </span>
@@ -259,12 +259,12 @@ export default function PartnersPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 64, alignItems: 'center' }} className="hero-grid">
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: 9999, padding: '6px 16px', marginBottom: 24 }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80' }} />
-                <span style={{ fontSize: 12, fontWeight: 600, color: '#4ade80', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Poppins', sans-serif" }}>Partner Program</span>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4' }} />
+                <span style={{ fontSize: 12, fontWeight: 600, color: '#06b6d4', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'DM Sans', sans-serif" }}>Partner Program</span>
               </div>
               <h1 style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 20 }}>
                 Partner with<br />
-                <span style={{ color: '#4ade80' }}>Premium Research</span><br />
+                <span style={{ color: '#06b6d4' }}>Premium Research</span><br />
                 Peptides
               </h1>
               <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: 460, marginBottom: 36 }}>
@@ -288,7 +288,7 @@ export default function PartnersPage() {
                 ].map(s => (
                   <div key={s.label} style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 28, fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{s.value}</div>
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, fontFamily: "'Poppins', sans-serif", textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4 }}>{s.label}</div>
+                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, fontFamily: "'DM Sans', sans-serif", textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4 }}>{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -296,7 +296,7 @@ export default function PartnersPage() {
             {/* Right side — earnings preview */}
             <div className="hide-mobile" style={{ display: 'flex', justifyContent: 'center' }}>
               <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 24, padding: 32, maxWidth: 360, width: '100%' }}>
-                <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 20, fontFamily: "'Poppins', sans-serif" }}>Earnings Example</div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 20, fontFamily: "'DM Sans', sans-serif" }}>Earnings Example</div>
                 {[
                   { label: '10 new referrals/mo', calc: '10 × CAD$250 avg × 20%', result: 'CAD$500' },
                   { label: '40 recurring orders', calc: '40 × CAD$150 avg × 10%', result: 'CAD$600' },
@@ -304,16 +304,16 @@ export default function PartnersPage() {
                   <div key={r.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                     <div>
                       <div style={{ fontSize: 14, fontWeight: 600, color: '#fff' }}>{r.label}</div>
-                      <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', fontFamily: "'Poppins', sans-serif" }}>{r.calc}</div>
+                      <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', fontFamily: "'DM Sans', sans-serif" }}>{r.calc}</div>
                     </div>
-                    <span style={{ fontSize: 18, fontWeight: 800, color: '#4ade80', fontFamily: "'Poppins', sans-serif" }}>{r.result}</span>
+                    <span style={{ fontSize: 18, fontWeight: 800, color: '#06b6d4', fontFamily: "'DM Sans', sans-serif" }}>{r.result}</span>
                   </div>
                 ))}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 20, marginTop: 8 }}>
                   <span style={{ fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.6)' }}>Estimated Monthly</span>
                   <span style={{ fontSize: 28, fontWeight: 900, color: '#fff' }}>CAD$1,100</span>
                 </div>
-                <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', marginTop: 16, lineHeight: 1.5, fontFamily: "'Poppins', sans-serif" }}>
+                <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', marginTop: 16, lineHeight: 1.5, fontFamily: "'DM Sans', sans-serif" }}>
                   Example only. Actual earnings vary based on referral volume, order size, and retention.
                 </p>
               </div>
@@ -341,7 +341,7 @@ export default function PartnersPage() {
       <section id="how-it-works" className="section" style={{ background: '#fff' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'Poppins', sans-serif" }}>How It Works</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'DM Sans', sans-serif" }}>How It Works</span>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>Four Steps to Earning</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }} className="steps-grid">
@@ -355,10 +355,10 @@ export default function PartnersPage() {
                 onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 48, height: 48, borderRadius: 14, background: '#E8F5EE', color: '#1B4D3E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 14, background: '#E8F5EE', color: '#0F2A4A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {s.icon}
                   </div>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', fontFamily: "'Poppins', sans-serif" }}>{s.num}</span>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', fontFamily: "'DM Sans', sans-serif" }}>{s.num}</span>
                 </div>
                 <h3 style={{ fontSize: 18, fontWeight: 800, color: '#111827', marginBottom: 8 }}>{s.title}</h3>
                 <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.6 }}>{s.desc}</p>
@@ -372,7 +372,7 @@ export default function PartnersPage() {
       <section className="section" style={{ background: '#f8fafc' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'Poppins', sans-serif" }}>Partner Benefits</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'DM Sans', sans-serif" }}>Partner Benefits</span>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>Why Research Partners Choose EVO Labs</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="benefits-grid">
@@ -398,7 +398,7 @@ export default function PartnersPage() {
       <section className="section" style={{ background: '#fff' }}>
         <div className="container" style={{ maxWidth: 800 }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'Poppins', sans-serif" }}>Requirements</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'DM Sans', sans-serif" }}>Requirements</span>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 12 }}>Partner Eligibility Standards</h2>
             <p style={{ fontSize: 15, color: '#6b7280', maxWidth: 500, margin: '0 auto' }}>
               We maintain high standards to protect our partners, customers, and the integrity of research commerce.
@@ -421,7 +421,7 @@ export default function PartnersPage() {
       <section id="apply" className="section" style={{ background: '#f8fafc' }}>
         <div className="container" style={{ maxWidth: 720 }}>
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'Poppins', sans-serif" }}>Apply</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'DM Sans', sans-serif" }}>Apply</span>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 12 }}>Partner Application</h2>
             <p style={{ fontSize: 15, color: '#6b7280' }}>
               Applications are reviewed within 2–3 business days. Approval is not guaranteed.
@@ -437,7 +437,7 @@ export default function PartnersPage() {
       <section className="section" style={{ background: '#fff' }}>
         <div className="container" style={{ maxWidth: 720 }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'Poppins', sans-serif" }}>FAQ</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, display: 'block', fontFamily: "'DM Sans', sans-serif" }}>FAQ</span>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>Partner Program Questions</h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
@@ -456,7 +456,7 @@ export default function PartnersPage() {
                     display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                     transition: 'transform 0.2s, background 0.2s',
                     transform: openFaq === i ? 'rotate(45deg)' : 'none',
-                    ...(openFaq === i ? { background: '#1B4D3E', color: '#fff' } : { color: '#6b7280' }),
+                    ...(openFaq === i ? { background: '#0F2A4A', color: '#fff' } : { color: '#6b7280' }),
                   }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                   </span>

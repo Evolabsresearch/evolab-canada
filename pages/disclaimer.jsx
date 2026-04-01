@@ -4,14 +4,14 @@ import Link from 'next/link';
 export default function Disclaimer() {
   return (
     <Layout title="Disclaimer | EVO Labs Research Canada" description="EVO Labs Research Canada legal disclaimer — research use only, not for human consumption.">
-      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Inter', sans-serif" }}>
         <div style={{ marginBottom: 40 }}>
-          <span style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
+          <span style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
           <h1 style={{ fontSize: 36, fontWeight: 900, color: '#111', margin: '8px 0 12px', letterSpacing: '-0.02em' }}>Disclaimer</h1>
           <div style={{ height: 1, background: '#e5e7eb', marginTop: 24 }} />
         </div>
 
-        <div style={{ background: '#1B4D3E', color: '#fff', borderRadius: 12, padding: '24px 28px', marginBottom: 36, fontSize: 16, lineHeight: 1.7 }}>
+        <div style={{ background: '#0F2A4A', color: '#fff', borderRadius: 12, padding: '24px 28px', marginBottom: 36, fontSize: 16, lineHeight: 1.7 }}>
           <strong style={{ display: 'block', fontSize: 18, marginBottom: 8 }}>⚠ Research Use Only — Not for Human Consumption</strong>
           All products sold by EVO Labs Research Canada are intended exclusively for in vitro (test tube/cell culture) and in vivo (animal) research by qualified scientific professionals. These products are NOT approved by Health Canada for use in humans or as dietary supplements.
         </div>

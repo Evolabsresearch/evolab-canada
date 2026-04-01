@@ -71,7 +71,7 @@ export default function CompareDrawer() {
         borderRadius: '24px 24px 0 0',
         boxShadow: '0 -8px 40px rgba(0,0,0,0.18)',
         maxHeight: '85vh', overflowY: 'auto',
-        fontFamily: "'Poppins', sans-serif",
+        fontFamily: "'DM Sans', sans-serif",
       }}>
         {/* Handle bar */}
         <div style={{ display: 'flex', justifyContent: 'center', padding: '12px 0 0' }}>
@@ -196,10 +196,10 @@ export default function CompareDrawer() {
                       onClick={() => { addItem(p, { dosage: '5mg', bundleCount: 1 }); }}
                       style={{
                         display: 'block', width: '100%', padding: '10px 0',
-                        background: '#1B4D3E', color: '#fff', border: 'none',
+                        background: '#0F2A4A', color: '#fff', border: 'none',
                         borderRadius: 10, fontSize: 12, fontWeight: 700,
                         cursor: 'pointer', marginBottom: 6,
-                        fontFamily: "'Poppins', sans-serif",
+                        fontFamily: "'DM Sans', sans-serif",
                       }}
                     >
                       + Add to Cart

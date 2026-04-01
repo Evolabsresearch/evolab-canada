@@ -8,7 +8,7 @@ export default function VerifyEmailPage() {
       <div style={{
         minHeight: '100vh',
         background: '#0f0f0f',
-        fontFamily: "'Poppins', sans-serif",
+        fontFamily: "'DM Sans', sans-serif",
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -24,8 +24,8 @@ export default function VerifyEmailPage() {
           {/* Icon */}
           <div style={{
             width: 72, height: 72, borderRadius: 20,
-            background: 'rgba(74,222,128,0.08)',
-            border: '1px solid rgba(74,222,128,0.2)',
+            background: 'rgba(6,182,212,0.08)',
+            border: '1px solid rgba(6,182,212,0.2)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: 32, margin: '0 auto 24px',
           }}>
@@ -54,7 +54,7 @@ export default function VerifyEmailPage() {
               'You can close this tab and use the link from any device.',
             ].map((tip, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: i < 2 ? 10 : 0 }}>
-                <span style={{ fontSize: 12, color: '#4ade80', flexShrink: 0 }}>·</span>
+                <span style={{ fontSize: 12, color: '#06b6d4', flexShrink: 0 }}>·</span>
                 <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', lineHeight: 1.5 }}>{tip}</span>
               </div>
             ))}

@@ -151,18 +151,18 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                 {/* Volume discount nudge banner */}
                 {cart.some(item => (item.qty || 1) === 1) && (
                   <div style={{
-                    background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
-                    border: '1.5px solid #bbf7d0',
+                    background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+                    border: '1.5px solid #bfdbfe',
                     borderRadius: 12, padding: '12px 16px',
                     marginBottom: 20,
                     display: 'flex', alignItems: 'center', gap: 10,
                   }}>
                     <span style={{ fontSize: 20 }}>🏷️</span>
                     <div>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: '#15803d' }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#1e3a8a' }}>
                         Multi-Vial Discount — Save up to 10%
                       </div>
-                      <div style={{ fontSize: 12, color: '#166534', marginTop: 2 }}>
+                      <div style={{ fontSize: 12, color: '#1e40af', marginTop: 2 }}>
                         Order 2 vials of any product: <strong>5% off</strong> · Order 3+: <strong>10% off</strong>
                       </div>
                     </div>
@@ -176,7 +176,7 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                   borderBottom: '1px solid #e5e7eb',
                   fontSize: 11, fontWeight: 700, color: '#9ca3af',
                   textTransform: 'uppercase', letterSpacing: '0.06em',
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                 }} className="cart-header-row">
                   <span>Product</span>
                   <span style={{ textAlign: 'center' }}>Quantity</span>
@@ -213,7 +213,7 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                           </Link>
                           <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 2 }}>{item.category}</div>
                           {item.dosage && (
-                            <div style={{ fontSize: 11, color: '#6b7280', marginTop: 3, fontFamily: "'Poppins', sans-serif" }}>
+                            <div style={{ fontSize: 11, color: '#6b7280', marginTop: 3, fontFamily: "'DM Sans', sans-serif" }}>
                               Size: {item.dosage}
                             </div>
                           )}
@@ -251,7 +251,7 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                       </div>
 
                       {/* Line total */}
-                      <div style={{ textAlign: 'right', fontSize: 15, fontWeight: 700, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+                      <div style={{ textAlign: 'right', fontSize: 15, fontWeight: 700, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
                         ${lineTotal.toFixed(2)}
                       </div>
 
@@ -302,22 +302,22 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                 {/* Volume discount line */}
                 {volumeDiscount > 0 && (
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12, alignItems: 'center' }}>
-                    <span style={{ fontSize: 13, color: '#16a34a', display: 'flex', alignItems: 'center', gap: 5 }}>
+                    <span style={{ fontSize: 13, color: '#0ea5e9', display: 'flex', alignItems: 'center', gap: 5 }}>
                       <span style={{ fontSize: 15 }}>🏷️</span> Multi-vial savings
                     </span>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#16a34a' }}>−${volumeDiscount.toFixed(2)}</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: '#0ea5e9' }}>−${volumeDiscount.toFixed(2)}</span>
                   </div>
                 )}
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
                   <span style={{ fontSize: 14, color: '#6b7280' }}>Shipping</span>
-                  <span style={{ fontSize: 14, fontWeight: 600, color: shipping === 0 ? '#16a34a' : '#0a0a0a' }}>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: shipping === 0 ? '#0ea5e9' : '#0a0a0a' }}>
                     {shipping === 0 ? 'FREE' : '$9.99'}
                   </span>
                 </div>
 
                 {subtotalAfterVolume < 250 && (
-                  <div style={{ background: '#f0fdf4', borderRadius: 10, padding: '10px 14px', marginBottom: 16, fontSize: 12, color: '#166534', fontWeight: 500 }}>
+                  <div style={{ background: '#eff6ff', borderRadius: 10, padding: '10px 14px', marginBottom: 16, fontSize: 12, color: '#1e40af', fontWeight: 500 }}>
                     Add ${(250 - subtotalAfterVolume).toFixed(2)} more for <strong>free shipping</strong>!
                   </div>
                 )}
@@ -325,12 +325,12 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                 {/* Promo code */}
                 <div style={{ marginBottom: 16 }}>
                   {appliedCode ? (
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#f0fdf4', borderRadius: 10, padding: '10px 14px', border: '1px solid #bbf7d0' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#eff6ff', borderRadius: 10, padding: '10px 14px', border: '1px solid #bfdbfe' }}>
                       <div>
-                        <div style={{ fontSize: 12, fontWeight: 700, color: '#166534' }}>
+                        <div style={{ fontSize: 12, fontWeight: 700, color: '#1e40af' }}>
                           Code: <span style={{ fontFamily: 'monospace' }}>{appliedCode.code}</span> — {appliedCode.label}
                         </div>
-                        <div style={{ fontSize: 11, color: '#4ade80' }}>−${discountAmt.toFixed(2)} applied</div>
+                        <div style={{ fontSize: 11, color: '#06b6d4' }}>−${discountAmt.toFixed(2)} applied</div>
                       </div>
                       <button onClick={handleRemovePromo} style={{ background: 'none', border: 'none', fontSize: 12, color: '#6b7280', cursor: 'pointer', textDecoration: 'underline' }}>Remove</button>
                     </div>
@@ -347,14 +347,14 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                             border: `1.5px solid ${promoError ? '#fca5a5' : '#e5e7eb'}`,
                             outline: 'none', fontFamily: 'monospace', letterSpacing: '0.05em',
                           }}
-                          onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+                          onFocus={e => e.target.style.borderColor = '#0F2A4A'}
                           onBlur={e => e.target.style.borderColor = promoError ? '#fca5a5' : '#e5e7eb'}
                         />
                         <button
                           onClick={handleApplyPromo}
                           disabled={promoLoading || !promoInput.trim()}
                           style={{
-                            background: promoInput.trim() ? '#1B4D3E' : '#e5e7eb',
+                            background: promoInput.trim() ? '#0F2A4A' : '#e5e7eb',
                             color: promoInput.trim() ? '#fff' : '#9ca3af',
                             border: 'none', borderRadius: 8, padding: '9px 14px',
                             fontSize: 12, fontWeight: 700, cursor: promoInput.trim() ? 'pointer' : 'default',
@@ -373,14 +373,14 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
 
                 {appliedCode && (
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontSize: 14, color: '#16a34a' }}>Discount ({appliedCode.label})</span>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: '#16a34a' }}>−${discountAmt.toFixed(2)}</span>
+                    <span style={{ fontSize: 14, color: '#0ea5e9' }}>Discount ({appliedCode.label})</span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: '#0ea5e9' }}>−${discountAmt.toFixed(2)}</span>
                   </div>
                 )}
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 24 }}>
                   <span style={{ fontSize: 18, fontWeight: 800, color: '#0a0a0a' }}>Total</span>
-                  <span style={{ fontSize: 18, fontWeight: 800, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+                  <span style={{ fontSize: 18, fontWeight: 800, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
                     ${finalTotal.toFixed(2)}
                   </span>
                 </div>
@@ -403,14 +403,14 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                 <Link
                   href={isGuest && catalogMode === 'open_catalog' ? '/account/login?redirect=/checkout' : '/checkout'}
                   style={{
-                    display: 'block', width: '100%', background: '#1B4D3E', color: '#fff',
+                    display: 'block', width: '100%', background: '#0F2A4A', color: '#fff',
                     padding: '16px 24px', borderRadius: 12, fontSize: 15,
-                    fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                     textAlign: 'center', textDecoration: 'none',
                     transition: 'background 0.2s',
                   }}
-                  onMouseEnter={e => e.currentTarget.style.background = '#163d31'}
-                  onMouseLeave={e => e.currentTarget.style.background = '#1B4D3E'}
+                  onMouseEnter={e => e.currentTarget.style.background = '#0a1f3d'}
+                  onMouseLeave={e => e.currentTarget.style.background = '#0F2A4A'}
                 >
                   Proceed to Checkout &rarr;
                 </Link>
@@ -463,16 +463,16 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                       }}>
                         <img src={p.image} alt={p.name} style={{ width: '75%', height: '75%', objectFit: 'contain' }} />
                       </div>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: '#111', marginBottom: 4, lineHeight: 1.3, fontFamily: "'Poppins', sans-serif" }}>{p.name}</div>
-                      <div style={{ fontSize: 13, fontWeight: 800, color: '#1B4D3E', marginBottom: 12, fontFamily: "'Poppins', sans-serif" }}>{displayPrice}</div>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: '#111', marginBottom: 4, lineHeight: 1.3, fontFamily: "'DM Sans', sans-serif" }}>{p.name}</div>
+                      <div style={{ fontSize: 13, fontWeight: 800, color: '#0F2A4A', marginBottom: 12, fontFamily: "'DM Sans', sans-serif" }}>{displayPrice}</div>
                     </Link>
                     <button
                       onClick={() => addItem(p, { dosage: '5mg', bundleCount: 1 })}
                       style={{
-                        width: '100%', padding: '8px 0', background: '#f0fdf4',
-                        border: '1px solid #bbf7d0', borderRadius: 8,
-                        fontSize: 12, fontWeight: 700, color: '#1B4D3E', cursor: 'pointer',
-                        fontFamily: "'Poppins', sans-serif",
+                        width: '100%', padding: '8px 0', background: '#eff6ff',
+                        border: '1px solid #bfdbfe', borderRadius: 8,
+                        fontSize: 12, fontWeight: 700, color: '#0F2A4A', cursor: 'pointer',
+                        fontFamily: "'DM Sans', sans-serif",
                       }}
                     >
                       + Add to Cart
@@ -514,8 +514,8 @@ export default function CartPage({ catalogMode = 'gated', isGuest = false }) {
                       }}>
                         <img src={p.image} alt={p.name} style={{ width: '75%', height: '75%', objectFit: 'contain' }} />
                       </div>
-                      <div style={{ fontSize: 11, fontWeight: 700, color: '#111', marginBottom: 3, lineHeight: 1.3, fontFamily: "'Poppins', sans-serif" }}>{p.name}</div>
-                      <div style={{ fontSize: 13, fontWeight: 800, color: '#1B4D3E', fontFamily: "'Poppins', sans-serif" }}>{displayPrice}</div>
+                      <div style={{ fontSize: 11, fontWeight: 700, color: '#111', marginBottom: 3, lineHeight: 1.3, fontFamily: "'DM Sans', sans-serif" }}>{p.name}</div>
+                      <div style={{ fontSize: 13, fontWeight: 800, color: '#0F2A4A', fontFamily: "'DM Sans', sans-serif" }}>{displayPrice}</div>
                     </div>
                   </Link>
                 );

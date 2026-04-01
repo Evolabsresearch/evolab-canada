@@ -9,7 +9,7 @@ const CATEGORIES_RESEARCH = [
     label: 'Tissue Repair & Healing',
     icon: '🩹',
     color: '#E8F5EE',
-    accent: '#16a34a',
+    accent: '#0ea5e9',
     compounds: ['BPC-157', 'TB-500', 'BPC 157 + TB 500', 'GHK-CU', 'KPV', 'Thymosin Alpha', 'SNAP-8'],
     summary: 'Peptides studied for accelerated tissue regeneration, wound healing, and anti-inflammatory effects.',
     mechanism: 'These peptides interact with growth factor receptors and cytokine pathways to upregulate collagen synthesis, angiogenesis, and cellular migration at injury sites.',
@@ -170,12 +170,12 @@ export default function ResearchPage() {
       {/* ── PAGE HERO ─────────────────────────────────────────── */}
       <section style={{ background: '#0a0a0a', padding: '80px 0 72px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16, fontFamily: "'Poppins', sans-serif" }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16, fontFamily: "'DM Sans', sans-serif" }}>
             Science &amp; Research
           </div>
           <h1 style={{ fontSize: 'clamp(36px, 5vw, 60px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1.05, marginBottom: 20 }}>
             The Science Behind<br />
-            <span style={{ color: '#4ade80' }}>Every Compound</span>
+            <span style={{ color: '#06b6d4' }}>Every Compound</span>
           </h1>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', maxWidth: 560, lineHeight: 1.8, marginBottom: 44 }}>
             Every peptide we carry has a documented research history. Explore mechanism of action, peer-reviewed study summaries, and our step-by-step testing methodology — before you buy.
@@ -203,8 +203,8 @@ export default function ResearchPage() {
               { val: '6-Step', label: 'Independent Testing Protocol' },
             ].map((s, i) => (
               <div key={i} style={{ flex: '0 0 auto', padding: '0 36px', borderRight: i < 4 ? '1px solid #f0f0f0' : 'none', textAlign: 'center' }}>
-                <div style={{ fontSize: 24, fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', fontFamily: "'Poppins', sans-serif" }}>{s.val}</div>
-                <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 4, whiteSpace: 'nowrap', fontFamily: "'Poppins', sans-serif" }}>{s.label}</div>
+                <div style={{ fontSize: 24, fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', fontFamily: "'DM Sans', sans-serif" }}>{s.val}</div>
+                <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 4, whiteSpace: 'nowrap', fontFamily: "'DM Sans', sans-serif" }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -216,7 +216,7 @@ export default function ResearchPage() {
         <div className="container">
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, fontFamily: "'Poppins', sans-serif" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, fontFamily: "'DM Sans', sans-serif" }}>
               Research Profiles
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -241,7 +241,7 @@ export default function ResearchPage() {
                   style={{
                     width: '100%', padding: '11px 16px 11px 40px',
                     border: '1.5px solid #e5e7eb', borderRadius: 9999,
-                    fontSize: 14, fontFamily: "'Poppins', sans-serif",
+                    fontSize: 14, fontFamily: "'DM Sans', sans-serif",
                     outline: 'none', background: '#f9fafb', color: '#0a0a0a',
                     boxSizing: 'border-box',
                   }}
@@ -252,7 +252,7 @@ export default function ResearchPage() {
                 onChange={e => setFilterCat(e.target.value)}
                 style={{
                   padding: '11px 20px', border: '1.5px solid #e5e7eb', borderRadius: 9999,
-                  fontSize: 14, fontFamily: "'Poppins', sans-serif",
+                  fontSize: 14, fontFamily: "'DM Sans', sans-serif",
                   background: '#f9fafb', color: '#374151', outline: 'none', cursor: 'pointer',
                 }}
               >
@@ -314,10 +314,10 @@ export default function ResearchPage() {
                         padding: '3px 10px',
                         fontSize: 10,
                         fontWeight: 700,
-                        color: cat?.accentColor || '#1B4D3E',
+                        color: cat?.accentColor || '#0F2A4A',
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        fontFamily: "'Poppins', sans-serif",
+                        fontFamily: "'DM Sans', sans-serif",
                       }}>
                         {p.category.split(' ')[0]}
                       </div>
@@ -342,7 +342,7 @@ export default function ResearchPage() {
                             alignItems: 'center',
                             flex: '1 1 0',
                           }}>
-                            <span style={{ fontSize: 13, fontWeight: 900, color: cat?.accentColor || '#1B4D3E', lineHeight: 1.1 }}>{s.val}</span>
+                            <span style={{ fontSize: 13, fontWeight: 900, color: cat?.accentColor || '#0F2A4A', lineHeight: 1.1 }}>{s.val}</span>
                             <span style={{ fontSize: 9, color: '#9ca3af', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', lineHeight: 1.3, textAlign: 'center', maxWidth: 90 }}>{s.label}</span>
                           </div>
                         ))}
@@ -355,13 +355,13 @@ export default function ResearchPage() {
                             display: 'block',
                             textAlign: 'center',
                             padding: '12px 20px',
-                            background: cat?.accentColor || '#1B4D3E',
+                            background: cat?.accentColor || '#0F2A4A',
                             color: '#fff',
                             borderRadius: 12,
                             fontSize: 13,
                             fontWeight: 700,
                             textDecoration: 'none',
-                            fontFamily: "'Poppins', sans-serif",
+                            fontFamily: "'DM Sans', sans-serif",
                             letterSpacing: '0.01em',
                             transition: 'opacity 0.15s',
                           }}
@@ -384,7 +384,7 @@ export default function ResearchPage() {
       <section className="section" style={{ background: '#fafafa', borderTop: '1px solid #f0f0f0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, fontFamily: "'Poppins', sans-serif" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, fontFamily: "'DM Sans', sans-serif" }}>
               Research Library
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -404,7 +404,7 @@ export default function ResearchPage() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: 8,
                   padding: '10px 20px', borderRadius: 9999, fontSize: 14, fontWeight: 500,
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   background: activeCategory === cat.id ? '#131315' : cat.color,
                   color: activeCategory === cat.id ? '#fff' : '#374151',
                   border: 'none', cursor: 'pointer',
@@ -428,13 +428,13 @@ export default function ResearchPage() {
                   <h3 style={{ fontSize: 22, fontWeight: 800, color: '#0a0a0a', marginBottom: 12, lineHeight: 1.2 }}>{activeData.label}</h3>
                   <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 20 }}>{activeData.summary}</p>
                   <div style={{ background: 'rgba(255,255,255,0.7)', borderRadius: 16, padding: '16px 20px' }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10, fontFamily: "'Poppins', sans-serif" }}>Mechanism of Action</div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10, fontFamily: "'DM Sans', sans-serif" }}>Mechanism of Action</div>
                     <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{activeData.mechanism}</p>
                   </div>
                 </div>
 
                 <div>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 14, fontFamily: "'Poppins', sans-serif" }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 14, fontFamily: "'DM Sans', sans-serif" }}>
                     Compounds in This Category
                   </div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -451,7 +451,7 @@ export default function ResearchPage() {
                             textDecoration: 'none',
                             border: '1px solid #e5e7eb',
                             transition: 'all 0.2s',
-                            fontFamily: "'Poppins', sans-serif",
+                            fontFamily: "'DM Sans', sans-serif",
                             display: 'inline-block',
                           }}
                           onMouseEnter={e => { e.currentTarget.style.background = '#131315'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#131315'; }}
@@ -460,7 +460,7 @@ export default function ResearchPage() {
                           {name}
                         </Link>
                       ) : (
-                        <span key={name} style={{ padding: '6px 14px', borderRadius: 9999, background: '#f3f4f6', color: '#9ca3af', fontSize: 13, border: '1px solid #e5e7eb', fontFamily: "'Poppins', sans-serif" }}>{name}</span>
+                        <span key={name} style={{ padding: '6px 14px', borderRadius: 9999, background: '#f3f4f6', color: '#9ca3af', fontSize: 13, border: '1px solid #e5e7eb', fontFamily: "'DM Sans', sans-serif" }}>{name}</span>
                       );
                     })}
                   </div>
@@ -470,7 +470,7 @@ export default function ResearchPage() {
               {/* Right: study cards */}
               <div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{ background: '#f0fdf4', border: '1px solid #dcfce7', color: '#166534', padding: '3px 10px', borderRadius: 9999, fontSize: 11, fontFamily: "'Poppins', sans-serif" }}>
+                  <span style={{ background: '#eff6ff', border: '1px solid #dcfce7', color: '#166534', padding: '3px 10px', borderRadius: 9999, fontSize: 11, fontFamily: "'DM Sans', sans-serif" }}>
                     ✓ Peer-Reviewed
                   </span>
                   Featured Study Summaries
@@ -489,11 +489,11 @@ export default function ResearchPage() {
                     >
                       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12, marginBottom: 12 }}>
                         <h4 style={{ fontSize: 15, fontWeight: 700, color: '#0a0a0a', lineHeight: 1.4 }}>{study.title}</h4>
-                        <span style={{ flexShrink: 0, background: activeData.color, color: activeData.accent, fontSize: 11, fontWeight: 600, padding: '3px 10px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif" }}>
+                        <span style={{ flexShrink: 0, background: activeData.color, color: activeData.accent, fontSize: 11, fontWeight: 600, padding: '3px 10px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif" }}>
                           {study.year}
                         </span>
                       </div>
-                      <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 12, fontStyle: 'italic', fontFamily: "'Poppins', sans-serif" }}>
+                      <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 12, fontStyle: 'italic', fontFamily: "'DM Sans', sans-serif" }}>
                         Published in: <em>{study.journal}</em>
                       </div>
                       <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.8, borderLeft: `3px solid ${activeData.accent}`, paddingLeft: 14 }}>
@@ -519,7 +519,7 @@ export default function ResearchPage() {
       <section className="section" style={{ background: '#0a0a0a' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14, fontFamily: "'Poppins', sans-serif" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14, fontFamily: "'DM Sans', sans-serif" }}>
               Our Process
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -539,12 +539,12 @@ export default function ResearchPage() {
                 padding: '28px 24px',
                 transition: 'border-color 0.2s',
               }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = '#4ade80'}
+                onMouseEnter={e => e.currentTarget.style.borderColor = '#06b6d4'}
                 onMouseLeave={e => e.currentTarget.style.borderColor = '#1f1f1f'}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
                   <span style={{ fontSize: 24 }}>{step.icon}</span>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', fontFamily: "'Poppins', sans-serif", letterSpacing: '0.05em' }}>STEP {step.step}</span>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', fontFamily: "'DM Sans', sans-serif", letterSpacing: '0.05em' }}>STEP {step.step}</span>
                 </div>
                 <h3 style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 10 }}>{step.title}</h3>
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.8 }}>{step.desc}</p>
@@ -564,7 +564,7 @@ export default function ResearchPage() {
       <section className="section" style={{ background: '#f9fafb', borderTop: '1px solid #f0f0f0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14, fontFamily: "'Poppins', sans-serif" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14, fontFamily: "'DM Sans', sans-serif" }}>
               Who Tests Our Products
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: 16 }}>
@@ -582,16 +582,16 @@ export default function ResearchPage() {
               position: 'relative', overflow: 'hidden',
             }}>
               <div style={{
-                display: 'inline-block', fontSize: 10, fontWeight: 700, color: '#16a34a', background: '#f0fdf4',
+                display: 'inline-block', fontSize: 10, fontWeight: 700, color: '#0ea5e9', background: '#eff6ff',
                 border: '1px solid #dcfce7', padding: '3px 10px', borderRadius: 9999,
-                fontFamily: "'Poppins', sans-serif", marginBottom: 16,
+                fontFamily: "'DM Sans', sans-serif", marginBottom: 16,
               }}>
                 Primary Lab
               </div>
               <h3 style={{ fontSize: 22, fontWeight: 800, color: '#0a0a0a', marginBottom: 4, letterSpacing: '-0.01em' }}>
                 Janoshik Analytical
               </h3>
-              <p style={{ fontSize: 13, color: '#9ca3af', marginBottom: 20, fontFamily: "'Poppins', sans-serif" }}>
+              <p style={{ fontSize: 13, color: '#9ca3af', marginBottom: 20, fontFamily: "'DM Sans', sans-serif" }}>
                 Prague, Czech Republic &middot; Est. 2013
               </p>
               <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.8, marginBottom: 20 }}>
@@ -601,14 +601,14 @@ export default function ResearchPage() {
                 Widely regarded as the gold standard for independent third-party testing, Janoshik has built their reputation through years of consistent, reliable results validated by blind community testing. Their reports are referenced in published research and global drug survey data.
               </p>
               <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: 20 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', marginBottom: 12, fontFamily: "'Poppins', sans-serif", textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', marginBottom: 12, fontFamily: "'DM Sans', sans-serif", textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Testing Methods
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {['HPLC (UV 214nm)', 'LC-MS/MS', 'GC-MS'].map(m => (
                     <span key={m} style={{
-                      fontSize: 11, fontWeight: 600, color: '#1B4D3E', background: '#f0fdf4',
-                      padding: '4px 12px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif",
+                      fontSize: 11, fontWeight: 600, color: '#0F2A4A', background: '#eff6ff',
+                      padding: '4px 12px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif",
                     }}>{m}</span>
                   ))}
                 </div>
@@ -623,14 +623,14 @@ export default function ResearchPage() {
               <div style={{
                 display: 'inline-block', fontSize: 10, fontWeight: 700, color: '#2563eb', background: '#eff6ff',
                 border: '1px solid #dbeafe', padding: '3px 10px', borderRadius: 9999,
-                fontFamily: "'Poppins', sans-serif", marginBottom: 16,
+                fontFamily: "'DM Sans', sans-serif", marginBottom: 16,
               }}>
                 Coming Soon
               </div>
               <h3 style={{ fontSize: 22, fontWeight: 800, color: '#0a0a0a', marginBottom: 4, letterSpacing: '-0.01em' }}>
                 Kovera Labs
               </h3>
-              <p style={{ fontSize: 13, color: '#9ca3af', marginBottom: 20, fontFamily: "'Poppins', sans-serif" }}>
+              <p style={{ fontSize: 13, color: '#9ca3af', marginBottom: 20, fontFamily: "'DM Sans', sans-serif" }}>
                 Illinois, USA
               </p>
               <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.8, marginBottom: 20 }}>
@@ -640,14 +640,14 @@ export default function ResearchPage() {
                 Dual-lab verification means our compounds will be independently tested by two separate laboratories in two different countries — providing an additional level of confidence that the results on every COA are accurate and reproducible.
               </p>
               <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: 20 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', marginBottom: 12, fontFamily: "'Poppins', sans-serif", textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', marginBottom: 12, fontFamily: "'DM Sans', sans-serif", textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Testing Methods
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {['HPLC', 'Mass Spectrometry', 'Net Content Verification'].map(m => (
                     <span key={m} style={{
                       fontSize: 11, fontWeight: 600, color: '#1e40af', background: '#eff6ff',
-                      padding: '4px 12px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif",
+                      padding: '4px 12px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif",
                     }}>{m}</span>
                   ))}
                 </div>
@@ -662,12 +662,12 @@ export default function ResearchPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }} className="grade-split">
             <div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16, fontFamily: "'Poppins', sans-serif" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16, fontFamily: "'DM Sans', sans-serif" }}>
                 Quality Standards
               </div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: 24 }}>
                 What Makes a<br />
-                <span style={{ color: '#1B4D3E' }}>Research-Grade Peptide?</span>
+                <span style={{ color: '#0F2A4A' }}>Research-Grade Peptide?</span>
               </h2>
               <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.8, marginBottom: 24 }}>
                 Not all peptides are equal. Research-grade means the compound has been verified for identity, purity, and absence of contaminants by methods that are auditable and reproducible.
@@ -678,7 +678,7 @@ export default function ResearchPage() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {[
-                { grade: 'Research Grade', purity: '99%+', test: 'HPLC + MS + Net Content', coa: 'Full public COA', color: '#f0fdf4', accent: '#16a34a', badge: 'EVO Labs Standard' },
+                { grade: 'Research Grade', purity: '99%+', test: 'HPLC + MS + Net Content', coa: 'Full public COA', color: '#eff6ff', accent: '#0ea5e9', badge: 'EVO Labs Standard' },
                 { grade: 'Standard Grade', purity: '95–98%', test: 'HPLC only', coa: 'Partial or internal', color: '#fff7ed', accent: '#ea580c', badge: 'Common Competitor' },
                 { grade: 'Raw Powder', purity: '< 95%', test: 'Unverified', coa: 'Often unavailable', color: '#fef2f2', accent: '#dc2626', badge: 'Not Research Ready' },
               ].map((row, i) => (
@@ -691,7 +691,7 @@ export default function ResearchPage() {
                     </div>
                     <div style={{ fontSize: 12, color: '#6b7280', marginTop: 4 }}>COA: {row.coa}</div>
                   </div>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: row.accent, background: 'rgba(255,255,255,0.7)', padding: '4px 12px', borderRadius: 9999, whiteSpace: 'nowrap', fontFamily: "'Poppins', sans-serif" }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: row.accent, background: 'rgba(255,255,255,0.7)', padding: '4px 12px', borderRadius: 9999, whiteSpace: 'nowrap', fontFamily: "'DM Sans', sans-serif" }}>
                     {row.badge}
                   </span>
                 </div>
@@ -705,7 +705,7 @@ export default function ResearchPage() {
       <section className="section" style={{ background: '#fafafa', borderTop: '1px solid #f0f0f0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, fontFamily: "'Poppins', sans-serif" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12, fontFamily: "'DM Sans', sans-serif" }}>
               Reference
             </div>
             <h2 style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
@@ -745,7 +745,7 @@ export default function ResearchPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section style={{ background: '#1B4D3E', padding: '80px 0' }}>
+      <section style={{ background: '#0F2A4A', padding: '80px 0' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
             Research Backed. Purity Verified.
@@ -755,12 +755,12 @@ export default function ResearchPage() {
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/products"
-              style={{ background: '#fff', color: '#1B4D3E', padding: '15px 36px', borderRadius: 9999, fontSize: 15, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', fontFamily: "'Poppins', sans-serif" }}
+              style={{ background: '#fff', color: '#0F2A4A', padding: '15px 36px', borderRadius: 9999, fontSize: 15, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', fontFamily: "'DM Sans', sans-serif" }}
             >
               Shop All Compounds →
             </Link>
             <Link href="/coa"
-              style={{ background: 'rgba(255,255,255,0.12)', color: '#fff', padding: '15px 36px', borderRadius: 9999, fontSize: 15, fontWeight: 600, border: '1.5px solid rgba(255,255,255,0.25)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', fontFamily: "'Poppins', sans-serif" }}
+              style={{ background: 'rgba(255,255,255,0.12)', color: '#fff', padding: '15px 36px', borderRadius: 9999, fontSize: 15, fontWeight: 600, border: '1.5px solid rgba(255,255,255,0.25)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', fontFamily: "'DM Sans', sans-serif" }}
             >
               View COA Library
             </Link>

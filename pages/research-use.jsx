@@ -4,16 +4,16 @@ import Link from 'next/link';
 export default function ResearchUsePolicy() {
   return (
     <Layout title="Research Use Only Policy | EVO Labs Research Canada" description="EVO Labs Research Canada RUO compliance policy — all products are for research use only, not for human consumption.">
-      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Inter', sans-serif" }}>
         <div style={{ marginBottom: 40 }}>
-          <span style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Compliance</span>
+          <span style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Compliance</span>
           <h1 style={{ fontSize: 36, fontWeight: 900, color: '#111', margin: '8px 0 12px', letterSpacing: '-0.02em' }}>Research Use Only Policy</h1>
           <div style={{ height: 1, background: '#e5e7eb', marginTop: 24 }} />
         </div>
 
         {/* Big RUO Banner */}
         <div style={{ background: '#0f1117', borderRadius: 16, padding: '32px 36px', marginBottom: 40, textAlign: 'center' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>⚗ Official Statement</div>
+          <div style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>⚗ Official Statement</div>
           <p style={{ fontSize: 20, fontWeight: 700, color: '#fff', lineHeight: 1.6, margin: 0 }}>
             "ALL PRODUCTS SOLD BY EVO LABS RESEARCH CANADA ARE FOR RESEARCH USE ONLY (RUO) AND ARE NOT INTENDED FOR USE IN HUMANS OR ANIMALS."
           </p>
@@ -61,7 +61,7 @@ export default function ResearchUsePolicy() {
           <p>Violation of these requirements will result in immediate termination of the affiliate agreement.</p>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#111', margin: '28px 0 12px' }}>Questions?</h2>
-          <p>For compliance questions, contact: <a href="mailto:support@evolabsresearch.ca" style={{ color: '#1B4D3E' }}>support@evolabsresearch.ca</a></p>
+          <p>For compliance questions, contact: <a href="mailto:support@evolabsresearch.ca" style={{ color: '#0F2A4A' }}>support@evolabsresearch.ca</a></p>
         </div>
 
         <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: 24, marginTop: 40, display: 'flex', gap: 20, flexWrap: 'wrap' }}>

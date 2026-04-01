@@ -19,14 +19,14 @@ export default function NotFound() {
 
   return (
     <Layout title="Page Not Found | EVO Labs Research" description="The page you're looking for doesn't exist. Browse our research peptide catalog.">
-      <div style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '60px 20px', textAlign: 'center', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <div style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '60px 20px', textAlign: 'center', fontFamily: "'Inter', sans-serif" }}>
 
         {/* 404 Visual */}
         <div style={{ fontSize: 120, fontWeight: 900, color: '#f3f4f6', letterSpacing: '-0.06em', lineHeight: 1, marginBottom: 0, userSelect: 'none' }}>
           404
         </div>
         <div style={{ marginTop: -20, marginBottom: 24 }}>
-          <span style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.12em', textTransform: 'uppercase', background: '#f0fdf4', padding: '4px 12px', borderRadius: 9999 }}>
+          <span style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.12em', textTransform: 'uppercase', background: '#f0fdf4', padding: '4px 12px', borderRadius: 9999 }}>
             Page Not Found
           </span>
         </div>
@@ -48,7 +48,7 @@ export default function NotFound() {
             style={{ flex: 1, padding: '14px 20px', border: 'none', outline: 'none', fontSize: 15, background: 'transparent' }}
           />
           <button type="submit" style={{
-            padding: '14px 24px', background: '#1B4D3E', color: '#fff',
+            padding: '14px 24px', background: '#0F2A4A', color: '#fff',
             border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 700,
           }}>
             Search →
@@ -68,7 +68,7 @@ export default function NotFound() {
               textDecoration: 'none', color: '#374151', fontSize: 14, fontWeight: 500,
               background: '#fff', transition: 'all 0.15s',
             }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = '#1B4D3E'; e.currentTarget.style.color = '#1B4D3E'; }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#0F2A4A'; e.currentTarget.style.color = '#0F2A4A'; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = '#e5e7eb'; e.currentTarget.style.color = '#374151'; }}
             >
               {label}
@@ -91,7 +91,7 @@ export default function NotFound() {
                   </div>
                   <div style={{ padding: '10px 12px' }}>
                     <div style={{ fontSize: 12, fontWeight: 700, color: '#111', lineHeight: 1.3 }}>{p.name}</div>
-                    <div style={{ fontSize: 12, color: '#4ade80', fontWeight: 700, marginTop: 4 }}>{p.salePrice || p.price}</div>
+                    <div style={{ fontSize: 12, color: '#06b6d4', fontWeight: 700, marginTop: 4 }}>{p.salePrice || p.price}</div>
                   </div>
                 </div>
               </Link>

@@ -147,7 +147,7 @@ export default function AdminInventory() {
                               <input type="number" value={adjustQty} onChange={e => setAdjustQty(e.target.value)}
                                 placeholder="±qty" style={{ width: 64, padding: '4px 8px', border: '1px solid #e5e7eb', borderRadius: 6, fontSize: 12 }} />
                               <button onClick={() => handleAdjust(item)} disabled={adjusting}
-                                style={{ padding: '4px 10px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, cursor: 'pointer' }}>✓</button>
+                                style={{ padding: '4px 10px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, cursor: 'pointer' }}>✓</button>
                               <button onClick={() => setAdjustId(null)} style={{ padding: '4px 8px', background: '#f3f4f6', border: 'none', borderRadius: 6, fontSize: 12, cursor: 'pointer' }}>✕</button>
                             </div>
                           ) : (

@@ -15,7 +15,7 @@ const STATUS_TABS = [
 ];
 
 const STATUS_COLORS = {
-  approved: { bg: '#dcfce7', color: '#166534' },
+  approved: { bg: '#dbeafe', color: '#1e40af' },
   hold: { bg: '#fef9c3', color: '#854d0e' },
   spam: { bg: '#fee2e2', color: '#991b1b' },
   trash: { bg: '#f3f4f6', color: '#6b7280' },
@@ -137,8 +137,8 @@ export default function AdminReviews() {
             style={{
               padding: '8px 16px', border: 'none', background: 'none', cursor: 'pointer',
               fontSize: 13, fontWeight: activeTab === tab.key ? 700 : 400,
-              color: activeTab === tab.key ? '#1B4D3E' : '#6b7280',
-              borderBottom: activeTab === tab.key ? '2px solid #1B4D3E' : '2px solid transparent',
+              color: activeTab === tab.key ? '#0F2A4A' : '#6b7280',
+              borderBottom: activeTab === tab.key ? '2px solid #0F2A4A' : '2px solid transparent',
               marginBottom: -1,
             }}
           >
@@ -212,7 +212,7 @@ export default function AdminReviews() {
                               className="rv-action-btn"
                               disabled={!!actionLoading}
                               onClick={() => updateStatus(rv.id, 'approved')}
-                              style={{ background: '#dcfce7', color: '#166534', borderColor: '#bbf7d0' }}
+                              style={{ background: '#dbeafe', color: '#1e40af', borderColor: '#bbf7d0' }}
                             >
                               {actionLoading === rv.id + '_status' ? '…' : 'Approve'}
                             </button>

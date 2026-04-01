@@ -208,7 +208,7 @@ function ReviewsTab({ product }) {
       {/* Rating summary */}
       <div style={{ display: 'flex', gap: 40, marginBottom: 40, alignItems: 'flex-start', flexWrap: 'wrap' }}>
         <div style={{ textAlign: 'center', minWidth: 100 }}>
-          <div style={{ fontSize: 56, fontWeight: 900, color: '#0a0a0a', lineHeight: 1, fontFamily: "'Poppins', sans-serif" }}>{rating}</div>
+          <div style={{ fontSize: 56, fontWeight: 900, color: '#0a0a0a', lineHeight: 1, fontFamily: "'DM Sans', sans-serif" }}>{rating}</div>
           <Stars n={Math.floor(rating)} size={18} />
           <div style={{ fontSize: 12, color: '#6b7280', marginTop: 4 }}>out of 5</div>
           <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 2 }}>({total} reviews)</div>
@@ -804,23 +804,23 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, pointerEvents: 'auto' }}>
             <Link href="/account/login?mode=signup" style={{
               display: 'inline-flex', alignItems: 'center', gap: 7,
-              background: '#1B4D3E', color: '#fff',
+              background: '#0F2A4A', color: '#fff',
               padding: '10px 20px', borderRadius: 10,
               fontSize: 13, fontWeight: 700, textDecoration: 'none',
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               boxShadow: '0 4px 16px rgba(27,77,62,0.25)',
               whiteSpace: 'nowrap',
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               Free account — takes 10 seconds
             </Link>
-            <span style={{ fontSize: 12, color: '#9ca3af', fontFamily: "'Poppins', sans-serif" }}>or</span>
+            <span style={{ fontSize: 12, color: '#9ca3af', fontFamily: "'DM Sans', sans-serif" }}>or</span>
             <Link href="/account/login" style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               background: '#fff', color: '#374151',
               padding: '10px 18px', borderRadius: 10,
               fontSize: 13, fontWeight: 600, textDecoration: 'none',
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               border: '1.5px solid #e5e7eb',
               boxShadow: '0 2px 6px rgba(0,0,0,0.06)',
               whiteSpace: 'nowrap',
@@ -833,10 +833,10 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
             {['No credit card required', 'We never sell your data', 'Unlock pricing & COA access'].map(t => (
               <span key={t} style={{
                 fontSize: 11, color: '#6b7280',
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 display: 'flex', alignItems: 'center', gap: 4,
               }}>
-                <span style={{ color: '#16a34a', fontWeight: 700 }}>✓</span> {t}
+                <span style={{ color: '#0ea5e9', fontWeight: 700 }}>✓</span> {t}
               </span>
             ))}
           </div>
@@ -893,11 +893,11 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
             <div style={{ paddingTop: 8 }}>
               {/* Category + badge */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-                <span style={{ fontSize: 10, fontWeight: 600, color: '#1B4D3E', background: '#f0fdf4', padding: '4px 12px', borderRadius: 9999, textTransform: 'uppercase', letterSpacing: '0.07em', fontFamily: "'Poppins', sans-serif" }}>
+                <span style={{ fontSize: 10, fontWeight: 600, color: '#0F2A4A', background: '#eff6ff', padding: '4px 12px', borderRadius: 9999, textTransform: 'uppercase', letterSpacing: '0.07em', fontFamily: "'DM Sans', sans-serif" }}>
                   {product.category}
                 </span>
                 {product.badge && (
-                  <span style={{ fontSize: 10, fontWeight: 600, color: '#fff', background: '#131315', padding: '4px 12px', borderRadius: 9999, textTransform: 'uppercase', letterSpacing: '0.07em', fontFamily: "'Poppins', sans-serif" }}>
+                  <span style={{ fontSize: 10, fontWeight: 600, color: '#fff', background: '#131315', padding: '4px 12px', borderRadius: 9999, textTransform: 'uppercase', letterSpacing: '0.07em', fontFamily: "'DM Sans', sans-serif" }}>
                     {product.badge}
                   </span>
                 )}
@@ -911,7 +911,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
               {chemData?.aliases && (
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
                   {chemData.aliases.map(alias => (
-                    <span key={alias} style={{ fontSize: 10, color: '#6b7280', background: '#f3f4f6', border: '1px solid #e5e7eb', padding: '2px 10px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif" }}>
+                    <span key={alias} style={{ fontSize: 10, color: '#6b7280', background: '#f3f4f6', border: '1px solid #e5e7eb', padding: '2px 10px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif" }}>
                       {alias}
                     </span>
                   ))}
@@ -922,21 +922,21 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 4, flexWrap: 'wrap' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                   <Stars n={Math.floor(product.rating)} />
-                  <span style={{ fontSize: 13, fontWeight: 600, color: '#374151', fontFamily: "'Poppins', sans-serif" }}>{product.rating}</span>
-                  <span style={{ fontSize: 13, color: '#9ca3af', fontFamily: "'Poppins', sans-serif" }}>({product.reviewCount} reviews)</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#374151', fontFamily: "'DM Sans', sans-serif" }}>{product.rating}</span>
+                  <span style={{ fontSize: 13, color: '#9ca3af', fontFamily: "'DM Sans', sans-serif" }}>({product.reviewCount} reviews)</span>
                 </div>
               </div>
 
               {/* Price */}
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 24 }}>
-                <span style={{ fontSize: 36, fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', fontFamily: "'Poppins', sans-serif" }}>
+                <span style={{ fontSize: 36, fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', fontFamily: "'DM Sans', sans-serif" }}>
                   {isOOS ? 'Out of Stock' : displayPrice}
                 </span>
                 {product.salePrice && !isOOS && !variantPrice && (
-                  <span style={{ fontSize: 18, color: '#d1d5db', textDecoration: 'line-through', fontWeight: 400, fontFamily: "'Poppins', sans-serif" }}>{product.price}</span>
+                  <span style={{ fontSize: 18, color: '#d1d5db', textDecoration: 'line-through', fontWeight: 400, fontFamily: "'DM Sans', sans-serif" }}>{product.price}</span>
                 )}
                 {product.salePrice && !isOOS && !variantPrice && (
-                  <span style={{ fontSize: 12, fontWeight: 700, color: '#dc2626', background: '#fef2f2', padding: '3px 10px', borderRadius: 9999, fontFamily: "'Poppins', sans-serif" }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: '#dc2626', background: '#fef2f2', padding: '3px 10px', borderRadius: 9999, fontFamily: "'DM Sans', sans-serif" }}>
                     Save {Math.round((1 - parseFloat(product.salePrice.replace(/[^0-9.]/g,'')) / parseFloat(product.price.replace(/[^0-9.]/g,''))) * 100)}%
                   </span>
                 )}
@@ -945,7 +945,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
               {/* Quantity/variant selector */}
               {!isOOS && product.category !== 'Research Kits' && QTY_OPTIONS && QTY_OPTIONS.length > 0 && (
                 <div style={{ marginBottom: 24 }}>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.07em', fontFamily: "'Poppins', sans-serif" }}>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.07em', fontFamily: "'DM Sans', sans-serif" }}>
                     Select Quantity
                   </div>
                   <div style={{ display: 'flex', gap: 8 }}>
@@ -955,7 +955,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         onClick={() => setSelectedQty(i)}
                         style={{
                           padding: '9px 20px', borderRadius: 8, fontSize: 14, fontWeight: 500,
-                          fontFamily: "'Poppins', sans-serif",
+                          fontFamily: "'DM Sans', sans-serif",
                           background: selectedQty === i ? '#131315' : 'transparent',
                           color: selectedQty === i ? '#fff' : '#555',
                           border: selectedQty === i ? '1px solid #131315' : '1px solid #e0e0e0',
@@ -972,7 +972,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
               {/* Bundle & Save */}
               {!isOOS && (
                 <div style={{ marginBottom: 22 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Poppins', sans-serif" }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'DM Sans', sans-serif" }}>
                     Bundle &amp; Save
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
@@ -1005,7 +1005,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                               fontSize: 8, fontWeight: 800, color: '#fff',
                               background: tag === 'MOST POPULAR' ? '#2563eb' : '#d97706',
                               padding: '2px 8px', borderRadius: 9999, whiteSpace: 'nowrap', letterSpacing: '0.06em',
-                              fontFamily: "'Poppins', sans-serif",
+                              fontFamily: "'DM Sans', sans-serif",
                             }}>
                               {tag}
                             </div>
@@ -1015,13 +1015,13 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                               <img key={i} src={product.image} alt="" style={{ height: count === 1 ? 38 : count === 2 ? 32 : 27, width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 2px 5px rgba(0,0,0,0.2))' }} />
                             ))}
                           </div>
-                          <div style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a', letterSpacing: '0.01em', fontFamily: "'Poppins', sans-serif" }}>{label}</div>
+                          <div style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a', letterSpacing: '0.01em', fontFamily: "'DM Sans', sans-serif" }}>{label}</div>
                           {discount > 0 ? (
-                            <div style={{ fontSize: 10, fontWeight: 700, color: '#16a34a', marginTop: 2, fontFamily: "'Poppins', sans-serif" }}>{discount}% OFF</div>
+                            <div style={{ fontSize: 10, fontWeight: 700, color: '#0ea5e9', marginTop: 2, fontFamily: "'DM Sans', sans-serif" }}>{discount}% OFF</div>
                           ) : (
-                            <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 2, fontFamily: "'Poppins', sans-serif" }}>Base price</div>
+                            <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 2, fontFamily: "'DM Sans', sans-serif" }}>Base price</div>
                           )}
-                          {total && <div style={{ fontSize: 12, fontWeight: 800, color: '#0a0a0a', marginTop: 2, fontFamily: "'Poppins', sans-serif" }}>${total}</div>}
+                          {total && <div style={{ fontSize: 12, fontWeight: 800, color: '#0a0a0a', marginTop: 2, fontFamily: "'DM Sans', sans-serif" }}>${total}</div>}
                         </button>
                       );
                     })}
@@ -1031,9 +1031,9 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
 
               {/* Free shipping nudge */}
               {!isOOS && (
-                <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 12, padding: '10px 16px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 12, padding: '10px 16px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 8 }}>
                   <span style={{ fontSize: 16 }}>🚚</span>
-                  <span style={{ fontSize: 13, color: '#15803d', fontWeight: 500, fontFamily: "'Poppins', sans-serif" }}>
+                  <span style={{ fontSize: 13, color: '#1e3a8a', fontWeight: 500, fontFamily: "'DM Sans', sans-serif" }}>
                     Free shipping on orders $250+
                   </span>
                 </div>
@@ -1049,7 +1049,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                 }}>
                   <span style={{ fontSize: 14 }}>{getStockLeft(product.id) < 20 ? '🔥' : '⚡'}</span>
                   <span style={{
-                    fontSize: 12, fontWeight: 600, fontFamily: "'Poppins', sans-serif",
+                    fontSize: 12, fontWeight: 600, fontFamily: "'DM Sans', sans-serif",
                     color: getStockLeft(product.id) < 20 ? '#dc2626' : '#92400e',
                   }}>
                     {getStockLeft(product.id) < 20
@@ -1069,7 +1069,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                 <div style={{ background: '#f9fafb', border: '1.5px solid #e5e7eb', borderRadius: 16, padding: '24px', marginBottom: 20 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                     <span style={{ fontSize: 20 }}>🔔</span>
-                    <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#111', fontFamily: "'Poppins', sans-serif" }}>Currently Out of Stock</p>
+                    <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#111', fontFamily: "'DM Sans', sans-serif" }}>Currently Out of Stock</p>
                   </div>
                   <p style={{ fontSize: 13, color: '#6b7280', marginTop: 0, marginBottom: 16, lineHeight: 1.6 }}>
                     Enter your email and we&apos;ll notify you the moment {product.name} is back in stock.
@@ -1077,7 +1077,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   {notifySubmitted ? (
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: '#d1fae5', border: '1px solid #6ee7b7', borderRadius: 10, padding: '12px 16px' }}>
                       <span style={{ fontSize: 18 }}>✓</span>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: '#065f46', fontFamily: "'Poppins', sans-serif" }}>
+                      <span style={{ fontSize: 13, fontWeight: 600, color: '#1e40af', fontFamily: "'DM Sans', sans-serif" }}>
                         You&apos;re on the list! We&apos;ll email you when it&apos;s back.
                       </span>
                     </div>
@@ -1089,16 +1089,16 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         style={{
                           flex: 1, padding: '11px 14px', border: '1.5px solid #d1d5db',
                           borderRadius: 10, fontSize: 13, outline: 'none',
-                          fontFamily: "'Poppins', sans-serif",
+                          fontFamily: "'DM Sans', sans-serif",
                         }}
                       />
                       <button
                         type="submit" disabled={notifyLoading}
                         style={{
-                          padding: '11px 20px', background: '#1B4D3E', color: '#fff',
+                          padding: '11px 20px', background: '#0F2A4A', color: '#fff',
                           border: 'none', borderRadius: 10, fontSize: 13, fontWeight: 700,
                           cursor: notifyLoading ? 'wait' : 'pointer', whiteSpace: 'nowrap',
-                          fontFamily: "'Poppins', sans-serif", opacity: notifyLoading ? 0.7 : 1,
+                          fontFamily: "'DM Sans', sans-serif", opacity: notifyLoading ? 0.7 : 1,
                         }}
                       >
                         {notifyLoading ? 'Saving…' : 'Notify Me'}
@@ -1111,7 +1111,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   {product.lowStock && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: '#fef2f2', border: '1px solid #fecaca', borderRadius: 8, padding: '8px 12px', marginBottom: 12 }}>
                       <span style={{ fontSize: 14 }}>🔴</span>
-                      <span style={{ fontSize: 12, fontWeight: 600, color: '#dc2626', fontFamily: "'Poppins', sans-serif" }}>Only a few left in stock — order soon</span>
+                      <span style={{ fontSize: 12, fontWeight: 600, color: '#dc2626', fontFamily: "'DM Sans', sans-serif" }}>Only a few left in stock — order soon</span>
                     </div>
                   )}
                   <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
@@ -1120,7 +1120,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       className="btn-primary"
                       style={{
                         flex: 1, justifyContent: 'center', fontSize: 15, padding: '16px 24px',
-                        background: cartAdded ? '#16a34a' : '#000000',
+                        background: cartAdded ? '#0ea5e9' : '#000000',
                         transition: 'background 0.3s',
                       }}
                     >
@@ -1146,7 +1146,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                     </button>
                   </div>
                   {cartAdded && (
-                    <p style={{ fontSize: 12, color: '#16a34a', textAlign: 'center', fontWeight: 500, fontFamily: "'Poppins', sans-serif" }}>
+                    <p style={{ fontSize: 12, color: '#0ea5e9', textAlign: 'center', fontWeight: 500, fontFamily: "'DM Sans', sans-serif" }}>
                       ✓ Added to cart — view cart or continue shopping
                     </p>
                   )}
@@ -1164,7 +1164,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   {/* Secure card */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#f9fafb', border: '1px solid #f0f0f0', borderRadius: 11, padding: '9px 14px', marginBottom: 8 }}>
                     <span style={{ fontSize: 15 }}>🔒</span>
-                    <span style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'Poppins', sans-serif" }}>Secure Card Processing</span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'DM Sans', sans-serif" }}>Secure Card Processing</span>
                     <div style={{ marginLeft: 'auto', display: 'flex', gap: 5, alignItems: 'center' }}>
                       <VisaLogo />
                       <MastercardLogo />
@@ -1175,8 +1175,8 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#f0f7ff', border: '1px solid #dbeafe', borderRadius: 11, padding: '9px 14px' }}>
                     <span style={{ fontSize: 15 }}>🏦</span>
                     <div>
-                      <span style={{ fontSize: 12, fontWeight: 600, color: '#1d4ed8', fontFamily: "'Poppins', sans-serif" }}>Bank Transfer via ACH</span>
-                      <span style={{ fontSize: 10, color: '#6b7280', marginLeft: 8, fontFamily: "'Poppins', sans-serif" }}>powered by</span>
+                      <span style={{ fontSize: 12, fontWeight: 600, color: '#1d4ed8', fontFamily: "'DM Sans', sans-serif" }}>Bank Transfer via ACH</span>
+                      <span style={{ fontSize: 10, color: '#6b7280', marginLeft: 8, fontFamily: "'DM Sans', sans-serif" }}>powered by</span>
                     </div>
                     <div style={{ marginLeft: 'auto' }}><PlaidLogo /></div>
                   </div>
@@ -1195,8 +1195,8 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                     padding: '10px 12px', textAlign: 'center',
                   }}>
                     <span style={{ fontSize: 16, display: 'block', marginBottom: 3 }}>{b.icon}</span>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', fontFamily: "'Poppins', sans-serif" }}>{b.label}</div>
-                    <div style={{ fontSize: 9, color: '#9ca3af', fontFamily: "'Poppins', sans-serif" }}>{b.sub}</div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#374151', fontFamily: "'DM Sans', sans-serif" }}>{b.label}</div>
+                    <div style={{ fontSize: 9, color: '#9ca3af', fontFamily: "'DM Sans', sans-serif" }}>{b.sub}</div>
                   </div>
                 ))}
               </div>
@@ -1211,14 +1211,14 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   'Lyophilized, sealed for maximum stability',
                 ].map(f => (
                   <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13, color: '#374151' }}>
-                    <span style={{ color: '#16a34a', fontWeight: 700, fontSize: 14 }}>✓</span>
+                    <span style={{ color: '#0ea5e9', fontWeight: 700, fontSize: 14 }}>✓</span>
                     {f}
                   </div>
                 ))}
               </div>
 
               {/* Research link */}
-              <Link href="/research" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: '#6b7280', textDecoration: 'none', transition: 'color 0.15s', fontFamily: "'Poppins', sans-serif", borderTop: '1px solid #f0f0f0', paddingTop: 16 }}
+              <Link href="/research" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: '#6b7280', textDecoration: 'none', transition: 'color 0.15s', fontFamily: "'DM Sans', sans-serif", borderTop: '1px solid #f0f0f0', paddingTop: 16 }}
                 onMouseEnter={e => e.currentTarget.style.color = '#131315'}
                 onMouseLeave={e => e.currentTarget.style.color = '#6b7280'}
               >
@@ -1234,7 +1234,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
         <section ref={compoundProfileRef} style={{ background: '#f8f9fa', borderTop: '1px solid #f0f0f0', borderBottom: '1px solid #f0f0f0', padding: '56px 0' }}>
           <div className="container">
             <div style={{ marginBottom: 28 }}>
-              <p style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
+              <p style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
                 Compound Profile
               </p>
               <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
@@ -1261,7 +1261,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 24 }}>
                   {rd.stats.map((s, i) => (
                     <div key={i} style={{ textAlign: 'center', padding: '12px 8px' }}>
-                      <div style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 900, color: '#4ade80', letterSpacing: '-0.02em', lineHeight: 1 }}>{s.val}</div>
+                      <div style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 900, color: '#06b6d4', letterSpacing: '-0.02em', lineHeight: 1 }}>{s.val}</div>
                       <div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: 6, lineHeight: 1.4 }}>{s.label}</div>
                     </div>
                   ))}
@@ -1273,7 +1273,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
             <section style={{ padding: '72px 0 56px', background: '#fff' }}>
               <div className="container">
                 <div style={{ marginBottom: 40 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
                     Mechanism of Action
                   </p>
                   <h2 style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 20 }}>
@@ -1289,7 +1289,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
                         <div style={{
                           width: 52, height: 52, borderRadius: '50%',
-                          background: cat?.accentColor || '#1B4D3E',
+                          background: cat?.accentColor || '#0F2A4A',
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
                           flexShrink: 0,
                         }}>
@@ -1303,7 +1303,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
                         {pw.details.map((d, j) => (
                           <li key={j} style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, paddingLeft: 14, position: 'relative', marginBottom: 4 }}>
-                            <span style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: 5, height: 5, background: cat?.accentColor || '#1B4D3E', borderRadius: '50%' }} />
+                            <span style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: 5, height: 5, background: cat?.accentColor || '#0F2A4A', borderRadius: '50%' }} />
                             {d}
                           </li>
                         ))}
@@ -1315,7 +1315,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                 {/* Key Mechanism Dark Card */}
                 <div style={{ background: '#0a1628', borderRadius: 20, padding: '36px 40px', display: 'flex', gap: 32, flexWrap: 'wrap', alignItems: 'flex-start' }}>
                   <div style={{ flex: '1 1 260px' }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 10 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 10 }}>
                       Key Mechanism
                     </div>
                     <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', lineHeight: 1.3, marginBottom: 12 }}>
@@ -1342,7 +1342,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
               <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
                   <div>
-                    <p style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
                       Preclinical Findings
                     </p>
                     <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 32 }}>
@@ -1353,13 +1353,13 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         <div key={i}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                             <span style={{ fontSize: 14, fontWeight: 600, color: '#0a0a0a' }}>{item.label}</span>
-                            <span style={{ fontSize: 14, fontWeight: 800, color: cat?.accentColor || '#1B4D3E' }}>{item.pct}%</span>
+                            <span style={{ fontSize: 14, fontWeight: 800, color: cat?.accentColor || '#0F2A4A' }}>{item.pct}%</span>
                           </div>
                           <div style={{ height: 8, background: '#e5e7eb', borderRadius: 4, overflow: 'hidden' }}>
                             <div style={{
                               height: '100%',
                               width: `${item.pct}%`,
-                              background: `linear-gradient(90deg, ${cat?.accentColor || '#1B4D3E'}, ${cat?.accentColor || '#1B4D3E'}99)`,
+                              background: `linear-gradient(90deg, ${cat?.accentColor || '#0F2A4A'}, ${cat?.accentColor || '#0F2A4A'}99)`,
                               borderRadius: 4,
                               transition: 'width 0.8s ease',
                             }} />
@@ -1371,13 +1371,13 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
 
                   {/* Clinical Data */}
                   <div>
-                    <p style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
                       Clinical Data
                     </p>
                     <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 12 }}>
                       {rd.clinicalData.title}
                     </h2>
-                    <div style={{ display: 'inline-block', background: cat?.color || '#e8f5ee', color: cat?.accentColor || '#1B4D3E', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', padding: '4px 12px', borderRadius: 20, marginBottom: 16 }}>
+                    <div style={{ display: 'inline-block', background: cat?.color || '#e8f5ee', color: cat?.accentColor || '#0F2A4A', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', padding: '4px 12px', borderRadius: 20, marginBottom: 16 }}>
                       {rd.clinicalData.badge}
                     </div>
                     <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 24 }}>{rd.clinicalData.note}</p>
@@ -1386,13 +1386,13 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         <div key={i}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                             <span style={{ fontSize: 13, color: '#374151', fontWeight: 500, flex: 1, paddingRight: 12 }}>{f.label}</span>
-                            <span style={{ fontSize: 14, fontWeight: 800, color: cat?.accentColor || '#1B4D3E', flexShrink: 0 }}>{f.pct}%</span>
+                            <span style={{ fontSize: 14, fontWeight: 800, color: cat?.accentColor || '#0F2A4A', flexShrink: 0 }}>{f.pct}%</span>
                           </div>
                           <div style={{ height: 6, background: '#e5e7eb', borderRadius: 3, overflow: 'hidden' }}>
                             <div style={{
                               height: '100%',
                               width: `${f.pct}%`,
-                              background: cat?.accentColor || '#1B4D3E',
+                              background: cat?.accentColor || '#0F2A4A',
                               borderRadius: 3,
                             }} />
                           </div>
@@ -1412,7 +1412,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
             {/* Research Success Metrics */}
             <section style={{ padding: '56px 0', background: '#fff', borderTop: '1px solid #f0f0f0' }}>
               <div className="container">
-                <p style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
+                <p style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
                   Research Outcomes
                 </p>
                 <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 40 }}>
@@ -1423,15 +1423,15 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                     <div key={i} style={{ textAlign: 'center', padding: '32px 24px', background: '#f8f9fa', borderRadius: 20, border: '1.5px solid #e5e7eb', position: 'relative', overflow: 'hidden' }}>
                       <div style={{
                         position: 'absolute', inset: 0,
-                        background: `conic-gradient(${cat?.accentColor || '#1B4D3E'} ${m.pct * 3.6}deg, #e5e7eb ${m.pct * 3.6}deg)`,
+                        background: `conic-gradient(${cat?.accentColor || '#0F2A4A'} ${m.pct * 3.6}deg, #e5e7eb ${m.pct * 3.6}deg)`,
                         borderRadius: 20,
                         opacity: 0.06,
                       }} />
-                      <div style={{ fontSize: 'clamp(36px, 5vw, 52px)', fontWeight: 900, color: cat?.accentColor || '#1B4D3E', lineHeight: 1, marginBottom: 6, letterSpacing: '-0.02em' }}>
+                      <div style={{ fontSize: 'clamp(36px, 5vw, 52px)', fontWeight: 900, color: cat?.accentColor || '#0F2A4A', lineHeight: 1, marginBottom: 6, letterSpacing: '-0.02em' }}>
                         {m.pct}%
                       </div>
                       <div style={{ fontSize: 14, color: '#374151', fontWeight: 600, marginBottom: 4 }}>{m.label}</div>
-                      <div style={{ fontSize: 13, color: '#1B4D3E', fontWeight: 700, marginBottom: 6 }}>{m.sub}</div>
+                      <div style={{ fontSize: 13, color: '#0F2A4A', fontWeight: 700, marginBottom: 6 }}>{m.sub}</div>
                       <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 500 }}>{m.note}</div>
                     </div>
                   ))}
@@ -1444,7 +1444,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
               <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
                   <div>
-                    <p style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>
                       Safety Profile
                     </p>
                     <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 24 }}>
@@ -1453,8 +1453,8 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                     <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
                       {rd.safety.map((s, i) => (
                         <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                          <span style={{ flexShrink: 0, marginTop: 2, width: 18, height: 18, borderRadius: '50%', background: '#4ade8033', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          <span style={{ flexShrink: 0, marginTop: 2, width: 18, height: 18, borderRadius: '50%', background: '#06b6d433', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                           </span>
                           <span style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.7 }}>{s}</span>
                         </li>
@@ -1470,13 +1470,13 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         {rd.disclaimer}
                       </p>
                       <div style={{ paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                        <div style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 10 }}>
+                        <div style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 10 }}>
                           Research Grade Quality
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                           {['99%+ Net Purity (HPLC Verified)', 'Net Content Confirmed Per Vial', 'Batch-Specific COA Available', 'Lyophilized for Stability'].map((q, i) => (
                             <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                              <span style={{ fontSize: 14, color: '#4ade80' }}>✓</span>
+                              <span style={{ fontSize: 14, color: '#06b6d4' }}>✓</span>
                               <span style={{ fontSize: 13, color: '#94a3b8' }}>{q}</span>
                             </div>
                           ))}
@@ -1504,10 +1504,10 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   padding: '18px 28px',
                   fontSize: 14,
                   fontWeight: activeTab === tab ? 700 : 500,
-                  color: activeTab === tab ? '#1B4D3E' : '#6b7280',
+                  color: activeTab === tab ? '#0F2A4A' : '#6b7280',
                   background: 'none',
                   border: 'none',
-                  borderBottom: activeTab === tab ? '2px solid #1B4D3E' : '2px solid transparent',
+                  borderBottom: activeTab === tab ? '2px solid #0F2A4A' : '2px solid transparent',
                   cursor: 'pointer',
                   whiteSpace: 'nowrap',
                   transition: 'color 0.15s',
@@ -1622,7 +1622,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                                 {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
                               </span>
                               {r.verified && (
-                                <span style={{ fontSize: 11, color: '#16a34a', fontWeight: 700, background: 'rgba(22,163,74,0.08)', padding: '2px 8px', borderRadius: 9999 }}>
+                                <span style={{ fontSize: 11, color: '#0ea5e9', fontWeight: 700, background: 'rgba(22,163,74,0.08)', padding: '2px 8px', borderRadius: 9999 }}>
                                   Verified Purchase
                                 </span>
                               )}
@@ -1644,7 +1644,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       <button
                         onClick={() => setReviewModalOpen(true)}
                         style={{
-                          background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 10,
+                          background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 10,
                           padding: '12px 24px', fontSize: 14, fontWeight: 700, cursor: 'pointer',
                           fontFamily: 'inherit',
                         }}
@@ -1692,7 +1692,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
             <div className="container">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, flexWrap: 'wrap', gap: 12 }}>
                 <div>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: '#0F2A4A', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
                     Popular Stacks
                   </div>
                   <h2 style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
@@ -1700,7 +1700,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   </h2>
                 </div>
                 {bundleSavings > 0 && (
-                  <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 12, padding: '8px 16px', fontSize: 13, fontWeight: 700, color: '#16a34a' }}>
+                  <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 12, padding: '8px 16px', fontSize: 13, fontWeight: 700, color: '#0ea5e9' }}>
                     Bundle &amp; save ${bundleSavings.toFixed(2)} on shipping
                   </div>
                 )}
@@ -1715,13 +1715,13 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       width: 88, height: 88, borderRadius: 14,
                       background: `radial-gradient(ellipse at 50% 60%, ${cat.color} 0%, #f5f5f5 80%)`,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
-                      border: '2px solid #1B4D3E',
+                      border: '2px solid #0F2A4A',
                     }}>
                       <img src={product.image} alt={product.name} style={{ width: '72%', height: '72%', objectFit: 'contain', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.12))' }} />
                     </div>
                     <span style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a', textAlign: 'center', maxWidth: 100, lineHeight: 1.3 }}>{product.name}</span>
-                    <div style={{ fontSize: 9, fontWeight: 600, color: '#1B4D3E', background: 'rgba(27,77,62,0.08)', borderRadius: 6, padding: '2px 8px', textAlign: 'center' }}>This item</div>
-                    <span style={{ fontSize: 12, fontWeight: 800, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>{product.salePrice || product.price}</span>
+                    <div style={{ fontSize: 9, fontWeight: 600, color: '#0F2A4A', background: 'rgba(27,77,62,0.08)', borderRadius: 6, padding: '2px 8px', textAlign: 'center' }}>This item</div>
+                    <span style={{ fontSize: 12, fontWeight: 800, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>{product.salePrice || product.price}</span>
                   </div>
 
                   {/* Stack products */}
@@ -1737,7 +1737,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                           </div>
                           <span style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a', textAlign: 'center', maxWidth: 100, lineHeight: 1.3 }}>{p.name}</span>
                           <div style={{ fontSize: 9, fontWeight: 600, color: '#6b7280', background: '#f0f0f0', borderRadius: 6, padding: '2px 8px', textAlign: 'center' }}>{reason}</div>
-                          <span style={{ fontSize: 12, fontWeight: 800, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>{p.salePrice || p.price}</span>
+                          <span style={{ fontSize: 12, fontWeight: 800, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>{p.salePrice || p.price}</span>
                         </Link>
                       </div>
                     );
@@ -1751,11 +1751,11 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       Researchers often pair <strong style={{ color: '#0a0a0a' }}>{product.name}</strong> with these compounds for multi-system protocols.
                     </div>
                     {bundleTotal > 0 && (
-                      <div style={{ fontSize: 14, fontWeight: 800, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+                      <div style={{ fontSize: 14, fontWeight: 800, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
                         Bundle total:{' '}
-                        <span style={{ color: '#1B4D3E' }}>${bundleTotal.toFixed(2)}</span>
+                        <span style={{ color: '#0F2A4A' }}>${bundleTotal.toFixed(2)}</span>
                         {bundleTotal >= 250 && (
-                          <span style={{ fontSize: 11, fontWeight: 600, color: '#16a34a', marginLeft: 8 }}>✓ Free shipping!</span>
+                          <span style={{ fontSize: 11, fontWeight: 600, color: '#0ea5e9', marginLeft: 8 }}>✓ Free shipping!</span>
                         )}
                       </div>
                     )}
@@ -1763,10 +1763,10 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   <button
                     onClick={handleAddAllToCart}
                     style={{
-                      background: cartAdded ? '#16a34a' : '#131315', color: '#fff',
+                      background: cartAdded ? '#0ea5e9' : '#131315', color: '#fff',
                       border: 'none', borderRadius: 9999, padding: '13px 28px',
                       fontSize: 14, fontWeight: 700, cursor: 'pointer',
-                      fontFamily: "'Poppins', sans-serif", transition: 'background 0.2s',
+                      fontFamily: "'DM Sans', sans-serif", transition: 'background 0.2s',
                       whiteSpace: 'nowrap',
                     }}
                   >
@@ -1809,9 +1809,9 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         }} />
                       </div>
                     <div style={{ padding: '14px 14px 16px' }}>
-                      <p style={{ fontSize: 9, fontWeight: 600, color: '#9ca3af', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 3, fontFamily: "'Poppins', sans-serif" }}>{p.category}</p>
+                      <p style={{ fontSize: 9, fontWeight: 600, color: '#9ca3af', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 3, fontFamily: "'DM Sans', sans-serif" }}>{p.category}</p>
                       <h3 style={{ fontSize: 13, fontWeight: 700, color: '#111827', marginBottom: 6, lineHeight: 1.3 }}>{p.name}</h3>
-                      <p style={{ fontSize: 14, fontWeight: 800, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>From {p.salePrice || p.price}</p>
+                      <p style={{ fontSize: 14, fontWeight: 800, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>From {p.salePrice || p.price}</p>
                     </div>
                   </Link>
                 );
@@ -1848,9 +1848,9 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       <img src={p.image} alt={p.name} style={{ width: '65%', height: '65%', objectFit: 'contain', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.1))' }} loading="lazy" />
                     </div>
                     <div style={{ padding: '12px 14px 14px' }}>
-                      <div style={{ fontSize: 9, fontWeight: 700, color: c.accent || '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 4 }}>{p.category}</div>
+                      <div style={{ fontSize: 9, fontWeight: 700, color: c.accent || '#0F2A4A', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 4 }}>{p.category}</div>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#0a0a0a', lineHeight: 1.3, marginBottom: 6 }}>{p.name}</div>
-                      <div style={{ fontSize: 13, fontWeight: 800, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>{p.salePrice || p.price}</div>
+                      <div style={{ fontSize: 13, fontWeight: 800, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>{p.salePrice || p.price}</div>
                     </div>
                   </Link>
                 );
@@ -1911,11 +1911,11 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         {product.name}
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                        <span style={{ fontSize: 10, color: '#4ade80', fontWeight: 600, fontFamily: "'Poppins', sans-serif" }}>
+                        <span style={{ fontSize: 10, color: '#06b6d4', fontWeight: 600, fontFamily: "'DM Sans', sans-serif" }}>
                           99%+ Purity
                         </span>
                         <span style={{ fontSize: 10, color: '#555' }}>|</span>
-                        <span style={{ fontSize: 10, color: '#777', fontFamily: "'Poppins', sans-serif" }}>
+                        <span style={{ fontSize: 10, color: '#777', fontFamily: "'DM Sans', sans-serif" }}>
                           COA Included
                         </span>
                       </div>
@@ -1930,7 +1930,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                         onClick={() => setSelectedQty(i)}
                         style={{
                           padding: '7px 14px', borderRadius: 8, fontSize: 11, fontWeight: 600,
-                          fontFamily: "'Poppins', sans-serif",
+                          fontFamily: "'DM Sans', sans-serif",
                           background: selectedQty === i ? '#fff' : 'transparent',
                           color: selectedQty === i ? '#111' : '#888',
                           border: selectedQty === i ? '1px solid #fff' : '1px solid #333',
@@ -1956,7 +1956,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                           onClick={() => setBundleCount(count)}
                           style={{
                             padding: '7px 12px', borderRadius: 8, fontSize: 11, fontWeight: 600,
-                            fontFamily: "'Poppins', sans-serif",
+                            fontFamily: "'DM Sans', sans-serif",
                             background: isActive ? '#fff' : 'transparent',
                             color: isActive ? '#111' : '#888',
                             border: isActive ? '1px solid #fff' : '1px solid #333',
@@ -1968,7 +1968,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                           {discount > 0 && (
                             <span style={{
                               fontSize: 9, fontWeight: 800,
-                              color: isActive ? '#16a34a' : '#4ade80',
+                              color: isActive ? '#0ea5e9' : '#06b6d4',
                             }}>
                               -{discount}%
                             </span>
@@ -1983,11 +1983,11 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
 
                   {/* Price */}
                   <div className="sticky-bar-price" style={{ textAlign: 'right', flexShrink: 0 }}>
-                    <div style={{ fontSize: 22, fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1, fontFamily: "'Poppins', sans-serif" }}>
+                    <div style={{ fontSize: 22, fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1, fontFamily: "'DM Sans', sans-serif" }}>
                       ${stickyTotal || displayPrice.replace('$', '')}
                     </div>
                     {bundleCount > 1 && (
-                      <div style={{ fontSize: 10, fontWeight: 700, color: '#4ade80', marginTop: 3, fontFamily: "'Poppins', sans-serif" }}>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: '#06b6d4', marginTop: 3, fontFamily: "'DM Sans', sans-serif" }}>
                         Save {stickyDiscount}%
                       </div>
                     )}
@@ -2002,7 +2002,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                     className="sticky-bar-cta"
                     style={{
                       flexShrink: 0,
-                      background: cartAdded ? '#16a34a' : '#1B4D3E',
+                      background: cartAdded ? '#0ea5e9' : '#0F2A4A',
                       color: '#fff',
                       border: 'none',
                       borderRadius: 12,
@@ -2010,7 +2010,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                       fontSize: 14,
                       fontWeight: 700,
                       cursor: 'pointer',
-                      fontFamily: "'Poppins', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                       transition: 'background 0.3s',
                       whiteSpace: 'nowrap',
                     }}
@@ -2085,7 +2085,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
             {reviewSubmitted ? (
               <div style={{ textAlign: 'center', padding: '24px 0' }}>
                 <div style={{ fontSize: 40, marginBottom: 12 }}>✅</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: '#16a34a' }}>Thank you for your review!</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: '#0ea5e9' }}>Thank you for your review!</div>
                 <div style={{ fontSize: 13, color: '#6b7280', marginTop: 6 }}>Your review will appear after approval.</div>
               </div>
             ) : (
@@ -2129,7 +2129,7 @@ export default function ProductDetail({ product, related, stackProducts, coa, ca
                   type="submit"
                   disabled={reviewSubmitting || !reviewRating}
                   style={{
-                    width: '100%', padding: '13px', background: '#1B4D3E',
+                    width: '100%', padding: '13px', background: '#0F2A4A',
                     color: '#fff', border: 'none', borderRadius: 10,
                     fontSize: 15, fontWeight: 700, cursor: reviewSubmitting || !reviewRating ? 'default' : 'pointer',
                     opacity: reviewSubmitting || !reviewRating ? 0.6 : 1,

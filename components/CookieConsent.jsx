@@ -37,11 +37,11 @@ export default function CookieConsent() {
         left: 0,
         right: 0,
         zIndex: 999,
-        background: '#1B4D3E',
+        background: '#0F2A4A',
         color: '#fff',
         padding: '16px 24px',
-        fontFamily: "'Poppins', sans-serif",
-        borderTop: '1px solid rgba(74, 222, 128, 0.2)',
+        fontFamily: "'DM Sans', sans-serif",
+        borderTop: '1px solid rgba(6, 182, 212, 0.2)',
         boxShadow: '0 -2px 16px rgba(0, 0, 0, 0.15)',
       }}
     >
@@ -70,7 +70,7 @@ export default function CookieConsent() {
             <Link
               href="/privacy"
               style={{
-                color: '#4ADE80',
+                color: '#06B6D4',
                 textDecoration: 'underline',
                 fontWeight: 600,
               }}
@@ -101,7 +101,7 @@ export default function CookieConsent() {
               cursor: 'pointer',
               fontSize: 14,
               fontWeight: 600,
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               transition: 'all 0.2s ease',
               whiteSpace: 'nowrap',
             }}
@@ -120,24 +120,24 @@ export default function CookieConsent() {
           <button
             onClick={handleAcceptAll}
             style={{
-              background: '#4ADE80',
+              background: '#06B6D4',
               border: 'none',
-              color: '#1B4D3E',
+              color: '#0F2A4A',
               padding: '10px 24px',
               borderRadius: 4,
               cursor: 'pointer',
               fontSize: 14,
               fontWeight: 700,
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               transition: 'all 0.2s ease',
               whiteSpace: 'nowrap',
             }}
             onMouseEnter={(e) => {
-              e.target.style.background = '#22c55e';
-              e.target.style.boxShadow = '0 4px 12px rgba(74, 222, 128, 0.4)';
+              e.target.style.background = '#0ea5e9';
+              e.target.style.boxShadow = '0 4px 12px rgba(6, 182, 212, 0.4)';
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = '#4ADE80';
+              e.target.style.background = '#06B6D4';
               e.target.style.boxShadow = 'none';
             }}
           >

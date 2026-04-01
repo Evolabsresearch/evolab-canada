@@ -37,7 +37,7 @@ export default function COAPage() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
               <Link href="/account/login?mode=signup" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 7,
-                background: '#4ade80', color: '#0a0a0a',
+                background: '#06b6d4', color: '#0a0a0a',
                 padding: '13px 28px', borderRadius: 100,
                 fontSize: 14, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap',
               }}>
@@ -58,7 +58,7 @@ export default function COAPage() {
             <div style={{ display: 'flex', gap: 20, justifyContent: 'center', flexWrap: 'wrap' }}>
               {['No credit card required', 'We never sell your data', 'Unlock full COA library'].map(t => (
                 <span key={t} style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', display: 'flex', alignItems: 'center', gap: 5 }}>
-                  <span style={{ color: '#4ade80', fontWeight: 700 }}>✓</span> {t}
+                  <span style={{ color: '#06b6d4', fontWeight: 700 }}>✓</span> {t}
                 </span>
               ))}
             </div>
@@ -82,7 +82,7 @@ export default function COAPage() {
       {/* Header */}
       <div style={{ background: '#0a0a0a', padding: '72px 0 60px' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
             Transparency First
           </div>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16, maxWidth: 640 }}>
@@ -107,7 +107,7 @@ export default function COAPage() {
       </div>
 
       {/* Stats bar */}
-      <div style={{ background: '#1B4D3E', padding: '20px 0' }}>
+      <div style={{ background: '#0F2A4A', padding: '20px 0' }}>
         <div className="container" style={{ display: 'flex', gap: 48, flexWrap: 'wrap', justifyContent: 'center' }}>
           {[
             { val: `${COAS.length}+`, label: 'COAs Published' },
@@ -133,7 +133,7 @@ export default function COAPage() {
               {search && ` for "${search}"`}
             </p>
             {search && (
-              <button onClick={() => setSearch('')} style={{ fontSize: 13, color: '#1B4D3E', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer' }}>
+              <button onClick={() => setSearch('')} style={{ fontSize: 13, color: '#0F2A4A', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer' }}>
                 Clear search ×
               </button>
             )}

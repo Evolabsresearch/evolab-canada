@@ -42,25 +42,25 @@ function ProductCard({ product }) {
             <h3 style={{ fontSize: 15, fontWeight: 800, color: '#fff', marginBottom: 4, letterSpacing: '-0.01em' }}>{product.name}</h3>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 12 }}>
               <Stars n={product.rating} size={11} />
-              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', fontFamily: "'Poppins', sans-serif" }}>({product.reviewCount})</span>
+              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', fontFamily: "'DM Sans', sans-serif" }}>({product.reviewCount})</span>
             </div>
             {!isOOS && (
               <span style={{
                 display: 'inline-block', background: '#fff', color: '#0a0a0a',
                 fontSize: 12, fontWeight: 700, padding: '8px 18px', borderRadius: 9999,
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
               }}>View Research →</span>
             )}
           </div>
         </div>
         {/* Info panel below image */}
         <div style={{ padding: '14px 16px 16px', background: '#141414' }}>
-          <span style={{ fontSize: 9, fontWeight: 600, color: '#4ade80', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: 4 }}>
+          <span style={{ fontSize: 9, fontWeight: 600, color: '#06b6d4', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: 4 }}>
             {product.category}
           </span>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
             <h3 style={{ fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{product.name}</h3>
-            <span style={{ fontSize: 14, fontWeight: 800, color: '#4ade80', flexShrink: 0, fontFamily: "'Poppins', sans-serif" }}>
+            <span style={{ fontSize: 14, fontWeight: 800, color: '#06b6d4', flexShrink: 0, fontFamily: "'DM Sans', sans-serif" }}>
               {isOOS ? <span style={{ color: '#6b7280' }}>Sold Out</span> : product.salePrice || product.price}
             </span>
           </div>
@@ -82,7 +82,7 @@ function ReviewCard({ review }) {
           "{review.text}"
         </p>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#f0fdf4', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 700, color: '#1B4D3E', flexShrink: 0 }}>
+          <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 700, color: '#0F2A4A', flexShrink: 0 }}>
             {review.name[0]}
           </div>
           <div>
@@ -107,8 +107,8 @@ const QUALITY_TABS = [
     method: 'HPLC Analysis',
     desc: 'Every vial is tested to confirm it contains exactly what the label says — down to the microgram. No guessing, no rounding. You get the exact concentration you paid for.',
     why: 'Accurate dosing is the foundation of any reliable research protocol.',
-    accent: '#22c55e',
-    bg: '#f0fdf4',
+    accent: '#0ea5e9',
+    bg: '#eff6ff',
   },
   {
     key: 'purity',
@@ -242,7 +242,7 @@ export default function Home({ dbProducts }) {
         <div className="hide-mobile" style={{
           position: 'absolute', top: '50%', right: '12%',
           width: 600, height: 600,
-          background: 'radial-gradient(circle, rgba(27,77,62,0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(15,42,74,0.18) 0%, transparent 70%)',
           transform: 'translateY(-50%)',
           pointerEvents: 'none',
         }} />
@@ -252,9 +252,9 @@ export default function Home({ dbProducts }) {
 
             {/* Left — copy */}
             <div style={{ padding: '80px 0' }} className="hero-left">
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 100, padding: '6px 14px', marginBottom: 28 }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80', flexShrink: 0, boxShadow: '0 0 8px rgba(74,222,128,0.8)' }} />
-                <span style={{ fontSize: 12, fontWeight: 600, color: '#4ade80', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.25)', borderRadius: 100, padding: '6px 14px', marginBottom: 28 }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', flexShrink: 0, boxShadow: '0 0 8px rgba(6,182,212,0.8)' }} />
+                <span style={{ fontSize: 12, fontWeight: 600, color: '#06b6d4', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                   EVO Labs Research — Toronto, ON
                 </span>
               </div>
@@ -262,7 +262,7 @@ export default function Home({ dbProducts }) {
               <h1 style={{ fontSize: 'clamp(32px, 4.5vw, 64px)', fontWeight: 900, color: '#fff', lineHeight: 1.0, letterSpacing: '-0.03em', marginBottom: 24 }}>
                 Research-Grade<br />
                 Peptides.<br />
-                <span style={{ color: '#4ade80' }}>Zero Compromise.</span>
+                <span style={{ color: '#06b6d4' }}>Zero Compromise.</span>
               </h1>
 
               <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: 420, marginBottom: 36 }}>
@@ -274,7 +274,7 @@ export default function Home({ dbProducts }) {
                 <Link href={session ? "/products" : "/account/login"} style={{
                   background: '#fff', color: '#0c1018',
                   padding: '15px 32px', borderRadius: 9999,
-                  fontSize: 15, fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                  fontSize: 15, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                   display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none',
                   transition: 'background 0.2s, transform 0.15s',
                 }}
@@ -286,7 +286,7 @@ export default function Home({ dbProducts }) {
                 <Link href="/coa" style={{
                   background: 'transparent', color: 'rgba(255,255,255,0.75)',
                   padding: '14px 28px', borderRadius: 9999,
-                  fontSize: 14, fontWeight: 500, fontFamily: "'Poppins', sans-serif",
+                  fontSize: 14, fontWeight: 500, fontFamily: "'DM Sans', sans-serif",
                   border: '1px solid rgba(255,255,255,0.2)', textDecoration: 'none',
                   transition: 'border-color 0.2s, color 0.2s',
                 }}
@@ -319,7 +319,7 @@ export default function Home({ dbProducts }) {
               <div style={{
                 position: 'absolute', top: '50%', left: '50%',
                 width: 340, height: 340,
-                background: 'radial-gradient(circle, rgba(74,222,128,0.14) 0%, rgba(27,77,62,0.09) 45%, transparent 72%)',
+                background: 'radial-gradient(circle, rgba(6,182,212,0.14) 0%, rgba(15,42,74,0.09) 45%, transparent 72%)',
                 transform: 'translate(-50%, -50%)',
                 borderRadius: '50%',
                 pointerEvents: 'none',
@@ -337,14 +337,14 @@ export default function Home({ dbProducts }) {
               {/* Main hero vial — centered, large — 5-Amino-1MQ */}
               <Float3D speed={5} distance={10} rotate={2} style={{ position: 'relative', zIndex: 4 }}>
                 <img src="https://lh3.googleusercontent.com/d/17USTyXbdbJ9cmTh7i2CJPPg0JPcycuse" alt="5-Amino-1MQ"
-                  style={{ width: 230, height: 230, objectFit: 'contain', filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.7)) drop-shadow(0 0 36px rgba(74,222,128,0.18))' }}
+                  style={{ width: 230, height: 230, objectFit: 'contain', filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.7)) drop-shadow(0 0 36px rgba(6,182,212,0.18))' }}
                 />
               </Float3D>
 
               {/* Supporting vial — top left — BPC-157 */}
               <div className="hero-vial-secondary" style={{ position: 'absolute', left: '2%', top: '8%', zIndex: 3 }}>
                 <img src="https://lh3.googleusercontent.com/d/18kaeTUJb9UE8HhMtYtim3aOtq5gCjAcK" alt="BPC-157"
-                  style={{ width: 108, height: 108, objectFit: 'contain', filter: 'drop-shadow(0 14px 28px rgba(0,0,0,0.55)) drop-shadow(0 0 16px rgba(74,222,128,0.12))' }}
+                  style={{ width: 108, height: 108, objectFit: 'contain', filter: 'drop-shadow(0 14px 28px rgba(0,0,0,0.55)) drop-shadow(0 0 16px rgba(6,182,212,0.12))' }}
                 />
               </div>
 
@@ -377,8 +377,8 @@ export default function Home({ dbProducts }) {
                 border: '1px solid rgba(255,255,255,0.12)',
                 display: 'flex', alignItems: 'center', gap: 10,
               }}>
-                <div style={{ width: 28, height: 28, borderRadius: 8, background: 'rgba(74,222,128,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div style={{ width: 28, height: 28, borderRadius: 8, background: 'rgba(6,182,212,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 800, color: '#fff' }}>99%+ Purity</div>
@@ -441,7 +441,7 @@ export default function Home({ dbProducts }) {
               padding: '8px 20px',
               borderRight: i < 4 ? '1px solid rgba(255,255,255,0.06)' : 'none',
             }}>
-              <span style={{ color: '#4ade80', display: 'flex', alignItems: 'center', flexShrink: 0 }}>{item.icon}</span>
+              <span style={{ color: '#06b6d4', display: 'flex', alignItems: 'center', flexShrink: 0 }}>{item.icon}</span>
               <span style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.65)', letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{item.text}</span>
             </div>
           ))}
@@ -455,7 +455,7 @@ export default function Home({ dbProducts }) {
         <div className="container">
           <ScrollReveal type="up" delay={0}>
             <div style={{ textAlign: 'center', marginBottom: 52 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
                 Our Promise
               </div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
@@ -474,9 +474,9 @@ export default function Home({ dbProducts }) {
                 title: '99%+ Purity Guaranteed',
                 subtitle: 'Or your money back',
                 desc: 'Every batch is independently verified by Janoshik Analytical via HPLC and mass spectrometry. No compromises — ever.',
-                bg: '#f0fdf4',
-                accent: '#1B4D3E',
-                iconBg: '#dcfce7',
+                bg: '#eff6ff',
+                accent: '#0F2A4A',
+                iconBg: '#dbeafe',
               },
               {
                 icon: '📦',
@@ -526,7 +526,7 @@ export default function Home({ dbProducts }) {
           <div className="container">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 40, flexWrap: 'wrap', gap: 16 }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 10 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 10 }}>
                   Top Research Compounds
                 </div>
                 <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
@@ -548,12 +548,12 @@ export default function Home({ dbProducts }) {
       ) : (
         <section style={{ background: '#0a0c10', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '80px 0' }}>
           <div className="container" style={{ textAlign: 'center' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', marginBottom: 28 }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.2)', marginBottom: 28 }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
               </svg>
             </div>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 14 }}>Members Only</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 14 }}>Members Only</div>
             <h2 style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16, lineHeight: 1.1 }}>
               Sign in to View Our Catalog
             </h2>
@@ -561,7 +561,7 @@ export default function Home({ dbProducts }) {
               Access to our research peptide catalog is restricted to verified researchers. Create a free account to browse products, view COAs, and place orders.
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 20 }}>
-              <Link href="/account/login?mode=signup" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: '#4ade80', color: '#0a0a0a', padding: '14px 32px', borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+              <Link href="/account/login?mode=signup" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: '#06b6d4', color: '#0a0a0a', padding: '14px 32px', borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
                 Free account — takes 10 seconds
               </Link>
@@ -572,7 +572,7 @@ export default function Home({ dbProducts }) {
             <div style={{ display: 'flex', gap: 20, justifyContent: 'center', flexWrap: 'wrap' }}>
               {['No credit card required', 'We never sell your data', 'Unlock pricing & COA access'].map(t => (
                 <span key={t} style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', display: 'inline-flex', alignItems: 'center', gap: 5 }}>
-                  <span style={{ color: '#4ade80', fontWeight: 700 }}>✓</span> {t}
+                  <span style={{ color: '#06b6d4', fontWeight: 700 }}>✓</span> {t}
                 </span>
               ))}
             </div>
@@ -599,7 +599,7 @@ export default function Home({ dbProducts }) {
         <div className="container">
           <ScrollReveal type="up" delay={0}>
             <div style={{ textAlign: 'center', marginBottom: 52 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
                 Proof Over Promises
               </div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
@@ -619,7 +619,7 @@ export default function Home({ dbProducts }) {
               { val: '100%', label: 'Canada Verified' },
             ].map(s => (
               <div key={s.val} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 28, fontWeight: 900, color: '#4ade80', letterSpacing: '-0.02em' }}>{s.val}</div>
+                <div style={{ fontSize: 28, fontWeight: 900, color: '#06b6d4', letterSpacing: '-0.02em' }}>{s.val}</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', marginTop: 4, fontWeight: 500 }}>{s.label}</div>
               </div>
             ))}
@@ -685,7 +685,7 @@ export default function Home({ dbProducts }) {
                     background: activeTab.accent, color: '#fff',
                     borderRadius: 8, padding: '4px 10px',
                     fontSize: 10, fontWeight: 700, letterSpacing: '0.05em',
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                   }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: 4, verticalAlign: 'middle' }}><polyline points="20 6 9 17 4 12"/></svg>
                     VERIFIED
@@ -716,7 +716,7 @@ export default function Home({ dbProducts }) {
       <section className="section" style={{ background: '#0a0a0a' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 60 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
               Why Choose EVO Labs
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
@@ -730,7 +730,7 @@ export default function Home({ dbProducts }) {
                 icon: '🔬',
                 title: '99%+ Purity, Every Batch',
                 desc: 'Every compound independently tested via HPLC and mass spectrometry. Full COA published before any product is listed.',
-                accent: '#22c55e',
+                accent: '#0ea5e9',
                 bg: '#141414',
               },
               {
@@ -799,7 +799,7 @@ export default function Home({ dbProducts }) {
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
               How We Compare
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
@@ -825,7 +825,7 @@ export default function Home({ dbProducts }) {
                       textAlign: 'center', padding: '16px 20px',
                       fontSize: 13, fontWeight: 800,
                       color: col.highlight ? '#fff' : '#374151',
-                      background: col.highlight ? '#1B4D3E' : '#f9fafb',
+                      background: col.highlight ? '#0F2A4A' : '#f9fafb',
                       borderRadius: col.highlight ? '12px 12px 0 0' : 0,
                       borderTop: col.highlight ? 'none' : '1px solid #f0f0f0',
                       borderLeft: col.highlight ? 'none' : '1px solid #f0f0f0',
@@ -863,10 +863,10 @@ export default function Home({ dbProducts }) {
                         ...cellBase,
                         textAlign: 'center', fontWeight: 700,
                         color: evoPositive ? '#16a34a' : '#9ca3af',
-                        background: 'rgba(27,77,62,0.04)',
-                        borderLeft: '1.5px solid rgba(27,77,62,0.15)',
-                        borderRight: '1.5px solid rgba(27,77,62,0.15)',
-                        borderBottom: isLast ? '1.5px solid rgba(27,77,62,0.15)' : '1px solid rgba(27,77,62,0.08)',
+                        background: 'rgba(15,42,74,0.04)',
+                        borderLeft: '1.5px solid rgba(15,42,74,0.15)',
+                        borderRight: '1.5px solid rgba(15,42,74,0.15)',
+                        borderBottom: isLast ? '1.5px solid rgba(15,42,74,0.15)' : '1px solid rgba(15,42,74,0.08)',
                       }}>
                         {row.evo}
                       </td>
@@ -893,7 +893,7 @@ export default function Home({ dbProducts }) {
       <section className="section" style={{ background: '#fafafa' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
               Researcher Reviews
             </div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: 16 }}>
@@ -918,7 +918,7 @@ export default function Home({ dbProducts }) {
               {Array.from({ length: totalPages }).map((_, i) => (
                 <button key={i} onClick={() => setReviewPage(i)} style={{
                   width: 10, height: 10, borderRadius: '50%',
-                  background: i === reviewPage ? '#1B4D3E' : '#d1d5db',
+                  background: i === reviewPage ? '#0F2A4A' : '#d1d5db',
                   border: 'none', cursor: 'pointer', transition: 'background 0.2s',
                 }} />
               ))}
@@ -934,14 +934,14 @@ export default function Home({ dbProducts }) {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 48, flexWrap: 'wrap', gap: 16 }}>
             <div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
                 Browse by Category
               </div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
                 Shop by Research Goal
               </h2>
             </div>
-            <Link href={session ? "/products" : "/account/login"} style={{ fontSize: 14, fontWeight: 600, color: '#1B4D3E', textDecoration: 'none', borderBottom: '1px solid #1B4D3E', paddingBottom: 2 }}>
+            <Link href={session ? "/products" : "/account/login"} style={{ fontSize: 14, fontWeight: 600, color: '#0F2A4A', textDecoration: 'none', borderBottom: '1px solid #0F2A4A', paddingBottom: 2 }}>
               View all 48 compounds →
             </Link>
           </div>
@@ -996,7 +996,7 @@ export default function Home({ dbProducts }) {
                       </div>
                     )}
                   </div>
-                  <div style={{ fontSize: 10, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6, fontFamily: "'Poppins', sans-serif" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6, fontFamily: "'DM Sans', sans-serif" }}>
                     {catProductCount} compounds
                   </div>
                   <h3 style={{ fontSize: isLarge ? 20 : 14, fontWeight: 800, color: '#0a0a0a', lineHeight: 1.25, marginBottom: 6 }}>
@@ -1008,7 +1008,7 @@ export default function Home({ dbProducts }) {
                   <span style={{
                     display: 'inline-flex', alignItems: 'center', gap: 4,
                     fontSize: 12, fontWeight: 700, color: '#131315',
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                   }}>
                     Shop {cat.name.split(' ')[0]} →
                   </span>
@@ -1031,7 +1031,7 @@ export default function Home({ dbProducts }) {
                   <span style={{ fontSize: 28, flexShrink: 0 }}>{cat.icon}</span>
                   <div>
                     <h3 style={{ fontSize: 13, fontWeight: 700, color: '#0a0a0a', marginBottom: 3, lineHeight: 1.3 }}>{cat.name}</h3>
-                    <p style={{ fontSize: 11, color: '#6b7280', fontFamily: "'Poppins', sans-serif" }}>{count} compounds →</p>
+                    <p style={{ fontSize: 11, color: '#6b7280', fontFamily: "'DM Sans', sans-serif" }}>{count} compounds →</p>
                   </div>
                 </Link>
               );
@@ -1073,10 +1073,10 @@ export default function Home({ dbProducts }) {
                     )}
                     <div style={{
                       position: 'absolute', bottom: 6, right: 6,
-                      background: '#1B4D3E', color: '#fff',
+                      background: '#0F2A4A', color: '#fff',
                       borderRadius: 4, padding: '2px 6px',
                       fontSize: 8, fontWeight: 700, letterSpacing: '0.05em',
-                      fontFamily: "'Poppins', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                     }}>COA</div>
                   </div>
                   <div style={{ padding: '10px 10px 12px' }}>
@@ -1098,13 +1098,13 @@ export default function Home({ dbProducts }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }} className="brand-split">
             {/* Left: large text */}
             <div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>
                 Our Commitment
               </div>
               <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.05, marginBottom: 24 }}>
                 We Never Sell<br />
                 a Peptide Without<br />
-                <span style={{ color: '#1B4D3E' }}>Proof of Purity.</span>
+                <span style={{ color: '#0F2A4A' }}>Proof of Purity.</span>
               </h2>
               <p style={{ fontSize: 16, color: '#6b7280', lineHeight: 1.8, marginBottom: 36 }}>
                 Every compound we carry has been independently tested by Janoshik Analytical (Prague, est. 2013) — one of the most trusted independent labs in the research compound industry. We publish the Certificate of Analysis — HPLC chromatograms, mass spec data, and purity percentage — before any product is made available for purchase.
@@ -1118,7 +1118,7 @@ export default function Home({ dbProducts }) {
             {/* Right: stats cards */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               {[
-                { val: '99%+',   label: 'Average Purity',      bg: '#f0fdf4', accent: '#1B4D3E' },
+                { val: '99%+',   label: 'Average Purity',      bg: '#eff6ff', accent: '#0F2A4A' },
                 { val: '100%',   label: 'Batches Tested',       bg: '#eff6ff', accent: '#2563eb' },
                 { val: 'Same Day', label: 'Fulfillment',        bg: '#fdf4ff', accent: '#7c3aed' },
                 { val: 'Free',   label: 'Shipping $300+ CAD',    bg: '#fff7ed', accent: '#ea580c' },
@@ -1139,7 +1139,7 @@ export default function Home({ dbProducts }) {
       <section style={{ background: '#0a0a0a', padding: '72px 0', borderTop: '1px solid #1a1a1a' }}>
         <div className="container">
           <div style={{ maxWidth: 560, margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>
               Stay Updated
             </div>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 14 }}>
@@ -1149,7 +1149,7 @@ export default function Home({ dbProducts }) {
               Subscribe for exclusive deals, new compound announcements, and member-only pricing. Join 5,000+ researchers.
             </p>
             {emailSubmitted ? (
-              <div style={{ background: '#1B4D3E', borderRadius: 16, padding: '20px 28px', color: '#fff' }}>
+              <div style={{ background: '#0F2A4A', borderRadius: 16, padding: '20px 28px', color: '#fff' }}>
                 <p style={{ fontWeight: 700, fontSize: 16 }}>✓ You're on the list!</p>
                 <p style={{ fontSize: 13, opacity: 0.7, marginTop: 6 }}>We'll be in touch with research updates and exclusive offers.</p>
               </div>
@@ -1181,12 +1181,12 @@ export default function Home({ dbProducts }) {
                   }}
                 />
                 <button type="submit" disabled={emailLoading} style={{
-                  background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 100,
+                  background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 100,
                   padding: '13px 24px', fontSize: 14, fontWeight: 700, cursor: emailLoading ? 'default' : 'pointer',
                   whiteSpace: 'nowrap', transition: 'background 0.15s', opacity: emailLoading ? 0.7 : 1,
                 }}
                   onMouseEnter={e => { if (!emailLoading) e.currentTarget.style.background = '#16a34a'; }}
-                  onMouseLeave={e => e.currentTarget.style.background = '#1B4D3E'}
+                  onMouseLeave={e => e.currentTarget.style.background = '#0F2A4A'}
                 >
                   {emailLoading ? '…' : 'Subscribe'}
                 </button>
@@ -1203,7 +1203,7 @@ export default function Home({ dbProducts }) {
       {session && <section style={{ background: '#fff', padding: '80px 0', borderTop: '1px solid #f0f0f0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
               Curated Protocols
             </div>
             <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 42px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 14 }}>
@@ -1263,7 +1263,7 @@ export default function Home({ dbProducts }) {
                       background: s.accent, color: '#fff',
                       fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 9999,
                       letterSpacing: '0.06em', textTransform: 'uppercase',
-                      fontFamily: "'Poppins', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                     }}>
                       Save {s.savings} ({s.pct})
                     </span>
@@ -1278,10 +1278,10 @@ export default function Home({ dbProducts }) {
               display: 'inline-flex', alignItems: 'center', gap: 8,
               background: '#0a0a0a', color: '#fff', padding: '13px 32px',
               borderRadius: 100, fontSize: 14, fontWeight: 700, textDecoration: 'none',
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               transition: 'background 0.15s',
             }}
-              onMouseEnter={e => e.currentTarget.style.background = '#1B4D3E'}
+              onMouseEnter={e => e.currentTarget.style.background = '#0F2A4A'}
               onMouseLeave={e => e.currentTarget.style.background = '#0a0a0a'}
             >
               Browse All 6 Research Stacks →
@@ -1293,7 +1293,7 @@ export default function Home({ dbProducts }) {
       {/* ════════════════════════════════════════════════════════
           CTA BANNER
       ════════════════════════════════════════════════════════ */}
-      <section style={{ background: '#1B4D3E', padding: '80px 0' }}>
+      <section style={{ background: '#0F2A4A', padding: '80px 0' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
             Ready to Elevate Your Research?
@@ -1303,7 +1303,7 @@ export default function Home({ dbProducts }) {
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href={session ? "/products" : "/account/login"}
-              style={{ background: '#fff', color: '#1B4D3E', padding: '15px 36px', borderRadius: 100, fontSize: 15, fontWeight: 700, transition: 'transform 0.15s', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
+              style={{ background: '#fff', color: '#0F2A4A', padding: '15px 36px', borderRadius: 100, fontSize: 15, fontWeight: 700, transition: 'transform 0.15s', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'none'}
             >

@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function ReturnsPolicy() {
   return (
     <Layout title="Returns & Refunds Policy | EVO Labs Research Canada" description="EVO Labs Research Canada returns and refunds policy for research compounds.">
-      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Anek Telugu', sans-serif" }}>
+      <div style={{ maxWidth: 780, margin: '0 auto', padding: '60px 24px 80px', fontFamily: "'Inter', sans-serif" }}>
         <div style={{ marginBottom: 40 }}>
-          <span style={{ fontSize: 11, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
+          <span style={{ fontSize: 11, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Legal</span>
           <h1 style={{ fontSize: 36, fontWeight: 900, color: '#111', margin: '8px 0 12px', letterSpacing: '-0.02em' }}>Returns & Refunds Policy</h1>
           <p style={{ fontSize: 14, color: '#6b7280' }}>Last updated: March 1, 2026</p>
           <div style={{ height: 1, background: '#e5e7eb', marginTop: 24 }} />
@@ -37,7 +37,7 @@ export default function ReturnsPolicy() {
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#111', margin: '28px 0 12px' }}>How to Request a Return/Refund</h2>
           <ol style={{ paddingLeft: 20, margin: '0 0 20px' }}>
-            <li style={{ marginBottom: 10 }}>Email <a href="mailto:support@evolabsresearch.ca" style={{ color: '#1B4D3E' }}>support@evolabsresearch.ca</a> within 14 days of delivery</li>
+            <li style={{ marginBottom: 10 }}>Email <a href="mailto:support@evolabsresearch.ca" style={{ color: '#0F2A4A' }}>support@evolabsresearch.ca</a> within 14 days of delivery</li>
             <li style={{ marginBottom: 10 }}>Include your order number (e.g., EVO-XXXXX)</li>
             <li style={{ marginBottom: 10 }}>Describe the issue clearly</li>
             <li style={{ marginBottom: 10 }}>Attach photos of the damaged/incorrect product and packaging</li>
@@ -50,7 +50,7 @@ export default function ReturnsPolicy() {
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#111', margin: '28px 0 12px' }}>Contact</h2>
           <p>For any returns or refund questions:<br />
-            <a href="mailto:support@evolabsresearch.ca" style={{ color: '#1B4D3E' }}>support@evolabsresearch.ca</a> · (647) 555-0199
+            <a href="mailto:support@evolabsresearch.ca" style={{ color: '#0F2A4A' }}>support@evolabsresearch.ca</a> · (647) 555-0199
           </p>
         </div>
 

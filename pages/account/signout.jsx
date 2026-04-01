@@ -26,7 +26,7 @@ export default function SignOutPage() {
       <div style={{
         minHeight: '100vh', background: '#0a0a0a',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '40px 16px', fontFamily: "'Poppins', sans-serif",
+        padding: '40px 16px', fontFamily: "'DM Sans', sans-serif",
       }}>
         <div style={{ width: '100%', maxWidth: 420 }}>
           {/* Logo */}
@@ -61,7 +61,7 @@ export default function SignOutPage() {
               disabled={loading}
               style={{
                 width: '100%', padding: '14px', borderRadius: 10, border: 'none',
-                background: '#1B4D3E', color: '#4ade80',
+                background: '#0F2A4A', color: '#06b6d4',
                 fontSize: 14, fontWeight: 700, cursor: loading ? 'not-allowed' : 'pointer',
                 marginBottom: 12, transition: 'all 0.2s', letterSpacing: '0.03em',
                 opacity: loading ? 0.6 : 1,

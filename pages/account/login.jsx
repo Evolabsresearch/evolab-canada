@@ -160,7 +160,7 @@ export default function LoginPage() {
       <div style={{
         minHeight: '100vh', background: '#0a0a0a',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '40px 16px', fontFamily: "'Poppins', sans-serif",
+        padding: '40px 16px', fontFamily: "'DM Sans', sans-serif",
       }}>
         <div style={{ width: '100%', maxWidth: 420 }}>
           {/* Logo */}
@@ -194,7 +194,7 @@ export default function LoginPage() {
                     style={{
                       flex: 1, padding: '9px 0', borderRadius: 7, border: 'none',
                       background: tab === t ? 'rgba(27,77,62,0.8)' : 'transparent',
-                      color: tab === t ? '#4ade80' : 'rgba(255,255,255,0.4)',
+                      color: tab === t ? '#06b6d4' : 'rgba(255,255,255,0.4)',
                       fontSize: 13, fontWeight: 600, cursor: 'pointer',
                       transition: 'all 0.15s',
                     }}
@@ -217,7 +217,7 @@ export default function LoginPage() {
                   type="checkbox"
                   checked={ageConfirmed}
                   onChange={e => setAgeConfirmed(e.target.checked)}
-                  style={{ marginTop: 2, accentColor: '#4ade80', flexShrink: 0 }}
+                  style={{ marginTop: 2, accentColor: '#06b6d4', flexShrink: 0 }}
                 />
                 <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.55 }}>
                   I confirm I am <strong style={{ color: '#fff' }}>18 years or older</strong> and am
@@ -251,8 +251,8 @@ export default function LoginPage() {
                   disabled={btnDisabled || !email}
                   style={{
                     width: '100%', padding: '14px', borderRadius: 10, border: 'none',
-                    background: (btnDisabled || !email) ? '#1a2a24' : '#1B4D3E',
-                    color: (btnDisabled || !email) ? 'rgba(74,222,128,0.35)' : '#4ade80',
+                    background: (btnDisabled || !email) ? '#1a2a24' : '#0F2A4A',
+                    color: (btnDisabled || !email) ? 'rgba(74,222,128,0.35)' : '#06b6d4',
                     fontSize: 14, fontWeight: 700,
                     cursor: (btnDisabled || !email) ? 'not-allowed' : 'pointer',
                     transition: 'all 0.2s',
@@ -273,7 +273,7 @@ export default function LoginPage() {
                 </p>
                 <button
                   onClick={() => { setEmailSent(false); setEmail(''); }}
-                  style={{ background: 'none', border: 'none', color: '#4ade80', fontSize: 13, cursor: 'pointer', marginTop: 20 }}
+                  style={{ background: 'none', border: 'none', color: '#06b6d4', fontSize: 13, cursor: 'pointer', marginTop: 20 }}
                 >
                   ← Use a different email
                 </button>
@@ -305,8 +305,8 @@ export default function LoginPage() {
                   disabled={btnDisabled || !phone}
                   style={{
                     width: '100%', padding: '14px', borderRadius: 10, border: 'none',
-                    background: (btnDisabled || !phone) ? '#1a2a24' : '#1B4D3E',
-                    color: (btnDisabled || !phone) ? 'rgba(74,222,128,0.35)' : '#4ade80',
+                    background: (btnDisabled || !phone) ? '#1a2a24' : '#0F2A4A',
+                    color: (btnDisabled || !phone) ? 'rgba(74,222,128,0.35)' : '#06b6d4',
                     fontSize: 14, fontWeight: 700,
                     cursor: (btnDisabled || !phone) ? 'not-allowed' : 'pointer',
                     transition: 'all 0.2s',
@@ -342,7 +342,7 @@ export default function LoginPage() {
                       autoFocus={i === 0}
                       style={{
                         width: 48, height: 56, textAlign: 'center', fontSize: 22, fontWeight: 700,
-                        borderRadius: 10, border: digit ? '2px solid #4ade80' : '1px solid rgba(255,255,255,0.15)',
+                        borderRadius: 10, border: digit ? '2px solid #06b6d4' : '1px solid rgba(255,255,255,0.15)',
                         background: 'rgba(255,255,255,0.06)', color: '#fff', outline: 'none',
                         transition: 'border-color 0.15s',
                       }}
@@ -357,8 +357,8 @@ export default function LoginPage() {
                   disabled={loading || codeInputs.join('').length !== 6}
                   style={{
                     width: '100%', padding: '14px', borderRadius: 10, border: 'none',
-                    background: (loading || codeInputs.join('').length !== 6) ? '#1a2a24' : '#1B4D3E',
-                    color: (loading || codeInputs.join('').length !== 6) ? 'rgba(74,222,128,0.35)' : '#4ade80',
+                    background: (loading || codeInputs.join('').length !== 6) ? '#1a2a24' : '#0F2A4A',
+                    color: (loading || codeInputs.join('').length !== 6) ? 'rgba(74,222,128,0.35)' : '#06b6d4',
                     fontSize: 14, fontWeight: 700,
                     cursor: (loading || codeInputs.join('').length !== 6) ? 'not-allowed' : 'pointer',
                     transition: 'all 0.2s',
@@ -383,8 +383,8 @@ export default function LoginPage() {
           {/* Trust chips */}
           <div style={{ display: 'flex', gap: 20, justifyContent: 'center', flexWrap: 'wrap', marginTop: 24 }}>
             {['No credit card required', 'We never sell your data', 'Cancel anytime'].map(t => (
-              <span key={t} style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: "'Poppins', sans-serif" }}>
-                <span style={{ color: '#4ade80', fontWeight: 700 }}>✓</span> {t}
+              <span key={t} style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: "'DM Sans', sans-serif" }}>
+                <span style={{ color: '#06b6d4', fontWeight: 700 }}>✓</span> {t}
               </span>
             ))}
           </div>

@@ -71,9 +71,9 @@ export default function WholesalePage() {
     >
       {/* Header */}
       <div style={{ background: '#0a0a0a', padding: '72px 0 60px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(74,222,128,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(74,222,128,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(6,182,212,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#4ade80', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#06b6d4', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
             Institutional Access
           </div>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -150,7 +150,7 @@ export default function WholesalePage() {
 
           {submitted ? (
             <div style={{ textAlign: 'center', background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: 20, padding: '48px 32px' }}>
-              <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#dcfce7', border: '2px solid #4ade80', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+              <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#dcfce7', border: '2px solid #06b6d4', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 6L9 17l-5-5"/>
                 </svg>
@@ -159,7 +159,7 @@ export default function WholesalePage() {
               <p style={{ fontSize: 15, color: '#166534', lineHeight: 1.7, maxWidth: 400, margin: '0 auto 24px' }}>
                 We'll review your application and reach out to <strong>{form.email}</strong> within 1–2 business days.
               </p>
-              <Link href="/products" style={{ background: '#1B4D3E', color: '#fff', padding: '13px 28px', borderRadius: 100, fontSize: 14, fontWeight: 700, textDecoration: 'none' }}>
+              <Link href="/products" style={{ background: '#0F2A4A', color: '#fff', padding: '13px 28px', borderRadius: 100, fontSize: 14, fontWeight: 700, textDecoration: 'none' }}>
                 Browse Products →
               </Link>
             </div>
@@ -179,7 +179,7 @@ export default function WholesalePage() {
                     value={form[f.id]}
                     onChange={e => handleChange(f.id, e.target.value)}
                     style={{ width: '100%', padding: '12px 14px', border: '1.5px solid #e5e7eb', borderRadius: 10, fontSize: 14, color: '#111827', outline: 'none', fontFamily: 'inherit', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
-                    onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+                    onFocus={e => e.target.style.borderColor = '#0F2A4A'}
                     onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                   />
                 </div>
@@ -231,7 +231,7 @@ export default function WholesalePage() {
                   value={form.message}
                   onChange={e => handleChange('message', e.target.value)}
                   style={{ width: '100%', padding: '12px 14px', border: '1.5px solid #e5e7eb', borderRadius: 10, fontSize: 14, color: '#111827', outline: 'none', fontFamily: 'inherit', boxSizing: 'border-box', resize: 'vertical', transition: 'border-color 0.2s' }}
-                  onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+                  onFocus={e => e.target.style.borderColor = '#0F2A4A'}
                   onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                 />
               </div>
@@ -239,15 +239,15 @@ export default function WholesalePage() {
               <button
                 type="submit"
                 disabled={loading}
-                style={{ padding: '14px 24px', background: loading ? '#e5e7eb' : '#1B4D3E', color: loading ? '#9ca3af' : '#fff', borderRadius: 12, border: 'none', fontSize: 15, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit', transition: 'background 0.2s' }}
+                style={{ padding: '14px 24px', background: loading ? '#e5e7eb' : '#0F2A4A', color: loading ? '#9ca3af' : '#fff', borderRadius: 12, border: 'none', fontSize: 15, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit', transition: 'background 0.2s' }}
               >
                 {loading ? 'Submitting...' : 'Submit Application →'}
               </button>
 
               <p style={{ fontSize: 12, color: '#9ca3af', textAlign: 'center', lineHeight: 1.6 }}>
                 For Research Use Only — Not for Human Consumption. All accounts are verified before approval. By applying you agree to our{' '}
-                <Link href="/terms" style={{ color: '#1B4D3E' }}>Terms of Service</Link> and{' '}
-                <Link href="/research-use" style={{ color: '#1B4D3E' }}>Research Use Agreement</Link>.
+                <Link href="/terms" style={{ color: '#0F2A4A' }}>Terms of Service</Link> and{' '}
+                <Link href="/research-use" style={{ color: '#0F2A4A' }}>Research Use Agreement</Link>.
               </p>
             </form>
           )}

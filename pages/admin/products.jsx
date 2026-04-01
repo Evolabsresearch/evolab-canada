@@ -273,7 +273,7 @@ export default function AdminProducts() {
               onClick={handleSyncWC}
               disabled={syncing}
               title="Pull all products from WooCommerce into the database"
-              style={{ padding: '7px 14px', background: syncing ? '#9ca3af' : '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: syncing ? 'default' : 'pointer', whiteSpace: 'nowrap', flexShrink: 0 }}
+              style={{ padding: '7px 14px', background: syncing ? '#9ca3af' : '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: syncing ? 'default' : 'pointer', whiteSpace: 'nowrap', flexShrink: 0 }}
             >
               {syncing ? 'Syncing…' : '↻ Sync WooCommerce'}
             </button>
@@ -373,7 +373,7 @@ export default function AdminProducts() {
                   <input type="url" value={editForm.newGalleryUrl} onChange={e => setEditForm({ ...editForm, newGalleryUrl: e.target.value })}
                     placeholder="Paste image URL and click Add" style={{ ...inputStyle, flex: 1 }}
                     onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); addGalleryImage(); } }} />
-                  <button onClick={addGalleryImage} style={{ padding: '8px 14px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer', flexShrink: 0 }}>Add URL</button>
+                  <button onClick={addGalleryImage} style={{ padding: '8px 14px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer', flexShrink: 0 }}>Add URL</button>
                   <GalleryUploadButton onUpload={url => setEditForm(f => ({ ...f, gallery: [...f.gallery, url] }))} />
                 </div>
                 {editForm.gallery?.length > 0 && (
@@ -480,7 +480,7 @@ export default function AdminProducts() {
                     <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 4 }}>Sale Price ($)</div>
                     <input type="number" step="0.01" placeholder="optional" value={editForm.newSizeSalePrice} onChange={e => setEditForm({ ...editForm, newSizeSalePrice: e.target.value })} style={inputStyle} />
                   </div>
-                  <button onClick={addSize} style={{ padding: '8px 14px', background: '#1B4D3E', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>+ Add</button>
+                  <button onClick={addSize} style={{ padding: '8px 14px', background: '#0F2A4A', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>+ Add</button>
                 </div>
                 <div>
                   <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 4 }}>Image for this size (optional)</div>
@@ -497,7 +497,7 @@ export default function AdminProducts() {
               )}
               <button onClick={handleSave} disabled={saving} style={{
                 width: '100%', padding: '10px', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: saving ? 'not-allowed' : 'pointer',
-                background: saved ? '#065f46' : '#1B4D3E', color: '#fff', opacity: saving ? 0.7 : 1,
+                background: saved ? '#065f46' : '#0F2A4A', color: '#fff', opacity: saving ? 0.7 : 1,
               }}>
                 {saving ? 'Saving to database…' : saved ? '✓ Saved to Supabase' : 'Save Changes'}
               </button>

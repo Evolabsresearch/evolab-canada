@@ -48,7 +48,7 @@ const CA_PROVINCES = [
 function InputField({ label, required, ...props }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-      <label style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'Poppins', sans-serif" }}>
+      <label style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'DM Sans', sans-serif" }}>
         {label} {required && <span style={{ color: '#ef4444' }}>*</span>}
       </label>
       <input
@@ -61,7 +61,7 @@ function InputField({ label, required, ...props }) {
           outline: 'none', transition: 'border-color 0.2s',
           ...(props.style || {}),
         }}
-        onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+        onFocus={e => e.target.style.borderColor = '#0F2A4A'}
         onBlur={e => e.target.style.borderColor = '#e5e7eb'}
       />
     </div>
@@ -71,7 +71,7 @@ function InputField({ label, required, ...props }) {
 function SelectField({ label, required, children, ...props }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-      <label style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'Poppins', sans-serif" }}>
+      <label style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'DM Sans', sans-serif" }}>
         {label} {required && <span style={{ color: '#ef4444' }}>*</span>}
       </label>
       <select
@@ -85,7 +85,7 @@ function SelectField({ label, required, children, ...props }) {
           background: '#fff', appearance: 'auto',
           ...(props.style || {}),
         }}
-        onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+        onFocus={e => e.target.style.borderColor = '#0F2A4A'}
         onBlur={e => e.target.style.borderColor = '#e5e7eb'}
       >
         {children}
@@ -99,8 +99,8 @@ function Checkbox({ checked, onChange, children, description }) {
     <label style={{ display: 'flex', gap: 10, cursor: 'pointer', alignItems: 'flex-start' }}>
       <div style={{
         width: 20, height: 20, flexShrink: 0, borderRadius: 6, marginTop: 1,
-        border: checked ? '2px solid #1B4D3E' : '2px solid #d1d5db',
-        background: checked ? '#1B4D3E' : '#fff',
+        border: checked ? '2px solid #0F2A4A' : '2px solid #d1d5db',
+        background: checked ? '#0F2A4A' : '#fff',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         transition: 'all 0.15s', cursor: 'pointer',
       }}>
@@ -755,11 +755,11 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
         <section style={{ padding: '80px 0 120px', minHeight: '60vh' }}>
           <div className="container" style={{ maxWidth: 600, textAlign: 'center' }}>
             <div style={{
-              width: 72, height: 72, borderRadius: '50%', background: '#f0fdf4',
+              width: 72, height: 72, borderRadius: '50%', background: '#eff6ff',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              margin: '0 auto 24px', border: '2px solid #dcfce7',
+              margin: '0 auto 24px', border: '2px solid #dbeafe',
             }}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 6L9 17l-5-5"/>
               </svg>
             </div>
@@ -822,7 +822,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                 </div>
                 <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: 14, fontWeight: 800, color: '#0a0a0a' }}>Total Paid</span>
-                  <span style={{ fontSize: 16, fontWeight: 900, color: '#1B4D3E', fontFamily: "'Poppins', sans-serif" }}>${paidTotal.toFixed(2)}</span>
+                  <span style={{ fontSize: 16, fontWeight: 900, color: '#0F2A4A', fontFamily: "'DM Sans', sans-serif" }}>${paidTotal.toFixed(2)}</span>
                 </div>
               </div>
             )}
@@ -846,19 +846,19 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
             }}>
               <h3 style={{ fontSize: 14, fontWeight: 700, color: '#0a0a0a', marginBottom: 16 }}>What happens next?</h3>
               {[
-                { step: '1', title: 'Order Processing', desc: 'Your order is being prepared and will be dispatched same business day if placed before 2pm EST.', color: '#1B4D3E' },
+                { step: '1', title: 'Order Processing', desc: 'Your order is being prepared and will be dispatched same business day if placed before 2pm EST.', color: '#0F2A4A' },
                 { step: '2', title: 'Shipping Confirmation', desc: 'You\'ll receive an email with your tracking number once your order ships via USPS Priority or UPS Ground.', color: '#2563eb' },
                 { step: '3', title: 'Delivery', desc: 'Most orders arrive within 2-5 business days. Cold-pack packaging included for temperature-sensitive compounds.', color: '#7c3aed' },
               ].map(s => (
                 <div key={s.step} style={{ display: 'flex', gap: 14, marginBottom: 14, alignItems: 'flex-start' }}>
-                  <div style={{ width: 26, height: 26, borderRadius: '50%', background: s.color, color: '#fff', fontSize: 11, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1, fontFamily: "'Poppins', sans-serif" }}>{s.step}</div>
+                  <div style={{ width: 26, height: 26, borderRadius: '50%', background: s.color, color: '#fff', fontSize: 11, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1, fontFamily: "'DM Sans', sans-serif" }}>{s.step}</div>
                   <div>
                     <div style={{ fontSize: 13, fontWeight: 700, color: '#0a0a0a', marginBottom: 2 }}>{s.title}</div>
                     <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5 }}>{s.desc}</div>
                   </div>
                 </div>
               ))}
-              <Link href="/track" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 4, fontSize: 12, fontWeight: 700, color: '#1B4D3E', textDecoration: 'none', borderBottom: '1px solid #1B4D3E', paddingBottom: 1 }}>
+              <Link href="/track" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 4, fontSize: 12, fontWeight: 700, color: '#0F2A4A', textDecoration: 'none', borderBottom: '1px solid #0F2A4A', paddingBottom: 1 }}>
                 Track your order →
               </Link>
             </div>
@@ -905,10 +905,10 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                       onClick={handleCopy}
                       style={{
                         padding: '9px 16px', borderRadius: 8, border: 'none',
-                        background: referralCopied ? '#16a34a' : '#1B4D3E',
+                        background: referralCopied ? '#0ea5e9' : '#0F2A4A',
                         color: '#fff', fontSize: 12, fontWeight: 700,
                         cursor: 'pointer', transition: 'background 0.2s', flexShrink: 0,
-                        fontFamily: "'Poppins', sans-serif",
+                        fontFamily: "'DM Sans', sans-serif",
                       }}
                     >
                       {referralCopied ? '✓ Copied!' : 'Copy Link'}
@@ -925,7 +925,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         padding: '7px 14px', borderRadius: 8,
                         background: s.color, color: '#fff',
                         fontSize: 11, fontWeight: 700, textDecoration: 'none',
-                        fontFamily: "'Poppins', sans-serif",
+                        fontFamily: "'DM Sans', sans-serif",
                       }}>
                         {s.label}
                       </a>
@@ -946,7 +946,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                 <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(74,222,128,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
                   Your Next Order Discount
                 </div>
-                <div style={{ fontSize: 28, fontWeight: 900, color: '#4ade80', fontFamily: 'monospace', letterSpacing: '0.1em', marginBottom: 6 }}>
+                <div style={{ fontSize: 28, fontWeight: 900, color: '#06b6d4', fontFamily: 'monospace', letterSpacing: '0.1em', marginBottom: 6 }}>
                   {discountCode}
                 </div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
@@ -997,10 +997,10 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={{
                     width: 32, height: 32, borderRadius: '50%',
-                    background: step >= num ? '#1B4D3E' : '#e5e7eb',
+                    background: step >= num ? '#0F2A4A' : '#e5e7eb',
                     color: step >= num ? '#fff' : '#9ca3af',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 13, fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                    fontSize: 13, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                     transition: 'all 0.3s',
                   }}>
                     {step > num ? (
@@ -1012,7 +1012,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                   <span style={{
                     fontSize: 13, fontWeight: step >= num ? 700 : 500,
                     color: step >= num ? '#0a0a0a' : '#9ca3af',
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                   }}>
                     {label}
                   </span>
@@ -1020,7 +1020,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                 {i < 2 && (
                   <div style={{
                     width: 48, height: 2, margin: '0 16px',
-                    background: step > num ? '#1B4D3E' : '#e5e7eb',
+                    background: step > num ? '#0F2A4A' : '#e5e7eb',
                     borderRadius: 1, transition: 'background 0.3s',
                   }} />
                 )}
@@ -1042,7 +1042,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                       <InputField label="Email Address" type="email" required value={form.email} onChange={set('email')} placeholder="you@example.com" />
                       {isGuest && catalogMode === 'full_open' && (
-                        <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '10px 14px', fontSize: 12, color: '#065f46', lineHeight: 1.5 }}>
+                        <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 8, padding: '10px 14px', fontSize: 12, color: '#065f46', lineHeight: 1.5 }}>
                           We&apos;ll create a free account for you so you can track your order. You&apos;ll receive an email to set your password.
                         </div>
                       )}
@@ -1102,7 +1102,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                   {/* Order notes */}
                   <div style={{ marginBottom: 36 }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                      <label style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'Poppins', sans-serif" }}>
+                      <label style={{ fontSize: 12, fontWeight: 600, color: '#374151', fontFamily: "'DM Sans', sans-serif" }}>
                         Order Notes <span style={{ fontWeight: 400, color: '#9ca3af' }}>(optional)</span>
                       </label>
                       <textarea
@@ -1117,7 +1117,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                           outline: 'none', resize: 'vertical',
                           transition: 'border-color 0.2s',
                         }}
-                        onFocus={e => e.target.style.borderColor = '#1B4D3E'}
+                        onFocus={e => e.target.style.borderColor = '#0F2A4A'}
                         onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                       />
                     </div>
@@ -1126,14 +1126,14 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                   <button
                     type="submit"
                     style={{
-                      width: '100%', background: '#1B4D3E', color: '#fff',
+                      width: '100%', background: '#0F2A4A', color: '#fff',
                       padding: '16px 24px', borderRadius: 12, fontSize: 15,
-                      fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                      fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                       cursor: 'pointer', border: 'none',
                       transition: 'background 0.2s',
                     }}
-                    onMouseEnter={e => e.currentTarget.style.background = '#163d31'}
-                    onMouseLeave={e => e.currentTarget.style.background = '#1B4D3E'}
+                    onMouseEnter={e => e.currentTarget.style.background = '#0a1f3d'}
+                    onMouseLeave={e => e.currentTarget.style.background = '#0F2A4A'}
                   >
                     Continue to Payment &rarr;
                   </button>
@@ -1152,7 +1152,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                       <button
                         type="button"
                         onClick={() => { setStep(1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                        style={{ fontSize: 12, color: '#1B4D3E', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                        style={{ fontSize: 12, color: '#0F2A4A', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
                       >
                         Edit
                       </button>
@@ -1178,13 +1178,13 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         <label key={m.id} onClick={() => setSelectedShipping(m.id)} style={{
                           display: 'flex', alignItems: 'center', gap: 14,
                           padding: '14px 16px', borderRadius: 12,
-                          border: selectedShipping === m.id ? '2px solid #1B4D3E' : '1.5px solid #e5e7eb',
+                          border: selectedShipping === m.id ? '2px solid #0F2A4A' : '1.5px solid #e5e7eb',
                           background: selectedShipping === m.id ? '#f0fdf8' : '#fff',
                           cursor: 'pointer',
                         }}>
                           <div style={{
                             width: 18, height: 18, borderRadius: '50%',
-                            border: selectedShipping === m.id ? '5px solid #1B4D3E' : '2px solid #d1d5db',
+                            border: selectedShipping === m.id ? '5px solid #0F2A4A' : '2px solid #d1d5db',
                             flexShrink: 0,
                           }} />
                           <div style={{ flex: 1 }}>
@@ -1193,8 +1193,8 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                           </div>
                           <span style={{
                             fontSize: 13, fontWeight: 700,
-                            color: m.price === 'FREE' ? '#16a34a' : '#0a0a0a',
-                            fontFamily: "'Poppins', sans-serif",
+                            color: m.price === 'FREE' ? '#0ea5e9' : '#0a0a0a',
+                            fontFamily: "'DM Sans', sans-serif",
                           }}>
                             {m.price}
                           </span>
@@ -1218,7 +1218,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         onClick={() => { setPaymentMethod('card'); setHbError(''); setLinkMoneyError(''); setStripeError(''); }}
                         style={{
                           flex: 1, minWidth: 120, padding: '12px 14px', borderRadius: 12, cursor: 'pointer',
-                          border: paymentMethod === 'card' ? '2px solid #1B4D3E' : '1.5px solid #e5e7eb',
+                          border: paymentMethod === 'card' ? '2px solid #0F2A4A' : '1.5px solid #e5e7eb',
                           background: paymentMethod === 'card' ? '#f0fdf8' : '#fff',
                           textAlign: 'left', transition: 'all 0.15s',
                         }}
@@ -1226,9 +1226,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                           <div style={{
                             width: 14, height: 14, borderRadius: '50%', flexShrink: 0,
-                            border: paymentMethod === 'card' ? '4px solid #1B4D3E' : '2px solid #d1d5db',
+                            border: paymentMethod === 'card' ? '4px solid #0F2A4A' : '2px solid #d1d5db',
                           }} />
-                          <span style={{ fontSize: 12, fontWeight: 700, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
                             Credit / Debit Card
                           </span>
                         </div>
@@ -1246,7 +1246,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         onClick={() => { setPaymentMethod('bank'); setHbError(''); setLinkMoneyError(''); setStripeError(''); }}
                         style={{
                           flex: 1, minWidth: 120, padding: '12px 14px', borderRadius: 12, cursor: 'pointer',
-                          border: paymentMethod === 'bank' ? '2px solid #1B4D3E' : '1.5px solid #e5e7eb',
+                          border: paymentMethod === 'bank' ? '2px solid #0F2A4A' : '1.5px solid #e5e7eb',
                           background: paymentMethod === 'bank' ? '#f0fdf8' : '#fff',
                           textAlign: 'left', transition: 'all 0.15s',
                         }}
@@ -1254,9 +1254,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                           <div style={{
                             width: 14, height: 14, borderRadius: '50%', flexShrink: 0,
-                            border: paymentMethod === 'bank' ? '4px solid #1B4D3E' : '2px solid #d1d5db',
+                            border: paymentMethod === 'bank' ? '4px solid #0F2A4A' : '2px solid #d1d5db',
                           }} />
-                          <span style={{ fontSize: 12, fontWeight: 700, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
                             Pay by Bank (ACH)
                           </span>
                         </div>
@@ -1282,11 +1282,11 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                               width: 14, height: 14, borderRadius: '50%', flexShrink: 0,
                               border: paymentMethod === 'stripe' ? '4px solid #635bff' : '2px solid #d1d5db',
                             }} />
-                            <span style={{ fontSize: 12, fontWeight: 700, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif" }}>
+                            <span style={{ fontSize: 12, fontWeight: 700, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif" }}>
                               Credit/Debit &amp; More
                             </span>
                           </div>
-                          <div style={{ paddingLeft: 22, fontSize: 10, color: '#6b7280', fontFamily: "'Poppins', sans-serif" }}>
+                          <div style={{ paddingLeft: 22, fontSize: 10, color: '#6b7280', fontFamily: "'DM Sans', sans-serif" }}>
                             Apple Pay · Google Pay · Klarna
                           </div>
                         </button>
@@ -1316,9 +1316,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                                 onClick={() => { setPaymentMethod('bank'); setHbError(''); }}
                                 style={{
                                   width: '100%', padding: '11px 16px', borderRadius: 10,
-                                  border: '1.5px solid #1B4D3E', background: '#f0fdf8',
-                                  fontSize: 13, fontWeight: 700, color: '#1B4D3E',
-                                  cursor: 'pointer', fontFamily: "'Poppins', sans-serif",
+                                  border: '1.5px solid #0F2A4A', background: '#f0fdf8',
+                                  fontSize: 13, fontWeight: 700, color: '#0F2A4A',
+                                  cursor: 'pointer', fontFamily: "'DM Sans', sans-serif",
                                 }}
                               >
                                 Switch to Bank Transfer &rarr;
@@ -1344,7 +1344,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                             </>
                           )}
                           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 12 }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                             </svg>
                             <span style={{ fontSize: 11, color: '#6b7280' }}>256-bit SSL &bull; Card data never touches our servers</span>
@@ -1361,7 +1361,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                             Securely link your bank account to complete payment. You&apos;ll be redirected to our payment partner to authorize the transfer — your banking credentials are never shared with us.
                           </p>
                           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                             </svg>
                             <span style={{ fontSize: 11, color: '#6b7280' }}>Bank-grade encryption &bull; Powered by Link Money</span>
@@ -1428,9 +1428,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     if (!bacWater || alreadyInCart) return null;
                     return (
                       <div style={{
-                        border: `2px dashed ${bumpAdded ? '#16a34a' : '#1B4D3E'}`,
+                        border: `2px dashed ${bumpAdded ? '#0ea5e9' : '#0F2A4A'}`,
                         borderRadius: 12, padding: '16px', marginBottom: 24,
-                        background: bumpAdded ? '#f0fdf4' : '#f0fdf8',
+                        background: bumpAdded ? '#eff6ff' : '#f0fdf8',
                         transition: 'all 0.2s ease',
                       }}>
                         <label style={{ display: 'flex', gap: 12, alignItems: 'center', cursor: 'pointer' }}>
@@ -1441,10 +1441,10 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                               setBumpAdded(e.target.checked);
                               if (e.target.checked) addItem(bacWater, { dosage: '', bundleCount: 1 });
                             }}
-                            style={{ width: 18, height: 18, accentColor: '#1B4D3E', flexShrink: 0, cursor: 'pointer' }}
+                            style={{ width: 18, height: 18, accentColor: '#0F2A4A', flexShrink: 0, cursor: 'pointer' }}
                           />
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', marginBottom: 3 }}>
+                            <div style={{ fontSize: 12, fontWeight: 700, color: '#0F2A4A', marginBottom: 3 }}>
                               YES — Add Bacteriostatic Water 10mL for just $12.99!
                             </div>
                             <p style={{ fontSize: 11, color: '#374151', lineHeight: 1.5, margin: 0 }}>
@@ -1452,7 +1452,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                             </p>
                           </div>
                           <div style={{ flexShrink: 0, textAlign: 'right' }}>
-                            <div style={{ fontSize: 14, fontWeight: 800, color: '#1B4D3E', fontFamily: "'Poppins', sans-serif" }}>$12.99</div>
+                            <div style={{ fontSize: 14, fontWeight: 800, color: '#0F2A4A', fontFamily: "'DM Sans', sans-serif" }}>$12.99</div>
                           </div>
                         </label>
                       </div>
@@ -1470,9 +1470,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     type="submit"
                     disabled={placing || !ruoAgreed}
                     style={{
-                      width: '100%', background: (placing || !ruoAgreed) ? '#6b7280' : '#1B4D3E', color: '#fff',
+                      width: '100%', background: (placing || !ruoAgreed) ? '#6b7280' : '#0F2A4A', color: '#fff',
                       padding: '16px 24px', borderRadius: 12, fontSize: 15,
-                      fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                      fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                       cursor: (placing || !ruoAgreed) ? 'not-allowed' : 'pointer', border: 'none',
                       transition: 'background 0.2s', opacity: (placing || !ruoAgreed) ? 0.5 : 1,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
@@ -1532,8 +1532,8 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         {(item.qty || 1) > 1 && (
                           <span style={{
                             position: 'absolute', top: -6, right: -6,
-                            background: '#1B4D3E', color: '#fff',
-                            fontSize: 10, fontWeight: 700, fontFamily: "'Poppins', sans-serif",
+                            background: '#0F2A4A', color: '#fff',
+                            fontSize: 10, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
                             width: 20, height: 20, borderRadius: '50%',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                           }}>{item.qty}</span>
@@ -1545,7 +1545,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                           <div style={{ fontSize: 11, color: '#9ca3af' }}>{item.dosage}</div>
                         )}
                       </div>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: '#0a0a0a', fontFamily: "'Poppins', sans-serif", flexShrink: 0 }}>
+                      <span style={{ fontSize: 13, fontWeight: 600, color: '#0a0a0a', fontFamily: "'DM Sans', sans-serif", flexShrink: 0 }}>
                         ${(price * (item.qty || 1)).toFixed(2)}
                       </span>
                     </div>
@@ -1559,9 +1559,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               {step !== 3 && (
                 <div style={{ marginBottom: 16 }}>
                   {promoApplied ? (
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 10, padding: '10px 14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 10, padding: '10px 14px' }}>
                       <div>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: '#16a34a', fontFamily: "'Poppins', sans-serif" }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: '#0ea5e9', fontFamily: "'DM Sans', sans-serif" }}>
                           🏷️ {promoApplied.code}
                           {promoFreeShip && promoApplied.type !== 'free_shipping' && (
                             <span style={{ marginLeft: 8, fontSize: 11, color: '#1d4ed8', background: '#eff6ff', borderRadius: 6, padding: '2px 6px' }}>🚚 + Free shipping</span>
@@ -1581,16 +1581,16 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         value={promoInput} onChange={e => { setPromoInput(e.target.value.toUpperCase()); setPromoError(''); }}
                         style={{
                           flex: 1, padding: '9px 12px', border: `1.5px solid ${promoError ? '#fca5a5' : '#e5e7eb'}`,
-                          borderRadius: 10, fontSize: 12, fontFamily: "'Poppins', sans-serif",
+                          borderRadius: 10, fontSize: 12, fontFamily: "'DM Sans', sans-serif",
                           outline: 'none', textTransform: 'uppercase', letterSpacing: '0.05em',
                         }}
                       />
                       <button type="submit" disabled={promoLoading || !promoInput.trim()}
                         style={{
-                          padding: '9px 16px', background: '#1B4D3E', color: '#fff',
+                          padding: '9px 16px', background: '#0F2A4A', color: '#fff',
                           border: 'none', borderRadius: 10, fontSize: 12, fontWeight: 700,
                           cursor: promoLoading ? 'wait' : 'pointer', whiteSpace: 'nowrap',
-                          fontFamily: "'Poppins', sans-serif", opacity: (!promoInput.trim() || promoLoading) ? 0.6 : 1,
+                          fontFamily: "'DM Sans', sans-serif", opacity: (!promoInput.trim() || promoLoading) ? 0.6 : 1,
                         }}>Apply</button>
                     </form>
                   )}
@@ -1604,7 +1604,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                   {loyaltyRedeemed > 0 ? (
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fefce8', border: '1px solid #fde68a', borderRadius: 10, padding: '10px 14px' }}>
                       <div>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: '#92400e', fontFamily: "'Poppins', sans-serif" }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: '#92400e', fontFamily: "'DM Sans', sans-serif" }}>
                           ⭐ {loyaltyRedeemed.toLocaleString()} pts redeemed
                         </span>
                         <div style={{ fontSize: 11, color: '#6b7280', marginTop: 2 }}>−${loyaltyDiscount.toFixed(2)} off your order</div>
@@ -1630,7 +1630,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                                 padding: '6px 12px', background: '#fff',
                                 border: '1.5px solid #fbbf24', borderRadius: 8,
                                 fontSize: 11, fontWeight: 700, cursor: 'pointer',
-                                color: '#92400e', fontFamily: "'Poppins', sans-serif",
+                                color: '#92400e', fontFamily: "'DM Sans', sans-serif",
                                 transition: 'all 0.15s',
                               }}
                               onMouseEnter={e => { e.currentTarget.style.background = '#fef3c7'; }}
@@ -1652,14 +1652,14 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               </div>
               {volumeDiscount > 0 && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
-                  <span style={{ fontSize: 13, color: '#16a34a' }}>🏷️ Multi-vial savings</span>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: '#16a34a' }}>−${volumeDiscount.toFixed(2)}</span>
+                  <span style={{ fontSize: 13, color: '#0ea5e9' }}>🏷️ Multi-vial savings</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#0ea5e9' }}>−${volumeDiscount.toFixed(2)}</span>
                 </div>
               )}
               {promoApplied && discountAmount > 0 && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
-                  <span style={{ fontSize: 13, color: '#16a34a' }}>Discount ({promoApplied.code})</span>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: '#16a34a' }}>−${discountAmount.toFixed(2)}</span>
+                  <span style={{ fontSize: 13, color: '#0ea5e9' }}>Discount ({promoApplied.code})</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#0ea5e9' }}>−${discountAmount.toFixed(2)}</span>
                 </div>
               )}
               {loyaltyRedeemed > 0 && (
@@ -1670,25 +1670,25 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               )}
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
                 <span style={{ fontSize: 13, color: '#6b7280' }}>Shipping</span>
-                <span style={{ fontSize: 13, fontWeight: 600, color: (effectiveShipping === 0) ? '#16a34a' : '#0a0a0a' }}>
+                <span style={{ fontSize: 13, fontWeight: 600, color: (effectiveShipping === 0) ? '#0ea5e9' : '#0a0a0a' }}>
                   {effectiveShipping === 0 ? 'FREE' : `$${effectiveShipping.toFixed(2)}`}
-                  {promoFreeShip && effectiveShipping === 0 && <span style={{ fontSize: 10, color: '#16a34a', marginLeft: 4 }}>(promo)</span>}
+                  {promoFreeShip && effectiveShipping === 0 && <span style={{ fontSize: 10, color: '#0ea5e9', marginLeft: 4 }}>(promo)</span>}
                 </span>
               </div>
 
               <div style={{ height: 1, background: '#e5e7eb', margin: '14px 0' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
                 <span style={{ fontSize: 16, fontWeight: 800 }}>Total</span>
-                <span style={{ fontSize: 16, fontWeight: 800, fontFamily: "'Poppins', sans-serif" }}>
+                <span style={{ fontSize: 16, fontWeight: 800, fontFamily: "'DM Sans', sans-serif" }}>
                   ${effectiveTotal.toFixed(2)}
                 </span>
               </div>
 
               {/* Loyalty points preview */}
-              <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '10px 14px', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 8, padding: '10px 14px', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{ fontSize: 18 }}>⭐</span>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: '#16a34a' }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: '#0ea5e9' }}>
                     Earn {Math.floor(effectiveTotal)} reward points on this order
                   </div>
                   <div style={{ fontSize: 11, color: '#6b7280', marginTop: 1 }}>

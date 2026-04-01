@@ -80,7 +80,7 @@ export default function LoginGateModal({ open, onClose }) {
         position: 'fixed', inset: 0, zIndex: 9999,
         background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(6px)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '20px 16px', fontFamily: "'Poppins', sans-serif",
+        padding: '20px 16px', fontFamily: "'DM Sans', sans-serif",
       }}
     >
       <div
@@ -91,7 +91,7 @@ export default function LoginGateModal({ open, onClose }) {
           overflow: 'hidden', position: 'relative',
         }}
       >
-        <div style={{ height: 3, background: 'linear-gradient(90deg, #1B4D3E, #4ade80)' }} />
+        <div style={{ height: 3, background: 'linear-gradient(90deg, #0F2A4A, #06b6d4)' }} />
 
         <button
           onClick={onClose}
@@ -110,11 +110,11 @@ export default function LoginGateModal({ open, onClose }) {
               <div style={{ marginBottom: 24 }}>
                 <div style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
-                  background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)',
+                  background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.2)',
                   borderRadius: 100, padding: '4px 12px', marginBottom: 14,
                 }}>
-                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80', display: 'inline-block' }} />
-                  <span style={{ fontSize: 11, color: '#4ade80', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', display: 'inline-block' }} />
+                  <span style={{ fontSize: 11, color: '#06b6d4', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                     Research Portal Access
                   </span>
                 </div>
@@ -154,8 +154,8 @@ export default function LoginGateModal({ open, onClose }) {
                     onClick={() => { setMethod(key); setError(''); }}
                     style={{
                       padding: '9px 0', borderRadius: 8, border: 'none', cursor: 'pointer',
-                      background: method === key ? '#1B4D3E' : 'transparent',
-                      color: method === key ? '#4ade80' : 'rgba(255,255,255,0.4)',
+                      background: method === key ? '#0F2A4A' : 'transparent',
+                      color: method === key ? '#06b6d4' : 'rgba(255,255,255,0.4)',
                       fontSize: 13, fontWeight: 600, transition: 'all 0.15s',
                     }}
                   >{label}</button>
@@ -208,7 +208,7 @@ export default function LoginGateModal({ open, onClose }) {
                 <label style={{
                   display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer',
                   background: 'rgba(255,255,255,0.03)', borderRadius: 10, padding: '12px 14px', marginBottom: 16,
-                  border: ageConfirmed ? '1px solid rgba(74,222,128,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                  border: ageConfirmed ? '1px solid rgba(6,182,212,0.3)' : '1px solid rgba(255,255,255,0.08)',
                   transition: 'border-color 0.15s',
                 }}>
                   <input
@@ -216,7 +216,7 @@ export default function LoginGateModal({ open, onClose }) {
                     checked={ageConfirmed}
                     onChange={e => setAgeConfirmed(e.target.checked)}
                     required
-                    style={{ marginTop: 2, accentColor: '#4ade80', flexShrink: 0 }}
+                    style={{ marginTop: 2, accentColor: '#06b6d4', flexShrink: 0 }}
                   />
                   <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.55 }}>
                     I confirm I am <strong style={{ color: '#fff' }}>18 years or older</strong> and am
@@ -231,8 +231,8 @@ export default function LoginGateModal({ open, onClose }) {
                   disabled={!canSubmit}
                   style={{
                     width: '100%', padding: '14px', borderRadius: 10, border: 'none',
-                    background: canSubmit ? '#1B4D3E' : '#1a2a24',
-                    color: canSubmit ? '#4ade80' : 'rgba(74,222,128,0.35)',
+                    background: canSubmit ? '#0F2A4A' : '#1a2a24',
+                    color: canSubmit ? '#06b6d4' : 'rgba(6,182,212,0.35)',
                     fontSize: 14, fontWeight: 700, cursor: canSubmit ? 'pointer' : 'not-allowed',
                     transition: 'all 0.2s', letterSpacing: '0.03em',
                   }}
@@ -263,7 +263,7 @@ export default function LoginGateModal({ open, onClose }) {
               </p>
               <button
                 onClick={() => { setSent(false); setEmail(''); setPhone(''); }}
-                style={{ background: 'none', border: 'none', color: '#4ade80', fontSize: 13, cursor: 'pointer' }}
+                style={{ background: 'none', border: 'none', color: '#06b6d4', fontSize: 13, cursor: 'pointer' }}
               >
                 ← Try a different {method === 'phone' ? 'number' : 'email'}
               </button>
