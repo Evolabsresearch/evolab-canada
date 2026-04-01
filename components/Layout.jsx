@@ -236,7 +236,7 @@ export default function Layout({ children, title, description, ogImage, structur
         transition: 'all 0.3s cubic-bezier(0.2,0.8,0.2,1)',
         fontFamily: "'Anek Telugu', sans-serif",
       }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', height: 68, gap: 36 }}>
+        <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 28px', display: 'flex', alignItems: 'center', height: 68, gap: 28 }}>
 
           {/* Logo */}
           <Link href="/" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
@@ -248,7 +248,7 @@ export default function Layout({ children, title, description, ogImage, structur
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav aria-label="Main navigation" className="hide-tablet" style={{ display: 'flex', gap: 32, alignItems: 'center', flex: 1 }} suppressHydrationWarning>
+          <nav aria-label="Main navigation" className="hide-tablet" style={{ display: 'flex', gap: 24, alignItems: 'center', flex: 1 }} suppressHydrationWarning>
             {NAV_LINKS.map(({ href, label }) => {
               const resolvedHref = (href === '/products' && !session) ? '/account/login' : href;
               return (
