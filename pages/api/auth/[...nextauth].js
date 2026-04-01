@@ -99,7 +99,7 @@ async function sendBrandedVerificationRequest({ identifier: email, url, provider
                         <p style="margin:0;font-size:13px;font-weight:700;color:#0f1117;">EVO Labs Research Canada</p>
                         <p style="margin:2px 0 0;font-size:12px;color:#9ca3af;line-height:1.6;">
                           100 King Street West, Suite 5600, Toronto, ON M5X 1C9<br/>
-                          support@evolabsresearch.ca
+                          support@evolabsresearch.com
                         </p>
                       </td>
                     </tr>
@@ -127,9 +127,9 @@ async function sendBrandedVerificationRequest({ identifier: email, url, provider
 </body>
 </html>`;
 
-  const text = `Sign in to EVO Labs Research\n\nClick this link to sign in:\n${url}\n\nThis link expires in 24 hours.\n\nIf you didn't request this, ignore this email.\n\n---\nEVO Labs Research Canada\n100 King Street West, Suite 5600, Toronto, ON M5X 1C9\nsupport@evolabsresearch.ca`;
+  const text = `Sign in to EVO Labs Research\n\nClick this link to sign in:\n${url}\n\nThis link expires in 24 hours.\n\nIf you didn't request this, ignore this email.\n\n---\nEVO Labs Research Canada\n100 King Street West, Suite 5600, Toronto, ON M5X 1C9\nsupport@evolabsresearch.com`;
 
-  const fromRaw = process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.ca>';
+  const fromRaw = process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.com>';
   const fromMatch = fromRaw.match(/^(.*?)\s*<(.+)>$/);
   const fromName = fromMatch ? fromMatch[1].trim() : 'EVO Labs Research';
   const fromEmail = fromMatch ? fromMatch[2].trim() : fromRaw;
@@ -186,10 +186,10 @@ export const authOptions = {
     // ── Email magic link (via SendGrid HTTP API) ─────────────────────────
     // Env vars needed in Vercel:
     //   SENDGRID_API_KEY=SG.xxxx
-    //   EMAIL_FROM=EVO Labs Research <support@evolabsresearch.ca>
+    //   EMAIL_FROM=EVO Labs Research <support@evolabsresearch.com>
     EmailProvider({
       server: 'smtp://placeholder:placeholder@placeholder:587', // unused — sendVerificationRequest handles sending
-      from: process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.ca>',
+      from: process.env.EMAIL_FROM || 'EVO Labs Research <support@evolabsresearch.com>',
       sendVerificationRequest: sendBrandedVerificationRequest,
     }),
 
