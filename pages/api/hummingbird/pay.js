@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       public_key: publicKey,
       secret_key: secretKey,
       user_email: email,
-      currency_id: 'USD',
+      currency_id: 'CAD',
       amount: parseFloat(amount),
       encryptedCardNumber,
       encryptedExpiryMonth,
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
         city: city || '',
         postal_code: zip || '',
         state: state || '',
-        country: country || 'US',
+        country: country || 'CA',
       },
     };
 
@@ -89,7 +89,7 @@ export default async function handler(req, res) {
           secret_key: secretKey,
           transaction_id: payData.transaction_id,
           order_total: String(parseFloat(amount)),
-          order_currency: 'USD',
+          order_currency: 'CAD',
           order_status: 'processing',
           billing: {
             email,
@@ -97,7 +97,7 @@ export default async function handler(req, res) {
             city: city || '',
             state: state || '',
             postal_code: zip || '',
-            country: country || 'US',
+            country: country || 'CA',
           },
           items: cartItems || [],
         }),

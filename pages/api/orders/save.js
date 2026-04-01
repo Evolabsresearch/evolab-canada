@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     city: city || '',
     state: state || '',
     postcode: zip || '',
-    country: country || 'US',
+    country: country || 'CA',
   };
 
   // --- STEP 1: Find or create user ---

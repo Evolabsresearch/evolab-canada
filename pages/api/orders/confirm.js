@@ -108,7 +108,7 @@ export default async function handler(req, res) {
                 <strong>${fullName}</strong><br>
                 ${address1}${address2 ? ', ' + address2 : ''}<br>
                 ${city}, ${state} ${zip}<br>
-                ${country || 'US'}
+                ${country || 'CA'}
               </div>
               <div style="margin-top:12px;padding-top:12px;border-top:1px solid #e5e7eb;">
                 <span style="font-size:13px;color:#1B4D3E;font-weight:700;">🚚 ${shippingLabel}</span>

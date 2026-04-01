@@ -218,7 +218,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
         city: formData.city,
         state: formData.state,
         zip: formData.zip,
-        country: formData.country || 'US',
+        country: formData.country || 'CA',
         items: cartItems.map(item => ({
           id: item.id,
           slug: item.slug,
@@ -291,7 +291,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               city: f.city,
               state: f.state,
               zip: f.zip,
-              country: f.country || 'US',
+              country: f.country || 'CA',
               items: restoredCart.map(item => ({
                 name: item.name,
                 quantity: item.qty || 1,
@@ -431,7 +431,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
     city: '',
     state: '',
     zip: '',
-    country: 'US',
+    country: 'CA',
     phone: '',
     newsletter: true,   // pre-selected
     smsUpdates: true,    // pre-selected
@@ -462,7 +462,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
       city: form.city,
       state: form.state,
       zip: form.zip,
-      country: form.country || 'US',
+      country: form.country || 'CA',
       items: cartSnapshot.map(item => ({
         name: item.name,
         quantity: item.qty || 1,
@@ -516,7 +516,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
     try {
       if (typeof window !== 'undefined' && window.omnisend) {
         window.omnisend.push(['track', '$startedCheckout', {
-          $currency: 'USD',
+          $currency: 'CAD',
           $revenue: effectiveTotal,
           $cartItems: cart.map(item => ({
             productID: item.slug,
@@ -646,7 +646,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
           city: form.city,
           state: form.state,
           zip: form.zip,
-          country: form.country || 'US',
+          country: form.country || 'CA',
           cartItems: cart.map(item => ({
             name: item.name,
             quantity: item.qty || 1,
@@ -724,11 +724,11 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
       window.dataLayer.push({ ecommerce: null });
       window.dataLayer.push({
         event: 'purchase',
-        currency: 'USD',
+        currency: 'CAD',
         transaction_id: transactionId,
         value: paidTotal,
         ecommerce: {
-          currency: 'USD',
+          currency: 'CAD',
           transaction_id: transactionId,
           value: paidTotal,
           items: orderedItems.map((item) => {
