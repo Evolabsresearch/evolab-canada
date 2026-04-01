@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import Layout from '../components/Layout';
 import FloatingVials from '../components/FloatingVials';
+import { TiltCard, ScrollReveal, Float3D, ParallaxLayer, DepthCard } from '../components/Effects3D';
 import { products as STATIC_PRODUCTS, CATEGORIES, REVIEWS, COAS, getCategoryConfig } from '../lib/data';
 
 const FEATURED_SLUGS = ['bpc-157','glp-3-r','hgh-191aa','klow','nad','epithalon','cjc-1295-w-o-dac-ipamorelin','bpc-157-tb-500'];
@@ -12,84 +13,88 @@ function Stars({ n = 5, size = 14 }) {
   return <span style={{ color: '#f59e0b', fontSize: size, letterSpacing: 1 }}>{'★'.repeat(Math.floor(n))}{'☆'.repeat(5 - Math.floor(n))}</span>;
 }
 
-// Product card — clean design with white image area for visibility
+// Product card — 3D tilt effect with depth
 function ProductCard({ product }) {
   const isOOS = product.outOfStock;
   return (
-    <Link href={`/products/${product.slug}`} className="product-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
-      {/* Image area with white/light background so products are visible */}
-      <div className="card-image-wrap" style={{ background: '#fff' }}>
-        {product.badge && (
-          <span style={{
-            position: 'absolute', top: 12, left: 12, zIndex: 3,
-            background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)',
-            color: '#fff', fontSize: 9, fontWeight: 700, padding: '5px 12px',
-            borderRadius: 9999, letterSpacing: '0.08em', textTransform: 'uppercase',
-          }}>{product.badge}</span>
-        )}
-        {isOOS && (
-          <span style={{
-            position: 'absolute', top: 12, right: 12, zIndex: 3,
-            background: 'rgba(0,0,0,0.7)', color: '#fff', fontSize: 9, fontWeight: 600,
-            padding: '4px 10px', borderRadius: 9999,
-          }}>Sold Out</span>
-        )}
-        <img src={product.image} alt={product.name} loading="lazy" />
-        {/* Hover overlay */}
-        <div className="card-overlay">
-          <h3 style={{ fontSize: 15, fontWeight: 800, color: '#fff', marginBottom: 4, letterSpacing: '-0.01em' }}>{product.name}</h3>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 12 }}>
-            <Stars n={product.rating} size={11} />
-            <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', fontFamily: "'Poppins', sans-serif" }}>({product.reviewCount})</span>
-          </div>
-          {!isOOS && (
+    <TiltCard intensity={8} scale={1.03} glare style={{ borderRadius: 16, position: 'relative' }}>
+      <Link href={`/products/${product.slug}`} className="product-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+        {/* Image area with white/light background so products are visible */}
+        <div className="card-image-wrap" style={{ background: '#fff' }}>
+          {product.badge && (
             <span style={{
-              display: 'inline-block', background: '#fff', color: '#0a0a0a',
-              fontSize: 12, fontWeight: 700, padding: '8px 18px', borderRadius: 9999,
-              fontFamily: "'Poppins', sans-serif",
-            }}>View Research →</span>
+              position: 'absolute', top: 12, left: 12, zIndex: 3,
+              background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)',
+              color: '#fff', fontSize: 9, fontWeight: 700, padding: '5px 12px',
+              borderRadius: 9999, letterSpacing: '0.08em', textTransform: 'uppercase',
+            }}>{product.badge}</span>
           )}
+          {isOOS && (
+            <span style={{
+              position: 'absolute', top: 12, right: 12, zIndex: 3,
+              background: 'rgba(0,0,0,0.7)', color: '#fff', fontSize: 9, fontWeight: 600,
+              padding: '4px 10px', borderRadius: 9999,
+            }}>Sold Out</span>
+          )}
+          <img src={product.image} alt={product.name} loading="lazy" />
+          {/* Hover overlay */}
+          <div className="card-overlay">
+            <h3 style={{ fontSize: 15, fontWeight: 800, color: '#fff', marginBottom: 4, letterSpacing: '-0.01em' }}>{product.name}</h3>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 12 }}>
+              <Stars n={product.rating} size={11} />
+              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', fontFamily: "'Poppins', sans-serif" }}>({product.reviewCount})</span>
+            </div>
+            {!isOOS && (
+              <span style={{
+                display: 'inline-block', background: '#fff', color: '#0a0a0a',
+                fontSize: 12, fontWeight: 700, padding: '8px 18px', borderRadius: 9999,
+                fontFamily: "'Poppins', sans-serif",
+              }}>View Research →</span>
+            )}
+          </div>
         </div>
-      </div>
-      {/* Info panel below image */}
-      <div style={{ padding: '14px 16px 16px', background: '#141414' }}>
-        <span style={{ fontSize: 9, fontWeight: 600, color: '#4ade80', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: 4 }}>
-          {product.category}
-        </span>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{product.name}</h3>
-          <span style={{ fontSize: 14, fontWeight: 800, color: '#4ade80', flexShrink: 0, fontFamily: "'Poppins', sans-serif" }}>
-            {isOOS ? <span style={{ color: '#6b7280' }}>Sold Out</span> : product.salePrice || product.price}
+        {/* Info panel below image */}
+        <div style={{ padding: '14px 16px 16px', background: '#141414' }}>
+          <span style={{ fontSize: 9, fontWeight: 600, color: '#4ade80', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: 4 }}>
+            {product.category}
           </span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{product.name}</h3>
+            <span style={{ fontSize: 14, fontWeight: 800, color: '#4ade80', flexShrink: 0, fontFamily: "'Poppins', sans-serif" }}>
+              {isOOS ? <span style={{ color: '#6b7280' }}>Sold Out</span> : product.salePrice || product.price}
+            </span>
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </TiltCard>
   );
 }
 
-// Review card
+// Review card — with 3D tilt
 function ReviewCard({ review }) {
   return (
-    <div className="review-card">
-      <div style={{ display: 'flex', gap: 4, marginBottom: 12 }}>
-        <Stars />
+    <TiltCard intensity={5} scale={1.01} style={{ borderRadius: 20, height: '100%' }}>
+      <div className="review-card" style={{ height: '100%' }}>
+        <div style={{ display: 'flex', gap: 4, marginBottom: 12 }}>
+          <Stars />
+        </div>
+        <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 20, fontStyle: 'italic' }}>
+          "{review.text}"
+        </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#f0fdf4', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 700, color: '#1B4D3E', flexShrink: 0 }}>
+            {review.name[0]}
+          </div>
+          <div>
+            <p style={{ fontSize: 13, fontWeight: 700, color: '#111827' }}>{review.name}</p>
+            <p style={{ fontSize: 11, color: '#9ca3af' }}>{review.role} · {review.date}</p>
+          </div>
+          <div style={{ marginLeft: 'auto' }}>
+            <span style={{ fontSize: 10, color: '#9ca3af', background: '#f9fafb', padding: '3px 10px', borderRadius: 100, border: '1px solid #f0f0f0' }}>{review.product}</span>
+          </div>
+        </div>
       </div>
-      <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 20, fontStyle: 'italic' }}>
-        "{review.text}"
-      </p>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#f0fdf4', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, fontWeight: 700, color: '#1B4D3E', flexShrink: 0 }}>
-          {review.name[0]}
-        </div>
-        <div>
-          <p style={{ fontSize: 13, fontWeight: 700, color: '#111827' }}>{review.name}</p>
-          <p style={{ fontSize: 11, color: '#9ca3af' }}>{review.role} · {review.date}</p>
-        </div>
-        <div style={{ marginLeft: 'auto' }}>
-          <span style={{ fontSize: 10, color: '#9ca3af', background: '#f9fafb', padding: '3px 10px', borderRadius: 100, border: '1px solid #f0f0f0' }}>{review.product}</span>
-        </div>
-      </div>
-    </div>
+    </TiltCard>
   );
 }
 
@@ -330,11 +335,11 @@ export default function Home({ dbProducts }) {
               }} />
 
               {/* Main hero vial — centered, large — 5-Amino-1MQ */}
-              <div style={{ position: 'relative', zIndex: 4 }}>
+              <Float3D speed={5} distance={10} rotate={2} style={{ position: 'relative', zIndex: 4 }}>
                 <img src="https://lh3.googleusercontent.com/d/17USTyXbdbJ9cmTh7i2CJPPg0JPcycuse" alt="5-Amino-1MQ"
                   style={{ width: 230, height: 230, objectFit: 'contain', filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.7)) drop-shadow(0 0 36px rgba(74,222,128,0.18))' }}
                 />
-              </div>
+              </Float3D>
 
               {/* Supporting vial — top left — BPC-157 */}
               <div className="hero-vial-secondary" style={{ position: 'absolute', left: '2%', top: '8%', zIndex: 3 }}>
@@ -365,8 +370,8 @@ export default function Home({ dbProducts }) {
               </div>
 
               {/* Floating info card — purity (desktop only) */}
+              <Float3D speed={6} distance={6} rotate={1.5} delay={0.5} style={{ position: 'absolute', top: '6%', right: '2%', zIndex: 5 }}>
               <div className="hero-info-card" style={{
-                position: 'absolute', top: '6%', right: '2%', zIndex: 5,
                 background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)',
                 borderRadius: 14, padding: '10px 16px',
                 border: '1px solid rgba(255,255,255,0.12)',
@@ -380,10 +385,11 @@ export default function Home({ dbProducts }) {
                   <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.45)' }}>HPLC verified</div>
                 </div>
               </div>
+              </Float3D>
 
               {/* Floating info card — COA (desktop only) */}
+              <Float3D speed={7} distance={7} rotate={1.5} delay={1} style={{ position: 'absolute', bottom: '6%', left: '2%', zIndex: 5 }}>
               <div className="hero-info-card" style={{
-                position: 'absolute', bottom: '6%', left: '2%', zIndex: 5,
                 background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)',
                 borderRadius: 14, padding: '10px 16px',
                 border: '1px solid rgba(255,255,255,0.12)',
@@ -397,6 +403,7 @@ export default function Home({ dbProducts }) {
                   <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.45)' }}>Every batch</div>
                 </div>
               </div>
+              </Float3D>
             </div>
           </div>
         </div>
@@ -446,17 +453,19 @@ export default function Home({ dbProducts }) {
       ════════════════════════════════════════════════════════ */}
       <section className="section">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
-              Our Promise
+          <ScrollReveal type="up" delay={0}>
+            <div style={{ textAlign: 'center', marginBottom: 52 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+                Our Promise
+              </div>
+              <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
+                The EVO Labs Guarantee
+              </h2>
+              <p style={{ fontSize: 15, color: '#6b7280', marginTop: 12, maxWidth: 480, margin: '12px auto 0' }}>
+                We don't compromise on quality. Every product meets the highest standards — or your money back.
+              </p>
             </div>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em' }}>
-              The EVO Labs Guarantee
-            </h2>
-            <p style={{ fontSize: 15, color: '#6b7280', marginTop: 12, maxWidth: 480, margin: '12px auto 0' }}>
-              We don't compromise on quality. Every product meets the highest standards — or your money back.
-            </p>
-          </div>
+          </ScrollReveal>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="guarantee-grid">
             {[
@@ -488,21 +497,22 @@ export default function Home({ dbProducts }) {
                 iconBg: '#ede9fe',
               },
             ].map((g, i) => (
-              <div key={i} style={{
-                background: g.bg, borderRadius: 24, padding: '36px 32px',
-                border: '1px solid rgba(0,0,0,0.04)',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-              }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 48px rgba(0,0,0,0.08)'; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
-              >
-                <div style={{ width: 64, height: 64, borderRadius: 20, background: g.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30, marginBottom: 24 }}>
-                  {g.icon}
-                </div>
-                <h3 style={{ fontSize: 19, fontWeight: 800, color: '#0a0a0a', marginBottom: 6, lineHeight: 1.2 }}>{g.title}</h3>
-                <p style={{ fontSize: 12, fontWeight: 700, color: g.accent, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 14 }}>{g.subtitle}</p>
-                <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.8 }}>{g.desc}</p>
-              </div>
+              <ScrollReveal key={i} type="up" delay={i * 0.15}>
+                <TiltCard intensity={6} scale={1.02} glare style={{ borderRadius: 24, height: '100%' }}>
+                  <div style={{
+                    background: g.bg, borderRadius: 24, padding: '36px 32px',
+                    border: '1px solid rgba(0,0,0,0.04)',
+                    height: '100%',
+                  }}>
+                    <div style={{ width: 64, height: 64, borderRadius: 20, background: g.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30, marginBottom: 24, transform: 'translateZ(30px)', transition: 'transform 0.3s' }}>
+                      {g.icon}
+                    </div>
+                    <h3 style={{ fontSize: 19, fontWeight: 800, color: '#0a0a0a', marginBottom: 6, lineHeight: 1.2 }}>{g.title}</h3>
+                    <p style={{ fontSize: 12, fontWeight: 700, color: g.accent, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 14 }}>{g.subtitle}</p>
+                    <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.8 }}>{g.desc}</p>
+                  </div>
+                </TiltCard>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -587,17 +597,19 @@ export default function Home({ dbProducts }) {
       ════════════════════════════════════════════════════════ */}
       <section className="section">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
-              Proof Over Promises
+          <ScrollReveal type="up" delay={0}>
+            <div style={{ textAlign: 'center', marginBottom: 52 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#1B4D3E', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+                Proof Over Promises
+              </div>
+              <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+                Quality You Can Verify,<br />Not Just Trust
+              </h2>
+              <p style={{ fontSize: 15, color: '#6b7280', marginTop: 16, maxWidth: 520, margin: '16px auto 0', lineHeight: 1.7 }}>
+                Every batch undergoes independent quality checks at Janoshik Analytical (Prague, est. 2013). We give you the data — you verify the results.
+              </p>
             </div>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-              Quality You Can Verify,<br />Not Just Trust
-            </h2>
-            <p style={{ fontSize: 15, color: '#6b7280', marginTop: 16, maxWidth: 520, margin: '16px auto 0', lineHeight: 1.7 }}>
-              Every batch undergoes independent quality checks at Janoshik Analytical (Prague, est. 2013). We give you the data — you verify the results.
-            </p>
-          </div>
+          </ScrollReveal>
 
           {/* Stats bar */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap', marginBottom: 48, padding: '24px', background: '#0a0a0a', borderRadius: 20 }}>
@@ -757,20 +769,25 @@ export default function Home({ dbProducts }) {
                 bg: '#141414',
               },
             ].map((f, i) => (
-              <div key={i} style={{
-                background: f.bg, padding: '36px 32px', borderRadius: 20,
-                border: '1px solid #1a1a1a',
-                transition: 'background 0.2s, border-color 0.2s',
-              }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#1a1a1a'; e.currentTarget.style.borderColor = `${f.accent}30`; }}
-                onMouseLeave={e => { e.currentTarget.style.background = f.bg; e.currentTarget.style.borderColor = '#1a1a1a'; }}
-              >
-                <div style={{ width: 52, height: 52, borderRadius: 16, background: `${f.accent}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, marginBottom: 20 }}>
-                  {f.icon}
-                </div>
-                <h3 style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 10 }}>{f.title}</h3>
-                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.75 }}>{f.desc}</p>
-              </div>
+              <ScrollReveal key={i} type="up" delay={i * 0.1}>
+                <TiltCard intensity={7} scale={1.02} style={{ borderRadius: 20, height: '100%' }}>
+                  <div style={{
+                    background: f.bg, padding: '36px 32px', borderRadius: 20,
+                    border: '1px solid #1a1a1a',
+                    transition: 'background 0.2s, border-color 0.2s',
+                    height: '100%',
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.background = '#1a1a1a'; e.currentTarget.style.borderColor = `${f.accent}30`; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = f.bg; e.currentTarget.style.borderColor = '#1a1a1a'; }}
+                  >
+                    <div style={{ width: 52, height: 52, borderRadius: 16, background: `${f.accent}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, marginBottom: 20 }}>
+                      {f.icon}
+                    </div>
+                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 10 }}>{f.title}</h3>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.75 }}>{f.desc}</p>
+                  </div>
+                </TiltCard>
+              </ScrollReveal>
             ))}
           </div>
         </div>
