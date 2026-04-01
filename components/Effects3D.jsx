@@ -65,7 +65,7 @@ export function TiltCard({ children, intensity = 10, scale = 1.02, className = '
  * Scroll-triggered fade-in with 3D transforms
  * Usage: <ScrollReveal type="up" delay={0.1}><div>content</div></ScrollReveal>
  */
-export function ScrollReveal({ children, type = 'up', delay = 0, duration = 0.7, threshold = 0.15, style = {}, className = '' }) {
+export function ScrollReveal({ children, type = 'up', delay = 0, duration = 0.7, threshold = 0.05, style = {}, className = '' }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -74,17 +74,27 @@ export function ScrollReveal({ children, type = 'up', delay = 0, duration = 0.7,
 
     // Set initial hidden state
     const transforms = {
-      up: 'translateY(40px) rotateX(8deg)',
-      down: 'translateY(-40px) rotateX(-8deg)',
-      left: 'translateX(50px) rotateY(-8deg)',
-      right: 'translateX(-50px) rotateY(8deg)',
-      scale: 'scale3d(0.85, 0.85, 0.85)',
-      flip: 'rotateY(25deg) translateZ(-50px)',
+      up: 'translateY(30px) rotateX(4deg)',
+      down: 'translateY(-30px) rotateX(-4deg)',
+      left: 'translateX(40px) rotateY(-4deg)',
+      right: 'translateX(-40px) rotateY(4deg)',
+      scale: 'scale3d(0.9, 0.9, 0.9)',
+      flip: 'rotateY(15deg) translateZ(-30px)',
     };
 
     el.style.opacity = '0';
     el.style.transform = transforms[type] || transforms.up;
     el.style.transition = `opacity ${duration}s cubic-bezier(0.2, 0.8, 0.2, 1) ${delay}s, transform ${duration}s cubic-bezier(0.2, 0.8, 0.2, 1) ${delay}s`;
+
+    // If element is already in or above viewport on mount, reveal immediately
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.85) {
+      requestAnimationFrame(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0) translateX(0) rotateX(0) rotateY(0) scale3d(1,1,1) translateZ(0)';
+      });
+      return;
+    }
 
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -92,7 +102,7 @@ export function ScrollReveal({ children, type = 'up', delay = 0, duration = 0.7,
         el.style.transform = 'translateY(0) translateX(0) rotateX(0) rotateY(0) scale3d(1,1,1) translateZ(0)';
         observer.unobserve(el);
       }
-    }, { threshold });
+    }, { threshold, rootMargin: '0px 0px -30px 0px' });
 
     observer.observe(el);
     return () => observer.disconnect();
