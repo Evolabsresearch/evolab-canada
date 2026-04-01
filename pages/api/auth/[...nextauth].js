@@ -9,6 +9,11 @@ import { triggerEvent, upsertContact } from '../../../lib/omnisend';
 async function sendBrandedVerificationRequest({ identifier: email, url, provider }) {
   // Use SendGrid Web API — avoids SMTP 535 auth errors on free/trial accounts
 
+  if (!process.env.SENDGRID_API_KEY) {
+    console.error('SENDGRID_API_KEY is not set — cannot send magic link email');
+    throw new Error('Email service not configured');
+  }
+
   const escapedEmail = email.replace(/\./g, '&#8203;.');
   const brandColor = '#1B4D3E';
 
@@ -148,8 +153,11 @@ async function sendBrandedVerificationRequest({ identifier: email, url, provider
 
   if (!res.ok) {
     const body = await res.text();
+    console.error('SendGrid magic link error:', { status: res.status, body, to: email, from: fromEmail });
     throw new Error(`SendGrid API error ${res.status}: ${body}`);
   }
+
+  console.log('Magic link email sent successfully to:', email);
 }
 
 export const authOptions = {
