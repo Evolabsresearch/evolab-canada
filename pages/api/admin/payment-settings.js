@@ -14,7 +14,7 @@ const DEFAULT_PROCESSORS = {
 
 async function getProcessors(db) {
   const { data, error } = await db
-    .from('site_settings')
+    .from('store_settings')
     .select('value')
     .eq('key', 'payment_processors')
     .maybeSingle();
@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     processors[processor].enabled = enabled;
 
     const { error } = await db
-      .from('site_settings')
+      .from('store_settings')
       .update({ value: JSON.stringify(processors), updated_at: new Date().toISOString() })
       .eq('key', 'payment_processors');
 

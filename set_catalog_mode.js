@@ -14,7 +14,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 async function setCatalogMode() {
   console.log('Setting catalog_mode to full_open...');
   const { data, error } = await supabase
-    .from('site_settings')
+    .from('store_settings')
     .upsert(
       { key: 'catalog_mode', value: JSON.stringify({ mode: 'full_open' }) },
       { onConflict: 'key' }

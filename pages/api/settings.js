@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   try {
     const db = getSupabaseAdmin();
     const { data, error } = await db
-      .from('site_settings')
+      .from('store_settings')
       .select('key, value')
       .in('key', ['announcement_bar', 'free_shipping_threshold']);
 

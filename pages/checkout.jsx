@@ -21,7 +21,7 @@ export async function getServerSideProps(ctx) {
   try {
     const { getSupabaseAdmin } = await import('../lib/supabase');
     const db = getSupabaseAdmin();
-    const { data } = await db.from('site_settings').select('value').eq('key', 'payment_processors').maybeSingle();
+    const { data } = await db.from('store_settings').select('value').eq('key', 'payment_processors').maybeSingle();
     if (data) {
       const all = JSON.parse(data.value);
       enabledProcessors = Object.entries(all)

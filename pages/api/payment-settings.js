@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   try {
     const db = getSupabaseAdmin();
     const { data, error } = await db
-      .from('site_settings')
+      .from('store_settings')
       .select('value')
       .eq('key', 'payment_processors')
       .maybeSingle();

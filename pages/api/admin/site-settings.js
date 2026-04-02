@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   const db = getSupabaseAdmin();
 
   if (req.method === 'GET') {
-    const { data, error } = await db.from('site_settings').select('key, value');
+    const { data, error } = await db.from('store_settings').select('key, value');
     if (error) return res.status(500).json({ error: error.message });
     const settings = {};
     (data || []).forEach(row => {
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
     const strValue = typeof value === 'string' ? value : JSON.stringify(value);
     const { error } = await db
-      .from('site_settings')
+      .from('store_settings')
       .upsert({ key, value: strValue, updated_at: new Date().toISOString() }, { onConflict: 'key' });
 
     if (error) return res.status(500).json({ error: error.message });
