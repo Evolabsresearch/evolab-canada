@@ -233,178 +233,83 @@ export default function Home({ dbProducts }) {
   return (
     <Layout structuredData={[organizationSchema, websiteSchema]}>
       {/* ════════════════════════════════════════════════════════
-          HERO — Dark, clean layout with centered showcase vial
+          HERO — Full-width centered layout with background vials
       ════════════════════════════════════════════════════════ */}
-      <section style={{ background: '#0c1018', overflow: 'hidden', position: 'relative' }}>
+      <section style={{ background: '#0c1018', overflow: 'hidden', position: 'relative', padding: '120px 0 100px' }}>
         <FloatingVials />
 
-        {/* Radial glow behind vials — desktop only */}
+        {/* Gradient orb behind centered text */}
         <div className="hide-mobile" style={{
-          position: 'absolute', top: '50%', right: '12%',
+          position: 'absolute', top: '40%', left: '50%',
           width: 600, height: 600,
-          background: 'radial-gradient(circle, rgba(15,42,74,0.18) 0%, transparent 70%)',
-          transform: 'translateY(-50%)',
+          background: 'radial-gradient(circle at 50% 40%, rgba(6,182,212,0.12) 0%, transparent 60%)',
+          transform: 'translate(-50%, -50%)',
           pointerEvents: 'none',
         }} />
 
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', gap: 48 }} className="hero-grid">
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 2, textAlign: 'center' }}>
+          {/* Centered badge */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.25)', borderRadius: 100, padding: '6px 14px', marginBottom: 28 }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', flexShrink: 0, boxShadow: '0 0 8px rgba(6,182,212,0.8)' }} />
+            <span style={{ fontSize: 12, fontWeight: 600, color: '#06b6d4', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+              EVO Labs Research — Toronto, ON
+            </span>
+          </div>
 
-            {/* Left — copy */}
-            <div style={{ padding: '80px 0' }} className="hero-left">
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.25)', borderRadius: 100, padding: '6px 14px', marginBottom: 28 }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', flexShrink: 0, boxShadow: '0 0 8px rgba(6,182,212,0.8)' }} />
-                <span style={{ fontSize: 12, fontWeight: 600, color: '#06b6d4', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                  EVO Labs Research — Toronto, ON
-                </span>
+          {/* Centered h1 */}
+          <h1 style={{ fontSize: 'clamp(32px, 4.5vw, 64px)', fontWeight: 900, color: '#fff', lineHeight: 1.0, letterSpacing: '-0.03em', marginBottom: 24, maxWidth: 900, margin: '0 auto 24px' }}>
+            Research-Grade<br />
+            Peptides.<br />
+            <span style={{ color: '#06b6d4' }}>Zero Compromise.</span>
+          </h1>
+
+          {/* Centered subtitle */}
+          <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: 520, marginBottom: 36, margin: '0 auto 36px' }}>
+            Every compound independently tested by Janoshik Analytical.
+            99%+ purity. COA for every batch. For research use only.
+          </p>
+
+          {/* Centered CTA buttons */}
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40, justifyContent: 'center' }}>
+            <Link href={session ? "/products" : "/account/login"} style={{
+              background: '#fff', color: '#0c1018',
+              padding: '15px 32px', borderRadius: 9999,
+              fontSize: 15, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
+              display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none',
+              transition: 'background 0.2s, transform 0.15s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#e5e7eb'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.transform = 'none'; }}
+            >
+              Shop All Peptides →
+            </Link>
+            <Link href="/coa" style={{
+              background: 'transparent', color: 'rgba(255,255,255,0.75)',
+              padding: '14px 28px', borderRadius: 9999,
+              fontSize: 14, fontWeight: 500, fontFamily: "'DM Sans', sans-serif",
+              border: '1px solid rgba(255,255,255,0.2)', textDecoration: 'none',
+              transition: 'border-color 0.2s, color 0.2s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; e.currentTarget.style.color = '#fff'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; }}
+            >
+              View COA Library
+            </Link>
+          </div>
+
+          {/* Horizontal stats row */}
+          <div className="hero-stats" style={{ display: 'flex', gap: 48, flexWrap: 'wrap', justifyContent: 'center', paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            {[
+              { val: '99%+', label: 'Purity Guaranteed' },
+              { val: '3rd Party', label: 'Lab Tested' },
+              { val: 'Same Day', label: 'Fulfillment' },
+              { val: 'Discreet', label: 'Packaging' },
+            ].map(s => (
+              <div key={s.val} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: 18, fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1.2 }}>{s.val}</div>
+                <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', fontWeight: 500, marginTop: 2 }}>{s.label}</div>
               </div>
-
-              <h1 style={{ fontSize: 'clamp(32px, 4.5vw, 64px)', fontWeight: 900, color: '#fff', lineHeight: 1.0, letterSpacing: '-0.03em', marginBottom: 24 }}>
-                Research-Grade<br />
-                Peptides.<br />
-                <span style={{ color: '#06b6d4' }}>Zero Compromise.</span>
-              </h1>
-
-              <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: 420, marginBottom: 36 }}>
-                Every compound independently tested by Janoshik Analytical.
-                99%+ purity. COA for every batch. For research use only.
-              </p>
-
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-                <Link href={session ? "/products" : "/account/login"} style={{
-                  background: '#fff', color: '#0c1018',
-                  padding: '15px 32px', borderRadius: 9999,
-                  fontSize: 15, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
-                  display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none',
-                  transition: 'background 0.2s, transform 0.15s',
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#e5e7eb'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.transform = 'none'; }}
-                >
-                  Shop All Peptides →
-                </Link>
-                <Link href="/coa" style={{
-                  background: 'transparent', color: 'rgba(255,255,255,0.75)',
-                  padding: '14px 28px', borderRadius: 9999,
-                  fontSize: 14, fontWeight: 500, fontFamily: "'DM Sans', sans-serif",
-                  border: '1px solid rgba(255,255,255,0.2)', textDecoration: 'none',
-                  transition: 'border-color 0.2s, color 0.2s',
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; e.currentTarget.style.color = '#fff'; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; }}
-                >
-                  View COA Library
-                </Link>
-              </div>
-
-              {/* Stats row */}
-              <div className="hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                {[
-                  { val: '99%+', label: 'Purity Guaranteed' },
-                  { val: '3rd Party', label: 'Lab Tested' },
-                  { val: 'Same Day', label: 'Fulfillment' },
-                  { val: 'Discreet', label: 'Packaging' },
-                ].map(s => (
-                  <div key={s.val} style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 18, fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1.2 }}>{s.val}</div>
-                    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', fontWeight: 500, marginTop: 2 }}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — centered hero vial with glow + floating transparent vials */}
-            <div className="hero-right" style={{ position: 'relative', minHeight: 520, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              {/* Central glow ring */}
-              <div style={{
-                position: 'absolute', top: '50%', left: '50%',
-                width: 340, height: 340,
-                background: 'radial-gradient(circle, rgba(6,182,212,0.14) 0%, rgba(15,42,74,0.09) 45%, transparent 72%)',
-                transform: 'translate(-50%, -50%)',
-                borderRadius: '50%',
-                pointerEvents: 'none',
-              }} />
-              {/* Outer ambient glow */}
-              <div style={{
-                position: 'absolute', top: '50%', left: '50%',
-                width: 500, height: 500,
-                background: 'radial-gradient(circle, rgba(30,58,138,0.07) 0%, transparent 65%)',
-                transform: 'translate(-50%, -50%)',
-                borderRadius: '50%',
-                pointerEvents: 'none',
-              }} />
-
-              {/* Main hero vial — centered, large — 5-Amino-1MQ */}
-              <Float3D speed={5} distance={10} rotate={2} style={{ position: 'relative', zIndex: 4 }}>
-                <img src="https://lh3.googleusercontent.com/d/17USTyXbdbJ9cmTh7i2CJPPg0JPcycuse" alt="5-Amino-1MQ"
-                  style={{ width: 230, height: 230, objectFit: 'contain', filter: 'drop-shadow(0 28px 52px rgba(0,0,0,0.7)) drop-shadow(0 0 36px rgba(6,182,212,0.18))' }}
-                />
-              </Float3D>
-
-              {/* Supporting vial — top left — BPC-157 */}
-              <div className="hero-vial-secondary" style={{ position: 'absolute', left: '2%', top: '8%', zIndex: 3 }}>
-                <img src="https://lh3.googleusercontent.com/d/18kaeTUJb9UE8HhMtYtim3aOtq5gCjAcK" alt="BPC-157"
-                  style={{ width: 108, height: 108, objectFit: 'contain', filter: 'drop-shadow(0 14px 28px rgba(0,0,0,0.55)) drop-shadow(0 0 16px rgba(6,182,212,0.12))' }}
-                />
-              </div>
-
-              {/* Supporting vial — top right — Semax */}
-              <div className="hero-vial-secondary" style={{ position: 'absolute', right: '4%', top: '6%', zIndex: 3 }}>
-                <img src="https://lh3.googleusercontent.com/d/1eIWeUL2FjCOuS_GcQ486QI1ah2dokAOF" alt="Semax"
-                  style={{ width: 96, height: 96, objectFit: 'contain', filter: 'drop-shadow(0 12px 22px rgba(0,0,0,0.5)) drop-shadow(0 0 14px rgba(76,29,149,0.18))' }}
-                />
-              </div>
-
-              {/* Supporting vial — bottom left — HGH 191aa */}
-              <div className="hero-vial-secondary" style={{ position: 'absolute', left: '6%', bottom: '10%', zIndex: 3 }}>
-                <img src="https://lh3.googleusercontent.com/d/1Z_Syqo2Mcw0Sr2Rn-yu3nPWfq_JMivXp" alt="HGH 191aa"
-                  style={{ width: 90, height: 90, objectFit: 'contain', filter: 'drop-shadow(0 12px 22px rgba(0,0,0,0.5)) drop-shadow(0 0 14px rgba(20,83,45,0.2))' }}
-                />
-              </div>
-
-              {/* Supporting vial — bottom right — Bac Water */}
-              <div className="hero-vial-secondary" style={{ position: 'absolute', right: '8%', bottom: '12%', zIndex: 3 }}>
-                <img src="https://lh3.googleusercontent.com/d/1SAud8QDh3wvpD_ia9ur3YMSPCZ3w0DEI" alt="Bac Water"
-                  style={{ width: 84, height: 84, objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(30,58,138,0.18))' }}
-                />
-              </div>
-
-              {/* Floating info card — purity (desktop only) */}
-              <Float3D speed={6} distance={6} rotate={1.5} delay={0.5} style={{ position: 'absolute', top: '6%', right: '2%', zIndex: 5 }}>
-              <div className="hero-info-card" style={{
-                background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)',
-                borderRadius: 14, padding: '10px 16px',
-                border: '1px solid rgba(255,255,255,0.12)',
-                display: 'flex', alignItems: 'center', gap: 10,
-              }}>
-                <div style={{ width: 28, height: 28, borderRadius: 8, background: 'rgba(6,182,212,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 800, color: '#fff' }}>99%+ Purity</div>
-                  <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.45)' }}>HPLC verified</div>
-                </div>
-              </div>
-              </Float3D>
-
-              {/* Floating info card — COA (desktop only) */}
-              <Float3D speed={7} distance={7} rotate={1.5} delay={1} style={{ position: 'absolute', bottom: '6%', left: '2%', zIndex: 5 }}>
-              <div className="hero-info-card" style={{
-                background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)',
-                borderRadius: 14, padding: '10px 16px',
-                border: '1px solid rgba(255,255,255,0.12)',
-                display: 'flex', alignItems: 'center', gap: 10,
-              }}>
-                <div style={{ width: 28, height: 28, borderRadius: 8, background: 'rgba(99,102,241,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#818cf8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                </div>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 800, color: '#fff' }}>COA Included</div>
-                  <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.45)' }}>Every batch</div>
-                </div>
-              </div>
-              </Float3D>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -467,7 +372,7 @@ export default function Home({ dbProducts }) {
             </div>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="guarantee-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gridTemplateRows: 'auto auto', gap: 20 }} className="guarantee-grid">
             {[
               {
                 icon: '🔬',
@@ -477,6 +382,7 @@ export default function Home({ dbProducts }) {
                 bg: '#eff6ff',
                 accent: '#0F2A4A',
                 iconBg: '#dbeafe',
+                bento: { gridRow: '1 / 3' },
               },
               {
                 icon: '📦',
@@ -486,6 +392,7 @@ export default function Home({ dbProducts }) {
                 bg: '#eff6ff',
                 accent: '#1d4ed8',
                 iconBg: '#dbeafe',
+                bento: {},
               },
               {
                 icon: '📋',
@@ -495,10 +402,11 @@ export default function Home({ dbProducts }) {
                 bg: '#fdf4ff',
                 accent: '#7c3aed',
                 iconBg: '#ede9fe',
+                bento: {},
               },
             ].map((g, i) => (
               <ScrollReveal key={i} type="up" delay={i * 0.15}>
-                <TiltCard intensity={6} scale={1.02} glare style={{ borderRadius: 24, height: '100%' }}>
+                <TiltCard intensity={6} scale={1.02} glare style={{ borderRadius: 24, height: '100%', ...g.bento }}>
                   <div style={{
                     background: g.bg, borderRadius: 24, padding: '36px 32px',
                     border: '1px solid rgba(0,0,0,0.04)',
@@ -540,8 +448,8 @@ export default function Home({ dbProducts }) {
                 View All Products →
               </Link>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }} className="products-grid">
-              {FEATURED.map(p => <ProductCard key={p.id} product={p} />)}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="products-grid">
+              {FEATURED.slice(0, 6).map(p => <ProductCard key={p.id} product={p} />)}
             </div>
           </div>
         </section>
@@ -724,7 +632,7 @@ export default function Home({ dbProducts }) {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="features-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }} className="features-grid">
             {[
               {
                 icon: '🔬',
@@ -732,6 +640,7 @@ export default function Home({ dbProducts }) {
                 desc: 'Every compound independently tested via HPLC and mass spectrometry. Full COA published before any product is listed.',
                 accent: '#0ea5e9',
                 bg: '#141414',
+                layout: { gridColumn: '1 / -1', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'center', padding: '48px 40px' },
               },
               {
                 icon: '📦',
@@ -771,21 +680,47 @@ export default function Home({ dbProducts }) {
             ].map((f, i) => (
               <ScrollReveal key={i} type="up" delay={i * 0.1}>
                 <TiltCard intensity={7} scale={1.02} style={{ borderRadius: 20, height: '100%' }}>
-                  <div style={{
-                    background: f.bg, padding: '36px 32px', borderRadius: 20,
-                    border: '1px solid #1a1a1a',
-                    transition: 'background 0.2s, border-color 0.2s',
-                    height: '100%',
-                  }}
-                    onMouseEnter={e => { e.currentTarget.style.background = '#1a1a1a'; e.currentTarget.style.borderColor = `${f.accent}30`; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = f.bg; e.currentTarget.style.borderColor = '#1a1a1a'; }}
-                  >
-                    <div style={{ width: 52, height: 52, borderRadius: 16, background: `${f.accent}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, marginBottom: 20 }}>
-                      {f.icon}
+                  {i === 0 ? (
+                    <div style={{
+                      background: f.bg, borderRadius: 20,
+                      border: '1px solid #1a1a1a',
+                      transition: 'background 0.2s, border-color 0.2s',
+                      height: '100%',
+                      ...f.layout,
+                    }}
+                      onMouseEnter={e => { e.currentTarget.style.background = '#1a1a1a'; e.currentTarget.style.borderColor = `${f.accent}30`; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = f.bg; e.currentTarget.style.borderColor = '#1a1a1a'; }}
+                    >
+                      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                        <div style={{ width: 52, height: 52, borderRadius: 16, background: `${f.accent}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, marginBottom: 20 }}>
+                          {f.icon}
+                        </div>
+                        <h3 style={{ fontSize: 20, fontWeight: 800, color: '#fff', marginBottom: 12 }}>{f.title}</h3>
+                        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.75 }}>{f.desc}</p>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: 180, height: 180, borderRadius: 16, background: `${f.accent}15`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <span style={{ fontSize: 72 }}>{f.icon}</span>
+                        </div>
+                      </div>
                     </div>
-                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 10 }}>{f.title}</h3>
-                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.75 }}>{f.desc}</p>
-                  </div>
+                  ) : (
+                    <div style={{
+                      background: f.bg, padding: '36px 32px', borderRadius: 20,
+                      border: '1px solid #1a1a1a',
+                      transition: 'background 0.2s, border-color 0.2s',
+                      height: '100%',
+                    }}
+                      onMouseEnter={e => { e.currentTarget.style.background = '#1a1a1a'; e.currentTarget.style.borderColor = `${f.accent}30`; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = f.bg; e.currentTarget.style.borderColor = '#1a1a1a'; }}
+                    >
+                      <div style={{ width: 52, height: 52, borderRadius: 16, background: `${f.accent}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, marginBottom: 20 }}>
+                        {f.icon}
+                      </div>
+                      <h3 style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 10 }}>{f.title}</h3>
+                      <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.75 }}>{f.desc}</p>
+                    </div>
+                  )}
                 </TiltCard>
               </ScrollReveal>
             ))}
@@ -946,15 +881,14 @@ export default function Home({ dbProducts }) {
             </Link>
           </div>
 
-          {/* Large featured row — top 4 categories */}
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 16, marginBottom: 16 }} className="cat-featured-grid">
-            {CATEGORIES.slice(0, 4).map((cat, i) => {
+          {/* Masonry-style 2-row layout with varying widths */}
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 16, marginBottom: 16 }} className="cat-featured-grid">
+            {CATEGORIES.slice(0, 3).map((cat, i) => {
               const catProductCount = products.filter(p => p.category === cat.name).length;
               const GOAL_LABELS = [
                 'Growth Hormone Research',
                 'Metabolic & GLP-1',
                 'Healing & Regeneration',
-                'Mitochondrial Health',
               ];
               const isLarge = i === 0;
               return (
@@ -1018,8 +952,8 @@ export default function Home({ dbProducts }) {
           </div>
 
           {/* Second row — remaining categories */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }} className="category-grid">
-            {CATEGORIES.slice(4).map(cat => {
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="category-grid">
+            {CATEGORIES.slice(3).map(cat => {
               const count = products.filter(p => p.category === cat.name).length;
               return (
                 <Link

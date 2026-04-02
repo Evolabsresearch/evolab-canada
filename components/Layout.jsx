@@ -217,7 +217,7 @@ export default function Layout({ children, title, description, ogImage, structur
           </span>
         );
         return (
-          <div style={{ background: 'linear-gradient(90deg, #0a1f3d 0%, #0F2A4A 50%, #0a1f3d 100%)', color: '#fff', textAlign: 'center', fontSize: 12, fontWeight: 500, padding: '9px 16px', letterSpacing: '0.05em', fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: 38, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ background: 'linear-gradient(90deg, #0a1f3d 0%, #0F2A4A 50%, #0a1f3d 100%)', color: '#fff', textAlign: 'center', fontSize: 12, fontWeight: 500, padding: '9px 16px', letterSpacing: '0.05em', fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid rgba(6,182,212,0.3)' }}>
             {msg.href ? <Link href={msg.href} style={{ color: '#fff', textDecoration: 'none' }}>{inner}</Link> : inner}
           </div>
         );
@@ -236,7 +236,8 @@ export default function Layout({ children, title, description, ogImage, structur
         transition: 'all 0.3s cubic-bezier(0.2,0.8,0.2,1)',
         fontFamily: "'Inter', sans-serif",
       }}>
-        <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 28px', display: 'flex', alignItems: 'center', height: 68, gap: 28 }}>
+        {/* Top Row: Logo + Actions */}
+        <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 28px', display: 'flex', alignItems: 'center', height: 56, gap: 28, justifyContent: 'space-between' }}>
 
           {/* Logo */}
           <Link href="/" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
@@ -247,25 +248,7 @@ export default function Layout({ children, title, description, ogImage, structur
             />
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav aria-label="Main navigation" className="hide-tablet" style={{ display: 'flex', gap: 24, alignItems: 'center', flex: 1 }} suppressHydrationWarning>
-            {NAV_LINKS.map(({ href, label }) => {
-              const resolvedHref = (href === '/products' && !session) ? '/account/login' : href;
-              return (
-                <Link
-                  key={href}
-                  href={resolvedHref}
-                  aria-current={isActive(href) ? 'page' : undefined}
-                  className={`nav-link${isActive(href) ? ' active' : ''}`}
-                  suppressHydrationWarning
-                >
-                  {label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Desktop Actions */}
+          {/* Desktop Actions (Right side of top row) */}
           <div className="hide-tablet" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             {/* Search button */}
             <button
@@ -328,6 +311,24 @@ export default function Layout({ children, title, description, ogImage, structur
             </button>
           </div>
         </div>
+
+        {/* Bottom Row: Centered Navigation Links (Desktop only) */}
+        <nav aria-label="Main navigation" className="hide-tablet" style={{ maxWidth: 1320, margin: '0 auto', padding: '0 28px', display: 'flex', gap: 24, alignItems: 'center', justifyContent: 'center', height: 44, borderTop: '1px solid rgba(0,0,0,0.04)' }} suppressHydrationWarning>
+          {NAV_LINKS.map(({ href, label }) => {
+            const resolvedHref = (href === '/products' && !session) ? '/account/login' : href;
+            return (
+              <Link
+                key={href}
+                href={resolvedHref}
+                aria-current={isActive(href) ? 'page' : undefined}
+                className={`nav-link${isActive(href) ? ' active' : ''}`}
+                suppressHydrationWarning
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </nav>
 
         {/* Mobile Menu Dropdown */}
         {menuOpen && (

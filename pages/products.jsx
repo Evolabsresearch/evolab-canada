@@ -64,7 +64,7 @@ function ProductCard({ product }) {
         />
       </div>
       {/* Info panel */}
-      <div style={{ padding: '14px 16px 18px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ padding: '18px 20px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
         <span style={{ fontSize: 9, fontWeight: 600, color: '#9ca3af', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4, fontFamily: "'DM Sans', sans-serif" }}>{product.category}</span>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: '#131315', marginBottom: 6, lineHeight: 1.3 }}>{product.name}</h3>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6, marginTop: 'auto' }}>
@@ -148,18 +148,41 @@ export default function ProductsPage({ products, catalogMode = 'gated', isGuest 
 
   return (
     <Layout title="Buy Research Peptides Canada | EVO Labs Research Canada" description="Browse all 48+ research-grade peptides from EVO Labs Research Canada. 99%+ purity guaranteed. Filter by category, sort by price. COA available for every batch. Ships across Canada via Canada Post.">
-      {/* Page Header */}
-      <div style={{ background: '#0a0a0a', padding: '64px 0 56px' }}>
+      {/* Page Header — Split Layout */}
+      <div style={{ background: 'linear-gradient(180deg, #f8fafc 0%, #fff 100%)', padding: '48px 0 40px', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
         <div className="container">
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#0ea5e9', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
-            Research Compounds
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 24, flexWrap: 'wrap' }}>
+            {/* Left: Title & Subtitle */}
+            <div style={{ flex: 1, minWidth: 300 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#0ea5e9', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+                Research Compounds
+              </div>
+              <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.02em', marginBottom: 12 }}>
+                Research Peptides
+              </h1>
+              <p style={{ fontSize: 15, color: '#6b7280', maxWidth: 400 }}>
+                Browse 48+ compounds. Every batch independently tested.
+              </p>
+            </div>
+
+            {/* Right: Product Count & Sort */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start', gap: 12, minWidth: 250 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span style={{ fontSize: 13, color: '#9ca3af' }}>Results:</span>
+                <span style={{ fontSize: 18, fontWeight: 700, color: '#0a0a0a' }}>{products.length}</span>
+              </div>
+              <select
+                value={sort}
+                onChange={e => setSort(e.target.value)}
+                style={{ fontSize: 13, fontWeight: 500, color: '#374151', border: '1.5px solid #e5e7eb', borderRadius: 8, padding: '8px 14px', background: '#fff', cursor: 'pointer', outline: 'none', fontFamily: 'inherit' }}
+              >
+                <option value="default">Sort: Featured</option>
+                <option value="name">Sort: A–Z</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+            </div>
           </div>
-          <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', marginBottom: 16 }}>
-            All Peptides & Compounds
-          </h1>
-          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.5)', maxWidth: 500 }}>
-            {products.length} compounds. Every one independently tested. COA available before you buy.
-          </p>
         </div>
       </div>
 
@@ -180,11 +203,25 @@ export default function ProductsPage({ products, catalogMode = 'gated', isGuest 
         </div>
       )}
 
-      {/* Filters */}
-      <div style={{ borderBottom: '1px solid #f0f0f0', position: 'sticky', top: 72, zIndex: 100, background: '#fff' }} className="filter-bar">
-        <div className="container" style={{ padding: '0 32px' }}>
-          {/* Category pills */}
-          <div className="pills-row">
+      {/* Sticky Filter Bar */}
+      <div style={{ position: 'sticky', top: 68, zIndex: 50, background: '#fff', paddingTop: '16px', paddingBottom: '16px', borderBottom: '1px solid rgba(0,0,0,0.06)' }} className="sticky-filter-bar">
+        <div className="container">
+          {/* Search Input — Full Width Row */}
+          <div style={{ marginBottom: '16px' }}>
+            <div style={{ position: 'relative', width: '100%' }}>
+              <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#9ca3af', fontSize: 14 }}>🔍</span>
+              <input
+                className="input"
+                placeholder="Search peptides..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                style={{ width: '100%', padding: '10px 16px 10px 40px', borderRadius: 8, border: '1.5px solid #e5e7eb', fontSize: 14, fontFamily: 'inherit', outline: 'none' }}
+              />
+            </div>
+          </div>
+
+          {/* Category Pills Row — Scrollable */}
+          <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: '4px', scrollbarWidth: 'none', msOverflowStyle: 'none' }} className="pills-row">
             {categoryNames.map(cat => (
               <button
                 key={cat}
@@ -195,36 +232,8 @@ export default function ProductsPage({ products, catalogMode = 'gated', isGuest 
               </button>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* Controls bar */}
-      <div style={{ background: '#fafafa', borderBottom: '1px solid #f0f0f0', padding: '14px 0' }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-          {/* Search */}
-          <div style={{ position: 'relative', maxWidth: 300, flex: 1 }}>
-            <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#9ca3af', fontSize: 14 }}>🔍</span>
-            <input
-              className="input"
-              placeholder="Search peptides..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              style={{ paddingLeft: 40, padding: '10px 16px 10px 40px', borderRadius: 100 }}
-            />
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <span style={{ fontSize: 13, color: '#9ca3af' }}>{filtered.length} results</span>
-            <select
-              value={sort}
-              onChange={e => setSort(e.target.value)}
-              style={{ fontSize: 13, fontWeight: 500, color: '#374151', border: '1.5px solid #e5e7eb', borderRadius: 100, padding: '8px 16px', background: '#fff', cursor: 'pointer', outline: 'none', fontFamily: 'inherit' }}
-            >
-              <option value="default">Sort: Featured</option>
-              <option value="name">Sort: A–Z</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-            </select>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '12px' }}>
+            <span style={{ fontSize: 12, color: '#9ca3af' }}>{filtered.length} results</span>
           </div>
         </div>
       </div>
@@ -233,16 +242,18 @@ export default function ProductsPage({ products, catalogMode = 'gated', isGuest 
       <section className="section">
         <div className="container">
           {filtered.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '80px 0', color: '#9ca3af' }}>
-              <div style={{ fontSize: 48, marginBottom: 16 }}>🔬</div>
-              <p style={{ fontSize: 18, fontWeight: 600, color: '#374151' }}>No products found</p>
-              <p style={{ fontSize: 14, marginTop: 8 }}>Try adjusting your search or category filter.</p>
-              <button onClick={() => { setSearch(''); setActiveCategory('All'); }} className="btn-green" style={{ marginTop: 24 }}>
-                Clear Filters
+            <div style={{ textAlign: 'center', padding: '120px 32px', color: '#9ca3af' }}>
+              <div style={{ fontSize: 80, marginBottom: 24, opacity: 0.6 }}>🔬</div>
+              <p style={{ fontSize: 20, fontWeight: 700, color: '#374151', marginBottom: 12 }}>No products found</p>
+              <p style={{ fontSize: 15, color: '#6b7280', marginBottom: 32, maxWidth: 400, marginLeft: 'auto', marginRight: 'auto' }}>
+                We couldn't find any compounds matching your search. Try adjusting your filters or browsing all categories.
+              </p>
+              <button onClick={() => { setSearch(''); setActiveCategory('All'); }} className="btn-green" style={{ marginTop: 0 }}>
+                Browse All Compounds
               </button>
             </div>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }} className="products-grid">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28 }} className="products-grid">
               {filtered.map(p => <ProductCard key={p.id} product={p} />)}
             </div>
           )}
@@ -261,36 +272,51 @@ export default function ProductsPage({ products, catalogMode = 'gated', isGuest 
       </section>
 
       <style>{`
-        /* Desktop: pills wrap to multiple rows */
+        /* Pills row scrolling behavior */
         .pills-row {
           display: flex;
-          flex-wrap: wrap;
           gap: 8px;
-          padding: 16px 0;
+          flex-wrap: wrap;
+          -webkit-overflow-scrolling: touch;
         }
-        /* Mobile: single scrollable row — no overlap with products */
+
+        .pills-row::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Tablet: 2 columns */
+        @media (max-width: 1024px) {
+          .products-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 24px !important;
+          }
+          .sticky-filter-bar { top: 56px !important; }
+        }
+
+        /* Mobile: 1 column, adjust spacing */
         @media (max-width: 768px) {
-          .filter-bar { top: 56px !important; }
+          .products-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .sticky-filter-bar {
+            top: 56px !important;
+            padding-top: 12px;
+            padding-bottom: 12px;
+          }
           .pills-row {
             flex-wrap: nowrap;
             overflow-x: auto;
-            padding: 12px 0;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
           }
-          .pills-row::-webkit-scrollbar { display: none; }
           .pills-row .filter-pill { flex-shrink: 0; }
           .container { padding: 0 16px !important; }
         }
-        @media (max-width: 1024px) {
-          .products-grid { grid-template-columns: repeat(3, 1fr) !important; }
-        }
-        @media (max-width: 768px) {
-          .products-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
-        }
+
         @media (max-width: 480px) {
-          .products-grid { grid-template-columns: 1fr !important; }
+          .products-grid {
+            grid-template-columns: 1fr !important;
+            gap: 14px !important;
+          }
         }
       `}</style>
     </Layout>
