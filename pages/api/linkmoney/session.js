@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   const clientId = process.env.LINKMONEY_CLIENT_ID;
   const clientSecret = process.env.LINKMONEY_CLIENT_SECRET;
   const apiBase = process.env.LINKMONEY_API_BASE_URL || 'https://api.link.money';
-  const redirectUrl = process.env.LINKMONEY_REDIRECT_URL || `${process.env.NEXTAUTH_URL}/checkout`;
+  const redirectUrl = process.env.LINKMONEY_REDIRECT_URL || `${process.env.NEXTAUTH_URL.replace('evolabsresearch.com', 'evolabsresearch.ca')}/checkout`;
 
   if (!clientId || !clientSecret) {
     return res.status(500).json({ error: 'Link Money credentials not configured' });
@@ -60,10 +60,10 @@ export default async function handler(req, res) {
         email,
         customerProfile: { guestCheckout: true },
         orderDetails: {
-          totalAmount: { value: parsedAmount, currency: 'USD' },
+          totalAmount: { value: parsedAmount, currency: 'CAD' },
         },
         paymentDetails: {
-          amount: { value: parsedAmount, currency: 'USD' },
+          amount: { value: parsedAmount, currency: 'CAD' },
           requestKey: randomUUID(),
         },
         redirectUrl,

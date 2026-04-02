@@ -7,9 +7,9 @@ import { getSupabaseAdmin } from '../../../lib/supabase';
 import { isAdminAuthed } from './_auth';
 
 const DEFAULT_PROCESSORS = {
-  stripe: { enabled: true, label: 'Credit / Debit Card', description: 'Visa, Mastercard, Amex via Stripe', icon: 'card', order: 1 },
-  hummingbird: { enabled: false, label: 'Credit / Debit Card (Alt)', description: 'Card processing via Hummingbird', icon: 'card', order: 2 },
-  linkmoney: { enabled: false, label: 'Bank Transfer', description: 'Pay directly from bank via LinkMoney', icon: 'bank', order: 3 },
+  hummingbird: { enabled: true, label: 'Credit / Debit Card', description: 'Visa, Mastercard, Amex via Hummingbird', icon: 'card', order: 1 },
+  stripe: { enabled: true, label: 'Credit / Debit & More', description: 'Cards, Apple Pay, Google Pay via Stripe', icon: 'card', order: 2 },
+  linkmoney: { enabled: true, label: 'Bank Transfer', description: 'Pay directly from bank via LinkMoney', icon: 'bank', order: 3 },
 };
 
 async function getProcessors(db) {

@@ -22,15 +22,15 @@ export default async function handler(req, res) {
   }
 
   const sgKey   = process.env.SENDGRID_API_KEY;
-  const fromEmail = process.env.SENDGRID_FROM_EMAIL || 'orders@evolabsresearch.ca';
+  const fromEmail = process.env.SENDGRID_FROM_EMAIL || 'orders@evolabsresearch.com';
   const twilioSid = process.env.TWILIO_ACCOUNT_SID;
   const twilioToken = process.env.TWILIO_AUTH_TOKEN;
   const twilioFrom  = process.env.TWILIO_PHONE_NUMBER;
 
   const orderRef = orderNumber || `EVO-${Date.now().toString(36).toUpperCase()}`;
   const fullName = `${firstName} ${lastName}`.trim();
-  const shippingLabel = shippingMethod || 'USPS Priority Mail';
-  const deliveryEta   = shippingMethod === 'UPS Ground' ? '2–3 business days' : '3–5 business days';
+  const shippingLabel = shippingMethod || 'Canada Post Expedited';
+  const deliveryEta   = shippingMethod === 'Canada Post Xpresspost' ? '2–4 business days' : '3–7 business days';
 
   // ── Build item rows HTML ──────────────────────────────────────────
   const itemRowsHtml = items.map(item => `
@@ -59,9 +59,9 @@ export default async function handler(req, res) {
 
         <!-- Header -->
         <tr>
-          <td style="background:#1B4D3E;padding:32px 40px;text-align:center;">
+          <td style="background:#0F2A4A;padding:32px 40px;text-align:center;">
             <div style="font-size:22px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;">⚗️ EVO Labs Research</div>
-            <div style="font-size:13px;color:#a7d7c5;margin-top:6px;">Order Confirmation</div>
+            <div style="font-size:13px;color:#7dd3fc;margin-top:6px;">Order Confirmation</div>
           </td>
         </tr>
 
@@ -71,8 +71,8 @@ export default async function handler(req, res) {
             <div style="font-size:28px;">✅</div>
             <h1 style="font-size:22px;font-weight:800;color:#0a0a0a;margin:12px 0 8px;">Your order is confirmed!</h1>
             <p style="color:#6b7280;font-size:14px;margin:0;">Hi ${firstName}, thanks for your research order. We're preparing it now.</p>
-            <div style="display:inline-block;background:#f0fdf8;border:1.5px solid #1B4D3E;border-radius:8px;padding:8px 20px;margin-top:16px;">
-              <span style="font-size:13px;color:#1B4D3E;font-weight:700;">Order #${orderRef}</span>
+            <div style="display:inline-block;background:#f0f7ff;border:1.5px solid #0F2A4A;border-radius:8px;padding:8px 20px;margin-top:16px;">
+              <span style="font-size:13px;color:#0F2A4A;font-weight:700;">Order #${orderRef}</span>
             </div>
           </td>
         </tr>
@@ -93,7 +93,7 @@ export default async function handler(req, res) {
               </tr>
               <tr>
                 <td style="padding:14px 0 0;font-size:16px;font-weight:800;color:#0a0a0a;border-top:2px solid #0a0a0a;">Total Paid</td>
-                <td style="padding:14px 0 0;text-align:right;font-size:16px;font-weight:800;color:#1B4D3E;border-top:2px solid #0a0a0a;">$${parseFloat(total || 0).toFixed(2)}</td>
+                <td style="padding:14px 0 0;text-align:right;font-size:16px;font-weight:800;color:#0F2A4A;border-top:2px solid #0a0a0a;">$${parseFloat(total || 0).toFixed(2)}</td>
               </tr>
             </table>
           </td>
@@ -111,7 +111,7 @@ export default async function handler(req, res) {
                 ${country || 'CA'}
               </div>
               <div style="margin-top:12px;padding-top:12px;border-top:1px solid #e5e7eb;">
-                <span style="font-size:13px;color:#1B4D3E;font-weight:700;">🚚 ${shippingLabel}</span>
+                <span style="font-size:13px;color:#0F2A4A;font-weight:700;">🚚 ${shippingLabel}</span>
                 <span style="font-size:12px;color:#6b7280;margin-left:8px;">Est. ${deliveryEta}</span>
               </div>
             </div>
@@ -130,14 +130,14 @@ export default async function handler(req, res) {
         <!-- CTA -->
         <tr>
           <td style="padding:0 40px 36px;text-align:center;">
-            <a href="https://evolabsresearch.ca/account" style="display:inline-block;background:#1B4D3E;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:700;font-size:14px;">View Your Orders →</a>
+            <a href="https://evolabsresearch.ca/account" style="display:inline-block;background:#0F2A4A;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:700;font-size:14px;">View Your Orders →</a>
           </td>
         </tr>
 
         <!-- Footer -->
         <tr>
           <td style="background:#f9fafb;padding:24px 40px;text-align:center;border-top:1px solid #f0f0f0;">
-            <p style="font-size:12px;color:#9ca3af;margin:0 0 6px;">EVO Labs Research Canada · 100 King Street West, Suite 5600, Toronto ON M5X 1C9</p>
+            <p style="font-size:12px;color:#9ca3af;margin:0 0 6px;">EVO Labs Research Canada · Toronto, ON, Canada</p>
             <p style="font-size:11px;color:#d1d5db;margin:0;">These products are for research use only and not for human consumption.</p>
           </td>
         </tr>
@@ -172,7 +172,7 @@ Estimated delivery: ${deliveryEta}
 Tracking info will be sent once your order ships.
 Track your order: https://evolabsresearch.ca/account
 
-EVO Labs Research Canada | support@evolabsresearch.ca
+EVO Labs Research | support@evolabsresearch.com
 `;
 
   const errors = [];
@@ -189,7 +189,7 @@ EVO Labs Research Canada | support@evolabsresearch.ca
         body: JSON.stringify({
           personalizations: [{ to: [{ email, name: fullName }] }],
           from: { email: fromEmail, name: 'EVO Labs Research' },
-          reply_to: { email: 'support@evolabsresearch.ca', name: 'EVO Labs Support' },
+          reply_to: { email: 'support@evolabsresearch.com', name: 'EVO Labs Support' },
           subject: `✅ Order Confirmed — #${orderRef} | EVO Labs Research`,
           content: [
             { type: 'text/plain', value: textBody },
@@ -216,7 +216,7 @@ EVO Labs Research Canada | support@evolabsresearch.ca
     try {
       const normalizedPhone = phone.replace(/\D/g, '');
       const e164 = normalizedPhone.startsWith('1') ? `+${normalizedPhone}` : `+1${normalizedPhone}`;
-      const smsBody = `✅ EVO Labs Order Confirmed! Order #${orderRef} for $${parseFloat(total || 0).toFixed(2)} is being prepared. Tracking will be texted once shipped. Questions? support@evolabsresearch.ca`;
+      const smsBody = `✅ EVO Labs Order Confirmed! Order #${orderRef} for $${parseFloat(total || 0).toFixed(2)} is being prepared. Tracking will be texted once shipped. Questions? support@evolabsresearch.com`;
 
       const twilioRes = await fetch(
         `https://api.twilio.com/2010-04-01/Accounts/${twilioSid}/Messages.json`,

@@ -26,7 +26,7 @@ const STRIPE_APPEARANCE = {
     '.Input:focus': { border: '1.5px solid #0F2A4A', boxShadow: '0 0 0 2px rgba(15,42,74,0.12)' },
     '.Label': { fontWeight: '600', fontSize: '12px', color: '#374151' },
     '.Tab': { border: '1.5px solid #e5e7eb', borderRadius: '8px' },
-    '.Tab--selected': { border: '1.5px solid #0F2A4A', backgroundColor: '#f0fdf8' },
+    '.Tab--selected': { border: '1.5px solid #0F2A4A', backgroundColor: '#f0f7ff' },
   },
 };
 

@@ -41,8 +41,9 @@ const StripePayment = STRIPE_ENABLED
   : null;
 
 const CA_PROVINCES = [
-  'Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Northwest Territories',
-  'Nova Scotia','Nunavut','Ontario','Prince Edward Island','Quebec','Saskatchewan','Yukon',
+  'Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador',
+  'Northwest Territories','Nova Scotia','Nunavut','Ontario','Prince Edward Island',
+  'Quebec','Saskatchewan','Yukon',
 ];
 
 function InputField({ label, required, ...props }) {
@@ -57,7 +58,7 @@ function InputField({ label, required, ...props }) {
         style={{
           padding: '12px 14px', borderRadius: 10,
           border: '1.5px solid #e5e7eb', fontSize: 14,
-          fontFamily: "'Anek Telugu', sans-serif",
+          fontFamily: "'Inter', sans-serif",
           outline: 'none', transition: 'border-color 0.2s',
           ...(props.style || {}),
         }}
@@ -80,7 +81,7 @@ function SelectField({ label, required, children, ...props }) {
         style={{
           padding: '12px 14px', borderRadius: 10,
           border: '1.5px solid #e5e7eb', fontSize: 14,
-          fontFamily: "'Anek Telugu', sans-serif",
+          fontFamily: "'Inter', sans-serif",
           outline: 'none', transition: 'border-color 0.2s',
           background: '#fff', appearance: 'auto',
           ...(props.style || {}),
@@ -201,7 +202,6 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
   const [hbError, setHbError] = useState('');
   const [stripeSubmitting, setStripeSubmitting] = useState(false);
   const [stripeError, setStripeError] = useState('');
-  const [ruoAgreed, setRuoAgreed] = useState(false); // Research use only acknowledgment
   const adyenContainerRef = useRef(null);
 
   // Persist order to Supabase after any successful payment (fire-and-forget)
@@ -300,7 +300,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               subtotal: total,
               shipping: parseFloat(savedTotal || '0') > 0 ? 9.99 : 0,
               total,
-              shippingMethod: 'USPS Priority Mail',
+              shippingMethod: 'Canada Post Expedited',
               paymentMethod: 'linkmoney',
             }),
           }).catch(() => {});
@@ -471,7 +471,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
       subtotal: subtotalAfterVolume,
       shipping: effectiveShipping,
       total,
-      shippingMethod: selectedShipping === 'express' ? 'UPS Ground' : 'USPS Priority Mail',
+      shippingMethod: selectedShipping === 'express' ? 'Canada Post Xpresspost' : 'Canada Post Expedited',
       paymentMethod: payMethod,
     };
     // Fire-and-forget — don't block the UI
@@ -524,7 +524,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
             name: item.name,
             quantity: item.qty || 1,
             price: parseFloat((item.salePrice || item.price || '0').toString().replace(/[^0-9.]/g, '')),
-            imageUrl: item.image ? `https://evolabsresearch.ca${item.image}` : '',
+            imageUrl: item.image ? `https://evolabsresearch.co${item.image}` : '',
           })),
         }]);
       }
@@ -540,7 +540,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
           fields: {
             cartTotal: effectiveTotal,
             itemCount: cart.reduce((s, i) => s + (i.qty || 1), 0),
-            checkoutUrl: 'https://evolabsresearch.ca/checkout',
+            checkoutUrl: 'https://evolabsresearch.co/checkout',
           },
         }),
       }).catch(() => {});
@@ -751,15 +751,15 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
   // Order confirmation
   if (step === 3) {
     return (
-      <Layout title="Order Confirmed | EVO Labs Research Canada">
+      <Layout title="Order Confirmed | EVO Labs Research">
         <section style={{ padding: '80px 0 120px', minHeight: '60vh' }}>
           <div className="container" style={{ maxWidth: 600, textAlign: 'center' }}>
             <div style={{
-              width: 72, height: 72, borderRadius: '50%', background: '#eff6ff',
+              width: 72, height: 72, borderRadius: '50%', background: '#f0f7ff',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              margin: '0 auto 24px', border: '2px solid #dbeafe',
+              margin: '0 auto 24px', border: '2px solid #bfdbfe',
             }}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 6L9 17l-5-5"/>
               </svg>
             </div>
@@ -847,7 +847,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               <h3 style={{ fontSize: 14, fontWeight: 700, color: '#0a0a0a', marginBottom: 16 }}>What happens next?</h3>
               {[
                 { step: '1', title: 'Order Processing', desc: 'Your order is being prepared and will be dispatched same business day if placed before 2pm EST.', color: '#0F2A4A' },
-                { step: '2', title: 'Shipping Confirmation', desc: 'You\'ll receive an email with your tracking number once your order ships via USPS Priority or UPS Ground.', color: '#2563eb' },
+                { step: '2', title: 'Shipping Confirmation', desc: 'You\'ll receive an email with your tracking number once your order ships via Canada Post.', color: '#2563eb' },
                 { step: '3', title: 'Delivery', desc: 'Most orders arrive within 2-5 business days. Cold-pack packaging included for temperature-sensitive compounds.', color: '#7c3aed' },
               ].map(s => (
                 <div key={s.step} style={{ display: 'flex', gap: 14, marginBottom: 14, alignItems: 'flex-start' }}>
@@ -866,7 +866,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
             {/* Share & Earn referral section */}
             {(() => {
               const referralCode = `EVO${(form.firstName || 'FRIEND').toUpperCase().slice(0, 4)}10`;
-              const shareUrl = `https://evolabsresearch.ca?ref=${referralCode}`;
+              const shareUrl = `https://evolabsresearch.co?ref=${referralCode}`;
               const shareMsg = `I just ordered from EVO Labs Research — research-grade peptides with 99%+ purity. Use my code ${referralCode} for 10% off: ${shareUrl}`;
               const handleCopy = () => {
                 navigator.clipboard?.writeText(shareUrl).then(() => {
@@ -876,12 +876,12 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               };
               return (
                 <div style={{
-                  background: 'linear-gradient(135deg, #0d2218 0%, #0a1a1a 100%)',
-                  border: '1.5px solid rgba(74,222,128,0.2)',
+                  background: 'linear-gradient(135deg, #0a1f3d 0%, #061428 100%)',
+                  border: '1.5px solid rgba(6,182,212,0.2)',
                   borderRadius: 14, padding: '20px 24px',
                   marginBottom: 24, textAlign: 'left',
                 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(74,222,128,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 6 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(6,182,212,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 6 }}>
                     Share &amp; Earn
                   </div>
                   <h3 style={{ fontSize: 15, fontWeight: 800, color: '#fff', marginBottom: 4, lineHeight: 1.3 }}>
@@ -905,7 +905,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                       onClick={handleCopy}
                       style={{
                         padding: '9px 16px', borderRadius: 8, border: 'none',
-                        background: referralCopied ? '#0ea5e9' : '#0F2A4A',
+                        background: referralCopied ? '#0891b2' : '#0F2A4A',
                         color: '#fff', fontSize: 12, fontWeight: 700,
                         cursor: 'pointer', transition: 'background 0.2s', flexShrink: 0,
                         fontFamily: "'DM Sans', sans-serif",
@@ -943,10 +943,10 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                 borderRadius: 14, padding: '20px 24px',
                 marginBottom: 32, textAlign: 'center',
               }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(74,222,128,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
+                <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(6,182,212,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
                   Your Next Order Discount
                 </div>
-                <div style={{ fontSize: 28, fontWeight: 900, color: '#06b6d4', fontFamily: 'monospace', letterSpacing: '0.1em', marginBottom: 6 }}>
+                <div style={{ fontSize: 28, fontWeight: 900, color: '#4ade80', fontFamily: 'monospace', letterSpacing: '0.1em', marginBottom: 6 }}>
                   {discountCode}
                 </div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
@@ -967,7 +967,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
   // Empty cart redirect
   if (cart.length === 0 && step !== 3) {
     return (
-      <Layout title="Checkout | EVO Labs Research Canada">
+      <Layout title="Checkout | EVO Labs Research">
         <section style={{ padding: '80px 0 120px', minHeight: '60vh' }}>
           <div className="container" style={{ maxWidth: 600, textAlign: 'center' }}>
             <p style={{ fontSize: 18, fontWeight: 700, color: '#374151', marginBottom: 8 }}>Your cart is empty</p>
@@ -982,7 +982,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
   }
 
   return (
-    <Layout title="Checkout | EVO Labs Research Canada" description="Complete your research order.">
+    <Layout title="Checkout | EVO Labs Research" description="Complete your research order.">
       <section style={{ padding: '48px 0 120px', minHeight: '60vh' }}>
         <div className="container" style={{ maxWidth: 1080 }}>
 
@@ -1042,7 +1042,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                       <InputField label="Email Address" type="email" required value={form.email} onChange={set('email')} placeholder="you@example.com" />
                       {isGuest && catalogMode === 'full_open' && (
-                        <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 8, padding: '10px 14px', fontSize: 12, color: '#065f46', lineHeight: 1.5 }}>
+                        <div style={{ background: '#f0f7ff', border: '1px solid #bfdbfe', borderRadius: 8, padding: '10px 14px', fontSize: 12, color: '#1e3a5f', lineHeight: 1.5 }}>
                           We&apos;ll create a free account for you so you can track your order. You&apos;ll receive an email to set your password.
                         </div>
                       )}
@@ -1068,7 +1068,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                           <option value="">Select province...</option>
                           {CA_PROVINCES.map(s => <option key={s} value={s}>{s}</option>)}
                         </SelectField>
-                        <InputField label="Postal Code" required value={form.zip} onChange={set('zip')} placeholder="M5V 3A8" pattern="[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]" />
+                        <InputField label="Postal Code" required value={form.zip} onChange={set('zip')} placeholder="M5V 2T6" />
                       </div>
                     </div>
                   </div>
@@ -1113,7 +1113,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         style={{
                           padding: '12px 14px', borderRadius: 10,
                           border: '1.5px solid #e5e7eb', fontSize: 14,
-                          fontFamily: "'Anek Telugu', sans-serif",
+                          fontFamily: "'Inter', sans-serif",
                           outline: 'none', resize: 'vertical',
                           transition: 'border-color 0.2s',
                         }}
@@ -1172,14 +1172,14 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                       {[
-                        { id: 'standard', label: 'USPS Priority Mail', time: '3-5 business days', price: promoFreeShip ? 'FREE' : '$9.99' },
-                        { id: 'express', label: 'UPS Ground', time: '2-3 business days', price: '$14.99' },
+                        { id: 'standard', label: 'Canada Post Expedited', time: '3-7 business days', price: promoFreeShip ? 'FREE' : '$9.99' },
+                        { id: 'express', label: 'Canada Post Xpresspost', time: '2-4 business days', price: '$14.99' },
                       ].map(m => (
                         <label key={m.id} onClick={() => setSelectedShipping(m.id)} style={{
                           display: 'flex', alignItems: 'center', gap: 14,
                           padding: '14px 16px', borderRadius: 12,
                           border: selectedShipping === m.id ? '2px solid #0F2A4A' : '1.5px solid #e5e7eb',
-                          background: selectedShipping === m.id ? '#f0fdf8' : '#fff',
+                          background: selectedShipping === m.id ? '#f0f7ff' : '#fff',
                           cursor: 'pointer',
                         }}>
                           <div style={{
@@ -1193,7 +1193,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                           </div>
                           <span style={{
                             fontSize: 13, fontWeight: 700,
-                            color: m.price === 'FREE' ? '#0ea5e9' : '#0a0a0a',
+                            color: m.price === 'FREE' ? '#0891b2' : '#0a0a0a',
                             fontFamily: "'DM Sans', sans-serif",
                           }}>
                             {m.price}
@@ -1219,7 +1219,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         style={{
                           flex: 1, minWidth: 120, padding: '12px 14px', borderRadius: 12, cursor: 'pointer',
                           border: paymentMethod === 'card' ? '2px solid #0F2A4A' : '1.5px solid #e5e7eb',
-                          background: paymentMethod === 'card' ? '#f0fdf8' : '#fff',
+                          background: paymentMethod === 'card' ? '#f0f7ff' : '#fff',
                           textAlign: 'left', transition: 'all 0.15s',
                         }}
                       >
@@ -1247,7 +1247,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                         style={{
                           flex: 1, minWidth: 120, padding: '12px 14px', borderRadius: 12, cursor: 'pointer',
                           border: paymentMethod === 'bank' ? '2px solid #0F2A4A' : '1.5px solid #e5e7eb',
-                          background: paymentMethod === 'bank' ? '#f0fdf8' : '#fff',
+                          background: paymentMethod === 'bank' ? '#f0f7ff' : '#fff',
                           textAlign: 'left', transition: 'all 0.15s',
                         }}
                       >
@@ -1316,7 +1316,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                                 onClick={() => { setPaymentMethod('bank'); setHbError(''); }}
                                 style={{
                                   width: '100%', padding: '11px 16px', borderRadius: 10,
-                                  border: '1.5px solid #0F2A4A', background: '#f0fdf8',
+                                  border: '1.5px solid #0F2A4A', background: '#f0f7ff',
                                   fontSize: 13, fontWeight: 700, color: '#0F2A4A',
                                   cursor: 'pointer', fontFamily: "'DM Sans', sans-serif",
                                 }}
@@ -1344,7 +1344,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                             </>
                           )}
                           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 12 }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                             </svg>
                             <span style={{ fontSize: 11, color: '#6b7280' }}>256-bit SSL &bull; Card data never touches our servers</span>
@@ -1361,7 +1361,7 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                             Securely link your bank account to complete payment. You&apos;ll be redirected to our payment partner to authorize the transfer — your banking credentials are never shared with us.
                           </p>
                           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                             </svg>
                             <span style={{ fontSize: 11, color: '#6b7280' }}>Bank-grade encryption &bull; Powered by Link Money</span>
@@ -1428,9 +1428,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     if (!bacWater || alreadyInCart) return null;
                     return (
                       <div style={{
-                        border: `2px dashed ${bumpAdded ? '#0ea5e9' : '#0F2A4A'}`,
+                        border: `2px dashed ${bumpAdded ? '#0891b2' : '#0F2A4A'}`,
                         borderRadius: 12, padding: '16px', marginBottom: 24,
-                        background: bumpAdded ? '#eff6ff' : '#f0fdf8',
+                        background: bumpAdded ? '#f0f7ff' : '#f0f7ff',
                         transition: 'all 0.2s ease',
                       }}>
                         <label style={{ display: 'flex', gap: 12, alignItems: 'center', cursor: 'pointer' }}>
@@ -1459,22 +1459,15 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     );
                   })()}
 
-                  <Checkbox
-                    checked={ruoAgreed}
-                    onChange={e => setRuoAgreed(e.target.checked)}
-                  >
-                    I confirm these products are for research use only, not for human consumption, and are not approved by Health Canada.
-                  </Checkbox>
-
                   <button
                     type="submit"
-                    disabled={placing || !ruoAgreed}
+                    disabled={placing}
                     style={{
-                      width: '100%', background: (placing || !ruoAgreed) ? '#6b7280' : '#0F2A4A', color: '#fff',
+                      width: '100%', background: placing ? '#6b7280' : '#0F2A4A', color: '#fff',
                       padding: '16px 24px', borderRadius: 12, fontSize: 15,
                       fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
-                      cursor: (placing || !ruoAgreed) ? 'not-allowed' : 'pointer', border: 'none',
-                      transition: 'background 0.2s', opacity: (placing || !ruoAgreed) ? 0.5 : 1,
+                      cursor: placing ? 'not-allowed' : 'pointer', border: 'none',
+                      transition: 'background 0.2s',
                       display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                     }}
                   >
@@ -1498,11 +1491,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
                     )}
                   </button>
 
-                  {!ruoAgreed && placing && (
-                    <p style={{ fontSize: 11, color: '#ef4444', textAlign: 'center', marginTop: 8, lineHeight: 1.5 }}>
-                      You must acknowledge the research use policy to proceed.
-                    </p>
-                  )}
+                  <p style={{ fontSize: 11, color: '#9ca3af', textAlign: 'center', marginTop: 12, lineHeight: 1.5 }}>
+                    By placing your order, you agree that these products are for research use only and not for human consumption.
+                  </p>
                 </form>
               )}
             </div>
@@ -1559,9 +1550,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               {step !== 3 && (
                 <div style={{ marginBottom: 16 }}>
                   {promoApplied ? (
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 10, padding: '10px 14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#f0f7ff', border: '1px solid #bfdbfe', borderRadius: 10, padding: '10px 14px' }}>
                       <div>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: '#0ea5e9', fontFamily: "'DM Sans', sans-serif" }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: '#0891b2', fontFamily: "'DM Sans', sans-serif" }}>
                           🏷️ {promoApplied.code}
                           {promoFreeShip && promoApplied.type !== 'free_shipping' && (
                             <span style={{ marginLeft: 8, fontSize: 11, color: '#1d4ed8', background: '#eff6ff', borderRadius: 6, padding: '2px 6px' }}>🚚 + Free shipping</span>
@@ -1652,14 +1643,14 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               </div>
               {volumeDiscount > 0 && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
-                  <span style={{ fontSize: 13, color: '#0ea5e9' }}>🏷️ Multi-vial savings</span>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: '#0ea5e9' }}>−${volumeDiscount.toFixed(2)}</span>
+                  <span style={{ fontSize: 13, color: '#0891b2' }}>🏷️ Multi-vial savings</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#0891b2' }}>−${volumeDiscount.toFixed(2)}</span>
                 </div>
               )}
               {promoApplied && discountAmount > 0 && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
-                  <span style={{ fontSize: 13, color: '#0ea5e9' }}>Discount ({promoApplied.code})</span>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: '#0ea5e9' }}>−${discountAmount.toFixed(2)}</span>
+                  <span style={{ fontSize: 13, color: '#0891b2' }}>Discount ({promoApplied.code})</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#0891b2' }}>−${discountAmount.toFixed(2)}</span>
                 </div>
               )}
               {loyaltyRedeemed > 0 && (
@@ -1670,9 +1661,9 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               )}
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
                 <span style={{ fontSize: 13, color: '#6b7280' }}>Shipping</span>
-                <span style={{ fontSize: 13, fontWeight: 600, color: (effectiveShipping === 0) ? '#0ea5e9' : '#0a0a0a' }}>
+                <span style={{ fontSize: 13, fontWeight: 600, color: (effectiveShipping === 0) ? '#0891b2' : '#0a0a0a' }}>
                   {effectiveShipping === 0 ? 'FREE' : `$${effectiveShipping.toFixed(2)}`}
-                  {promoFreeShip && effectiveShipping === 0 && <span style={{ fontSize: 10, color: '#0ea5e9', marginLeft: 4 }}>(promo)</span>}
+                  {promoFreeShip && effectiveShipping === 0 && <span style={{ fontSize: 10, color: '#0891b2', marginLeft: 4 }}>(promo)</span>}
                 </span>
               </div>
 
@@ -1685,10 +1676,10 @@ export default function CheckoutPage({ enabledProcessors = ['hummingbird', 'link
               </div>
 
               {/* Loyalty points preview */}
-              <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 8, padding: '10px 14px', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ background: '#f0f7ff', border: '1px solid #bfdbfe', borderRadius: 8, padding: '10px 14px', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{ fontSize: 18 }}>⭐</span>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: '#0ea5e9' }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: '#0891b2' }}>
                     Earn {Math.floor(effectiveTotal)} reward points on this order
                   </div>
                   <div style={{ fontSize: 11, color: '#6b7280', marginTop: 1 }}>
